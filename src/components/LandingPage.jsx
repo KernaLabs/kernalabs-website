@@ -150,42 +150,72 @@ const LandingPage = () => {
 
   const scrollLeftFunc = () => {
     if (!carouselRef.current) return;
+    const cardWidth = 400 + 24; // card width + gap
     carouselRef.current.scrollBy({
-      left: -carouselRef.current.offsetWidth,
+      left: -cardWidth,
       behavior: 'smooth'
     });
   };
 
   const scrollRightFunc = () => {
     if (!carouselRef.current) return;
+    const cardWidth = 400 + 24; // card width + gap
     carouselRef.current.scrollBy({
-      left: carouselRef.current.offsetWidth,
+      left: cardWidth,
       behavior: 'smooth'
     });
   };
 
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = 0;
+      setCanScrollLeft(false);
+      setCanScrollRight(true);
+    }
+  }, []);
+
   return (
     <div
       className="snap-y snap-mandatory overflow-y-scroll h-screen"
-      style={{ backgroundImage: `url('/BackgroundSwirls.png')`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+      style={{ backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/BackgroundSwirls.png')`, backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
     >
       {/* Section 1: Better Genetic Medicines */}
-      <section id="platform" className="snap-start h-screen flex items-center">
+      <section id="platform" className="snap-start h-screen flex items-center relative">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold leading-tight text-white">Better genetic medicines, built with AI.</h1>
+          <div className="sm:max-w-md md:max-w-xl lg:max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold leading-tight text-white">
+              Better genetic medicines, built with AI.
+            </h1>
+          </div>
+          <div className="sm:max-w-sm md:max-w-md lg:max-w-lg">
             <p className="mt-4 md:mt-6 text-base md:text-lg text-white/80">
               Kerna Labs is unlocking the full potential of mRNA as the universal toolkit for genetic medicine.
             </p>
           </div>
         </div>
+        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-1/2 h-auto ">
+          <img 
+            src="/hazy_droplet.svg" 
+            alt="Hazy Droplet" 
+            className="w-full h-full object-contain opacity-100"
+          />
+        </div>
       </section>
 
       {/* Section 2: RNA Platform */}
-      <section id="rna-platform" className="snap-start h-screen flex items-center">
+      <section id="rna-platform" className="snap-start h-screen flex items-center relative">
+        <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-1/2 h-auto">
+          <img 
+            src="/shiny_droplet.svg" 
+            alt="Shiny Droplet" 
+            className="w-full h-full object-contain"
+          />
+        </div>
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-tight text-white">The first platform for RNA-based therapies.</h2>
+          <div className="sm:max-w-md md:max-w-xl lg:max-w-2xl ml-auto">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-tight text-white">
+              The first platform for RNA-based therapies.
+            </h2>
             <p className="mt-4 md:mt-6 text-base md:text-lg text-white/80">
               We leverage advanced computational techniques and high-throughput biology to fundamentally change the way we do drug discovery and development.
             </p>
@@ -194,16 +224,33 @@ const LandingPage = () => {
       </section>
 
       {/* Section 3: Potential */}
-      <section id="potential" className="snap-start h-screen flex items-center">
+      <section id="potential" className="snap-start h-screen flex items-center relative">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
+          <div className="max-w-7xl">
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-medium leading-tight tracking-tight text-white">
               Despite its potential, mRNA is held back by key bottlenecks in payload design and delivery
             </h2>
-            <p className="mt-4 md:mt-6 text-lg md:text-2xl text-kerna-red">
+            <p className="mt-4 md:mt-6 text-xl md:text-2xl text-kerna-red">
               Kerna Labs solves these key limitations with cutting-edge payload design
             </p>
           </div>
+        </div>
+        <div 
+          className="absolute right-0 top-0 w-2/3 h-auto"
+          style={{
+            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 95%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0.8) 70%, rgba(0,0,0,0) 95%)',
+          }}
+        >
+          <img 
+            src="/trail.svg" 
+            alt="Particle Trail" 
+            className="w-full h-full object-cover"
+            style={{
+              transform: 'rotate(0deg) translate(20%, 10%)',
+              transformOrigin: 'center'
+            }}
+          />
         </div>
       </section>
 
@@ -244,21 +291,21 @@ const LandingPage = () => {
       </section>
 
       {/* Section 5: Team */}
-      <section id="team" className="snap-start min-h-screen">
+      <section id="team" className="snap-start min-h-screen overflow-hidden">
         <div className="py-24">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium text-white mb-2">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-medium text-white mb-4">
               Meet Our Team
             </h2>
-            <p className="text-base md:text-lg text-white/80 mb-8">
-              Built and backed by the leading minds in machine learning and mRNA. 
+            <p className="text-xl text-white/60 mb-16">
+              Built and backed by the leading minds in machine learning and mRNA
             </p>
           </div>
 
           <div className="relative">
             <div 
               ref={carouselRef}
-              className="overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing"
+              className="overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing mx-[calc((100vw-1280px)/2)]"
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
               onMouseUp={handleDragEnd}
@@ -266,69 +313,76 @@ const LandingPage = () => {
               onTouchStart={handleDragStart}
               onTouchMove={handleDragMove}
               onTouchEnd={handleDragEnd}
+              onScroll={() => {
+                if (!carouselRef.current) return;
+                const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+                setCanScrollLeft(scrollLeft > 10);
+                setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+              }}
               style={{
                 scrollSnapType: 'x mandatory',
                 scrollBehavior: 'smooth',
                 WebkitOverflowScrolling: 'touch'
               }}
             >
-              <div className="flex container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="flex gap-6">
                 {teamMembers.map((member, idx) => (
                   <div 
                     key={idx}
-                    className="w-[240px] sm:w-[280px] md:w-[320px] flex-none"
+                    className="w-[400px] flex-none"
                     style={{ scrollSnapAlign: 'start' }}
                   >
-                    <div className={`bg-white/10 backdrop-blur-lg border-t border-r border-b ${idx === teamMembers.length - 1 ? 'border-l' : ''} border-white/20 p-3 sm:p-4 h-full ${idx === teamMembers.length - 1 ? 'border-r' : ''}`}>
+                    <div className="border border-white/20 bg-white/5 backdrop-blur-sm p-8 text-center h-full">
                       <img 
                         src={member.image} 
                         alt={member.name} 
-                        className="rounded-full w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto mb-2 sm:mb-3 object-cover" 
+                        className="w-32 h-32 rounded-full mx-auto mb-6 object-cover" 
                       />
-                      <h3 className="text-sm sm:text-base md:text-lg font-normal text-white text-center mb-1">
+                      <h3 className="text-2xl font-normal text-white mb-2">
                         {member.name}
                       </h3>
-                      <p className="text-gray-400 text-center mb-2 sm:mb-3 text-xs sm:text-sm">
+                      <p className="text-white/60 uppercase tracking-wider text-sm mb-6">
                         {member.position}
                       </p>
-                      <ul className="text-gray-400 text-xs space-y-1 sm:space-y-1.5">
-                        {member.description.map((item, i) => (
-                          <li key={i}>{item}</li>
+                      <div className="text-white/60 text-center space-y-2">
+                        {member.description.slice(0, 5).map((desc, i) => (
+                          <p key={i}>{desc}</p>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
                 ))}
+                <div className="w-[calc((100vw-1280px)/2)] flex-none" aria-hidden="true" />
               </div>
             </div>
 
             {/* Navigation Arrows */}
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="flex gap-2 sm:gap-4 mt-4 sm:mt-6">
+              <div className="flex gap-8 mt-8">
                 <button 
                   onClick={scrollLeftFunc}
                   disabled={!canScrollLeft}
-                  className={`p-1.5 sm:p-2 rounded-full border border-white/20 transition-all ${
+                  className={`p-2 ${
                     canScrollLeft 
-                      ? 'text-white hover:text-kerna-red hover:border-kerna-red' 
+                      ? 'text-white hover:text-kerna-red' 
                       : 'text-white/20 cursor-not-allowed'
                   }`}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 12H5m7 7l-7-7 7-7" />
                   </svg>
                 </button>
                 <button 
                   onClick={scrollRightFunc}
                   disabled={!canScrollRight}
-                  className={`p-1.5 sm:p-2 rounded-full border border-white/20 transition-all ${
+                  className={`p-2 ${
                     canScrollRight 
-                      ? 'text-white hover:text-kerna-red hover:border-kerna-red' 
+                      ? 'text-white hover:text-kerna-red' 
                       : 'text-white/20 cursor-not-allowed'
                   }`}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </button>
               </div>
@@ -339,14 +393,30 @@ const LandingPage = () => {
 
       {/* Section 6: Our Mission */}
       <section id="mission" className="snap-start h-screen">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex items-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-            <img src="/TeamPhoto.jpg" alt="Team" className="rounded-lg w-full" />
-            <div className="bg-white/5 backdrop-blur-lg border border-white/20 p-6 sm:p-8 rounded-lg">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Mission</h2>
-              <p className="text-white/80 text-base md:text-lg">
-                Kerna Labs' mission is to build the first true platform for RNA therapeutics. 
-                The future is disease-free.
+        <div className="h-full">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium text-white px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+            Our Mission
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {/* Left side - Image */}
+            <div className="h-[500px]"> {/* Fixed height */}
+              <img 
+                src="/TeamPhoto.jpg" 
+                alt="Team" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            {/* Right side - Text content */}
+            <div className="h-[500px] bg-white/10 backdrop-blur-sm border-t border-r border-b border-white/20 p-8 md:p-12 flex flex-col justify-center">
+              <p className="text-xl md:text-2xl text-white/90 mb-8">
+                Kerna Labs' mission is to build the first true platform for RNA therapeutics. The future is disease-free.
+              </p>
+              <p className="text-lg md:text-xl text-white/70 mb-6">
+                Lorem ipsum dolor sit amet consectetur. Molestie placerat justo aliquet tellus felis ornare dignissim sapien. Urna sed enim neque neque urna varius diam vitae. Tortor vel nunc quis urna metus feugiat leo proin. Mi feugiat dictum mauris turpis donec egestas.
+              </p>
+              <p className="text-lg md:text-xl text-white/70">
+                Lorem ipsum dolor sit amet consectetur. Molestie placerat justo aliquet tellus felis ornare dignissim sapien. Urna sed enim neque neque urna varius diam vitae. Tortor vel nunc quis urna metus feugiat leo proin.
               </p>
             </div>
           </div>
@@ -354,10 +424,12 @@ const LandingPage = () => {
       </section>
 
       {/* Section 7: Join Us */}
-      <section id="join-us" className="snap-start h-screen flex items-center">
-        <div className="container mx-auto max-w-7xl px-8 sm:px-12 lg:px-16">
+      <section id="join-us" className="snap-start h-screen flex items-center relative">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-normal tracking-tight text-white">Join Us in Shaping the Future of Medicine</h2>
+            <h2 className="text-4xl md:text-5xl font-normal tracking-tight text-white">
+              Join Us in Shaping the Future of Medicine
+            </h2>
             <p className="mt-4 text-kerna-red text-base md:text-lg">
               Kerna Labs was founded in 2024 by Amit Deshwar, Melissa Moore, Julia Peng, and Michael Swift.
             </p>
@@ -365,6 +437,13 @@ const LandingPage = () => {
               If you're a biologist or machine learning engineer who's excited about our mission, we'd love to hear from you.
             </p>
           </div>
+        </div>
+        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-1/2 h-auto">
+          <img 
+            src="/hazy_droplet.svg" 
+            alt="Hazy Droplet" 
+            className="w-full h-full object-contain opacity-90"
+          />
         </div>
       </section>
 

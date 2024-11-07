@@ -74,56 +74,9 @@ const teamMembers = [
   },
 ];
 const LandingPage = () => {
-  const [visibleCards, setVisibleCards] = useState(3);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const carouselRef = useRef(null);
-
-  const handleDragStart = (e) => {
-    setIsDragging(true);
-    setStartX(e.type === 'mousedown' ? e.pageX : e.touches[0].pageX);
-    setScrollLeft(carouselRef.current.scrollLeft);
-  };
-
-  const handleDragMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
-    const walk = (x - startX) * 2;
-    carouselRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleDragEnd = () => {
-    setIsDragging(false);
-    if (carouselRef.current) {
-      const cardWidth = carouselRef.current.offsetWidth / visibleCards;
-      const scrollPos = carouselRef.current.scrollLeft;
-      const nearestCard = Math.round(scrollPos / cardWidth);
-      carouselRef.current.scrollTo({
-        left: nearestCard * cardWidth,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setVisibleCards(1.5);
-      } else if (window.innerWidth < 1024) {
-        setVisibleCards(2.5);
-      } else {
-        setVisibleCards(3.5);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {

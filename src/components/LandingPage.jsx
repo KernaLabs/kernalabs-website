@@ -106,7 +106,7 @@ const LandingPage = () => {
 
   const scrollLeftFunc = () => {
     if (!carouselRef.current) return;
-    const cardWidth = 400 + 24; // card width + gap
+    const cardWidth = 240 + 12; // card width + gap
     carouselRef.current.scrollBy({
       left: -cardWidth,
       behavior: 'smooth'
@@ -115,7 +115,7 @@ const LandingPage = () => {
 
   const scrollRightFunc = () => {
     if (!carouselRef.current) return;
-    const cardWidth = 400 + 24; // card width + gap
+    const cardWidth = 240 + 12; // card width + gap
     carouselRef.current.scrollBy({
       left: cardWidth,
       behavior: 'smooth'
@@ -221,7 +221,7 @@ const LandingPage = () => {
       {/* Section 3: Potential */}
       <section id="potential" className="snap-start h-screen flex items-center relative">
         <div 
-          className="absolute right-0 top-1/2 w-2/3 h-auto transform -translate-y-1/3 md:-translate-y-1/2"
+          className="absolute right-0 top-1/2 w-full sm:w-3/4 md:w-2/3 h-auto transform -translate-y-1/3 md:-translate-y-1/2"
           style={{
             maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 85%)',
             WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 85%)',
@@ -316,24 +316,39 @@ const LandingPage = () => {
               onMouseMove={handleMouseMove}
               style={{ userSelect: 'none' }}
             >
-              <div className="flex gap-3 sm:gap-4 pb-4">
+              <div className="flex gap-2 sm:gap-3 pb-4">
                 {teamMembers.map((member, idx) => (
                   <div 
                     key={idx}
-                    className="w-[260px] sm:w-[300px] md:w-[350px] flex-none"
+                    className="w-[200px] sm:w-[220px] md:w-[240px] flex-none"
                   >
-                    <div className="border border-white/20 bg-white/5 backdrop-blur-sm p-4 sm:p-6 text-center">
-                      <img 
-                        src={member.image} 
-                        alt={member.name} 
-                        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-3" 
-                      />
-                      <h3 className="text-base sm:text-lg font-normal text-white mb-1">
-                        {member.name}
-                      </h3>
-                      <p className="text-white/60 uppercase tracking-wider text-xs">
-                        {member.position}
-                      </p>
+                    <div className="border border-white/20 bg-white/5 backdrop-blur-sm p-4 sm:p-6 text-center h-[360px] sm:h-[400px] md:h-[440px]">
+                      <div className="flex flex-col h-full">
+                        {/* Top spacing */}
+                        <div className="h-[15%]" />
+                        
+                        {/* Image section - fixed height */}
+                        <div className="h-[40%] flex items-center justify-center">
+                          <img 
+                            src={member.image} 
+                            alt={member.name} 
+                            className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full" 
+                          />
+                        </div>
+                        
+                        {/* Text section - fixed height */}
+                        <div className="h-[30%] flex flex-col items-center justify-center">
+                          <h3 className="text-base sm:text-base md:text-lg font-normal text-white mb-3 px-2">
+                            {member.name}
+                          </h3>
+                          <p className="text-white/60 uppercase tracking-wider text-xs sm:text-sm px-2">
+                            {member.position}
+                          </p>
+                        </div>
+                        
+                        {/* Bottom spacing */}
+                        <div className="h-[15%]" />
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -379,7 +394,7 @@ const LandingPage = () => {
       <section id="mission" className="snap-start h-screen flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-medium text-white mb-8 sm:mb-12">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-medium text-white mb-8 sm:mb-12">
               Our Mission
             </h2>
           </div>
@@ -411,48 +426,48 @@ const LandingPage = () => {
       </section>
 
       {/* Section 7: Join Us */}
-      <section id="contact" className="snap-start min-h-screen flex flex-col">
-        <div className="flex-1 flex items-center relative overflow-hidden">
+      <section id="contact us" className="snap-start min-h-screen flex flex-col">
+        <div className="flex-1 flex items-center relative overflow-hidden py-16 sm:py-20">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white leading-tight">
                 Join Us In Shaping The Future Of Medicine
               </h1>
-              <p className="mt-6 text-kerna-red text-xl md:text-2xl">
+              <p className="mt-6 text-kerna-red text-base md:text-lg">
                 Kerna Labs was founded in 2024 by Amit Deshwar, Melissa Moore, Julia Peng, and Michael Swift.
               </p>
-              <p className="mt-4 text-kerna-red text-xl md:text-2xl">
+              <p className="mt-4 text-kerna-red text-base md:text-lg">
                 If you're a biologist or machine learning engineer who's excited about our mission
               </p>
             </div>
           </div>
           <div 
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[600px] h-[600px]"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto"
             style={{
-              maskImage: 'radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0) 100%)',
-              WebkitMaskImage: 'radial-gradient(circle at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0) 100%)',
+              maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
+              WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
             }}
           >
             <img 
               src="/hazy_droplet.svg" 
               alt="Hazy Droplet" 
-              className="w-full h-full object-contain opacity-90"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
 
         <div className="bg-kerna-red">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex flex-col items-start">
-              <h2 className="text-6xl sm:text-7xl md:text-8xl font-medium text-white mb-6">
+              <h2 className="text-3xl sm:text-4xl font-medium text-white mb-4">
                 Get Connected
               </h2>
-              <p className="text-xl sm:text-2xl text-white/90 max-w-2xl mb-8">
+              <p className="text-lg sm:text-xl text-white/90 max-w-2xl mb-6">
                 Learn more about how we're enabling our partners in their mRNA pipeline development.
               </p>
               <a 
                 href="mailto:founders@kernalabs.ai"
-                className="bg-white px-8 py-4 text-kerna-red font-medium text-lg hover:bg-white/90 transition-colors inline-flex items-center gap-2"
+                className="bg-white px-6 py-3 text-kerna-red font-medium text-base hover:bg-white/90 transition-colors inline-flex items-center gap-2"
               >
                 Contact Us
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -462,36 +477,17 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-
-        <footer className="bg-black/40 backdrop-blur-sm text-white py-8">
+      </section>
+      <footer className="bg-black/40 backdrop-blur-sm text-white py-8">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between">
-              <img src="/logo.svg" alt="Kerna Labs" className="h-8" />
-              <div className="flex items-center gap-8">
-                <a href="/blog" className="text-white/80 hover:text-white">Blog</a>
-                <a href="/contact" className="text-white/80 hover:text-white">Contact</a>
-              </div>
-            </div>
-            <div className="mt-8 flex items-center gap-4">
-              <a href="#" className="text-white/60 hover:text-white">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  {/* Discord icon path */}
-                </svg>
-              </a>
-              <a href="#" className="text-white/60 hover:text-white">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  {/* Twitter/X icon path */}
-                </svg>
-              </a>
-              <a href="#" className="text-white/60 hover:text-white">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  {/* Telegram icon path */}
-                </svg>
-              </a>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <img src="/KernaLeaf.svg" alt="Kerna Labs" className="h-8" />
+              <p className="text-white/60 text-sm">
+                © {new Date().getFullYear()} Kerna Labs. All rights reserved.
+              </p>
             </div>
           </div>
         </footer>
-      </section>
     </div>
   );
 };

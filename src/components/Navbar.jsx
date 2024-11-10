@@ -3,6 +3,15 @@ import React, { useState } from 'react';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-transparent z-50 border-b border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-12">
@@ -16,6 +25,7 @@ const Navbar = () => {
             <a
               key={idx}
               href={`#${section.toLowerCase()}`}
+              onClick={(e) => handleNavClick(e, section.toLowerCase())}
               className="h-full flex items-center justify-center border-l text-sm border-gray-700 px-4 py-1 text-white hover:text-red-400"
             >
               {section}
@@ -63,8 +73,8 @@ const Navbar = () => {
           <a
             key={idx}
             href={`#${section.toLowerCase()}`}
+            onClick={(e) => handleNavClick(e, section.toLowerCase())}
             className="block px-4 py-3 text-white hover:text-red-400 border-t border-gray-700/50"
-            onClick={() => setIsMenuOpen(false)}
           >
             {section}
           </a>

@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "Leaf192.png",
+      "src": "Logo192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "Leaf512.png",
+      "src": "Logo512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

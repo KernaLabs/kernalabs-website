@@ -169,14 +169,14 @@ const LandingPage = () => {
               Better genetic medicines, built with AI.
             </h1>
             <div className="max-w-sm sm:max-w-md lg:max-w-lg">
-              <p className="mt-4 md:mt-6 text-sm sm:text-base md:text-lg text-kerna-beige">
+              <p className="mt-4 md:mt-6 text-base md:text-lg text-kerna-beige">
                 Kerna Labs is unlocking the full potential of mRNA as the universal toolkit for genetic medicine.
               </p>
             </div>
           </div>
         </div>
         <div 
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto"
+          className="select-none absolute right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto"
           style={{
             maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
             WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
@@ -185,7 +185,7 @@ const LandingPage = () => {
           <img 
             src="/hazy_droplet.svg" 
             alt="Hazy Droplet" 
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain select-none"
           />
         </div>
       </section>
@@ -202,9 +202,9 @@ const LandingPage = () => {
           <img 
             src="/trail.svg" 
             alt="Particle Trail" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-scale-down scale-150 md:scale-125 select-none"
             style={{
-              transform: 'rotate(0deg) translate(10%, -10%) scale(1.25)',
+              transform: 'rotate(0deg) translate(10%, -10%)',
               transformOrigin: 'center'
             }}
           />
@@ -264,7 +264,7 @@ const LandingPage = () => {
 
               <div className="bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10 p-3 sm:p-4 rounded-lg hover:border-kerna-darkred/50 transition-colors">
                 <div className="mb-3 w-5 h-5 md:w-6 md:h-6">
-                  <img src="/aim.svg" alt="Target" className="w-full h-full" />
+                  <img src="/aim.svg" alt="Target" className="w-full h-full select-none" />
                 </div>
                 <h3 className="text-kerna-beige text-base sm:text-lg md:text-xl font-normal mb-1.5">Cell-Type Specific Expression</h3>
                 <p className="text-kerna-beige/60 text-sm">Precision-targeted delivery for cell-specific therapeutic effects.</p>
@@ -272,7 +272,7 @@ const LandingPage = () => {
 
               <div className="bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10 p-3 sm:p-4 rounded-lg hover:border-kerna-darkred/50 transition-colors">
                 <div className="mb-3 w-5 h-5 md:w-6 md:h-6">
-                  <img src="/clock.svg" alt="Clock" className="w-full h-full" />
+                  <img src="/clock.svg" alt="Clock" className="w-full h-full select-none" />
                 </div>
                 <h3 className="text-kerna-beige text-base sm:text-lg md:text-xl font-normal mb-1.5">Enhanced Half-life</h3>
                 <p className="text-kerna-beige/60 text-sm">Prolonged efficacy window through optimized mRNA stability.</p>
@@ -281,7 +281,7 @@ const LandingPage = () => {
           </div>
         </div>
         
-        <div className="bg-[#EDE9DF] text-black p-4 sm:p-6 md:p-8 lg:p-12">
+        <div className="bg-[#EDE9DF] text-black p-6 md:p-8 lg:p-12">
           <div className="max-w-7xl mx-auto flex items-center gap-4 sm:gap-6 md:gap-8">
             <div className="w-0.5 bg-black h-10 sm:h-12 md:h-16 flex-shrink-0"></div>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium">
@@ -404,7 +404,7 @@ const LandingPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-12">
             {/* Image Container */}
-            <div className="relative h-[300px] md:h-full overflow-hidden">
+            <div className="relative select-none h-[300px] md:h-full overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 md:hidden"></div>
               <img 
                 src="/TeamPhoto.jpg" 
@@ -456,7 +456,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div 
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto"
+            className="absolute select-none right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto"
             style={{
               maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
               WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
@@ -496,7 +496,7 @@ const LandingPage = () => {
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <img src="/KernaLeaf.svg" alt="Kerna Labs" className="h-8" />
-              <p className="text-white/60 text-sm">
+              <p className="text-kerna-beige/90 text-sm">
                 © {new Date().getFullYear()} Kerna Labs. All rights reserved.
               </p>
             </div>

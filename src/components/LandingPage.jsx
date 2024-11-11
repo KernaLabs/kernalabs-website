@@ -295,7 +295,7 @@ const LandingPage = () => {
       <section id="team" className="snap-start h-screen flex flex-col">
         <div className="flex-1 flex flex-col justify-center pt-16">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-kerna-beige mb-2 sm:mb-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-kerna-beige mb-2 sm:mb-3">
               Meet Our Team
             </h2>
             <p className="text-base sm:text-lg text-white/75 mb-8 sm:mb-12">
@@ -338,10 +338,10 @@ const LandingPage = () => {
                         
                         {/* Text section - fixed height */}
                         <div className="h-[35%] flex flex-col items-center justify-center">
-                          <h3 className="text-sm sm:text-base md:text-lg font-normal text-white mb-2">
+                          <h3 className="text-sm sm:text-base md:text-md font-normal text-white mb-2">
                             {member.name}
                           </h3>
-                          <p className="text-white/60 uppercase tracking-wider text-xs sm:text-sm px-2">
+                          <p className="text-white/60 uppercase tracking-wider text-xs sm:text-sm md:text-md px-2">
                             {member.position}
                           </p>
                         </div>
@@ -395,7 +395,7 @@ const LandingPage = () => {
         <div className="flex-1 flex flex-col justify-center">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8">
             <div className="relative inline-block">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-normal text-kerna-beige">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal text-kerna-beige">
                 Our Mission
               </h2>
               <div className="absolute -left-2 -bottom-2 w-12 h-0.5 bg-kerna-red"></div>
@@ -473,10 +473,10 @@ const LandingPage = () => {
         <div className="bg-kerna-darkred">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex flex-col items-start">
-              <h2 className="text-xl sm:text-2xl font-medium text-kerna-beige mb-4">
+              <h2 className="text-xl sm:text-xl md:text-2xl font-medium text-kerna-beige mb-4">
                 Get Connected
               </h2>
-              <p className="text-base sm:text-lg text-kerna-beige/90 max-w-2xl mb-6">
+              <p className="text-sm md:text-md lg:text-lg text-kerna-beige/90 max-w-2xl mb-6">
                 Learn more about how we're enabling our partners in their mRNA pipeline development.
               </p>
               <a 

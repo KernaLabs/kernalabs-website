@@ -328,7 +328,7 @@ const LandingPage = () => {
                         <div className="h-[10%]" />
                         
                         {/* Image section - fixed height */}
-                        <div className="h-[45%] flex items-center justify-center">
+                        <div className="h-[45%] flex items-center justify-center select-none">
                           <img 
                             src={member.image} 
                             alt={member.name} 
@@ -393,39 +393,45 @@ const LandingPage = () => {
       {/* Section 6: Our Mission */}
       <section id="mission" className="snap-start h-screen flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
+          {/* Heading - stays left-aligned */}
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8">
             <div className="relative inline-block">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal text-kerna-beige">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-normal text-kerna-beige">
                 Our Mission
               </h2>
               <div className="absolute -left-2 -bottom-2 w-12 h-0.5 bg-kerna-red"></div>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-12">
-            {/* Image Container */}
-            <div className="relative select-none h-[300px] md:h-full overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 md:hidden"></div>
-              <img 
-                src="/TeamPhoto.jpg" 
-                alt="Team" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            {/* Text Container */}
-            <div className="relative md:flex md:items-center">
-              <div className="p-6 sm:p-8 md:p-12 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none md:rounded-lg -mt-20 md:mt-0 relative z-20">
-                <div className="absolute -left-2 -top-2 w-16 h-1 bg-kerna-darkred hidden md:block"></div>
-                <div className="absolute -left-2 -top-2 w-1 h-16 bg-kerna-darkred hidden md:block"></div>
+          {/* Content container - stretches but with max width */}
+          <div className="px-4 sm:px-6 lg:px-8">
+            <div className="max-w-screen-2xl mx-auto"> {/* Added max-width constraint */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-12">
+                {/* Image Container */}
+                <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[16/9] overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 md:hidden"></div>
+                  <img 
+                    src="/TeamPhoto.jpg" 
+                    alt="Team" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 
-                <div className="max-w-xl">
-                  <p className="text-base sm:text-lg md:text-xl text-kerna-beige mb-6 font-light">
-                    Kerna's mission is to revolutionize genetic medicine.
-                  </p>
-                  <p className="text-sm sm:text-base md:text-lg text-kerna-beige/70 font-light leading-relaxed">
-                    We aim to transform the discovery and development of life-changing therapies by leveraging AI and high-throughput biology to decode RNA biology.
-                  </p>
+                {/* Text Container */}
+                <div className="relative md:flex md:items-center">
+                  <div className="p-6 sm:p-8 md:p-12 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none md:rounded-lg -mt-20 md:mt-0 relative z-20 w-full h-full flex flex-col justify-center">
+                    <div className="absolute -left-2 -top-2 w-16 h-1 bg-kerna-red hidden md:block"></div>
+                    <div className="absolute -left-2 -top-2 w-1 h-16 bg-kerna-red hidden md:block"></div>
+                    
+                    <div>
+                      <p className="text-base sm:text-lg md:text-xl text-kerna-beige mb-6 font-light text-center">
+                        Kerna's mission is to revolutionize genetic medicine.
+                      </p>
+                      <p className="text-sm sm:text-base text-kerna-beige/70 font-light leading-relaxed text-center">
+                        We aim to transform the discovery and development of life-changing therapies by leveraging AI and high-throughput biology to decode RNA biology.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

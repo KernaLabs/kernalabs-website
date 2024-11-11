@@ -7,7 +7,9 @@ module.exports = {
         primary: '#1E40AF',
         secondary: '#9333EA',
         'kerna-red': '#EF0000',
-        'kerna-darkblue': '#0F1418'
+        'kerna-darkred': '#B50000',
+        'kerna-darkblue': '#0F1418',
+        'kerna-beige': '#EDE9DF'
       },
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],

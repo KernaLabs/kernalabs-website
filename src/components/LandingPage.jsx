@@ -419,7 +419,7 @@ const LandingPage = () => {
                 
                 {/* Text Container */}
                 <div className="relative md:flex md:items-center">
-                  <div className="p-6 sm:p-8 md:p-12 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none md:rounded-lg -mt-20 md:mt-0 relative z-20 w-full h-full flex flex-col justify-center">
+                  <div className="p-6 sm:p-8 md:p-12 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none md:rounded-lg -mt-20 md:mt-0 relative z-20 w-full h-full flex flex-col justify-center min-h-[250px] sm:min-h-[200px]">
                     <div className="absolute -left-2 -top-2 w-16 h-1 bg-kerna-red hidden md:block"></div>
                     <div className="absolute -left-2 -top-2 w-1 h-16 bg-kerna-red hidden md:block"></div>
                     
@@ -447,10 +447,10 @@ const LandingPage = () => {
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-[#EDE9DF] leading-tight">
                 Join Us In Shaping The Future Of Medicine
               </h1>
-              <p className="mt-6 text-kerna-red text-sm md:text-base">
+              <p className="mt-6 text-kerna-beige text-sm md:text-base">
                 Kerna Labs was founded in 2024 by Amit Deshwar, Melissa Moore, Julia Peng, and Michael Swift.
               </p>
-              <p className="mt-4 text-kerna-red text-sm md:text-base">
+              <p className="mt-4 text-kerna-beige text-sm md:text-base">
                 If you're a biologist or machine learning engineer who's excited about our mission,
               </p>
               <a 

@@ -470,7 +470,7 @@ const LandingPage = () => {
 
             {/* Mobile button */}
             <a 
-              href="mailto:founders@kernalabs.ai" target="_blank"
+              href="mailto:founders@kernalabs.ai" target="_blank" ref="noreferrer"
               className="sm:hidden inline-flex items-center gap-3 bg-kerna-beige/90 hover:bg-kerna-beige transition-colors px-8 py-4 text-kerna-red w-fit mt-8"
             >
               Contact Us
@@ -496,10 +496,10 @@ const LandingPage = () => {
           <div className="flex flex-col items-center my-8">
             <img src="/KernaLeaf.svg" alt="Kerna Leaf" className="w-24 h-auto mb-6 select-none" />
             <div className="flex justify-center gap-6">
-              <a href="https://twitter.com/KernaLabs" target="_blank" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-colors">
+              <a href="https://twitter.com/KernaLabs" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-colors">
                 <img src="/XIcon.svg" alt="Twitter/X" className="w-6 h-6" />
               </a>
-              <a href="https://linkedin.com/company/kernalabs" target="_blank" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-colors">
+              <a href="https://linkedin.com/company/kernalabs" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-colors">
                 <img src="/LinkedInIcon.svg" alt="LinkedIn" className="w-6 h-6" />
               </a>
             </div>

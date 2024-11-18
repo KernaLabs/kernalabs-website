@@ -298,7 +298,7 @@ const LandingPage = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-kerna-beige mb-2 sm:mb-3">
               Meet Our Team
             </h2>
-            <p className="text-base sm:text-lg text-white/75 mb-8 sm:mb-12">
+            <p className="text-base sm:text-lg text-kerna-beige/90 mb-8 sm:mb-12">
               Built and backed by the leading minds in machine learning and mRNA
             </p>
           </div>
@@ -338,10 +338,10 @@ const LandingPage = () => {
                         
                         {/* Text section - fixed height */}
                         <div className="h-[35%] flex flex-col items-center justify-center">
-                          <h3 className="text-sm sm:text-base md:text-md font-normal text-white mb-2">
+                          <h3 className="text-sm sm:text-base md:text-md font-normal text-kerna-beige mb-2">
                             {member.name}
                           </h3>
-                          <p className="text-white/60 uppercase tracking-wider text-xs sm:text-sm md:text-md px-2">
+                          <p className="text-kerna-beige/60 uppercase tracking-wider text-xs sm:text-sm md:text-md px-2">
                             {member.position}
                           </p>
                         </div>
@@ -364,8 +364,8 @@ const LandingPage = () => {
                 disabled={!canScrollLeft}
                 className={`p-2 ${
                   canScrollLeft 
-                    ? 'text-white hover:text-kerna-red' 
-                    : 'text-white/20 cursor-not-allowed'
+                    ? 'text-kerna-beige hover:text-kerna-red' 
+                    : 'text-kerna-beige/20 cursor-not-allowed'
                 }`}
               >
                 <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -377,8 +377,8 @@ const LandingPage = () => {
                 disabled={!canScrollRight}
                 className={`p-2 ${
                   canScrollRight 
-                    ? 'text-white hover:text-kerna-red' 
-                    : 'text-white/20 cursor-not-allowed'
+                    ? 'text-kerna-beige hover:text-kerna-red' 
+                    : 'text-kerna-beige/20 cursor-not-allowed'
                 }`}
               >
                 <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -439,75 +439,81 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Section 7: Join Us */}
-      <section id="contact us" className="snap-start min-h-screen flex flex-col">
-        <div className="flex-1 flex items-center relative overflow-hidden py-16 sm:py-20">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-3xl">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-[#EDE9DF] leading-tight">
-                Join Us In Shaping The Future Of Medicine
-              </h1>
-              <p className="mt-6 text-kerna-beige text-sm md:text-base">
-                Kerna Labs was founded in 2024 by Amit Deshwar, Melissa Moore, Julia Peng, and Michael Swift.
-              </p>
-              <p className="mt-4 text-kerna-beige text-sm md:text-base">
-                If you're a biologist or machine learning engineer who's excited about our mission,
-              </p>
-              <a 
-                href="mailto:founders@kernalabs.ai"
-                className="mt-6 inline-block bg-kerna-red/75 px-6 py-3 text-kerna-beige text-sm font-medium hover:bg-kerna-red/90 transition-colors"
-              >
-                Join Us
-              </a>
-            </div>
-          </div>
-          <div 
-            className="absolute select-none right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto"
-            style={{
-              maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-            }}
-          >
-            <img 
-              src="/hazy_droplet.svg" 
-              alt="Hazy Droplet" 
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </div>
+      {/* Join Us Section */}
+      <section className="bg-kerna-red snap-start min-h-[40vh] items-center relative">
+        <div className="absolute left-0 top-0 w-1 h-16 bg-kerna-blue"></div>
+        
+        {/* White vertical line */}
+        
+        <div className="container mx-auto px-4 h-full">
+          <div className="relative h-full flex flex-col justify-between sm:justify-start py-16 ml-12 lg:ml-24">
+            <div className="absolute left-[-2rem] lg:left-[-3rem] top-[calc(16px+2.5rem)] w-0.5 h-[calc(40vh-16px-2.5rem)] bg-kerna-beige"></div>
 
-        <div className="bg-kerna-darkred">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-            <div className="flex flex-col items-start">
-              <h2 className="text-xl sm:text-xl md:text-2xl font-medium text-kerna-beige mb-4">
+            <div>
+              <h2 className="text-4xl sm:text-5xl text-kerna-beige mb-8">
                 Get Connected
               </h2>
-              <p className="text-sm md:text-md lg:text-lg text-kerna-beige/90 max-w-2xl mb-6">
+              <p className="text-xl text-kerna-beige/90 mb-12">
                 Learn more about how we're enabling our partners in their mRNA pipeline development.
               </p>
-              <a 
-                href="mailto:founders@kernalabs.ai"
-                className="bg-kerna-beige px-6 py-3 text-kerna-darkred text-sm font-medium hover:bg-kerna-beige/90 transition-colors inline-flex items-center gap-2"
-              >
-                Contact Us
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
             </div>
+            
+            <a 
+              href="mailto:founders@kernalabs.ai" 
+              className="hidden sm:inline-flex items-center gap-3 bg-kerna-beige/90 hover:bg-kerna-beige transition-colors px-8 py-4 text-kerna-red w-fit mt-auto mb-0"
+            >
+              Contact Us
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.172 11L10.808 5.63605L12.222 4.22205L20 12L12.222 19.778L10.808 18.364L16.172 13H4V11H16.172Z" fill="currentColor"/>
+              </svg>
+            </a>
+
+            {/* Mobile button */}
+            <a 
+              href="mailto:founders@kernalabs.ai" target="_blank"
+              className="sm:hidden inline-flex items-center gap-3 bg-kerna-beige/90 hover:bg-kerna-beige transition-colors px-8 py-4 text-kerna-red w-fit mt-8"
+            >
+              Contact Us
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.172 11L10.808 5.63605L12.222 4.22205L20 12L12.222 19.778L10.808 18.364L16.172 13H4V11H16.172Z" fill="currentColor"/>
+              </svg>
+            </a>
           </div>
         </div>
       </section>
-      <footer className="bg-black/40 backdrop-blur-sm text-white py-8">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <img src="/KernaLeaf.svg" alt="Kerna Labs" className="h-8" />
-              <p className="text-kerna-beige/90 text-sm">
-                © {new Date().getFullYear()} Kerna Labs. All rights reserved.
-              </p>
+
+      {/* Footer */}
+      <footer 
+        className="h-[30vh] relative flex flex-col"
+        style={{ 
+          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(14, 23, 43, 0.3)), url('/BackgroundSwirls.png')`, 
+          backgroundSize: 'cover', 
+          backgroundAttachment: 'fixed' 
+        }}
+      >
+        <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between container mx-auto px-4">
+          {/* Left side - Leaf logo and social links */}
+          <div className="flex flex-col items-center my-8">
+            <img src="/KernaLeaf.svg" alt="Kerna Leaf" className="w-24 h-auto mb-6 select-none" />
+            <div className="flex justify-center gap-6">
+              <a href="https://twitter.com/KernaLabs" target="_blank" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-colors">
+                <img src="/XIcon.svg" alt="Twitter/X" className="w-6 h-6" />
+              </a>
+              <a href="https://linkedin.com/company/kernalabs" target="_blank" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-colors">
+                <img src="/LinkedInIcon.svg" alt="LinkedIn" className="w-6 h-6" />
+              </a>
             </div>
           </div>
-        </footer>
+
+          {/* Right side - Text logo and copyright */}
+          <div className="text-center lg:text-right lg:w-[70%]">
+            <img src="/TextOnlyLogo.svg" alt="Kerna Labs" className="mx-auto lg:ml-auto lg:mr-0 mb-4 w-full max-w-md lg:max-w-none h-auto opacity-10 select-none" />
+            <p className="text-kerna-beige text-sm">
+              © 2024 Kerna Labs
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

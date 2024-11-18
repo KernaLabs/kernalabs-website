@@ -193,18 +193,18 @@ const LandingPage = () => {
       <section id="platform" className="snap-start h-screen w-full flex items-center relative overflow-hidden">
         {/* Background Trail SVG */}
         <div 
-          className="absolute right-0 top-1/2 w-full sm:w-4/5 md:w-3/4 h-auto transform -translate-y-1/3 md:-translate-y-1/2"
+          className="absolute right-0 top-1/2 md:top-2/3 w-[150%] sm:w-4/5 md:w-5/6 h-auto transform -translate-y-1/3 md:-translate-y-1/2"
           style={{
-            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
+            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0) 75%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0) 75%)',
           }}
         >
           <img 
             src="/trail.svg" 
             alt="Particle Trail" 
-            className="w-full h-full object-scale-down scale-150 md:scale-125 select-none"
+            className="w-full h-full object-scale-down scale-200 sm:scale-150 md:scale-125 select-none"
             style={{
-              transform: 'rotate(0deg) translate(10%, -10%)',
+              transform: 'rotate(-2deg) translate(30%, -10%)',
               transformOrigin: 'center'
             }}
           />

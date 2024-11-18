@@ -470,7 +470,7 @@ const LandingPage = () => {
 
             {/* Mobile button */}
             <a 
-              href="mailto:founders@kernalabs.ai" target="_blank" ref="noreferrer"
+              href="mailto:founders@kernalabs.ai" target="_blank" rel="noreferrer"
               className="sm:hidden inline-flex items-center gap-3 bg-kerna-beige/90 hover:bg-kerna-beige transition-colors px-8 py-4 text-kerna-red w-fit mt-8"
             >
               Contact Us

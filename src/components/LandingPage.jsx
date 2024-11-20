@@ -84,9 +84,6 @@ const LandingPage = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const isFirstSlide = currentSlide === 0;
-  const isLastSlide = currentSlide === 2;
 
   // Therapeutics carousel (section 4) states
   const [canScrollLeftTherapeutics, setCanScrollLeftTherapeutics] = useState(false);
@@ -95,9 +92,6 @@ const LandingPage = () => {
   const [isDraggingTherapeutics, setIsDraggingTherapeutics] = useState(false);
   const [startXTherapeutics, setStartXTherapeutics] = useState(0);
   const [scrollLeftTherapeutics, setScrollLeftTherapeutics] = useState(0);
-  const [currentSlideTherapeutics, setCurrentSlideTherapeutics] = useState(0);
-  const isFirstSlideTherapeutics = currentSlideTherapeutics === 0;
-  const isLastSlideTherapeutics = currentSlideTherapeutics === 2;
 
   useEffect(() => {
     const handleScroll = () => {

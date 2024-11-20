@@ -74,6 +74,10 @@ const teamMembers = [
   },
 ];
 const LandingPage = () => {
+  // Mobile state
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Team carousel (section 5) states
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const carouselRef = useRef(null);
@@ -82,19 +86,18 @@ const LandingPage = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   const isFirstSlide = currentSlide === 0;
-  const isLastSlide = currentSlide === 2; // assuming 3 slides total
+  const isLastSlide = currentSlide === 2;
 
-  const handleNextSlide = () => {
-    if (!isLastSlide) {
-      setCurrentSlide(prev => prev + 1);
-    }
-  };
-
-  const handlePrevSlide = () => {
-    if (!isFirstSlide) {
-      setCurrentSlide(prev => prev - 1);
-    }
-  };
+  // Therapeutics carousel (section 4) states
+  const [canScrollLeftTherapeutics, setCanScrollLeftTherapeutics] = useState(false);
+  const [canScrollRightTherapeutics, setCanScrollRightTherapeutics] = useState(true);
+  const therapeuticsCarouselRef = useRef(null);
+  const [isDraggingTherapeutics, setIsDraggingTherapeutics] = useState(false);
+  const [startXTherapeutics, setStartXTherapeutics] = useState(0);
+  const [scrollLeftTherapeutics, setScrollLeftTherapeutics] = useState(0);
+  const [currentSlideTherapeutics, setCurrentSlideTherapeutics] = useState(0);
+  const isFirstSlideTherapeutics = currentSlideTherapeutics === 0;
+  const isLastSlideTherapeutics = currentSlideTherapeutics === 2;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -166,6 +169,85 @@ const LandingPage = () => {
     const walk = (x - startX) * 1;
     carouselRef.current.scrollLeft = scrollLeft - walk;
   };
+
+  // Therapeutics carousel scroll handlers
+  const scrollLeftTherapeuticsFunc = () => {
+    if (!therapeuticsCarouselRef.current) return;
+    const cardWidth = 400; // card width
+    therapeuticsCarouselRef.current.scrollBy({
+      left: -cardWidth,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollRightTherapeuticsFunc = () => {
+    if (!therapeuticsCarouselRef.current) return;
+    const cardWidth = 400; // card width
+    therapeuticsCarouselRef.current.scrollBy({
+      left: cardWidth,
+      behavior: 'smooth'
+    });
+  };
+
+  // Therapeutics carousel drag handlers
+  const handleMouseDownTherapeutics = (e) => {
+    setIsDraggingTherapeutics(true);
+    setStartXTherapeutics(e.pageX - therapeuticsCarouselRef.current.offsetLeft);
+    setScrollLeftTherapeutics(therapeuticsCarouselRef.current.scrollLeft);
+  };
+
+  const handleMouseLeaveTherapeutics = () => {
+    setIsDraggingTherapeutics(false);
+  };
+
+  const handleMouseUpTherapeutics = () => {
+    setIsDraggingTherapeutics(false);
+  };
+
+  const handleMouseMoveTherapeutics = (e) => {
+    if (!isDraggingTherapeutics) return;
+    e.preventDefault();
+    const x = e.pageX - therapeuticsCarouselRef.current.offsetLeft;
+    const walk = (x - startXTherapeutics) * 1;
+    therapeuticsCarouselRef.current.scrollLeft = scrollLeftTherapeutics - walk;
+  };
+
+  // Therapeutics scroll check effect
+  useEffect(() => {
+    const handleScrollTherapeutics = () => {
+      if (!therapeuticsCarouselRef.current) return;
+      
+      const { scrollLeft, scrollWidth, clientWidth } = therapeuticsCarouselRef.current;
+      setCanScrollLeftTherapeutics(scrollLeft > 10);
+      setCanScrollRightTherapeutics(scrollLeft < scrollWidth - clientWidth - 10);
+    };
+
+    const carousel = therapeuticsCarouselRef.current;
+    if (carousel) {
+      carousel.addEventListener('scroll', handleScrollTherapeutics);
+      // Initial check
+      handleScrollTherapeutics();
+    }
+
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener('scroll', handleScrollTherapeutics);
+      }
+    };
+  }, []);
+
+  // Mobile check effect
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
 
   return (
     <div
@@ -277,21 +359,21 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-8">
             {/* Carousel */}
             <div 
-              ref={carouselRef}
-              className="overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing"
-              onMouseDown={handleMouseDown}
-              onMouseLeave={handleMouseLeave}
-              onMouseUp={handleMouseUp}
-              onMouseMove={handleMouseMove}
+              ref={therapeuticsCarouselRef}
+              className={`overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing ${isMobile ? '' : 'absolute right-0 w-[calc(100%-250px)]'}`}
+              onMouseDown={handleMouseDownTherapeutics}
+              onMouseLeave={handleMouseLeaveTherapeutics}
+              onMouseUp={handleMouseUpTherapeutics}
+              onMouseMove={handleMouseMoveTherapeutics}
               style={{ 
                 userSelect: 'none',
-                paddingLeft: 'calc(50% - 120px)',
+                paddingLeft: isMobile ? 'calc(50% - 120px)' : 'calc(50% - 250px)',
               }}
             >
-              <div className="flex gap-0 mt-16">
+              <div className="flex gap-0 pb-4 md:pb-0">
                 <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
                   <div className="p-8">
                     <div className="mb-4 w-8 h-8">
@@ -327,16 +409,16 @@ const LandingPage = () => {
             </div>
 
             {/* Carousel Navigation */}
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8">
-              <div className="flex gap-8 justify-center">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative pointer-events-none">
+              <div className={`flex gap-8 pointer-events-auto ${isMobile ? 'justify-center mt-8' : 'justify-start mt-[120px]'}`}>
                 <div className="select-none w-[72px] h-[72px] flex items-center justify-center">
                   <button 
-                    onClick={scrollLeftFunc}
-                    disabled={!canScrollLeft}
+                    onClick={scrollLeftTherapeuticsFunc}
+                    disabled={!canScrollLeftTherapeutics}
                     className="w-[72px] h-[72px] transition-none rotate-180 disabled:transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
                   >
                     <img 
-                      src={canScrollLeft ? '/Arrow.svg' : '/DisabledArrow.svg'} 
+                      src={canScrollLeftTherapeutics ? '/Arrow.svg' : '/DisabledArrow.svg'} 
                       alt="Previous" 
                       className="w-full h-full"
                     />
@@ -344,12 +426,12 @@ const LandingPage = () => {
                 </div>
                 <div className="w-[72px] h-[72px] flex items-center justify-center">
                   <button 
-                    onClick={scrollRightFunc}
-                    disabled={!canScrollRight}
+                    onClick={scrollRightTherapeuticsFunc}
+                    disabled={!canScrollRightTherapeutics}
                     className="w-[72px] h-[72px] transition-none disabled:rotate-180 transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
                   >
                     <img 
-                      src={canScrollRight ? '/Arrow.svg' : '/DisabledArrow.svg'} 
+                      src={canScrollRightTherapeutics ? '/Arrow.svg' : '/DisabledArrow.svg'} 
                       alt="Next" 
                       className="w-full h-full"
                     />

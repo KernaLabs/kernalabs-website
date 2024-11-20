@@ -171,7 +171,12 @@ const LandingPage = () => {
     <div
       className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory"
       style={{ 
-        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(14, 23, 43, 0.3)), url('/BackgroundSwirls.png')`, 
+        backgroundImage: `linear-gradient(to bottom, 
+          rgba(0, 0, 0, 0.85) 0%, 
+          rgba(14, 23, 43, 0.3) 25%,
+          rgba(14, 23, 43, 0.3) 75%,
+          rgba(0, 0, 0, 0.85) 100%
+        ), url('/BackgroundSwirls.png')`, 
         backgroundSize: 'cover', 
         backgroundPosition: 'center bottom', 
         backgroundAttachment: 'fixed' 
@@ -266,22 +271,72 @@ const LandingPage = () => {
         <div className="flex-1 flex flex-col justify-center">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-start">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal mb-6 text-kerna-beige w-2/3 md:w-1/2">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-kerna-beige w-1/2">
                 mRNA Therapeutics<br />That Have
               </h2>
             </div>
+          </div>
 
-            <div className="relative mt-8">
-              {/* Carousel Navigation */}
-              <div className="overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing left-0 top-1/2 -translate-y-1/2 flex gap-4 z-10" st>
+          <div className="relative">
+            {/* Carousel */}
+            <div 
+              ref={carouselRef}
+              className="overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing"
+              onMouseDown={handleMouseDown}
+              onMouseLeave={handleMouseLeave}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              style={{ 
+                userSelect: 'none',
+                paddingLeft: 'calc(50% - 120px)',
+              }}
+            >
+              <div className="flex gap-0 mt-16">
+                <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
+                  <div className="p-8">
+                    <div className="mb-4 w-8 h-8">
+                      <img src="/line-graph.svg" alt="Line Graph" className="w-full h-full" />
+                    </div>
+                    <h3 className="text-kerna-beige text-xl font-normal mb-4">Expression Curve Tuning</h3>
+                    <p className="text-kerna-beige/60">Customizable expression profiles for diverse therapeutic applications.</p>
+                  </div>
+                </div>
+
+                <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
+                  <div className="p-8">
+                    <div className="mb-4 w-8 h-8">
+                      <img src="/aim.svg" alt="Target" className="w-full h-full" />
+                    </div>
+                    <h3 className="text-kerna-beige text-xl font-normal mb-4">Cell-Type Specific Expression</h3>
+                    <p className="text-kerna-beige/60">Precision-targeted delivery for cell-specific therapeutic effects.</p>
+                  </div>
+                </div>
+
+                <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
+                  <div className="p-8">
+                    <div className="mb-4 w-8 h-8">
+                      <img src="/clock.svg" alt="Clock" className="w-full h-full" />
+                    </div>
+                    <h3 className="text-kerna-beige text-xl font-normal mb-4">Enhanced Half-life</h3>
+                    <p className="text-kerna-beige/60">Prolonged efficacy window through optimized mRNA stability.</p>
+                  </div>
+                </div>
+                
+                <div className="w-[calc((100vw-1280px)/2)] flex-none" aria-hidden="true" />
+              </div>
+            </div>
+
+            {/* Carousel Navigation */}
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8">
+              <div className="flex gap-8 justify-center">
                 <div className="select-none w-[72px] h-[72px] flex items-center justify-center">
                   <button 
-                    onClick={() => handlePrevSlide()}
-                    disabled={isFirstSlide}
+                    onClick={scrollLeftFunc}
+                    disabled={!canScrollLeft}
                     className="w-[72px] h-[72px] transition-none rotate-180 disabled:transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
                   >
                     <img 
-                      src={isFirstSlide ? '/DisabledArrow.svg' : '/Arrow.svg'} 
+                      src={canScrollLeft ? '/Arrow.svg' : '/DisabledArrow.svg'} 
                       alt="Previous" 
                       className="w-full h-full"
                     />
@@ -289,60 +344,16 @@ const LandingPage = () => {
                 </div>
                 <div className="w-[72px] h-[72px] flex items-center justify-center">
                   <button 
-                    onClick={() => handleNextSlide()}
-                    disabled={isLastSlide}
+                    onClick={scrollRightFunc}
+                    disabled={!canScrollRight}
                     className="w-[72px] h-[72px] transition-none disabled:rotate-180 transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
                   >
                     <img 
-                      src={isLastSlide ? '/DisabledArrow.svg' : '/Arrow.svg'} 
+                      src={canScrollRight ? '/Arrow.svg' : '/DisabledArrow.svg'} 
                       alt="Next" 
                       className="w-full h-full"
                     />
                   </button>
-                </div>
-              </div>
-
-              {/* Carousel */}
-              <div className="overflow-hidden ml-[200px]">
-                <div 
-                  className="flex transition-transform duration-300 ease-in-out"
-                  style={{ 
-                    transform: `translateX(-${currentSlide * 33.333}%)`,
-                    paddingRight: 'calc((100vw - 1280px)/2)'  // Add padding to extend past container
-                  }}
-                >
-                  <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
-                    <div className="p-8">
-                      <div className="mb-4 w-8 h-8">
-                        <img src="/line-graph.svg" alt="Line Graph" className="w-full h-full" />
-                      </div>
-                      <h3 className="text-kerna-beige text-xl font-normal mb-4">Expression Curve Tuning</h3>
-                      <p className="text-kerna-beige/60">Customizable expression profiles for diverse therapeutic applications.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
-                    <div className="p-8">
-                      <div className="mb-4 w-8 h-8">
-                        <img src="/aim.svg" alt="Target" className="w-full h-full" />
-                      </div>
-                      <h3 className="text-kerna-beige text-xl font-normal mb-4">Cell-Type Specific Expression</h3>
-                      <p className="text-kerna-beige/60">Precision-targeted delivery for cell-specific therapeutic effects.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
-                    <div className="p-8">
-                      <div className="mb-4 w-8 h-8">
-                        <img src="/clock.svg" alt="Clock" className="w-full h-full" />
-                      </div>
-                      <h3 className="text-kerna-beige text-xl font-normal mb-4">Enhanced Half-life</h3>
-                      <p className="text-kerna-beige/60">Prolonged efficacy window through optimized mRNA stability.</p>
-                    </div>
-                  </div>
-                  
-                  {/* Add this div to create space for flowing off screen */}
-                  <div className="w-[calc((100vw-1280px)/2)] flex-none" aria-hidden="true" />
                 </div>
               </div>
             </div>
@@ -432,12 +443,12 @@ const LandingPage = () => {
                 <button 
                   onClick={scrollLeftFunc}
                   disabled={!canScrollLeft}
-                  className="w-[72px] h-[72px] disabled:w-[52px] disabled:h-[52px] transition-all duration-200 flex items-center justify-center"
+                  className="w-[72px] h-[72px] transition-none rotate-180 disabled:transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
                 >
                   <img 
                     src={canScrollLeft ? '/Arrow.svg' : '/DisabledArrow.svg'} 
                     alt="Previous" 
-                    className="w-full h-full rotate-180"
+                    className="w-full h-full"
                   />
                 </button>
               </div>
@@ -445,12 +456,12 @@ const LandingPage = () => {
                 <button 
                   onClick={scrollRightFunc}
                   disabled={!canScrollRight}
-                  className="w-[72px] h-[72px] disabled:w-[52px] disabled:h-[52px] transition-all duration-200 flex items-center justify-center"
+                  className="w-[72px] h-[72px] transition-none disabled:rotate-180 transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
                 >
                   <img 
                     src={canScrollRight ? '/Arrow.svg' : '/DisabledArrow.svg'} 
                     alt="Next" 
-                    className="w-full h-full"
+                    className="w-full h-full disabled:rotate-180 rotate-0"
                   />
                 </button>
               </div>

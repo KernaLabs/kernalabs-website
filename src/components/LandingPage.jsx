@@ -61,7 +61,7 @@ const teamMembers = [
   },
   {
     name: 'Oliver Chang, PhD',
-    position: 'RNA Biologist',
+    position: 'Platform Scientist',
     image: '/Oliver Chang.jpg',
     description: [
       '7+ years of R&D experience in mammalian cell engineering and synthetic biology',
@@ -559,12 +559,12 @@ const LandingPage = () => {
             </div>
           </div>
           
-          {/* Content container - stretches but with max width */}
+          {/* Content container */}
           <div className="px-4 sm:px-6 lg:px-8">
-            <div className="max-w-screen-2xl mx-auto"> {/* Added max-width constraint */}
+            <div className="max-w-screen-2xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-12">
                 {/* Image Container */}
-                <div className="relative aspect-[4/3] md:aspect-[16/10] lg:aspect-[16/9] overflow-hidden">
+                <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px] lg:h-[500px] overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 md:hidden"></div>
                   <img 
                     src="/TeamPhoto.jpg" 
@@ -575,7 +575,7 @@ const LandingPage = () => {
                 
                 {/* Text Container */}
                 <div className="relative md:flex md:items-center">
-                  <div className="p-6 sm:p-8 md:p-12 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none md:rounded-lg -mt-20 md:mt-0 relative z-20 w-full h-full flex flex-col justify-center min-h-[250px] sm:min-h-[200px]">
+                  <div className="p-6 sm:p-8 md:p-12 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none md:rounded-lg -mt-20 md:mt-0 relative z-20 w-full h-full flex flex-col justify-center">
                     <div className="absolute -left-2 -top-2 w-16 h-1 bg-kerna-red hidden md:block"></div>
                     <div className="absolute -left-2 -top-2 w-1 h-16 bg-kerna-red hidden md:block"></div>
                     

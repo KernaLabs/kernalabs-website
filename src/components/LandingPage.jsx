@@ -80,6 +80,21 @@ const LandingPage = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const isFirstSlide = currentSlide === 0;
+  const isLastSlide = currentSlide === 2; // assuming 3 slides total
+
+  const handleNextSlide = () => {
+    if (!isLastSlide) {
+      setCurrentSlide(prev => prev + 1);
+    }
+  };
+
+  const handlePrevSlide = () => {
+    if (!isFirstSlide) {
+      setCurrentSlide(prev => prev - 1);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -158,6 +173,7 @@ const LandingPage = () => {
       style={{ 
         backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(14, 23, 43, 0.3)), url('/BackgroundSwirls.png')`, 
         backgroundSize: 'cover', 
+        backgroundPosition: 'center bottom', 
         backgroundAttachment: 'fixed' 
       }}
     >
@@ -249,33 +265,85 @@ const LandingPage = () => {
       <section id="therapeutics" className="snap-start h-screen flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal mb-6 md:mb-12 text-kerna-beige">
-              {/* mRNA Therapeutics That Offer */}
-              Advancing mRNA Therapeutics Through:
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-              <div className="bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10 p-3 sm:p-4 rounded-lg hover:border-kerna-darkred/50 transition-colors">
-                <div className="mb-3 w-5 h-5 md:w-6 md:h-6">
-                  <img src="/line-graph.svg" alt="Line Graph" className="w-full h-full" />
+            <div className="flex items-start">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal mb-6 text-kerna-beige w-2/3 md:w-1/2">
+                mRNA Therapeutics<br />That Have
+              </h2>
+            </div>
+
+            <div className="relative mt-8">
+              {/* Carousel Navigation */}
+              <div className="overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing left-0 top-1/2 -translate-y-1/2 flex gap-4 z-10" st>
+                <div className="select-none w-[72px] h-[72px] flex items-center justify-center">
+                  <button 
+                    onClick={() => handlePrevSlide()}
+                    disabled={isFirstSlide}
+                    className="w-[72px] h-[72px] transition-none rotate-180 disabled:transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
+                  >
+                    <img 
+                      src={isFirstSlide ? '/DisabledArrow.svg' : '/Arrow.svg'} 
+                      alt="Previous" 
+                      className="w-full h-full"
+                    />
+                  </button>
                 </div>
-                <h3 className="text-kerna-beige text-base sm:text-lg md:text-xl font-normal mb-1.5">Expression Curve Tuning</h3>
-                <p className="text-kerna-beige/60 text-sm">Customizable expression profiles for diverse therapeutic applications.</p>
+                <div className="w-[72px] h-[72px] flex items-center justify-center">
+                  <button 
+                    onClick={() => handleNextSlide()}
+                    disabled={isLastSlide}
+                    className="w-[72px] h-[72px] transition-none disabled:rotate-180 transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
+                  >
+                    <img 
+                      src={isLastSlide ? '/DisabledArrow.svg' : '/Arrow.svg'} 
+                      alt="Next" 
+                      className="w-full h-full"
+                    />
+                  </button>
+                </div>
               </div>
 
-              <div className="bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10 p-3 sm:p-4 rounded-lg hover:border-kerna-darkred/50 transition-colors">
-                <div className="mb-3 w-5 h-5 md:w-6 md:h-6">
-                  <img src="/aim.svg" alt="Target" className="w-full h-full select-none" />
-                </div>
-                <h3 className="text-kerna-beige text-base sm:text-lg md:text-xl font-normal mb-1.5">Cell-Type Specific Expression</h3>
-                <p className="text-kerna-beige/60 text-sm">Precision-targeted delivery for cell-specific therapeutic effects.</p>
-              </div>
+              {/* Carousel */}
+              <div className="overflow-hidden ml-[200px]">
+                <div 
+                  className="flex transition-transform duration-300 ease-in-out"
+                  style={{ 
+                    transform: `translateX(-${currentSlide * 33.333}%)`,
+                    paddingRight: 'calc((100vw - 1280px)/2)'  // Add padding to extend past container
+                  }}
+                >
+                  <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
+                    <div className="p-8">
+                      <div className="mb-4 w-8 h-8">
+                        <img src="/line-graph.svg" alt="Line Graph" className="w-full h-full" />
+                      </div>
+                      <h3 className="text-kerna-beige text-xl font-normal mb-4">Expression Curve Tuning</h3>
+                      <p className="text-kerna-beige/60">Customizable expression profiles for diverse therapeutic applications.</p>
+                    </div>
+                  </div>
 
-              <div className="bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10 p-3 sm:p-4 rounded-lg hover:border-kerna-darkred/50 transition-colors">
-                <div className="mb-3 w-5 h-5 md:w-6 md:h-6">
-                  <img src="/clock.svg" alt="Clock" className="w-full h-full select-none" />
+                  <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
+                    <div className="p-8">
+                      <div className="mb-4 w-8 h-8">
+                        <img src="/aim.svg" alt="Target" className="w-full h-full" />
+                      </div>
+                      <h3 className="text-kerna-beige text-xl font-normal mb-4">Cell-Type Specific Expression</h3>
+                      <p className="text-kerna-beige/60">Precision-targeted delivery for cell-specific therapeutic effects.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
+                    <div className="p-8">
+                      <div className="mb-4 w-8 h-8">
+                        <img src="/clock.svg" alt="Clock" className="w-full h-full" />
+                      </div>
+                      <h3 className="text-kerna-beige text-xl font-normal mb-4">Enhanced Half-life</h3>
+                      <p className="text-kerna-beige/60">Prolonged efficacy window through optimized mRNA stability.</p>
+                    </div>
+                  </div>
+                  
+                  {/* Add this div to create space for flowing off screen */}
+                  <div className="w-[calc((100vw-1280px)/2)] flex-none" aria-hidden="true" />
                 </div>
-                <h3 className="text-kerna-beige text-base sm:text-lg md:text-xl font-normal mb-1.5">Enhanced Half-life</h3>
-                <p className="text-kerna-beige/60 text-sm">Prolonged efficacy window through optimized mRNA stability.</p>
               </div>
             </div>
           </div>
@@ -316,19 +384,19 @@ const LandingPage = () => {
                 paddingLeft: 'calc(50% - 120px)',
               }}
             >
-              <div className="flex gap-2 sm:gap-3 pb-4">
+              <div className="flex gap-0 pb-4">
                 {teamMembers.map((member, idx) => (
                   <div 
                     key={idx}
-                    className="w-[180px] sm:w-[200px] md:w-[220px] flex-none"
+                    className="w-[220px] sm:w-[240px] md:w-[260px] flex-none"
                   >
-                    <div className="border border-white/20 bg-white/5 backdrop-blur-sm p-4 sm:p-5 text-center h-[300px] sm:h-[320px] md:h-[340px]">
+                    <div className="border border-white/20 bg-white/5 backdrop-blur-sm h-[300px] sm:h-[320px] md:h-[340px]">
                       <div className="flex flex-col h-full">
                         {/* Top spacing */}
                         <div className="h-[10%]" />
                         
                         {/* Image section - fixed height */}
-                        <div className="h-[45%] flex items-center justify-center select-none">
+                        <div className="h-[45%] flex items-center justify-center">
                           <img 
                             src={member.image} 
                             alt={member.name} 
@@ -357,34 +425,35 @@ const LandingPage = () => {
             </div>
           </div>
 
+          {/* Team Section Navigation */}
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8">
             <div className="flex gap-8 justify-center">
-              <button 
-                onClick={scrollLeftFunc}
-                disabled={!canScrollLeft}
-                className={`p-2 ${
-                  canScrollLeft 
-                    ? 'text-kerna-beige hover:text-kerna-red' 
-                    : 'text-kerna-beige/20 cursor-not-allowed'
-                }`}
-              >
-                <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 12H5m7 7l-7-7 7-7" />
-                </svg>
-              </button>
-              <button 
-                onClick={scrollRightFunc}
-                disabled={!canScrollRight}
-                className={`p-2 ${
-                  canScrollRight 
-                    ? 'text-kerna-beige hover:text-kerna-red' 
-                    : 'text-kerna-beige/20 cursor-not-allowed'
-                }`}
-              >
-                <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
+              <div className="w-[72px] h-[72px] flex items-center justify-center">
+                <button 
+                  onClick={scrollLeftFunc}
+                  disabled={!canScrollLeft}
+                  className="w-[72px] h-[72px] disabled:w-[52px] disabled:h-[52px] transition-all duration-200 flex items-center justify-center"
+                >
+                  <img 
+                    src={canScrollLeft ? '/Arrow.svg' : '/DisabledArrow.svg'} 
+                    alt="Previous" 
+                    className="w-full h-full rotate-180"
+                  />
+                </button>
+              </div>
+              <div className="w-[72px] h-[72px] flex items-center justify-center">
+                <button 
+                  onClick={scrollRightFunc}
+                  disabled={!canScrollRight}
+                  className="w-[72px] h-[72px] disabled:w-[52px] disabled:h-[52px] transition-all duration-200 flex items-center justify-center"
+                >
+                  <img 
+                    src={canScrollRight ? '/Arrow.svg' : '/DisabledArrow.svg'} 
+                    alt="Next" 
+                    className="w-full h-full"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>

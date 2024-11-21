@@ -312,7 +312,7 @@ const LandingPage = () => {
             {/* Left side card */}
             <div className="relative">
               <div className="absolute -left-4 -top-4 w-20 h-20 bg-kerna-darkred/10 rounded-full blur-2xl" />
-              <div className="bg-black/30 backdrop-blur-sm backdrop-brightness-90 border border-white/10 rounded-lg p-8 relative">
+              <div className="bg-black/30 backdrop-blur-sm backdrop-brightness-90 border border-white/10 rounded-none p-8 relative">
                 <div className="absolute -left-2 -top-2 w-16 h-1 bg-kerna-darkred" />
                 <div className="absolute -left-2 -top-2 w-1 h-16 bg-kerna-darkred" />
                 <h2 className="text-xl md:text-2xl font-medium leading-tight text-kerna-beige mb-6">
@@ -327,7 +327,7 @@ const LandingPage = () => {
             {/* Right side card */}
             <div className="relative mt-12 md:mt-32">
               <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-kerna-darkred/10 rounded-full blur-2xl" />
-              <div className="bg-black/30 backdrop-blur-sm backdrop-brightness-75 border border-white/10 rounded-lg p-8 relative">
+              <div className="bg-black/30 backdrop-blur-sm backdrop-brightness-75 border border-white/10 rounded-none p-8 relative">
                 <div className="absolute -right-2 -bottom-2 w-16 h-1 bg-kerna-darkred" />
                 <div className="absolute -right-2 -bottom-2 w-1 h-16 bg-kerna-darkred" />
                 <h2 className="text-xl md:text-2xl font-medium leading-tight text-kerna-beige mb-6">
@@ -346,8 +346,8 @@ const LandingPage = () => {
       <section id="therapeutics" className="snap-start h-screen flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-start">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-kerna-beige w-1/2">
+            <div className="items-start w-full lg:w-1/2">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-kerna-beige">
                 mRNA Therapeutics<br />That Have
               </h2>
             </div>
@@ -357,7 +357,7 @@ const LandingPage = () => {
             {/* Carousel */}
             <div 
               ref={therapeuticsCarouselRef}
-              className={`overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing ${isMobile ? '' : 'absolute right-0 w-[calc(100%-250px)]'}`}
+              className={`overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing ${isMobile ? '' : 'absolute right-0 w-[calc(100%-380px)]'}`}
               onMouseDown={handleMouseDownTherapeutics}
               onMouseLeave={handleMouseLeaveTherapeutics}
               onMouseUp={handleMouseUpTherapeutics}
@@ -436,10 +436,10 @@ const LandingPage = () => {
           </div>
         </div>
         
-        <div className="bg-[#EDE9DF] text-black p-6 md:p-8 lg:p-12">
-          <div className="max-w-7xl mx-auto flex items-center gap-4 sm:gap-6 md:gap-8">
-            <div className="w-0.5 bg-black h-10 sm:h-12 md:h-16 flex-shrink-0"></div>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium">
+        <div className="bg-[#EDE9DF] text-black">
+          <div className="max-w-8xl mx-auto flex p-6 md:p-8 lg:p-12 items-center ml-6 lg:ml-12 gap-4 sm:gap-6 md:gap-8 h-full relative">
+            <div className="absolute left-2 lg:left-6 top-[calc(1.5rem)] w-0.5 h-[calc(100%-1.5rem)] bg-black flex-shrink-0"></div>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl pl-2 lg:pl-6 font-medium">
               Kerna Labs is building foundation models to programmatically develop better mRNA therapeutics.
             </p>
           </div>
@@ -450,11 +450,11 @@ const LandingPage = () => {
       <section id="team" className="snap-start h-screen flex flex-col">
         <div className="flex-1 flex flex-col justify-center pt-16">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-kerna-beige mb-2 sm:mb-3">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-kerna-beige mb-4 sm:mb-6">
               Meet Our Team
             </h2>
             <p className="text-base sm:text-lg text-kerna-beige/90 mb-8 sm:mb-12">
-              Built and backed by the leading minds in machine learning and mRNA
+              Built and backed by the leading minds in machine learning and mRNA.
             </p>
           </div>
 
@@ -552,7 +552,7 @@ const LandingPage = () => {
           {/* Heading - stays left-aligned */}
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8">
             <div className="relative inline-block">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-normal text-kerna-beige">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-kerna-beige">
                 Our Mission
               </h2>
               <div className="absolute -left-2 -bottom-2 w-12 h-0.5 bg-kerna-red"></div>
@@ -575,15 +575,15 @@ const LandingPage = () => {
                 
                 {/* Text Container */}
                 <div className="relative md:flex md:items-center">
-                  <div className="p-6 sm:p-8 md:p-12 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none md:rounded-lg -mt-20 md:mt-0 relative z-20 w-full h-full flex flex-col justify-center">
+                  <div className="p-6 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none -mt-20 py-20 md:mt-0 md:py-0 relative z-20 w-full h-full flex flex-col justify-center">
                     <div className="absolute -left-2 -top-2 w-16 h-1 bg-kerna-red hidden md:block"></div>
                     <div className="absolute -left-2 -top-2 w-1 h-16 bg-kerna-red hidden md:block"></div>
                     
                     <div>
-                      <p className="text-base sm:text-lg md:text-xl text-kerna-beige mb-6 font-light text-center">
+                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-kerna-beige mb-6 font-normal text-center">
                         Kerna's mission is to revolutionize genetic medicine.
                       </p>
-                      <p className="text-sm sm:text-base text-kerna-beige/70 font-light leading-relaxed text-center">
+                      <p className="text-sm sm:text-base md:text-lg text-kerna-beige/70 font-light leading-relaxed text-center">
                         We aim to transform the discovery and development of life-changing therapies by leveraging AI and high-throughput biology to decode RNA biology.
                       </p>
                     </div>
@@ -596,38 +596,24 @@ const LandingPage = () => {
       </section>
 
       {/* Join Us Section */}
-      <section className="bg-kerna-red snap-start min-h-[40vh] items-center relative">
-        <div className="absolute left-0 top-0 w-1 h-16 bg-kerna-blue"></div>
+      <section className="bg-kerna-red snap-start min-h-[40vh] max-h-[40vh] items-center relative">
         
-        {/* White vertical line */}
-        
-        <div className="container mx-auto px-4 h-full">
-          <div className="relative h-full flex flex-col justify-between sm:justify-start py-16 ml-12 lg:ml-24">
-            <div className="absolute left-[-2rem] lg:left-[-3rem] top-[calc(16px+2.5rem)] w-0.5 h-[calc(40vh-16px-2.5rem)] bg-kerna-beige"></div>
+        <div className="container mx-auto px-4 min-h-[40vh] max-h-[40vh]">
+          <div className="relative mx-auto px-4 min-h-[40vh] max-h-[40vh] flex flex-col justify-between sm:justify-start py-16 ml-12 lg:ml-24">
+            <div className="absolute left-[-2rem] lg:left-[-3rem] top-[calc(16px+2.5rem)] w-0.5 h-[calc(100%-16px-2.5rem)] bg-kerna-beige"></div>
 
             <div>
-              <h2 className="text-4xl sm:text-5xl text-kerna-beige mb-8">
+              <h2 className="text-3xl sm:text-4xl text-kerna-beige mb-6 md:mb-8">
                 Get Connected
               </h2>
-              <p className="text-xl text-kerna-beige/90 mb-12">
+              <p className="text-lg text-kerna-beige/90 mb-12">
                 Learn more about how we're enabling our partners in their mRNA pipeline development.
               </p>
             </div>
             
             <a 
               href="mailto:founders@kernalabs.ai" 
-              className="hidden sm:inline-flex items-center gap-3 bg-kerna-beige/90 hover:bg-kerna-beige transition-colors px-8 py-4 text-kerna-red w-fit mt-auto mb-0"
-            >
-              Contact Us
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.172 11L10.808 5.63605L12.222 4.22205L20 12L12.222 19.778L10.808 18.364L16.172 13H4V11H16.172Z" fill="currentColor"/>
-              </svg>
-            </a>
-
-            {/* Mobile button */}
-            <a 
-              href="mailto:founders@kernalabs.ai" target="_blank" rel="noreferrer"
-              className="sm:hidden inline-flex items-center gap-3 bg-kerna-beige/90 hover:bg-kerna-beige transition-colors px-8 py-4 text-kerna-red w-fit mt-8"
+              className="flex-auto max-h-16 inline-flex items-center gap-3 bg-kerna-beige/90 hover:bg-kerna-beige transition-colors px-8 py-4 text-kerna-red w-fit mt-auto mb-8"
             >
               Contact Us
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -642,8 +628,13 @@ const LandingPage = () => {
       <footer 
         className="h-[30vh] relative flex flex-col"
         style={{ 
-          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(14, 23, 43, 0.3)), url('/BackgroundSwirls.png')`, 
+          backgroundImage: `linear-gradient(to bottom, 
+          rgba(0, 0, 0, 0.8) 66%, 
+          rgba(15, 20, 24 , 0.6) 80%,
+          rgba(15, 20, 24, 0.6) 86%,
+          rgba(0, 0, 0, 0.8) 100%), url('/BackgroundSwirls.png')`, 
           backgroundSize: 'cover', 
+          backgroundPosition: 'center bottom',
           backgroundAttachment: 'fixed' 
         }}
       >

@@ -596,7 +596,7 @@ const LandingPage = () => {
       </section>
 
       {/* Join Us Section */}
-      <section className="bg-kerna-red snap-start min-h-[40vh] max-h-[40vh] items-center relative">
+      <section id="contact" className="bg-kerna-red snap-start min-h-[40vh] max-h-[40vh] items-center relative">
         
         <div className="container mx-auto px-4 min-h-[40vh] max-h-[40vh]">
           <div className="relative mx-auto px-4 min-h-[40vh] max-h-[40vh] flex flex-col justify-between sm:justify-start py-16 ml-12 lg:ml-24">

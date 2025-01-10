@@ -4,11 +4,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNavClick = (e, sectionId) => {
-    if (sectionId === 'contact us') {
-      setIsMenuOpen(false);
-      return;
-    }
-    
     e.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
@@ -21,7 +16,7 @@ const Navbar = () => {
     { label: 'Platform', action: '#platform' },
     { label: 'Team', action: '#team' },
     { label: 'Mission', action: '#mission' },
-    { label: 'Contact Us', action: 'mailto:founders@kernalabs.ai' }
+    { label: 'Contact Us', action: '#contact' }
   ];
 
   return (
@@ -37,7 +32,7 @@ const Navbar = () => {
             <a
               key={idx}
               href={item.action}
-              onClick={(e) => handleNavClick(e, item.label.toLowerCase())}
+              onClick={(e) => handleNavClick(e, item.action.slice(1))}
               className="h-full flex items-center justify-center border-l text-sm border-gray-700 px-4 py-1 text-white hover:text-red-400"
             >
               {item.label}
@@ -85,7 +80,7 @@ const Navbar = () => {
           <a
             key={idx}
             href={item.action}
-            onClick={(e) => handleNavClick(e, item.label.toLowerCase())}
+            onClick={(e) => handleNavClick(e, item.action.slice(1))}
             className="block px-4 py-3 text-white hover:text-red-400 border-t border-gray-700/50"
           >
             {item.label}

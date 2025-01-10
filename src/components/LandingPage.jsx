@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 const teamMembers = [
   {
     name: 'Amit Deshwar, PhD',
-    position: 'Co-founder',
+    position: 'Co-founder & CTO',
     image: '/Amit Deshwar.jpg',
     description: [
       'Former Founding Scientist & Head of Platform @ Deep Genomics',
@@ -245,7 +245,7 @@ const LandingPage = () => {
 
   return (
     <div
-      className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory"
+      className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory bg-black"
       style={{ 
         backgroundImage: `linear-gradient(to bottom, 
           rgba(0, 0, 0, 0.85) 0%, 
@@ -468,7 +468,7 @@ const LandingPage = () => {
               onMouseMove={handleMouseMove}
               style={{ 
                 userSelect: 'none',
-                paddingLeft: 'calc(50% - 120px)',
+                paddingLeft: 'calc(50% - 480px)',
               }}
             >
               <div className="flex gap-0 pb-4">
@@ -581,10 +581,10 @@ const LandingPage = () => {
                     
                     <div>
                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-kerna-beige mb-6 font-normal text-center">
-                        Kerna's mission is to revolutionize genetic medicine.
+                        We are revolutionizing genetic medicine
                       </p>
                       <p className="text-sm sm:text-base md:text-lg text-kerna-beige/70 font-light leading-relaxed text-center">
-                        We aim to transform the discovery and development of life-changing therapies by leveraging AI and high-throughput biology to decode RNA biology.
+                        We are paving the way for a new generation of therapies by leveraging AI and high-throughput biology to decode RNA biology.
                       </p>
                     </div>
                   </div>
@@ -626,7 +626,7 @@ const LandingPage = () => {
 
       {/* Footer */}
       <footer 
-        className="h-[30vh] relative flex flex-col"
+        className="h-[30vh] relative flex flex-col bg-black"
         style={{ 
           backgroundImage: `linear-gradient(to bottom, 
           rgba(0, 0, 0, 0.8) 66%, 

@@ -4,6 +4,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNavClick = (e, sectionId) => {
+    if (sectionId === 'contact us') {
+      setIsMenuOpen(false);
+      return;
+    }
+    
     e.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
@@ -11,6 +16,13 @@ const Navbar = () => {
       setIsMenuOpen(false);
     }
   };
+
+  const navItems = [
+    { label: 'Platform', action: '#platform' },
+    { label: 'Team', action: '#team' },
+    { label: 'Mission', action: '#mission' },
+    { label: 'Contact Us', action: 'mailto:founders@kernalabs.ai' }
+  ];
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-transparent z-50 border-b border-gray-700">
@@ -21,14 +33,14 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-0 h-full">
-          {['Platform', 'Team', 'Mission', 'Contact Us'].map((section, idx) => (
+          {navItems.map((item, idx) => (
             <a
               key={idx}
-              href={`#${section.toLowerCase()}`}
-              onClick={(e) => handleNavClick(e, section.toLowerCase())}
+              href={item.action}
+              onClick={(e) => handleNavClick(e, item.label.toLowerCase())}
               className="h-full flex items-center justify-center border-l text-sm border-gray-700 px-4 py-1 text-white hover:text-red-400"
             >
-              {section}
+              {item.label}
             </a>
           ))}
         </div>
@@ -69,14 +81,14 @@ const Navbar = () => {
           isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
         }`}
       >
-        {['Platform', 'Team', 'Mission', 'Contact Us'].map((section, idx) => (
+        {navItems.map((item, idx) => (
           <a
             key={idx}
-            href={`#${section.toLowerCase()}`}
-            onClick={(e) => handleNavClick(e, section.toLowerCase())}
+            href={item.action}
+            onClick={(e) => handleNavClick(e, item.label.toLowerCase())}
             className="block px-4 py-3 text-white hover:text-red-400 border-t border-gray-700/50"
           >
-            {section}
+            {item.label}
           </a>
         ))}
       </div>

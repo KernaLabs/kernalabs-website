@@ -279,11 +279,11 @@ const LandingPage = () => {
             WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
           }}
         >
-          <img 
+          {/* <img 
             src="/hazy_droplet.svg" 
             alt="Hazy Droplet" 
             className="w-full h-full object-contain select-none"
-          />
+          /> */}
         </div>
       </section>
 

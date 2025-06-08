@@ -1,251 +1,115 @@
-import React, { useState, useEffect, useRef } from 'react';
-const teamMembers = [
+import React, { lazy, Suspense } from 'react';
+import MediaCard from './MediaCard';
+import AnimatedSection from './AnimatedSection';
+import StaggeredText from './StaggeredText';
+import RotatingText from './RotatingText';
+import TherapeuticCard from './TherapeuticCard';
+import TeamCard from './TeamCard';
+import LogoGrid from './LogoGrid';
+import useCarousel from '../hooks/useCarousel';
+import { teamMembers } from '../data/teamMembers';
+
+// Lazy load the DNA animation
+const DNACursorAnimation = lazy(() => import('./DNACursorAnimation'));
+
+// Constants for repeated classes
+const CLASSES = {
+  container: 'container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8',
+  sectionHeading: 'text-fluid-3xl sm:text-fluid-4xl lg:text-fluid-5xl font-display font-semibold tracking-display-normal text-kerna-beige mb-4',
+  sectionDescription: 'text-fluid-lg font-body text-kerna-beige/60 max-w-2xl',
+  card: 'relative h-full bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 backdrop-blur-md border border-kerna-beige/10 hover:border-kerna-beige/20 hover:from-kerna-beige/10 hover:to-kerna-beige/15 transition-all duration-300 group shadow-lg hover:shadow-xl',
+  logoImage: 'h-6 sm:h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity',
+  carouselArrow: 'pointer-events-auto w-12 h-12 flex items-center justify-center bg-black/50 backdrop-blur-sm border border-white/20 rounded-full transition-all'
+};
+
+// Therapeutic cards data
+const therapeuticCards = [
   {
-    name: 'Amit Deshwar, PhD',
-    position: 'Co-founder & CTO',
-    image: '/Amit Deshwar.jpg',
-    description: [
-      'Former Founding Scientist & Head of Platform @ Deep Genomics',
-      '10+ years of experience in ML for RNA biology',
-      'AI Scientific Advisory Board @ Deep Genomics, Aperture Tx, Synkrino Biotherapeutics',
-      'PhD Machine Learning @ University of Toronto',
-    ],
+    icon: '/icons/line-graph.svg',
+    title: 'Expression Curve Tuning',
+    description: 'Customizable expression profiles for diverse therapeutic applications.'
   },
   {
-    name: 'Melissa J. Moore, PhD',
-    position: 'Co-founder',
-    image: '/Melissa Moore.jpg',
-    description: [
-      'CSO Emerita @ Moderna',
-      'Led development of platform behind Covid-19 vaccine',
-      'PI @ Howard Hughes Medical Institute',
-      'PI @ UMass Medical',
-      'Director @ RNA Therapeutics Institute',
-      'National Academy of Sciences',
-      'PhD Biological Chemistry @ MIT',
-    ],
+    icon: '/icons/aim.svg',
+    title: 'Cell-Type Specific Expression',
+    description: 'Precision-targeted delivery for cell-specific therapeutic effects.'
   },
   {
-    name: 'Julia Peng',
-    position: 'Co-founder & CEO',
-    image: '/Julia Peng.jpg',
-    description: [
-      'Prev Go-to-Market @ Confluent',
-      '8+ years in deeptech partnerships, GTM, B2B sales',
-      'Prev founder of biomaterials company developing novel drug delivery devices',
-      'BSc Economics @ The Wharton School',
-    ],
-  },
-  {
-    name: 'Michael Swift, PhD',
-    position: 'Founding Scientist',
-    image: '/Michael Swift.jpg',
-    description: [
-      'High-throughput biology, single-cell and multi-omics expertise',
-      '10+ years in RNA biology',
-      'Research Fellow @ Longitude Capital',
-      'Researcher @ miRagen Therapeutics',
-      'PhD Systems Biology @ Stanford University',
-    ],
-  },
-  {
-    name: 'Aryan Misra',
-    position: 'Machine Learning Engineer',
-    image: '/Aryan Misra.jpg',
-    description: [
-      'Generative AI, deep probabilistic modelling, Bayesian active learning, systems design',
-      '12+ years in engineering and machine learning',
-      'Founding Engineer @ Bitswap',
-      'BSc Mathematics, BSc Statistics @ University of Toronto',
-    ],
-  },
-  {
-    name: 'Oliver Chang, PhD',
-    position: 'Platform Scientist',
-    image: '/Oliver Chang.jpg',
-    description: [
-      '7+ years of R&D experience in mammalian cell engineering and synthetic biology',
-      'Expert in CRISPR, optogenetics, and biomolecular condensates',
-      'Developed scalable image analysis pipelines for HPC systems',
-      'PhD in Chemistry @ Princeton University',
-      'Published 4 papers in high-impact journals, including Cell and Nature Cell Biology',
-      'Spearheaded a genome organization platform integrating CRISPR, optogenetics, and genomic imaging',
-    ],
-  },
+    icon: '/icons/clock.svg',
+    title: 'Enhanced Half-life',
+    description: 'Prolonged efficacy window through optimized mRNA stability.'
+  }
 ];
-const LandingPage = () => {
-  // Mobile state
-  const [isMobile, setIsMobile] = useState(false);
 
-  // Team carousel (section 5) states
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const carouselRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+// Journal logos data
+const journalLogos = [
+  { src: '/logos/cell-logo.png', alt: 'Cell' },
+  { src: '/logos/nature-text-logo.png', alt: 'Nature' },
+  { src: '/logos/science-logo.png', alt: 'Science' },
+  { src: '/logos/pnas-logo.png', alt: 'PNAS' }
+];
 
-  // Therapeutics carousel (section 4) states
-  const [canScrollLeftTherapeutics, setCanScrollLeftTherapeutics] = useState(false);
-  const [canScrollRightTherapeutics, setCanScrollRightTherapeutics] = useState(true);
-  const therapeuticsCarouselRef = useRef(null);
-  const [isDraggingTherapeutics, setIsDraggingTherapeutics] = useState(false);
-  const [startXTherapeutics, setStartXTherapeutics] = useState(0);
-  const [scrollLeftTherapeutics, setScrollLeftTherapeutics] = useState(0);
+// Partner logos data
+const partnerLogos = [
+  { src: '/logos/gradient-logo.png', alt: 'Gradient Ventures' },
+  { src: '/logos/humba-logo.png', alt: 'Humba Ventures' },
+  { src: '/logos/tau-logo.png', alt: 'Tau Ventures' },
+  { src: '/logos/pioneer-logo.png', alt: 'Pioneer Fund' }
+];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!carouselRef.current) return;
-      
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 10);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
-    };
+// Media articles data
+const mediaArticles = [
+  {
+    href: 'https://www.asbmb.org/asbmb-today/careers/040225/melissa-moore-to-speak-at-asbmb-2025',
+    logo: '/logos/asbmb-text-logo.png',
+    date: 'April 2, 2025',
+    title: 'Melissa Moore to speak at ASBMB 2025',
+    description: 'Renowned RNA biochemist Melissa Moore will take center stage at ASBMB\'s 2025 Annual Meeting.',
+    isPublication: false
+  },
+  {
+    href: 'https://endpoints.news/modernas-former-top-scientist-moore-has-a-new-mrna-startup/',
+    logo: '/logos/endpoint-text-logo.png',
+    date: 'January 10, 2025',
+    title: 'Exclusive: Moderna\'s former top scientist has a new startup using AI to improve mRNA therapies',
+    description: 'Kerna Labs was founded in 2024 by industry veterans Amit Deshwar, Melissa J. Moore, and Julia Peng.',
+    isPublication: false
+  },
+  {
+    href: 'https://genome.cshlp.org/content/34/3/394.short',
+    logo: '/logos/csh-text-logo.png',
+    date: 'March 20, 2024',
+    title: 'Translation dependent and independent mRNA decay occur through mutually exclusive pathways defined by ribosome density during T cell activation',
+    description: 'A breakthrough in RNA language modeling, enabling unprecedented understanding and design of RNA sequences.',
+    isPublication: true
+  },
+  {
+    href: 'https://www.nature.com/articles/s41573-023-00827-x',
+    logo: '/logos/naturerdd-text-logo.png',
+    date: 'November 29, 2023',
+    title: 'Tailor made: the art of therapeutic mRNA design',
+    description: 'Comprehensive analysis of regulatory elements and their role in muscle development and function.',
+    isPublication: true
+  },
+  {
+    href: 'https://www.nature.com/articles/s41587-022-01525-6',
+    logo: '/logos/naturebiotech-text-logo.png',
+    date: 'November 10, 2022',
+    title: 'An engineered T7 RNA polymerase that produces mRNA free of immunostimulatory byproducts',
+    description: 'A breakthrough in mRNA production, enabling safer and more effective therapies.',
+    isPublication: true
+  }
+];
 
-    const carousel = carouselRef.current;
-    if (carousel) {
-      carousel.addEventListener('scroll', handleScroll);
-      // Initial check
-      handleScroll();
-    }
+const LandingPage = ({ contentReady = true }) => {
+  // Team carousel
+  const teamCarousel = useCarousel();
 
-    return () => {
-      if (carousel) {
-        carousel.removeEventListener('scroll', handleScroll);
-      }
-    };
-  }, []);
-
-  const scrollLeftFunc = () => {
-    if (!carouselRef.current) return;
-    const cardWidth = 240 + 12; // card width + gap
-    carouselRef.current.scrollBy({
-      left: -cardWidth,
-      behavior: 'smooth'
-    });
-  };
-
-  const scrollRightFunc = () => {
-    if (!carouselRef.current) return;
-    const cardWidth = 240 + 12; // card width + gap
-    carouselRef.current.scrollBy({
-      left: cardWidth,
-      behavior: 'smooth'
-    });
-  };
-
-  useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = 0;
-      setCanScrollLeft(false);
-      setCanScrollRight(true);
-    }
-  }, []);
-
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - carouselRef.current.offsetLeft);
-    setScrollLeft(carouselRef.current.scrollLeft);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 1;
-    carouselRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  // Therapeutics carousel scroll handlers
-  const scrollLeftTherapeuticsFunc = () => {
-    if (!therapeuticsCarouselRef.current) return;
-    const cardWidth = 400; // card width
-    therapeuticsCarouselRef.current.scrollBy({
-      left: -cardWidth,
-      behavior: 'smooth'
-    });
-  };
-
-  const scrollRightTherapeuticsFunc = () => {
-    if (!therapeuticsCarouselRef.current) return;
-    const cardWidth = 400; // card width
-    therapeuticsCarouselRef.current.scrollBy({
-      left: cardWidth,
-      behavior: 'smooth'
-    });
-  };
-
-  // Therapeutics carousel drag handlers
-  const handleMouseDownTherapeutics = (e) => {
-    setIsDraggingTherapeutics(true);
-    setStartXTherapeutics(e.pageX - therapeuticsCarouselRef.current.offsetLeft);
-    setScrollLeftTherapeutics(therapeuticsCarouselRef.current.scrollLeft);
-  };
-
-  const handleMouseLeaveTherapeutics = () => {
-    setIsDraggingTherapeutics(false);
-  };
-
-  const handleMouseUpTherapeutics = () => {
-    setIsDraggingTherapeutics(false);
-  };
-
-  const handleMouseMoveTherapeutics = (e) => {
-    if (!isDraggingTherapeutics) return;
-    e.preventDefault();
-    const x = e.pageX - therapeuticsCarouselRef.current.offsetLeft;
-    const walk = (x - startXTherapeutics) * 1;
-    therapeuticsCarouselRef.current.scrollLeft = scrollLeftTherapeutics - walk;
-  };
-
-  // Therapeutics scroll check effect
-  useEffect(() => {
-    const handleScrollTherapeutics = () => {
-      if (!therapeuticsCarouselRef.current) return;
-      
-      const { scrollLeft, scrollWidth, clientWidth } = therapeuticsCarouselRef.current;
-      setCanScrollLeftTherapeutics(scrollLeft > 10);
-      setCanScrollRightTherapeutics(scrollLeft < scrollWidth - clientWidth - 10);
-    };
-
-    const carousel = therapeuticsCarouselRef.current;
-    if (carousel) {
-      carousel.addEventListener('scroll', handleScrollTherapeutics);
-      // Initial check
-      handleScrollTherapeutics();
-    }
-
-    return () => {
-      if (carousel) {
-        carousel.removeEventListener('scroll', handleScrollTherapeutics);
-      }
-    };
-  }, []);
-
-  // Mobile check effect
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
 
   return (
     <div
-      className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory bg-black"
+      className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden bg-black"
       style={{ 
         backgroundImage: `linear-gradient(to bottom, 
           rgba(0, 0, 0, 0.85) 0%, 
@@ -259,25 +123,65 @@ const LandingPage = () => {
       }}
     >
       {/* Section 1: Better Genetic Medicines */}
-      <section id="main" className="snap-start min-h-screen w-full flex items-center relative px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-7xl">
-          <div className="sm:max-w-md md:max-w-xl lg:max-w-2xl relative z-10">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-kerna-beige">
-              Better genetic medicines, built with AI.
+      <section id="main" className="min-h-screen w-full flex items-center relative py-20 sm:py-24 lg:py-32">
+        {/* DNA Cursor Animation - absolute positioned to cover the section */}
+        <div className="absolute inset-0 overflow-hidden">
+          <Suspense fallback={<div className="w-full h-full" />}>
+            <DNACursorAnimation 
+              baseSize={12}
+              growSize={20}
+              growDistance={180}
+              gapX={40}
+              gapY={40}
+              colorPalette={['#666666', '#777777', '#888888', '#999999']}
+              animationDuration={0.2}
+              containerClassName="w-full h-full"
+            />
+          </Suspense>
+        </div>
+        
+        <div className="container mx-auto max-w-7xl relative z-20 pointer-events-none px-4 sm:px-6 lg:px-8">
+          <div className="w-full sm:max-w-lg md:max-w-2xl lg:max-w-3xl">
+            <h1 className="font-display font-bold tracking-display-tight leading-tight text-kerna-beige">
+              {/* First line - responsive sizing */}
+              <span className="block text-fluid-3xl sm:text-fluid-4xl md:text-fluid-5xl lg:text-fluid-6xl">
+                <StaggeredText 
+                  text="Better genetic medicines," 
+                  delay={60}
+                  startDelay={150}
+                  ready={contentReady}
+                />
+              </span>
+              
+              {/* Second line - same size as first line */}
+              <div className="block text-fluid-3xl sm:text-fluid-4xl md:text-fluid-5xl lg:text-fluid-6xl mt-1 sm:mt-2">
+                <RotatingText 
+                  words={['built', 'designed', 'engineered']} 
+                  interval={3000}
+                  className="text-kerna-red inline align-baseline"
+                />
+                <span className="inline align-baseline ml-2 sm:ml-3 whitespace-nowrap">
+                  <StaggeredText 
+                    text="with AI." 
+                    delay={60}
+                    startDelay={600}
+                    ready={contentReady}
+                    className="inline"
+                  />
+                </span>
+              </div>
             </h1>
-            <div className="max-w-sm sm:max-w-md lg:max-w-lg">
-              <p className="mt-4 md:mt-6 text-base md:text-lg text-kerna-beige">
+            <div className="w-full sm:max-w-md lg:max-w-lg mt-4 md:mt-6">
+              <p className={`text-fluid-base sm:text-fluid-lg md:text-fluid-xl font-body text-kerna-beige/90 transition-all duration-500 delay-700 ${
+                contentReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}>
                 Kerna Labs is unlocking the full potential of mRNA as the universal toolkit for genetic medicine.
               </p>
             </div>
           </div>
         </div>
         <div 
-          className="select-none absolute right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto"
-          style={{
-            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-          }}
+          className="select-none absolute right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto mask-fade-vertical"
         >
           {/* <img 
             src="/hazy_droplet.svg" 
@@ -287,29 +191,19 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section id="platform" className="snap-start h-screen w-full flex items-center relative overflow-hidden">
-        {/* Background Trail SVG */}
+      {/* <section id="platform" className="snap-start h-screen w-full flex items-center relative overflow-hidden">
         <div 
-          className="absolute right-0 top-1/2 md:top-2/3 w-[150%] sm:w-4/5 md:w-5/6 h-auto transform -translate-y-1/3 md:-translate-y-1/2"
-          style={{
-            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0) 75%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0) 75%)',
-          }}
+          className="absolute right-0 top-1/2 md:top-2/3 w-[150%] sm:w-4/5 md:w-5/6 h-auto transform -translate-y-1/3 md:-translate-y-1/2 mask-fade-bottom"
         >
           <img 
             src="/trail.svg" 
             alt="Particle Trail" 
-            className="w-full h-full object-scale-down scale-200 sm:scale-150 md:scale-125 select-none"
-            style={{
-              transform: 'rotate(-2deg) translate(30%, -10%)',
-              transformOrigin: 'center'
-            }}
+            className="w-full h-full object-scale-down scale-200 sm:scale-150 md:scale-125 select-none -rotate-2 translate-x-[30%] -translate-y-[10%] origin-center"
           />
         </div>
 
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="{CLASSES.container} relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-            {/* Left side card */}
             <div className="relative">
               <div className="absolute -left-4 -top-4 w-20 h-20 bg-kerna-darkred/10 rounded-full blur-2xl" />
               <div className="bg-black/30 backdrop-blur-sm backdrop-brightness-90 border border-white/10 rounded-none p-8 relative">
@@ -324,7 +218,6 @@ const LandingPage = () => {
               </div>
             </div>
 
-            {/* Right side card */}
             <div className="relative mt-12 md:mt-32">
               <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-kerna-darkred/10 rounded-full blur-2xl" />
               <div className="bg-black/30 backdrop-blur-sm backdrop-brightness-75 border border-white/10 rounded-none p-8 relative">
@@ -340,241 +233,184 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Section 4: MRNA Therapeutics */}
-      <section id="therapeutics" className="snap-start h-screen flex flex-col">
-        <div className="flex-1 flex flex-col justify-center">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="items-start w-full lg:w-1/2">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-kerna-beige">
-                mRNA Therapeutics<br />That Have
+      {/* Section 4: MRNA Therapeutics + Banner */}
+      <div className="min-h-screen flex flex-col">
+        {/* MRNA Therapeutics */}
+        <section id="therapeutics" className="flex-1 py-24 sm:py-32 lg:py-40 flex flex-col">
+          <div className={CLASSES.container}>
+            <AnimatedSection animation="fadeInUp" className="mb-16">
+              <h2 className={CLASSES.sectionHeading}>
+                A Foundation Model for mRNA Therapeutics
               </h2>
-            </div>
+              <p className={CLASSES.sectionDescription}>
+                We leverage AI and high-throughput biology to decode RNA biology.
+              </p>
+            </AnimatedSection>
           </div>
 
-          <div className="relative mt-8">
-            {/* Carousel */}
-            <div 
-              ref={therapeuticsCarouselRef}
-              className={`overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing ${isMobile ? '' : 'absolute right-0 w-[calc(100%-380px)]'}`}
-              onMouseDown={handleMouseDownTherapeutics}
-              onMouseLeave={handleMouseLeaveTherapeutics}
-              onMouseUp={handleMouseUpTherapeutics}
-              onMouseMove={handleMouseMoveTherapeutics}
-              style={{ 
-                userSelect: 'none',
-                paddingLeft: isMobile ? 'calc(50% - 120px)' : 'calc(50% - 250px)',
-              }}
-            >
-              <div className="flex gap-0 pb-4 md:pb-0">
-                <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
-                  <div className="p-8">
-                    <div className="mb-4 w-8 h-8">
-                      <img src="/line-graph.svg" alt="Line Graph" className="w-full h-full" />
-                    </div>
-                    <h3 className="text-kerna-beige text-xl font-normal mb-4">Expression Curve Tuning</h3>
-                    <p className="text-kerna-beige/60">Customizable expression profiles for diverse therapeutic applications.</p>
-                  </div>
-                </div>
-
-                <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
-                  <div className="p-8">
-                    <div className="mb-4 w-8 h-8">
-                      <img src="/aim.svg" alt="Target" className="w-full h-full" />
-                    </div>
-                    <h3 className="text-kerna-beige text-xl font-normal mb-4">Cell-Type Specific Expression</h3>
-                    <p className="text-kerna-beige/60">Precision-targeted delivery for cell-specific therapeutic effects.</p>
-                  </div>
-                </div>
-
-                <div className="flex-none w-[400px] bg-kerna-beige/5 backdrop-blur-sm border border-kerna-beige/10">
-                  <div className="p-8">
-                    <div className="mb-4 w-8 h-8">
-                      <img src="/clock.svg" alt="Clock" className="w-full h-full" />
-                    </div>
-                    <h3 className="text-kerna-beige text-xl font-normal mb-4">Enhanced Half-life</h3>
-                    <p className="text-kerna-beige/60">Prolonged efficacy window through optimized mRNA stability.</p>
-                  </div>
-                </div>
-                
-                <div className="w-[calc((100vw-1280px)/2)] flex-none" aria-hidden="true" />
-              </div>
-            </div>
-
-            {/* Carousel Navigation */}
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative pointer-events-none">
-              <div className={`flex gap-8 pointer-events-auto ${isMobile ? 'justify-center mt-8' : 'justify-start mt-[120px]'}`}>
-                <div className="select-none w-[72px] h-[72px] flex items-center justify-center">
-                  <button 
-                    onClick={scrollLeftTherapeuticsFunc}
-                    disabled={!canScrollLeftTherapeutics}
-                    className="w-[72px] h-[72px] transition-none rotate-180 disabled:transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
-                  >
-                    <img 
-                      src={canScrollLeftTherapeutics ? '/Arrow.svg' : '/DisabledArrow.svg'} 
-                      alt="Previous" 
-                      className="w-full h-full"
-                    />
-                  </button>
-                </div>
-                <div className="w-[72px] h-[72px] flex items-center justify-center">
-                  <button 
-                    onClick={scrollRightTherapeuticsFunc}
-                    disabled={!canScrollRightTherapeutics}
-                    className="w-[72px] h-[72px] transition-none disabled:rotate-180 transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
-                  >
-                    <img 
-                      src={canScrollRightTherapeutics ? '/Arrow.svg' : '/DisabledArrow.svg'} 
-                      alt="Next" 
-                      className="w-full h-full"
-                    />
-                  </button>
-                </div>
-              </div>
+          <div className={`${CLASSES.container} flex-1 flex items-center`}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 w-full">
+              {therapeuticCards.map((card, idx) => (
+                <TherapeuticCard
+                  key={idx}
+                  icon={card.icon}
+                  title={card.title}
+                  description={card.description}
+                  delay={idx * 100}
+                />
+              ))}
             </div>
           </div>
-        </div>
+        </section>
         
-        <div className="bg-[#EDE9DF] text-black">
-          <div className="max-w-8xl mx-auto flex p-6 md:p-8 lg:p-12 items-center ml-6 lg:ml-12 gap-4 sm:gap-6 md:gap-8 h-full relative">
-            <div className="absolute left-2 lg:left-6 top-[calc(1.5rem)] w-0.5 h-[calc(100%-1.5rem)] bg-black flex-shrink-0"></div>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl pl-2 lg:pl-6 font-medium">
-              Kerna Labs is building foundation models to programmatically develop better mRNA therapeutics.
-            </p>
+        {/* Therapeutics Banner */}
+        <AnimatedSection animation="fadeIn" threshold={0.8}>
+          <div className="bg-kerna-beige">
+            <div className={CLASSES.container}>
+              <div className="flex items-center py-12 md:py-16 lg:py-20">
+                <AnimatedSection animation="slideInLeft" className="w-1 h-16 bg-kerna-darkred mr-6 flex-shrink-0"></AnimatedSection>
+                <AnimatedSection animation="fadeInUp" delay={100}>
+                  <p className="text-fluid-base sm:text-fluid-lg md:text-fluid-xl lg:text-fluid-2xl text-kerna-darkblue font-display font-medium leading-snug">
+                    Our platform designs mRNA sequences that drive magnitude higher protein output with unprecedented cell-type precision.
+                  </p>
+                </AnimatedSection>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </AnimatedSection>
+      </div>
 
-      {/* Section 5: Team */}
-      <section id="team" className="snap-start h-screen flex flex-col">
-        <div className="flex-1 flex flex-col justify-center pt-16">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-kerna-beige mb-4 sm:mb-6">
-              Meet Our Team
-            </h2>
-            <p className="text-base sm:text-lg text-kerna-beige/90 mb-8 sm:mb-12">
-              Built and backed by the leading minds in machine learning and mRNA.
-            </p>
+      {/* Section 5: Team + Banners */}
+      <div className="min-h-screen flex flex-col">
+        {/* Team */}
+        <section id="team" className="flex-1 py-24 sm:py-32 lg:py-40 flex flex-col">
+          <div className={CLASSES.container}>
+            <AnimatedSection animation="fadeInUp" className="mb-16">
+              <h2 className={CLASSES.sectionHeading}>
+                Meet Our Team
+              </h2>
+              <p className={CLASSES.sectionDescription}>
+                Built and backed by the leading minds in machine learning and mRNA.
+              </p>
+            </AnimatedSection>
           </div>
 
-          <div className="relative">
+          <div className="relative flex-1 flex items-center">
             <div 
-              ref={carouselRef}
-              className="overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing"
-              onMouseDown={handleMouseDown}
-              onMouseLeave={handleMouseLeave}
-              onMouseUp={handleMouseUp}
-              onMouseMove={handleMouseMove}
-              style={{ 
-                userSelect: 'none',
-                paddingLeft: 'calc(50% - 480px)',
-              }}
+              ref={teamCarousel.carouselRef}
+              className="overflow-x-auto overflow-y-hidden hide-scrollbar no-select cursor-grab active:cursor-grabbing pl-carousel pr-4"
+              onMouseDown={teamCarousel.handleMouseDown}
+              onMouseLeave={teamCarousel.handleMouseLeave}
+              onMouseUp={teamCarousel.handleMouseUp}
+              onMouseMove={teamCarousel.handleMouseMove}
             >
-              <div className="flex gap-0 pb-4">
+              <div className="flex gap-4 pb-4">
                 {teamMembers.map((member, idx) => (
-                  <div 
+                  <TeamCard
                     key={idx}
-                    className="w-[220px] sm:w-[240px] md:w-[260px] flex-none"
-                  >
-                    <div className="border border-white/20 bg-white/5 backdrop-blur-sm h-[300px] sm:h-[320px] md:h-[340px]">
-                      <div className="flex flex-col h-full">
-                        {/* Top spacing */}
-                        <div className="h-[10%]" />
-                        
-                        {/* Image section - fixed height */}
-                        <div className="h-[45%] flex items-center justify-center">
-                          <img 
-                            src={member.image} 
-                            alt={member.name} 
-                            className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full"
-                          />
-                        </div>
-                        
-                        {/* Text section - fixed height */}
-                        <div className="h-[35%] flex flex-col items-center justify-center">
-                          <h3 className="text-sm sm:text-base md:text-md font-normal text-kerna-beige mb-2">
-                            {member.name}
-                          </h3>
-                          <p className="text-kerna-beige/60 uppercase tracking-wider text-xs sm:text-sm md:text-md px-2">
-                            {member.position}
-                          </p>
-                        </div>
-                        
-                        {/* Bottom spacing */}
-                        <div className="h-[10%]" />
-                      </div>
-                    </div>
-                  </div>
+                    member={member}
+                    delay={idx * 30}
+                  />
                 ))}
                 <div className="w-[calc((100vw-1280px)/2)] flex-none" aria-hidden="true" />
               </div>
             </div>
-          </div>
 
-          {/* Team Section Navigation */}
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-8">
-            <div className="flex gap-8 justify-center">
-              <div className="w-[72px] h-[72px] flex items-center justify-center">
-                <button 
-                  onClick={scrollLeftFunc}
-                  disabled={!canScrollLeft}
-                  className="w-[72px] h-[72px] transition-none rotate-180 disabled:transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
-                >
-                  <img 
-                    src={canScrollLeft ? '/Arrow.svg' : '/DisabledArrow.svg'} 
-                    alt="Previous" 
-                    className="w-full h-full"
-                  />
-                </button>
-              </div>
-              <div className="w-[72px] h-[72px] flex items-center justify-center">
-                <button 
-                  onClick={scrollRightFunc}
-                  disabled={!canScrollRight}
-                  className="w-[72px] h-[72px] transition-none disabled:rotate-180 transform-none disabled:w-[52px] disabled:h-[52px] flex items-center justify-center"
-                >
-                  <img 
-                    src={canScrollRight ? '/Arrow.svg' : '/DisabledArrow.svg'} 
-                    alt="Next" 
-                    className="w-full h-full disabled:rotate-180 rotate-0"
-                  />
-                </button>
+            {/* Navigation arrows - positioned absolutely */}
+            <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none">
+              <div className={CLASSES.container}>
+                <div className="flex justify-between">
+                  <button 
+                    onClick={teamCarousel.scrollLeftFunc}
+                    disabled={!teamCarousel.canScrollLeft}
+                    className={`${CLASSES.carouselArrow} ${
+                      teamCarousel.canScrollLeft ? 'opacity-100 hover:bg-black/70' : 'opacity-30 cursor-not-allowed'
+                    }`}
+                  >
+                    <svg className="w-6 h-6 text-white rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <button 
+                    onClick={teamCarousel.scrollRightFunc}
+                    disabled={!teamCarousel.canScrollRight}
+                    className={`${CLASSES.carouselArrow} ${
+                      teamCarousel.canScrollRight ? 'opacity-100 hover:bg-black/70' : 'opacity-30 cursor-not-allowed'
+                    }`}
+                  >
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+        
+        {/* Team Banner */}
+        <AnimatedSection animation="fadeIn" threshold={0.9}>
+          <div className="bg-kerna-beige">
+            <div className={`${CLASSES.container} py-12 sm:py-16 lg:py-20`}>
+            <div className="text-center">
+              <AnimatedSection animation="fadeInUp" delay={0}>
+                <h3 className="text-fluid-lg sm:text-fluid-2xl md:text-fluid-3xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
+                  Built by a world-class team
+                </h3>
+              </AnimatedSection>
+              
+              {/* Journal Logos */}
+              <AnimatedSection animation="fadeIn" delay={100}>
+                <LogoGrid logos={journalLogos} className="mb-8 sm:mb-12" />
+              </AnimatedSection>
+              
+              <AnimatedSection animation="fadeInUp" delay={200}>
+                <h3 className="text-fluid-lg sm:text-fluid-2xl md:text-fluid-3xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
+                  Backed by visionary partners
+                </h3>
+              </AnimatedSection>
+              
+              {/* Partner Logos */}
+              <AnimatedSection animation="fadeIn" delay={300}>
+                <LogoGrid logos={partnerLogos} />
+              </AnimatedSection>
+            </div>
+          </div>
+          </div>
+        </AnimatedSection>
+      </div>
 
-      {/* Section 6: Our Mission */}
-      <section id="mission" className="snap-start h-screen flex flex-col">
+      {/* Section 6: Our Mission - Commented out */}
+      {/* <section id="mission" className="min-h-screen flex flex-col">
         <div className="flex-1 flex flex-col justify-center">
           {/* Heading - stays left-aligned */}
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8">
+          {/* <div className="{CLASSES.container} mb-8">
             <div className="relative inline-block">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-kerna-beige">
                 Our Mission
               </h2>
               <div className="absolute -left-2 -bottom-2 w-12 h-0.5 bg-kerna-red"></div>
             </div>
-          </div>
+          </div> */}
           
           {/* Content container */}
-          <div className="px-4 sm:px-6 lg:px-8">
+          {/* <div className="px-4 sm:px-6 lg:px-8">
             <div className="max-w-screen-2xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-12">
                 {/* Image Container */}
-                <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px] lg:h-[500px] overflow-hidden">
+                {/* <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px] lg:h-[500px] overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 md:hidden"></div>
                   <img 
-                    src="/TeamPhoto.jpg" 
+                    src="/team/TeamPhoto.jpg" 
                     alt="Team" 
                     className="w-full h-full object-cover"
                   />
-                </div>
+                </div> */}
                 
                 {/* Text Container */}
-                <div className="relative md:flex md:items-center">
+                {/* <div className="relative md:flex md:items-center">
                   <div className="p-6 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none -mt-20 py-20 md:mt-0 md:py-0 relative z-20 w-full h-full flex flex-col justify-center">
                     <div className="absolute -left-2 -top-2 w-16 h-1 bg-kerna-red hidden md:block"></div>
                     <div className="absolute -left-2 -top-2 w-1 h-16 bg-kerna-red hidden md:block"></div>
@@ -593,74 +429,121 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+      </section> */}
+
+      {/* Section 6: Media & Publications */}
+      <section id="media" className="py-24 sm:py-32 lg:py-40">
+        <div className={CLASSES.container}>
+          {/* Heading and Intro */}
+          <AnimatedSection animation="fadeInUp" className="mb-16">
+            <h2 className={CLASSES.sectionHeading}>
+              <StaggeredText 
+                text="Media & Publications" 
+                animateOnView={true}
+                delay={100}
+              />
+            </h2>
+            <AnimatedSection animation="fadeIn" delay={150}>
+              <p className={CLASSES.sectionDescription}>
+                Pioneering the next era of genetic medicine.
+              </p>
+            </AnimatedSection>
+            <AnimatedSection animation="fadeIn" delay={250}>
+              <p className="text-fluid-lg font-body text-kerna-beige/60 max-w-3xl mt-2">
+                We are building large-scale machine learning models to design mRNA with unmatched potency, targeting, and safety.
+              </p>
+            </AnimatedSection>
+          </AnimatedSection>
+
+          {/* Media List */}
+          <div className="space-y-6">
+            {mediaArticles.map((article, idx) => (
+              <AnimatedSection key={idx} animation="fadeInUp" delay={50 + idx * 50}>
+                <MediaCard 
+                  href={article.href}
+                  logo={article.logo}
+                  date={article.date}
+                  title={article.title}
+                  description={article.description}
+                  isPublication={article.isPublication}
+                />
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Join Us Section */}
-      <section id="contact" className="bg-kerna-red snap-start min-h-[40vh] max-h-[40vh] items-center relative">
-        
-        <div className="container mx-auto px-4 min-h-[40vh] max-h-[40vh]">
-          <div className="relative mx-auto px-4 min-h-[40vh] max-h-[40vh] flex flex-col justify-between sm:justify-start py-16 ml-12 lg:ml-24">
-            <div className="absolute left-[-2rem] lg:left-[-3rem] top-[calc(16px+2.5rem)] w-0.5 h-[calc(100%-16px-2.5rem)] bg-kerna-beige"></div>
+      <AnimatedSection animation="fadeIn" threshold={0.2}>
+        <section id="contact" className="bg-kerna-red relative">
+          
+          <div className="container mx-auto px-4">
+            <div className="relative mx-auto px-4 py-20 sm:py-24 lg:py-32 ml-12 lg:ml-24">
+              <div className="absolute left-[-2rem] lg:left-[-3rem] top-8 bottom-8 w-0.5 bg-kerna-beige/60"></div>
 
-            <div>
-              <h2 className="text-3xl sm:text-4xl text-kerna-beige mb-6 md:mb-8">
-                Get Connected
-              </h2>
-              <p className="text-lg text-kerna-beige/90 mb-12">
-                Learn more about how we're enabling our partners in their mRNA pipeline development.
-              </p>
+              <AnimatedSection animation="slideUp" delay={100}>
+                <div>
+                  <h2 className="text-fluid-3xl sm:text-fluid-4xl font-display font-semibold tracking-display-normal text-kerna-beige mb-6 md:mb-8">
+                    Connect With Us
+                  </h2>
+                  <p className="text-fluid-lg font-body text-kerna-beige/80 mb-8">
+                    Learn more about how we're enabling our partners in their mRNA pipeline development.
+                  </p>
+                </div>
+              </AnimatedSection>
+              
+              <AnimatedSection animation="fadeInUp" delay={200}>
+                <a 
+                  href="mailto:founders@kernalabs.ai" 
+                  className="inline-flex items-center gap-3 bg-kerna-beige/90 hover:bg-kerna-beige transition-colors px-8 py-4 text-kerna-red font-body font-medium w-fit"
+                >
+                  Contact Us
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.172 11L10.808 5.63605L12.222 4.22205L20 12L12.222 19.778L10.808 18.364L16.172 13H4V11H16.172Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </AnimatedSection>
             </div>
-            
-            <a 
-              href="mailto:founders@kernalabs.ai" 
-              className="flex-auto max-h-16 inline-flex items-center gap-3 bg-kerna-beige/90 hover:bg-kerna-beige transition-colors px-8 py-4 text-kerna-red w-fit mt-auto mb-8"
-            >
-              Contact Us
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16.172 11L10.808 5.63605L12.222 4.22205L20 12L12.222 19.778L10.808 18.364L16.172 13H4V11H16.172Z" fill="currentColor"/>
-              </svg>
-            </a>
           </div>
-        </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Footer */}
-      <footer 
-        className="h-[30vh] relative flex flex-col bg-black"
-        style={{ 
-          backgroundImage: `linear-gradient(to bottom, 
-          rgba(0, 0, 0, 0.8) 66%, 
-          rgba(15, 20, 24 , 0.6) 80%,
-          rgba(15, 20, 24, 0.6) 86%,
-          rgba(0, 0, 0, 0.8) 100%), url('/BackgroundSwirls.png')`, 
-          backgroundSize: 'cover', 
-          backgroundPosition: 'center bottom',
-          backgroundAttachment: 'fixed' 
-        }}
-      >
-        <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between container mx-auto px-4">
-          {/* Left side - Leaf logo and social links */}
-          <div className="flex flex-col items-center my-8">
-            <img src="/KernaLeaf.svg" alt="Kerna Leaf" className="w-24 h-auto mb-6 select-none" />
-            <div className="flex justify-center gap-6">
-              <a href="https://twitter.com/KernaLabs" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-colors">
-                <img src="/XIcon.svg" alt="Twitter/X" className="w-6 h-6" />
-              </a>
-              <a href="https://linkedin.com/company/kernalabs" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-colors">
-                <img src="/LinkedInIcon.svg" alt="LinkedIn" className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
+      <AnimatedSection animation="fadeIn" threshold={0.1}>
+        <footer 
+          className="h-[30vh] relative flex flex-col"
+          style={{ 
+            background: `linear-gradient(to bottom, 
+              rgba(0, 0, 0, 0.9) 0%, 
+              rgba(0, 0, 0, 0.4) 50%,
+              rgba(0, 0, 0, 0.9) 100%
+            )`
+          }}
+        >
+          <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between container mx-auto px-4">
+            {/* Left side - Leaf logo and social links */}
+            <AnimatedSection animation="fadeInUp" delay={50} className="flex flex-col items-center my-8">
+              <img src="/icons/KernaLeaf.svg" alt="Kerna Leaf" className="w-24 h-auto mb-6 select-none" />
+              <div className="flex justify-center gap-6">
+                <a href="https://twitter.com/KernaLabs" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300">
+                  <img src="/icons/XIcon.svg" alt="Twitter/X" className="w-6 h-6" />
+                </a>
+                <a href="https://linkedin.com/company/kernalabs" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300">
+                  <img src="/icons/LinkedInIcon.svg" alt="LinkedIn" className="w-6 h-6" />
+                </a>
+              </div>
+            </AnimatedSection>
 
-          {/* Right side - Text logo and copyright */}
-          <div className="text-center lg:text-right lg:w-[70%]">
-            <img src="/TextOnlyLogo.svg" alt="Kerna Labs" className="mx-auto lg:ml-auto lg:mr-0 mb-4 w-full max-w-md lg:max-w-none h-auto opacity-10 select-none" />
-            <p className="text-kerna-beige text-sm">
-              © 2024 Kerna Labs
-            </p>
+            {/* Right side - Text logo and copyright */}
+            <AnimatedSection animation="fadeIn" delay={150} className="text-center lg:text-right lg:w-[70%]">
+              <img src="/icons/TextOnlyLogo.svg" alt="Kerna Labs" className="mx-auto lg:ml-auto lg:mr-0 mb-4 w-full max-w-md lg:max-w-none h-auto opacity-10 select-none" />
+              <p className="text-kerna-beige text-fluid-sm font-body">
+                © 2025 Kerna Labs
+              </p>
+            </AnimatedSection>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </AnimatedSection>
     </div>
   );
 };

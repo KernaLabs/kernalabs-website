@@ -3,29 +3,29 @@ import AnimatedSection from './AnimatedSection';
 import InstitutionLogo from './InstitutionLogo';
 
 const TeamCard = ({ member, delay = 0 }) => {
-  const cardClass = 'h-full bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 backdrop-blur-md border border-kerna-beige/10 hover:border-kerna-beige/20 hover:from-kerna-beige/10 hover:to-kerna-beige/15 transition-all duration-300 group shadow-lg hover:shadow-xl';
+  const cardClass = 'h-full bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 backdrop-blur-md border border-kerna-beige/10 hover:border-kerna-beige/20 transition-[border-color,box-shadow] duration-300 group shadow-lg hover:shadow-xl';
   
   return (
-    <AnimatedSection
-      animation="fadeInUp"
-      delay={delay}
-      className="flex-none w-[320px]"
-    >
+    <div className="flex-none w-[320px]">
       <div className={cardClass}>
-        <div className="p-8 flex flex-col h-[440px]">
+        <AnimatedSection
+          animation="fadeInUp"
+          delay={delay}
+          className="px-6 py-10 flex flex-col h-[360px]"
+        >
           {/* Image section */}
-          <div className="flex items-center justify-center mb-6">
+          <div className="flex items-center justify-center mb-2">
             <img 
               src={member.image} 
               alt={member.name} 
-              className="w-24 h-24 rounded-full object-cover select-none pointer-events-none transition-all duration-300 group-hover:brightness-110"
+              className="w-20 h-20 rounded-full object-cover select-none pointer-events-none transition-all duration-300 group-hover:brightness-110"
               draggable="false"
             />
           </div>
           
           {/* Text section */}
-          <div className="text-center mb-6">
-            <h3 className="text-fluid-lg font-display font-medium text-kerna-beige mb-1">
+          <div className="text-center mb-1 px-2">
+            <h3 className="text-fluid-base font-display font-medium text-kerna-beige mb-0.5 whitespace-nowrap">
               {member.name}
             </h3>
             <p className="text-kerna-beige/60 uppercase tracking-wider text-fluid-sm font-body">
@@ -34,22 +34,42 @@ const TeamCard = ({ member, delay = 0 }) => {
           </div>
           
           {/* Institution logos section */}
-          <div className="mt-auto pt-4">
-            <div className="min-h-[80px] flex items-center justify-center px-4">
+          <div className="mt-auto">
+            <div className="min-h-[50px] flex items-center justify-center px-4">
               <div className="flex items-center justify-center gap-3 flex-wrap max-w-full">
-                {member.institutions && member.institutions.map((institution, instIdx) => (
-                  <InstitutionLogo
-                    key={instIdx}
-                    logo={institution.logo}
-                    name={institution.name}
-                  />
-                ))}
+                {member.institutions && member.institutions.map((institution, instIdx) => {
+                  // Calculate group scale based on number of logos
+                  const logoCount = member.institutions.length;
+                  let groupScale = 1.0;
+                  
+                  if (logoCount === 1) {
+                    groupScale = 1.5;
+                  } else if (logoCount === 2) {
+                    groupScale = 1.3;
+                  } else if (logoCount === 3) {
+                    groupScale = 1.0;
+                  } else if (logoCount === 4) {
+                    groupScale = 0.95;
+                  } else if (logoCount >= 5) {
+                    groupScale = 0.9;
+                  }
+                  
+                  return (
+                    <InstitutionLogo
+                      key={instIdx}
+                      logo={institution.logo}
+                      name={institution.name}
+                      size={institution.size || 1.0}
+                      groupScale={groupScale}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
-    </AnimatedSection>
+    </div>
   );
 };
 

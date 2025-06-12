@@ -7,7 +7,7 @@ import TherapeuticCard from './TherapeuticCard';
 import TeamCard from './TeamCard';
 import LogoGrid from './LogoGrid';
 import useCarousel from '../hooks/useCarousel';
-import { teamMembers } from '../data/teamMembers';
+import { coreTeam, advisors } from '../data/teamMembers';
 
 // Lazy load the DNA animation
 const DNACursorAnimation = lazy(() => import('./DNACursorAnimation'));
@@ -15,7 +15,7 @@ const DNACursorAnimation = lazy(() => import('./DNACursorAnimation'));
 // Constants for repeated classes
 const CLASSES = {
   container: 'container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8',
-  sectionHeading: 'text-fluid-3xl sm:text-fluid-4xl lg:text-fluid-5xl font-display font-semibold tracking-display-normal text-kerna-beige mb-4',
+  sectionHeading: 'text-fluid-2xl sm:text-fluid-3xl lg:text-fluid-4xl font-display font-semibold tracking-display-normal text-kerna-beige mb-4',
   sectionDescription: 'text-fluid-lg font-body text-kerna-beige/60 max-w-2xl',
   card: 'relative h-full bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 backdrop-blur-md border border-kerna-beige/10 hover:border-kerna-beige/20 hover:from-kerna-beige/10 hover:to-kerna-beige/15 transition-all duration-300 group shadow-lg hover:shadow-xl',
   logoImage: 'h-6 sm:h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity',
@@ -46,7 +46,10 @@ const journalLogos = [
   { src: '/logos/cell-logo.png', alt: 'Cell' },
   { src: '/logos/nature-text-logo.png', alt: 'Nature' },
   { src: '/logos/science-logo.png', alt: 'Science' },
-  { src: '/logos/pnas-logo.png', alt: 'PNAS' }
+  { src: '/logos/pnas-logo.png', alt: 'PNAS' },
+  { src: '/logos/csh-text-logo.png', alt: 'CSH' },
+  // { src: '/logos/naturedd-text-logo.png', alt: 'Nature DD' },
+  // { src: '/logos/naturebiotech-text-logo.png', alt: 'Nature Biotech' },
 ];
 
 // Partner logos data
@@ -75,40 +78,40 @@ const mediaArticles = [
     description: 'Kerna Labs was founded in 2024 by industry veterans Amit Deshwar, Melissa J. Moore, and Julia Peng.',
     isPublication: false
   },
-  {
-    href: 'https://genome.cshlp.org/content/34/3/394.short',
-    logo: '/logos/csh-text-logo.png',
-    date: 'March 20, 2024',
-    title: 'Translation dependent and independent mRNA decay occur through mutually exclusive pathways defined by ribosome density during T cell activation',
-    description: 'A breakthrough in RNA language modeling, enabling unprecedented understanding and design of RNA sequences.',
-    isPublication: true
-  },
-  {
-    href: 'https://www.nature.com/articles/s41573-023-00827-x',
-    logo: '/logos/naturerdd-text-logo.png',
-    date: 'November 29, 2023',
-    title: 'Tailor made: the art of therapeutic mRNA design',
-    description: 'Comprehensive analysis of regulatory elements and their role in muscle development and function.',
-    isPublication: true
-  },
-  {
-    href: 'https://www.nature.com/articles/s41587-022-01525-6',
-    logo: '/logos/naturebiotech-text-logo.png',
-    date: 'November 10, 2022',
-    title: 'An engineered T7 RNA polymerase that produces mRNA free of immunostimulatory byproducts',
-    description: 'A breakthrough in mRNA production, enabling safer and more effective therapies.',
-    isPublication: true
-  }
+  // {
+  //   href: 'https://genome.cshlp.org/content/34/3/394.short',
+  //   logo: '/logos/csh-text-logo.png',
+  //   date: 'March 20, 2024',
+  //   title: 'Translation dependent and independent mRNA decay occur through mutually exclusive pathways defined by ribosome density during T cell activation',
+  //   description: 'A breakthrough in RNA language modeling, enabling unprecedented understanding and design of RNA sequences.',
+  //   isPublication: true
+  // },
+  // {
+  //   href: 'https://www.nature.com/articles/s41573-023-00827-x',
+  //   logo: '/logos/naturerdd-text-logo.png',
+  //   date: 'November 29, 2023',
+  //   title: 'Tailor made: the art of therapeutic mRNA design',
+  //   description: 'Comprehensive analysis of regulatory elements and their role in muscle development and function.',
+  //   isPublication: true
+  // },
+  // {
+  //   href: 'https://www.nature.com/articles/s41587-022-01525-6',
+  //   logo: '/logos/naturebiotech-text-logo.png',
+  //   date: 'November 10, 2022',
+  //   title: 'An engineered T7 RNA polymerase that produces mRNA free of immunostimulatory byproducts',
+  //   description: 'A breakthrough in mRNA production, enabling safer and more effective therapies.',
+  //   isPublication: true
+  // }
 ];
 
 const LandingPage = ({ contentReady = true }) => {
-  // Team carousel
+  // Team carousels
   const teamCarousel = useCarousel();
-
-
-
+  const advisorsCarousel = useCarousel();
+  
   return (
     <div
+      id="landing-page-container"
       className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden bg-black"
       style={{ 
         backgroundImage: `linear-gradient(to bottom, 
@@ -122,8 +125,11 @@ const LandingPage = ({ contentReady = true }) => {
         backgroundAttachment: 'fixed' 
       }}
     >
+      {/* Sentinel element for navbar scroll detection */}
+      <div id="navbar-scroll-sentinel" className="w-full h-1" style={{ position: 'absolute', top: 0, left: 0 }} />
+      
       {/* Section 1: Better Genetic Medicines */}
-      <section id="main" className="min-h-screen w-full flex items-center relative py-20 sm:py-24 lg:py-32">
+      <section id="main" className="min-h-screen w-full flex items-center relative py-24 sm:py-32 lg:py-40">
         {/* DNA Cursor Animation - absolute positioned to cover the section */}
         <div className="absolute inset-0 overflow-hidden">
           <Suspense fallback={<div className="w-full h-full" />}>
@@ -236,11 +242,11 @@ const LandingPage = ({ contentReady = true }) => {
       </section> */}
 
       {/* Section 4: MRNA Therapeutics + Banner */}
-      <div className="min-h-screen flex flex-col">
+      <div>
         {/* MRNA Therapeutics */}
-        <section id="therapeutics" className="flex-1 py-24 sm:py-32 lg:py-40 flex flex-col">
+        <section id="therapeutics" className="py-20 sm:py-28 lg:py-36">
           <div className={CLASSES.container}>
-            <AnimatedSection animation="fadeInUp" className="mb-16">
+            <AnimatedSection animation="fadeInUp" className="mb-12">
               <h2 className={CLASSES.sectionHeading}>
                 A Foundation Model for mRNA Therapeutics
               </h2>
@@ -250,7 +256,7 @@ const LandingPage = ({ contentReady = true }) => {
             </AnimatedSection>
           </div>
 
-          <div className={`${CLASSES.container} flex-1 flex items-center`}>
+          <div className={CLASSES.container}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 w-full">
               {therapeuticCards.map((card, idx) => (
                 <TherapeuticCard
@@ -266,7 +272,7 @@ const LandingPage = ({ contentReady = true }) => {
         </section>
         
         {/* Therapeutics Banner */}
-        <AnimatedSection animation="fadeIn" threshold={0.8}>
+        <AnimatedSection animation="fadeIn" threshold={0.1}>
           <div className="bg-kerna-beige">
             <div className={CLASSES.container}>
               <div className="flex items-center py-12 md:py-16 lg:py-20">
@@ -282,12 +288,12 @@ const LandingPage = ({ contentReady = true }) => {
         </AnimatedSection>
       </div>
 
-      {/* Section 5: Team + Banners */}
-      <div className="min-h-screen flex flex-col">
-        {/* Team */}
-        <section id="team" className="flex-1 py-24 sm:py-32 lg:py-40 flex flex-col">
+      {/* Section 5: Team + Advisors + Banners */}
+      <div>
+        {/* Core Team */}
+        <section id="team" className="pt-20 pb-8 sm:pt-28 sm:pb-10 lg:pt-36 lg:pb-12">
           <div className={CLASSES.container}>
-            <AnimatedSection animation="fadeInUp" className="mb-16">
+            <AnimatedSection animation="fadeInUp" className="mb-12">
               <h2 className={CLASSES.sectionHeading}>
                 Meet Our Team
               </h2>
@@ -297,7 +303,7 @@ const LandingPage = ({ contentReady = true }) => {
             </AnimatedSection>
           </div>
 
-          <div className="relative flex-1 flex items-center">
+          <div className="relative">
             <div 
               ref={teamCarousel.carouselRef}
               className="overflow-x-auto overflow-y-hidden hide-scrollbar no-select cursor-grab active:cursor-grabbing pl-carousel pr-4"
@@ -306,8 +312,8 @@ const LandingPage = ({ contentReady = true }) => {
               onMouseUp={teamCarousel.handleMouseUp}
               onMouseMove={teamCarousel.handleMouseMove}
             >
-              <div className="flex gap-4 pb-4">
-                {teamMembers.map((member, idx) => (
+              <div className="flex gap-4 pb-2">
+                {coreTeam.map((member, idx) => (
                   <TeamCard
                     key={idx}
                     member={member}
@@ -349,14 +355,81 @@ const LandingPage = ({ contentReady = true }) => {
             </div>
           </div>
         </section>
+
+        {/* Advisors */}
+        <section id="advisors" className="pt-4 pb-20 sm:pt-6 sm:pb-28 lg:pt-8 lg:pb-36">
+          <div className={CLASSES.container}>
+            <AnimatedSection animation="fadeInUp" className="mb-12">
+              <div className="flex items-center gap-4">
+                <div className="hidden sm:block h-px bg-kerna-beige/20 w-16 lg:w-24"></div>
+                <p className="text-fluid-base sm:text-fluid-lg lg:text-fluid-xl font-display font-medium text-kerna-beige/70 tracking-wide uppercase">
+                  Advised by the top scientific minds in genetic medicine
+                </p>
+                <div className="hidden sm:block h-px bg-kerna-beige/20 flex-1"></div>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <div className="relative">
+            <div 
+              ref={advisorsCarousel.carouselRef}
+              className="overflow-x-auto overflow-y-hidden hide-scrollbar no-select cursor-grab active:cursor-grabbing pl-carousel pr-4"
+              onMouseDown={advisorsCarousel.handleMouseDown}
+              onMouseLeave={advisorsCarousel.handleMouseLeave}
+              onMouseUp={advisorsCarousel.handleMouseUp}
+              onMouseMove={advisorsCarousel.handleMouseMove}
+            >
+              <div className="flex gap-4 pb-2">
+                {advisors.map((member, idx) => (
+                  <TeamCard
+                    key={idx}
+                    member={member}
+                    delay={idx * 30}
+                  />
+                ))}
+                <div className="w-[calc((100vw-1280px)/2)] flex-none" aria-hidden="true" />
+              </div>
+            </div>
+
+            {/* Navigation arrows - positioned absolutely */}
+            <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none">
+              <div className={CLASSES.container}>
+                <div className="flex justify-between">
+                  <button 
+                    onClick={advisorsCarousel.scrollLeftFunc}
+                    disabled={!advisorsCarousel.canScrollLeft}
+                    className={`${CLASSES.carouselArrow} ${
+                      advisorsCarousel.canScrollLeft ? 'opacity-100 hover:bg-black/70' : 'opacity-30 cursor-not-allowed'
+                    }`}
+                  >
+                    <svg className="w-6 h-6 text-white rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <button 
+                    onClick={advisorsCarousel.scrollRightFunc}
+                    disabled={!advisorsCarousel.canScrollRight}
+                    className={`${CLASSES.carouselArrow} ${
+                      advisorsCarousel.canScrollRight ? 'opacity-100 hover:bg-black/70' : 'opacity-30 cursor-not-allowed'
+                    }`}
+                  >
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         
         {/* Team Banner */}
-        <AnimatedSection animation="fadeIn" threshold={0.9}>
+        <AnimatedSection animation="fadeIn" threshold={0.1}>
           <div className="bg-kerna-beige">
             <div className={`${CLASSES.container} py-12 sm:py-16 lg:py-20`}>
             <div className="text-center">
               <AnimatedSection animation="fadeInUp" delay={0}>
-                <h3 className="text-fluid-lg sm:text-fluid-2xl md:text-fluid-3xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
+                <h3 className="text-fluid-lg sm:text-fluid-xl md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
                   Built by a world-class team
                 </h3>
               </AnimatedSection>
@@ -367,7 +440,7 @@ const LandingPage = ({ contentReady = true }) => {
               </AnimatedSection>
               
               <AnimatedSection animation="fadeInUp" delay={200}>
-                <h3 className="text-fluid-lg sm:text-fluid-2xl md:text-fluid-3xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
+                <h3 className="text-fluid-lg sm:text-fluid-xl md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
                   Backed by visionary partners
                 </h3>
               </AnimatedSection>
@@ -432,10 +505,10 @@ const LandingPage = ({ contentReady = true }) => {
       </section> */}
 
       {/* Section 6: Media & Publications */}
-      <section id="media" className="py-24 sm:py-32 lg:py-40">
+      <section id="media" className="py-20 sm:py-28 lg:py-36">
         <div className={CLASSES.container}>
           {/* Heading and Intro */}
-          <AnimatedSection animation="fadeInUp" className="mb-16">
+          <AnimatedSection animation="fadeInUp" className="mb-12">
             <h2 className={CLASSES.sectionHeading}>
               <StaggeredText 
                 text="Media & Publications" 
@@ -458,32 +531,32 @@ const LandingPage = ({ contentReady = true }) => {
           {/* Media List */}
           <div className="space-y-6">
             {mediaArticles.map((article, idx) => (
-              <AnimatedSection key={idx} animation="fadeInUp" delay={50 + idx * 50}>
-                <MediaCard 
-                  href={article.href}
-                  logo={article.logo}
-                  date={article.date}
-                  title={article.title}
-                  description={article.description}
-                  isPublication={article.isPublication}
-                />
-              </AnimatedSection>
+              <MediaCard 
+                key={idx}
+                href={article.href}
+                logo={article.logo}
+                date={article.date}
+                title={article.title}
+                description={article.description}
+                isPublication={article.isPublication}
+                delay={50 + idx * 50}
+              />
             ))}
           </div>
         </div>
       </section>
 
       {/* Join Us Section */}
-      <AnimatedSection animation="fadeIn" threshold={0.2}>
+      <AnimatedSection animation="fadeIn" threshold={0.05}>
         <section id="contact" className="bg-kerna-red relative">
           
           <div className="container mx-auto px-4">
-            <div className="relative mx-auto px-4 py-20 sm:py-24 lg:py-32 ml-12 lg:ml-24">
+            <div className="relative mx-auto px-4 py-16 sm:py-20 lg:py-28 ml-12 lg:ml-24">
               <div className="absolute left-[-2rem] lg:left-[-3rem] top-8 bottom-8 w-0.5 bg-kerna-beige/60"></div>
 
               <AnimatedSection animation="slideUp" delay={100}>
                 <div>
-                  <h2 className="text-fluid-3xl sm:text-fluid-4xl font-display font-semibold tracking-display-normal text-kerna-beige mb-6 md:mb-8">
+                  <h2 className="text-fluid-2xl sm:text-fluid-3xl font-display font-semibold tracking-display-normal text-kerna-beige mb-6 md:mb-8">
                     Connect With Us
                   </h2>
                   <p className="text-fluid-lg font-body text-kerna-beige/80 mb-8">
@@ -511,7 +584,7 @@ const LandingPage = ({ contentReady = true }) => {
       {/* Footer */}
       <AnimatedSection animation="fadeIn" threshold={0.1}>
         <footer 
-          className="h-[30vh] relative flex flex-col"
+          className="min-h-[30vh] relative flex flex-col py-12 sm:py-16 lg:py-20"
           style={{ 
             background: `linear-gradient(to bottom, 
               rgba(0, 0, 0, 0.9) 0%, 
@@ -520,23 +593,23 @@ const LandingPage = ({ contentReady = true }) => {
             )`
           }}
         >
-          <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between container mx-auto px-4">
+          <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between container mx-auto px-4 gap-8 lg:gap-12">
             {/* Left side - Leaf logo and social links */}
-            <AnimatedSection animation="fadeInUp" delay={50} className="flex flex-col items-center my-8">
-              <img src="/icons/KernaLeaf.svg" alt="Kerna Leaf" className="w-24 h-auto mb-6 select-none" />
-              <div className="flex justify-center gap-6">
-                <a href="https://twitter.com/KernaLabs" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300">
-                  <img src="/icons/XIcon.svg" alt="Twitter/X" className="w-6 h-6" />
+            <AnimatedSection animation="fadeInUp" delay={50} className="flex flex-col items-center">
+              <img src="/icons/KernaLeaf.svg" alt="Kerna Leaf" className="w-20 sm:w-24 h-auto mb-4 sm:mb-6 select-none" />
+              <div className="flex justify-center gap-4 sm:gap-6">
+                <a href="https://twitter.com/KernaLabs" target="_blank" rel="noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300">
+                  <img src="/icons/XIcon.svg" alt="Twitter/X" className="w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
-                <a href="https://linkedin.com/company/kernalabs" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300">
-                  <img src="/icons/LinkedInIcon.svg" alt="LinkedIn" className="w-6 h-6" />
+                <a href="https://linkedin.com/company/kernalabs" target="_blank" rel="noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300">
+                  <img src="/icons/LinkedInIcon.svg" alt="LinkedIn" className="w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
               </div>
             </AnimatedSection>
 
             {/* Right side - Text logo and copyright */}
             <AnimatedSection animation="fadeIn" delay={150} className="text-center lg:text-right lg:w-[70%]">
-              <img src="/icons/TextOnlyLogo.svg" alt="Kerna Labs" className="mx-auto lg:ml-auto lg:mr-0 mb-4 w-full max-w-md lg:max-w-none h-auto opacity-10 select-none" />
+              <img src="/icons/TextOnlyLogo.svg" alt="Kerna Labs" className="mx-auto lg:ml-auto lg:mr-0 mb-2 sm:mb-4 w-full max-w-[280px] sm:max-w-md lg:max-w-none h-auto opacity-10 select-none" />
               <p className="text-kerna-beige text-fluid-sm font-body">
                 © 2025 Kerna Labs
               </p>

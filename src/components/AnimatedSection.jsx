@@ -8,7 +8,7 @@ const AnimatedSection = ({
   threshold = 0.1,
   className = '',
   once = false,
-  rootMargin = '-20px',
+  rootMargin = '50px',
   duration = 500,
   ...props 
 }) => {

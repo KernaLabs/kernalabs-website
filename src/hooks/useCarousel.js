@@ -34,8 +34,17 @@ const useCarousel = () => {
   const scrollLeftFunc = useCallback(() => {
     if (!carouselRef.current) return;
     const cardWidth = 320 + 16; // card width + gap
+    
+    // Responsive scroll amount based on screen width
+    let scrollCount = 3; // Default for desktop
+    if (window.innerWidth < 768) {
+      scrollCount = 1; // Mobile: scroll 1 card at a time
+    } else if (window.innerWidth < 1024) {
+      scrollCount = 2; // Tablet: scroll 2 cards at a time
+    }
+    
     carouselRef.current.scrollBy({
-      left: -cardWidth * 3,
+      left: -cardWidth * scrollCount,
       behavior: 'smooth'
     });
   }, []);
@@ -43,8 +52,17 @@ const useCarousel = () => {
   const scrollRightFunc = useCallback(() => {
     if (!carouselRef.current) return;
     const cardWidth = 320 + 16; // card width + gap
+    
+    // Responsive scroll amount based on screen width
+    let scrollCount = 3; // Default for desktop
+    if (window.innerWidth < 768) {
+      scrollCount = 1; // Mobile: scroll 1 card at a time
+    } else if (window.innerWidth < 1024) {
+      scrollCount = 2; // Tablet: scroll 2 cards at a time
+    }
+    
     carouselRef.current.scrollBy({
-      left: cardWidth * 3,
+      left: cardWidth * scrollCount,
       behavior: 'smooth'
     });
   }, []);

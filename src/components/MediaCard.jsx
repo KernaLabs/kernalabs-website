@@ -1,12 +1,13 @@
 import React from 'react';
+import AnimatedSection from './AnimatedSection';
 
-const MediaCard = ({ href, logo, date, title, description, isPublication }) => {
+const MediaCard = ({ href, logo, date, title, description, isPublication, delay = 0 }) => {
   return (
     <a 
       href={href}
       target="_blank" 
       rel="noopener noreferrer"
-      className={`group block relative ${isPublication ? 'bg-gradient-to-br from-black/10 to-black/20 border-white/5 hover:border-white/15' : 'bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 border-kerna-beige/10 hover:border-kerna-beige/20'} backdrop-blur-md border transition-all duration-300 overflow-hidden shadow-lg hover:shadow-xl hover:transform hover:-translate-y-1`}
+      className={`group block relative ${isPublication ? 'bg-gradient-to-br from-black/10 to-black/20 border-white/5 hover:border-white/15' : 'bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 border-kerna-beige/10 hover:border-kerna-beige/20'} backdrop-blur-md border transition-[border-color,box-shadow,transform] duration-300 overflow-hidden shadow-lg hover:shadow-xl hover:transform hover:-translate-y-1`}
     >
       <div className="absolute top-8 right-8 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
         <img 
@@ -15,7 +16,7 @@ const MediaCard = ({ href, logo, date, title, description, isPublication }) => {
           className="w-full h-full"
         />
       </div>
-      <div className="p-10 lg:p-12">
+      <AnimatedSection animation="fadeInUp" delay={delay} className="p-10 lg:p-12">
         <div className="flex flex-col lg:flex-row lg:items-start gap-8">
           <div className="flex-shrink-0 lg:w-48">
             <div className="h-12 mb-3 flex items-center">
@@ -43,7 +44,7 @@ const MediaCard = ({ href, logo, date, title, description, isPublication }) => {
             </p>
           </div>
         </div>
-      </div>
+      </AnimatedSection>
     </a>
   );
 };

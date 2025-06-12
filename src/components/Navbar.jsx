@@ -10,16 +10,46 @@ const Navbar = () => {
     // Trigger load animations
     const timer = setTimeout(() => setIsLoaded(true), 100);
 
-    // Handle scroll effects
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    let observer = null;
+    
+    // Set up scroll detection for the custom scrolling container
+    const setupScrollDetection = () => {
+      const scrollContainer = document.getElementById('landing-page-container');
+      const sentinel = document.getElementById('navbar-scroll-sentinel');
+      
+      if (scrollContainer && sentinel) {
+        // Force initial transparent state
+        setScrolled(false);
+        
+        // Set up Intersection Observer with the scroll container as root
+        observer = new IntersectionObserver(
+          ([entry]) => {
+            // When the sentinel is intersecting (at top), navbar should be transparent
+            // When the sentinel is not intersecting (scrolled past), navbar should be opaque
+            setScrolled(!entry.isIntersecting);
+          },
+          {
+            root: scrollContainer,
+            threshold: 0,
+            rootMargin: '50px 0px 0px 0px' // Trigger when 50px from top
+          }
+        );
+
+        observer.observe(sentinel);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    // Small delay to ensure DOM is ready
+    const setupTimer = setTimeout(setupScrollDetection, 100);
+
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(setupTimer);
+      if (observer) {
+        observer.disconnect();
+      }
     };
+    
   }, []);
 
   const handleNavClick = (e, sectionId) => {

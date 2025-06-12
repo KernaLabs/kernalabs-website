@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const InstitutionLogo = ({ logo, name }) => {
+const InstitutionLogo = ({ logo, name, size = 1.0, groupScale = 1.0 }) => {
   const [aspectRatio, setAspectRatio] = useState(1.5);
   
   const handleImageLoad = (e) => {
@@ -10,21 +10,39 @@ const InstitutionLogo = ({ logo, name }) => {
     }
   };
   
-  // Determine size class based on aspect ratio
-  let sizeClass = "h-7 max-w-[80px]"; // default for normal logos
+  // Calculate final size multiplier
+  const finalScale = size * groupScale;
+  
+  // Determine base sizes based on aspect ratio
+  let baseHeight = 28; // 7 * 4 (h-7 in pixels)
+  let baseMaxWidth = 80;
+  
   if (aspectRatio < 1.2) {
     // Square-ish logos (like UMC) get bigger height
-    sizeClass = "h-9 max-w-[90px]";
-  } else if (aspectRatio > 2.5) {
+    baseHeight = 36; // 9 * 4 (h-9 in pixels)
+    baseMaxWidth = 90;
+  } else if (aspectRatio > 4) {
     // Wide logos (like OSU) get more horizontal space
-    sizeClass = "h-7 max-w-[120px]";
+    baseHeight = 28;
+    baseMaxWidth = 120;
   }
+  
+  // Apply scaling
+  const finalHeight = Math.round(baseHeight * finalScale);
+  const finalMaxWidth = Math.round(baseMaxWidth * finalScale);
+  
+  // Create inline style for precise sizing
+  const logoStyle = {
+    height: `${finalHeight}px`,
+    maxWidth: `${finalMaxWidth}px`
+  };
   
   return (
     <img
       src={logo}
       alt={name}
-      className={`${sizeClass} w-auto object-contain grayscale invert opacity-90 hover:opacity-100 transition-opacity duration-200 select-none pointer-events-none`}
+      className="w-auto object-contain grayscale brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-200 select-none pointer-events-none"
+      style={logoStyle}
       onLoad={handleImageLoad}
       loading="lazy"
       draggable={false}

@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
+import InstitutionLogo from './InstitutionLogo';
 
 const MediaCard = ({ href, logo, date, title, description, isPublication, delay = 0 }) => {
   return (
@@ -18,12 +19,12 @@ const MediaCard = ({ href, logo, date, title, description, isPublication, delay 
       </div>
       <AnimatedSection animation="fadeInUp" delay={delay} className="p-10 lg:p-12">
         <div className="flex flex-col lg:flex-row lg:items-start gap-8">
-          <div className="flex-shrink-0 lg:w-48">
-            <div className="h-12 mb-3 flex items-center">
-              <img 
-                src={logo}
-                alt=""
-                className="h-10 w-auto object-contain opacity-90 grayscale invert brightness-110 contrast-125 transition-all duration-300 group-hover:opacity-100 group-hover:brightness-125"
+          <div className="flex-shrink-0 lg:w-64">
+            <div className="h-10 mb-3 flex items-center">
+              <InstitutionLogo 
+                logo={logo} 
+                name=""
+                size="media"
               />
             </div>
             <span className={`inline-block px-3 py-1 text-xs font-body font-medium uppercase tracking-wider rounded-full ${

@@ -1,49 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { logoConfig, defaultLogoConfig } from '../config/logoConfig';
 
-const InstitutionLogo = ({ logo, name, size = 1.0, groupScale = 1.0 }) => {
-  const [aspectRatio, setAspectRatio] = useState(1.5);
+const InstitutionLogo = ({ logo, name, size = 'default' }) => {
+  // Extract filename from path
+  const filename = logo.split('/').pop();
   
-  const handleImageLoad = (e) => {
-    const { naturalWidth, naturalHeight } = e.target;
-    if (naturalHeight > 0) {
-      setAspectRatio(naturalWidth / naturalHeight);
+  // Get configuration for this specific logo
+  const config = logoConfig[filename] || defaultLogoConfig;
+  
+  // Apply scale factor if provided (default to 1.0)
+  const scale = config.scale || 1.0;
+  
+  // Check if logo should be inverted
+  const shouldInvert = config.invert || false;
+  
+  // Size presets for different contexts
+  const sizePresets = {
+    default: {
+      height: `${config.height * scale}px`,
+      maxWidth: `${config.maxWidth * scale}px`
+    },
+    media: {
+      height: '40px',
+      maxWidth: '200px'
+    },
+    team: {
+      height: 'auto',
+      maxHeight: '36px',
+      width: 'auto',
+      minWidth: '60px',
+      maxWidth: '90px',
+      objectFit: 'contain'
     }
   };
   
-  // Calculate final size multiplier
-  const finalScale = size * groupScale;
+  // Get the appropriate style based on size prop
+  const logoStyle = sizePresets[size] || sizePresets.default;
   
-  // Determine base sizes based on aspect ratio
-  let baseHeight = 28; // 7 * 4 (h-7 in pixels)
-  let baseMaxWidth = 80;
-  
-  if (aspectRatio < 1.2) {
-    // Square-ish logos (like UMC) get bigger height
-    baseHeight = 36; // 9 * 4 (h-9 in pixels)
-    baseMaxWidth = 90;
-  } else if (aspectRatio > 4) {
-    // Wide logos (like OSU) get more horizontal space
-    baseHeight = 28;
-    baseMaxWidth = 120;
-  }
-  
-  // Apply scaling
-  const finalHeight = Math.round(baseHeight * finalScale);
-  const finalMaxWidth = Math.round(baseMaxWidth * finalScale);
-  
-  // Create inline style for precise sizing
-  const logoStyle = {
-    height: `${finalHeight}px`,
-    maxWidth: `${finalMaxWidth}px`
-  };
+  // Build className with conditional invert
+  const className = `w-auto object-contain ${shouldInvert ? 'invert' : ''} opacity-90 hover:opacity-100 transition-opacity duration-200 select-none pointer-events-none`;
   
   return (
     <img
       src={logo}
       alt={name}
-      className="w-auto object-contain grayscale brightness-0 invert opacity-90 hover:opacity-100 transition-opacity duration-200 select-none pointer-events-none"
+      className={className}
       style={logoStyle}
-      onLoad={handleImageLoad}
       loading="lazy"
       draggable={false}
     />

@@ -10,9 +10,9 @@ export const coreTeam = [
       'PhD Machine Learning @ University of Toronto',
     ],
     institutions: [
-      { name: 'Deep Genomics', logo: '/logos/dg-logo.png', size: 1.5 },
-      { name: 'Google', logo: '/logos/google-text-logo.png', size: 0.8 },
-      { name: 'University of Toronto', logo: '/logos/uoft-text-logo.png', size: 1.0 },
+      { name: 'Deep Genomics', logo: '/logos/dg-logo.png'},
+      { name: 'Google', logo: '/logos/google-text-logo.png'},
+      { name: 'University of Toronto', logo: '/logos/uoft-text-logo.png'},
     ]
   },
   {
@@ -29,10 +29,12 @@ export const coreTeam = [
       'PhD Biological Chemistry @ MIT',
     ],
     institutions: [
-      { name: 'RNA Therapeutics Institute', logo: '/logos/rnati-logo.png', size: 1.2 },
-      { name: 'UMass Medical', logo: '/logos/umc-text-logo.png', size: 1.3 },
-      { name: 'Moderna', logo: '/logos/moderna-text-logo.png', size: 1.2 },
-      { name: 'National Academy of Sciences', logo: '/logos/nas-text-logo.png', size: 1.3 },
+      { name: 'RNA Therapeutics Institute', logo: '/logos/rnati-logo.png'},
+      { name: 'UMass Medical', logo: '/logos/umc-text-logo.png'},
+      { name: 'Moderna', logo: '/logos/moderna-text-logo.png'},
+      { name: 'National Academy of Sciences', logo: '/logos/nas-text-logo.png'},
+      { name: 'Tessera', logo: '/logos/tessera-text-logo.png'},
+      { name: 'nChroma', logo: '/logos/nchroma-text-logo.png'},
     ]
   },
   {
@@ -46,9 +48,9 @@ export const coreTeam = [
       'BSc Economics @ The Wharton School',
     ],
     institutions: [
-      { name: 'Wharton', logo: '/logos/wharton-text-logo.png', size:1 },
-      { name: 'Confluent', logo: '/logos/confluent-text-logo.png', size: 1 },
-      { name: 'JP Morgan', logo: '/logos/jpm-logo.png', size:0.75 }
+      { name: 'Wharton', logo: '/logos/wharton-text-logo.png'},
+      { name: 'Confluent', logo: '/logos/confluent-text-logo.png'},
+      { name: 'JP Morgan', logo: '/logos/jpm-logo.png'}
     ]
   },
   {
@@ -63,8 +65,8 @@ export const coreTeam = [
       'PhD Systems Biology @ Stanford University',
     ],
     institutions: [
-      { name: 'Stanford', logo: '/logos/stanford-text-logo.png', size:1.1 },
-      { name: 'Longitude Capital', logo: '/logos/longitude-text-logo.png', size:1.2 },
+      { name: 'Stanford', logo: '/logos/stanford-text-logo.png'},
+      { name: 'Longitude Capital', logo: '/logos/longitude-text-logo.png'},
       { name: 'miRagen', logo: '/logos/mgen-logo.png' }
     ]
   },
@@ -81,28 +83,10 @@ export const coreTeam = [
       'Spearheaded a genome organization platform integrating CRISPR, optogenetics, and genomic imaging',
     ],
     institutions: [
-      { name: 'Princeton', logo: '/logos/princeton-text-logo.png', size:0.9 },
-      { name: 'ODBI', logo: '/logos/odi-text-logo.png', size:1.1 }
+      { name: 'Princeton', logo: '/logos/princeton-text-logo.png'},
+      { name: 'ODBI', logo: '/logos/odi-text-logo.png'}
     ]
   },
-  // {
-  //   name: 'Aaron Mazel-Gee, PhD',
-  //   position: 'Machine Learning Engineer',
-  //   image: '/team/Aaron Mazel-Gee.jpg',
-  //   description: [
-  //     'Assistant Professor of Mathematics @ USC (2017-2024), specializing in ∞-category theory & homotopy',
-  //     'Author of forthcoming textbook "Higher Algebra: Chapter 0" (Cambridge University Press)',
-  //     'PI on NSF-funded grants; 20+ peer-reviewed papers in geometry & algebraic topology',
-  //     'Transitioned to AI in 2024; mechanistic-interpretability researcher @ Tilde → ML Engineer @ Kerna Labs',
-  //     'PhD Mathematics @ UC Berkeley; Post-doctoral fellow @ Caltech & Ohio State University',
-  //   ],
-  //   institutions: [
-  //     { name: 'Caltech', logo: '/logos/caltech-text-logo.png' },
-  //     { name: 'USC', logo: '/logos/usc-text-logo.png' },
-  //     { name: 'Ohio State University', logo: '/logos/osu-text-logo.png' },
-  //     { name: 'UC Berkeley', logo: '/logos/ucb-text-logo.png' }
-  //   ]
-  // },
   {
     name: 'Aryan Misra',
     position: 'Machine Learning',
@@ -115,6 +99,17 @@ export const coreTeam = [
     ],
     institutions: [
       { name: 'University of Toronto', logo: '/logos/uoft-text-logo.png' },
+    ]
+  },
+  {
+    name: 'Parsa Idehpour, MSE',
+    position: 'Machine Learning',
+    image: '/team/Parsa Idehpour.jpeg',
+    description: [
+      'MSE Robotics and AI @ University of Pennsylvania',
+    ],
+    institutions: [
+      { name: 'University of Pennsylvania', logo: '/logos/upenn-text-logo.png' },
     ]
   },
 ];
@@ -133,11 +128,11 @@ export const advisors = [
       'MD University of Chicago; MS Epidemiology & Nephrology fellowship @ University of Washington',
     ],
     institutions: [
-      { name: 'Chroma Medicine', logo: '/logos/choma-text-logo.png', size: 0.85 },
-      { name: 'Dyne Therapeutics', logo: '/logos/dyne-text-logo.png', size: 0.7 },
-      { name: 'Amgen', logo: '/logos/amgen-text-logo.png', size: 0.6 },
-      { name: 'Regeneron', logo: '/logos/regeneron-text-logo.png', size: 0.8 },
-      { name: 'Sarepta Therapeutics', logo: '/logos/sarepta-text-logo.png', size: 1.1 },
+      { name: 'nChroma', logo: '/logos/nchroma-text-logo.png'},
+      { name: 'Dyne Therapeutics', logo: '/logos/dyne-text-logo.png'},
+      { name: 'Amgen', logo: '/logos/amgen-text-logo.png'},
+      { name: 'Regeneron', logo: '/logos/regeneron-text-logo.png'},
+      { name: 'Sarepta Therapeutics', logo: '/logos/sarepta-text-logo.png'},
     ]
   },
   {
@@ -151,9 +146,9 @@ export const advisors = [
       'PhD Stem-Cell Biology @ UCSF (NSF Center for Cellular Construction)',
     ],
     institutions: [
-      { name: 'NewLimit', logo: '/logos/newlimit-text-logo.png', size: 1.2 },
-      { name: 'Calico Life Sciences', logo: '/logos/calico-text-logo.png', size: 0.8 },
-      { name: 'UCSF', logo: '/logos/ucsf-text-logo.png', size: 0.8 },
+      { name: 'NewLimit', logo: '/logos/newlimit-text-logo.png'},
+      { name: 'Calico Life Sciences', logo: '/logos/calico-text-logo.png'},
+      { name: 'UCSF', logo: '/logos/ucsf-text-logo.png'},
     ]
   },
   {
@@ -168,8 +163,8 @@ export const advisors = [
       'PhD Biochemistry @ Brown University; Post-doc @ Duke University Medical Center',
     ],
     institutions: [
-      { name: 'HHMI', logo: '/logos/hhmi-text-logo.png', size: 0.7 },
-      { name: 'UMass Medical', logo: '/logos/umc-text-logo.png', size:1 },
+      { name: 'HHMI', logo: '/logos/hhmi-text-logo.png'},
+      { name: 'UMass Medical', logo: '/logos/umc-text-logo.png'},
     ]
   },
   {
@@ -183,7 +178,7 @@ export const advisors = [
       'MD & MSc Molecular Biology @ Universidad Nacional Autónoma de México; former faculty @ UPenn',
     ],
     institutions: [
-      { name: 'University of Pennsylvania', logo: '/logos/upenn-text-logo.png', size:0.85 },
+      { name: 'University of Pennsylvania', logo: '/logos/upenn-text-logo.png'},
       { name: 'UMass Medical', logo: '/logos/umc-text-logo.png' },
     ]
   },
@@ -199,7 +194,7 @@ export const advisors = [
     ],
     institutions: [
       { name: 'Stanford', logo: '/logos/stanford-text-logo.png' },
-      { name: 'UCLA', logo: '/logos/ucla-text-logo.png', size:0.7 },
+      { name: 'UCLA', logo: '/logos/ucla-text-logo.png'},
     ]
   },
 ];

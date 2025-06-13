@@ -26,10 +26,9 @@ const InstitutionLogo = ({ logo, name, size = 'default' }) => {
     },
     team: {
       height: 'auto',
-      maxHeight: '36px',
+      maxHeight: `${config.height * scale * 0.925}px`,
       width: 'auto',
-      minWidth: '60px',
-      maxWidth: '90px',
+      maxWidth: `${Math.min(config.maxWidth * scale * 0.925, 78)}px`,
       objectFit: 'contain'
     }
   };

@@ -38,13 +38,13 @@ const TeamCard = ({ member, delay = 0 }) => {
           {member.institutions && member.institutions.length > 0 && (
             <div className="mt-auto" aria-label="Affiliated institutions">
               <div className="min-h-[80px] flex items-center justify-center w-full">
-                <div className="flex flex-wrap justify-center items-center gap-3 w-full">
+                <div className="flex flex-wrap justify-center items-center gap-3 w-full max-w-[260px]">
                   {member.institutions.map((institution, idx) => (
-                    <div key={idx} className="flex-shrink-0 flex-grow-0 basis-auto">
+                    <div key={idx} className="flex justify-center items-center">
                       <InstitutionLogo
                         logo={institution.logo}
                         name={institution.name}
-                        size="default"
+                        size="team"
                       />
                     </div>
                   ))}

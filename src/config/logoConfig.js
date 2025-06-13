@@ -9,7 +9,7 @@ export const logoConfig = {
   'osu-text-logo.png': { height: 14, maxWidth: 93 },        // 2560x384 (6.67:1)
   'gradient-logo.png': { height: 14, maxWidth: 89 },        // 5000x785 (6.37:1)
   'pioneer-logo.png': { height: 18, maxWidth: 77, invert: true },         // 5700x1337 (4.26:1)
-  'confluent-text-logo.png': { height: 20, maxWidth: 123 },  // 1206x196 (6.15:1)
+  'confluent-text-logo.png': { height: 20, maxWidth: 123, scale: 1.15 },  // 1206x196 (6.15:1)
   'endpoint-text-logo.png': { height: 18, maxWidth: 86, invert: true },    // 760x160 (4.75:1)
   'regeneron-text-logo.png': { height: 18, maxWidth: 90 },   // 860x171 (5.03:1)
   'tau-logo.png': { height: 20, maxWidth: 80, scale: 1.15 },             // 400x100 (4.00:1) - scaled up
@@ -21,16 +21,16 @@ export const logoConfig = {
   'amgen-text-logo.png': { height: 18, maxWidth: 70 },       // 2560x655 (3.91:1)
   'mgen-logo.png': { height: 20, maxWidth: 79 },            // 1478x375 (3.94:1)
   'longitude-text-logo.png': { height: 26, maxWidth: 96 },   // 435x118 (3.69:1)
-  'odi-text-logo.png': { height: 22, maxWidth: 80, scale: 1.2 },        // 677x186 (3.64:1)
+  'odi-text-logo.png': { height: 22, maxWidth: 80, scale: 1.3 },        // 677x186 (3.64:1)
   'stanford-text-logo.png': { height: 28, maxWidth: 100, invert: true },    // 510x142 (3.59:1)
   'newlimit-text-logo.png': { height: 24, maxWidth: 85 },    // 288x81 (3.56:1)
-  'calico-text-logo.png': { height: 20, maxWidth: 74 },     // 479x130 (3.68:1)
+  'calico-text-logo.png': { height: 20, maxWidth: 74, scale: 0.85 },     // 479x130 (3.68:1)
   
   // STANDARD WIDE (aspect ratio 3.0-3.5)
   'princeton-text-logo.png': { height: 24, maxWidth: 84, invert: true },   // 1901x543 (3.50:1)
   'asbmb-text-logo.png': { height: 20, maxWidth: 68 },      // 876x256 (3.42:1)
   'nature-text-logo.png': { height: 18, maxWidth: 73 },     // 1200x294 (4.08:1)
-  'hhmi-text-logo.png': { height: 24, maxWidth: 80 },       // 1998x600 (3.33:1)
+  'hhmi-text-logo.png': { height: 24, maxWidth: 80, scale: 0.85 },       // 1998x600 (3.33:1)
   'science-logo.png': { height: 20, maxWidth: 73, invert: true },         // 1200x330 (3.64:1)
   'usc-text-logo.png': { height: 20, maxWidth: 65, invert: true },        // 1000x309 (3.24:1)
   'humba-logo.png': { height: 20, maxWidth: 62, scale: 1.2, invert: true },           // 1920x618 (3.11:1) - scaled up
@@ -43,12 +43,12 @@ export const logoConfig = {
   
   // MEDIUM ASPECT (2.5-3.0)
   'google-text-logo.png': { height: 24, maxWidth: 71 },     // 1200x406 (2.96:1)
-  'upenn-text-logo.png': { height: 32, maxWidth: 92, invert: true },      // 1450x507 (2.86:1)
+  'upenn-text-logo.png': { height: 32, maxWidth: 92, scale: 0.9, invert: true },      // 1450x507 (2.86:1)
   'uoft-text-logo.png': { height: 32, maxWidth: 90, invert: true },       // 2309x821 (2.81:1)
   'rnati-logo.png': { height: 36, maxWidth: 97 },           // 822x304 (2.70:1)
   'pnas-logo.png': { height: 20, maxWidth: 54 },            // 1024x379 (2.70:1)
   'sarepta-text-logo.png': { height: 32, maxWidth: 85, invert: true },    // 812x307 (2.64:1)
-  'ucla-text-logo.png': { height: 22, maxWidth: 58},       // 1048x398 (2.63:1)
+  'ucla-text-logo.png': { height: 22, maxWidth: 58, scale: 0.85},       // 1048x398 (2.63:1)
   
   // COMPACT ASPECT (< 2.5) but actually wide
   'jpm-logo.png': { height: 18, maxWidth: 88, invert: true },             // 2400x493 (4.87:1)
@@ -57,12 +57,12 @@ export const logoConfig = {
   'caltech-text-logo.png': { height: 20, maxWidth: 82 },    // 1524x373 (4.09:1)
   
   // COMPACT ASPECT
-  'ucsf-text-logo.png': { height: 24, maxWidth: 49 },       // 2560x1249 (2.05:1)
+  'ucsf-text-logo.png': { height: 24, maxWidth: 49, scale: 0.85 },       // 2560x1249 (2.05:1)
   'dg-logo.png': { height: 44, maxWidth: 88, scale: 1.2 },              // 1024x512 (2.00:1)
   'mcmaster-text-logo.png': { height: 20, maxWidth: 36 },   // 1200x665 (1.80:1)
   
   // SQUARE-ISH
-  'umc-text-logo.png': { height: 40, maxWidth: 53, invert: false },        // 2701x2053 (1.32:1)
+  'umc-text-logo.png': { height: 40, maxWidth: 53, scale: 0.9, invert: false },        // 2701x2053 (1.32:1)
   'nas-text-logo.png': { height: 40, maxWidth: 48, invert: true },        // 1200x996 (1.20:1)
 };
 

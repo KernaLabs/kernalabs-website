@@ -109,6 +109,8 @@ const LandingPage = ({ contentReady = true }) => {
   const teamCarousel = useCarousel();
   const advisorsCarousel = useCarousel();
   
+  console.log('[LandingPage] Component rendered');
+  
   return (
     <div
       id="landing-page-container"
@@ -552,7 +554,7 @@ const LandingPage = ({ contentReady = true }) => {
           
           <div className="container mx-auto px-4">
             <div className="relative mx-auto px-4 py-16 sm:py-20 lg:py-28 ml-12 lg:ml-24">
-              <div className="absolute left-[-2rem] lg:left-[-3rem] top-8 bottom-8 w-0.5 bg-kerna-beige/60"></div>
+              <div className="absolute left-[-2rem] lg:left-[-3rem] top-8 bottom-0 w-0.5 bg-kerna-beige/60"></div>
 
               <AnimatedSection animation="slideUp" delay={100}>
                 <div>

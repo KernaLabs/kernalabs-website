@@ -296,12 +296,13 @@ const LandingPage = ({ contentReady = true }) => {
         <section id="team" className="pt-20 pb-8 sm:pt-28 sm:pb-10 lg:pt-36 lg:pb-12">
           <div className={CLASSES.container}>
             <AnimatedSection animation="fadeInUp" className="mb-12">
-              <h2 className={CLASSES.sectionHeading}>
-                Meet Our Team
-              </h2>
-              <p className={CLASSES.sectionDescription}>
-                Built and backed by the leading minds in machine learning and mRNA.
-              </p>
+              <div className="flex items-center gap-4">
+                <div className="hidden sm:block h-px bg-kerna-beige/20 w-16 lg:w-24"></div>
+                <p className="text-fluid-base sm:text-fluid-lg lg:text-fluid-xl font-display font-medium text-kerna-beige/70 tracking-wide uppercase">
+                  Built by the leading minds in machine learning and RNA
+                </p>
+                <div className="hidden sm:block h-px bg-kerna-beige/20 flex-1"></div>
+              </div>
             </AnimatedSection>
           </div>
 
@@ -322,7 +323,7 @@ const LandingPage = ({ contentReady = true }) => {
                     delay={idx * 30}
                   />
                 ))}
-                <div className="w-[calc((100vw-1280px)/2)] flex-none" aria-hidden="true" />
+                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert />
               </div>
             </div>
 
@@ -389,7 +390,7 @@ const LandingPage = ({ contentReady = true }) => {
                     delay={idx * 30}
                   />
                 ))}
-                <div className="w-[calc((100vw-1280px)/2)] flex-none" aria-hidden="true" />
+                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert />
               </div>
             </div>
 

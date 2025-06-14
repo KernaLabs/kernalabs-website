@@ -16,10 +16,13 @@ const Navbar = () => {
     }, 100);
 
     let observer = null;
+    let retryInterval = null;
+    let retryCount = 0;
+    const maxRetries = 50; // 5 seconds max (50 * 100ms)
     
     // Set up scroll detection for the custom scrolling container
     const setupScrollDetection = () => {
-      console.log('[Navbar] setupScrollDetection called');
+      console.log('[Navbar] setupScrollDetection called (attempt #' + (retryCount + 1) + ')');
       
       const scrollContainer = document.getElementById('landing-page-container');
       const sentinel = document.getElementById('navbar-scroll-sentinel');
@@ -56,27 +59,46 @@ const Navbar = () => {
 
           observer.observe(sentinel);
           console.log('[Navbar] Observer created and observing sentinel');
+          return true; // Success
         } catch (error) {
           console.error('[Navbar] Error creating IntersectionObserver:', error);
+          return false;
         }
       } else {
-        console.warn('[Navbar] Could not find required elements:');
+        console.warn('[Navbar] Elements not found yet:');
         console.warn('[Navbar] - scrollContainer:', scrollContainer);
         console.warn('[Navbar] - sentinel:', sentinel);
+        return false; // Not found yet
       }
     };
 
-    // Small delay to ensure DOM is ready
-    console.log('[Navbar] Waiting 100ms before setting up scroll detection...');
-    const setupTimer = setTimeout(() => {
-      console.log('[Navbar] Timer fired, calling setupScrollDetection');
-      setupScrollDetection();
+    // Keep trying to set up scroll detection until elements exist
+    console.log('[Navbar] Starting retry interval to find elements...');
+    retryInterval = setInterval(() => {
+      retryCount++;
+      
+      if (setupScrollDetection()) {
+        // Success! Clear the interval
+        console.log('[Navbar] Successfully set up scroll detection after ' + retryCount + ' attempts');
+        clearInterval(retryInterval);
+        retryInterval = null;
+      } else if (retryCount >= maxRetries) {
+        // Give up after max retries
+        console.error('[Navbar] Max retries (' + maxRetries + ') reached, giving up on scroll detection');
+        clearInterval(retryInterval);
+        retryInterval = null;
+      }
     }, 100);
 
     return () => {
       console.log('[Navbar] Cleanup running');
       clearTimeout(timer);
-      clearTimeout(setupTimer);
+      
+      if (retryInterval) {
+        clearInterval(retryInterval);
+        console.log('[Navbar] Retry interval cleared');
+      }
+      
       if (observer) {
         observer.disconnect();
         console.log('[Navbar] Observer disconnected');

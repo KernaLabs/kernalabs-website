@@ -109,7 +109,7 @@ const LandingPage = ({ contentReady = true }) => {
   const teamCarousel = useCarousel();
   const advisorsCarousel = useCarousel();
   
-  console.log('[LandingPage] Component rendered');
+  // console.log('[LandingPage] Component rendered');
   
   return (
     <div
@@ -431,7 +431,7 @@ const LandingPage = ({ contentReady = true }) => {
             <div className={`${CLASSES.container} py-8 sm:py-10 lg:py-12`}>
             <div className="text-center">
               <AnimatedSection animation="fadeInUp" delay={0}>
-                <h3 className="text-fluid-sm sm:text-fluid-lg md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
+                <h3 className="text-fluid-md sm:text-fluid-lg md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
                   Built by a world-class team
                 </h3>
               </AnimatedSection>
@@ -442,7 +442,7 @@ const LandingPage = ({ contentReady = true }) => {
               </AnimatedSection>
               
               <AnimatedSection animation="fadeInUp" delay={200}>
-                <h3 className="text-fluid-sm sm:text-fluid-lg md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
+                <h3 className="text-fluid-md sm:text-fluid-lg md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
                   Backed by visionary partners
                 </h3>
               </AnimatedSection>

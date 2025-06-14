@@ -9,10 +9,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [contentReady, setContentReady] = useState(false);
 
-  console.log('[App] Component rendered');
+  // console.log('[App] Component rendered');
 
   useEffect(() => {
-    console.log('[App] useEffect running');
+    // console.log('[App] useEffect running');
     // Simulate minimum loading time for better UX
     const minimumLoadTime = 1500;
     const startTime = Date.now();
@@ -45,10 +45,10 @@ function App() {
       const remainingTime = Math.max(0, minimumLoadTime - elapsedTime);
       
       setTimeout(() => {
-        console.log('[App] Setting contentReady to true');
+        // console.log('[App] Setting contentReady to true');
         setContentReady(true);
         setTimeout(() => {
-          console.log('[App] Setting isLoading to false');
+          // console.log('[App] Setting isLoading to false');
           setIsLoading(false);
         }, 100);
       }, remainingTime);

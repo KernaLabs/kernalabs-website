@@ -7,11 +7,11 @@ const Navbar = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
-    console.log('[Navbar] Component mounted, useEffect running');
+    // console.log('[Navbar] Component mounted, useEffect running');
     
     // Trigger load animations
     const timer = setTimeout(() => {
-      console.log('[Navbar] Setting isLoaded to true');
+      // console.log('[Navbar] Setting isLoaded to true');
       setIsLoaded(true);
     }, 500);
 
@@ -22,16 +22,16 @@ const Navbar = () => {
     
     // Set up scroll detection for the custom scrolling container
     const setupScrollDetection = () => {
-      console.log('[Navbar] setupScrollDetection called (attempt #' + (retryCount + 1) + ')');
+      // console.log('[Navbar] setupScrollDetection called (attempt #' + (retryCount + 1) + ')');
       
       const scrollContainer = document.getElementById('landing-page-container');
       const sentinel = document.getElementById('navbar-scroll-sentinel');
       
-      console.log('[Navbar] scrollContainer found:', !!scrollContainer);
-      console.log('[Navbar] sentinel found:', !!sentinel);
+      // console.log('[Navbar] scrollContainer found:', !!scrollContainer);
+      // console.log('[Navbar] sentinel found:', !!sentinel);
       
       if (scrollContainer && sentinel) {
-        console.log('[Navbar] Both elements found, setting up observer');
+        // console.log('[Navbar] Both elements found, setting up observer');
         
         // Force initial transparent state
         setScrolled(false);
@@ -40,15 +40,15 @@ const Navbar = () => {
           // Set up Intersection Observer with the scroll container as root
           observer = new IntersectionObserver(
             ([entry]) => {
-              console.log('[Navbar] Intersection callback fired');
-              console.log('[Navbar] entry.isIntersecting:', entry.isIntersecting);
-              console.log('[Navbar] entry.intersectionRatio:', entry.intersectionRatio);
-              console.log('[Navbar] entry.boundingClientRect:', entry.boundingClientRect);
+              // console.log('[Navbar] Intersection callback fired');
+              // console.log('[Navbar] entry.isIntersecting:', entry.isIntersecting);
+              // console.log('[Navbar] entry.intersectionRatio:', entry.intersectionRatio);
+              // console.log('[Navbar] entry.boundingClientRect:', entry.boundingClientRect);
               
               // When the sentinel is intersecting (at top), navbar should be transparent
               // When the sentinel is not intersecting (scrolled past), navbar should be opaque
               setScrolled(!entry.isIntersecting);
-              console.log('[Navbar] scrolled state set to:', !entry.isIntersecting);
+              // console.log('[Navbar] scrolled state set to:', !entry.isIntersecting);
             },
             {
               root: scrollContainer,
@@ -58,50 +58,50 @@ const Navbar = () => {
           );
 
           observer.observe(sentinel);
-          console.log('[Navbar] Observer created and observing sentinel');
+          // console.log('[Navbar] Observer created and observing sentinel');
           return true; // Success
         } catch (error) {
           console.error('[Navbar] Error creating IntersectionObserver:', error);
           return false;
         }
       } else {
-        console.warn('[Navbar] Elements not found yet:');
-        console.warn('[Navbar] - scrollContainer:', scrollContainer);
-        console.warn('[Navbar] - sentinel:', sentinel);
+        // console.warn('[Navbar] Elements not found yet:');
+        // console.warn('[Navbar] - scrollContainer:', scrollContainer);
+        // console.warn('[Navbar] - sentinel:', sentinel);
         return false; // Not found yet
       }
     };
 
     // Keep trying to set up scroll detection until elements exist
-    console.log('[Navbar] Starting retry interval to find elements...');
+    // console.log('[Navbar] Starting retry interval to find elements...');
     retryInterval = setInterval(() => {
       retryCount++;
       
       if (setupScrollDetection()) {
         // Success! Clear the interval
-        console.log('[Navbar] Successfully set up scroll detection after ' + retryCount + ' attempts');
+        // console.log('[Navbar] Successfully set up scroll detection after ' + retryCount + ' attempts');
         clearInterval(retryInterval);
         retryInterval = null;
       } else if (retryCount >= maxRetries) {
         // Give up after max retries
-        console.error('[Navbar] Max retries (' + maxRetries + ') reached, giving up on scroll detection');
+        // console.error('[Navbar] Max retries (' + maxRetries + ') reached, giving up on scroll detection');
         clearInterval(retryInterval);
         retryInterval = null;
       }
     }, 100);
 
     return () => {
-      console.log('[Navbar] Cleanup running');
+      // console.log('[Navbar] Cleanup running');
       clearTimeout(timer);
       
       if (retryInterval) {
         clearInterval(retryInterval);
-        console.log('[Navbar] Retry interval cleared');
+        // console.log('[Navbar] Retry interval cleared');
       }
       
       if (observer) {
         observer.disconnect();
-        console.log('[Navbar] Observer disconnected');
+        // console.log('[Navbar] Observer disconnected');
       }
     };
     

@@ -136,6 +136,19 @@ module.exports = {
         'in-out-expo': 'cubic-bezier(0.87, 0, 0.13, 1)',
         'in-out-back': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       },
+      backgroundImage: {
+        'hero-gradient': `linear-gradient(to bottom, 
+          rgba(0, 0, 0, 0.85) 0%, 
+          rgba(14, 23, 43, 0.3) 25%,
+          rgba(14, 23, 43, 0.3) 75%,
+          rgba(0, 0, 0, 0.85) 100%
+        )`,
+        'footer-gradient': `linear-gradient(to bottom, 
+          rgba(0, 0, 0, 0.9) 0%, 
+          rgba(0, 0, 0, 0.4) 50%,
+          rgba(0, 0, 0, 0.9) 100%
+        )`,
+      },
       fontSize: {
         // Fluid typography using clamp()
         'fluid-xs': 'clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)',

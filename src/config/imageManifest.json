@@ -1,0 +1,1473 @@
+{
+  "app/Logo192.jpg": {
+    "original": "app/Logo192.jpg",
+    "variants": [],
+    "placeholder": "app/Logo192-placeholder.jpg"
+  },
+  "app/Logo192.png": {
+    "original": "app/Logo192.png",
+    "variants": [],
+    "placeholder": null
+  },
+  "app/Logo512.png": {
+    "original": "app/Logo512.png",
+    "variants": [
+      "app/Logo512-320w.avif",
+      "app/Logo512-320w.png",
+      "app/Logo512-320w.webp"
+    ],
+    "placeholder": null
+  },
+  "app/Logo512.jpg": {
+    "original": "app/Logo512.jpg",
+    "variants": [],
+    "placeholder": "app/Logo512-placeholder.jpg"
+  },
+  "app/TextLogoWhite.png": {
+    "original": "app/TextLogoWhite.png",
+    "variants": [
+      "app/TextLogoWhite-1024w.avif",
+      "app/TextLogoWhite-1024w.png",
+      "app/TextLogoWhite-1024w.webp",
+      "app/TextLogoWhite-320w.avif",
+      "app/TextLogoWhite-320w.png",
+      "app/TextLogoWhite-320w.webp",
+      "app/TextLogoWhite-640w.avif",
+      "app/TextLogoWhite-640w.png",
+      "app/TextLogoWhite-640w.webp",
+      "app/TextLogoWhite-768w.avif",
+      "app/TextLogoWhite-768w.png",
+      "app/TextLogoWhite-768w.webp",
+      "app/TextLogoWhite-960w.avif",
+      "app/TextLogoWhite-960w.png",
+      "app/TextLogoWhite-960w.webp"
+    ],
+    "placeholder": null
+  },
+  "app/TextLogoWhite.jpg": {
+    "original": "app/TextLogoWhite.jpg",
+    "variants": [],
+    "placeholder": "app/TextLogoWhite-placeholder.jpg"
+  },
+  "backgrounds/BackgroundSwirls.png": {
+    "original": "backgrounds/BackgroundSwirls.png",
+    "variants": [
+      "backgrounds/BackgroundSwirls-1920w.avif",
+      "backgrounds/BackgroundSwirls-1920w.png",
+      "backgrounds/BackgroundSwirls-1920w.webp",
+      "backgrounds/BackgroundSwirls-2560w.avif",
+      "backgrounds/BackgroundSwirls-2560w.png",
+      "backgrounds/BackgroundSwirls-2560w.webp"
+    ],
+    "placeholder": null
+  },
+  "backgrounds/BackgroundSwirls.jpg": {
+    "original": "backgrounds/BackgroundSwirls.jpg",
+    "variants": [],
+    "placeholder": "backgrounds/BackgroundSwirls-placeholder.jpg"
+  },
+  "logos/institutions/amgen-text-logo.png": {
+    "original": "logos/institutions/amgen-text-logo.png",
+    "variants": [
+      "logos/institutions/amgen-text-logo-100w.avif",
+      "logos/institutions/amgen-text-logo-100w.png",
+      "logos/institutions/amgen-text-logo-100w.webp",
+      "logos/institutions/amgen-text-logo-200w.avif",
+      "logos/institutions/amgen-text-logo-200w.png",
+      "logos/institutions/amgen-text-logo-200w.webp",
+      "logos/institutions/amgen-text-logo-300w.avif",
+      "logos/institutions/amgen-text-logo-300w.png",
+      "logos/institutions/amgen-text-logo-300w.webp",
+      "logos/institutions/amgen-text-logo-400w.avif",
+      "logos/institutions/amgen-text-logo-400w.png",
+      "logos/institutions/amgen-text-logo-400w.webp",
+      "logos/institutions/amgen-text-logo-600w.avif",
+      "logos/institutions/amgen-text-logo-600w.png",
+      "logos/institutions/amgen-text-logo-600w.webp",
+      "logos/institutions/amgen-text-logo-800w.avif",
+      "logos/institutions/amgen-text-logo-800w.png",
+      "logos/institutions/amgen-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/amgen-text-logo.jpg": {
+    "original": "logos/institutions/amgen-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/amgen-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/calico-text-logo.png": {
+    "original": "logos/institutions/calico-text-logo.png",
+    "variants": [
+      "logos/institutions/calico-text-logo-100w.avif",
+      "logos/institutions/calico-text-logo-100w.png",
+      "logos/institutions/calico-text-logo-100w.webp",
+      "logos/institutions/calico-text-logo-200w.avif",
+      "logos/institutions/calico-text-logo-200w.png",
+      "logos/institutions/calico-text-logo-200w.webp",
+      "logos/institutions/calico-text-logo-300w.avif",
+      "logos/institutions/calico-text-logo-300w.png",
+      "logos/institutions/calico-text-logo-300w.webp",
+      "logos/institutions/calico-text-logo-400w.avif",
+      "logos/institutions/calico-text-logo-400w.png",
+      "logos/institutions/calico-text-logo-400w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/calico-text-logo.jpg": {
+    "original": "logos/institutions/calico-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/calico-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/caltech-text-logo.png": {
+    "original": "logos/institutions/caltech-text-logo.png",
+    "variants": [
+      "logos/institutions/caltech-text-logo-100w.avif",
+      "logos/institutions/caltech-text-logo-100w.png",
+      "logos/institutions/caltech-text-logo-100w.webp",
+      "logos/institutions/caltech-text-logo-200w.avif",
+      "logos/institutions/caltech-text-logo-200w.png",
+      "logos/institutions/caltech-text-logo-200w.webp",
+      "logos/institutions/caltech-text-logo-300w.avif",
+      "logos/institutions/caltech-text-logo-300w.png",
+      "logos/institutions/caltech-text-logo-300w.webp",
+      "logos/institutions/caltech-text-logo-400w.avif",
+      "logos/institutions/caltech-text-logo-400w.png",
+      "logos/institutions/caltech-text-logo-400w.webp",
+      "logos/institutions/caltech-text-logo-600w.avif",
+      "logos/institutions/caltech-text-logo-600w.png",
+      "logos/institutions/caltech-text-logo-600w.webp",
+      "logos/institutions/caltech-text-logo-800w.avif",
+      "logos/institutions/caltech-text-logo-800w.png",
+      "logos/institutions/caltech-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/caltech-text-logo.jpg": {
+    "original": "logos/institutions/caltech-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/caltech-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/choma-text-logo.png": {
+    "original": "logos/institutions/choma-text-logo.png",
+    "variants": [
+      "logos/institutions/choma-text-logo-100w.avif",
+      "logos/institutions/choma-text-logo-100w.png",
+      "logos/institutions/choma-text-logo-100w.webp",
+      "logos/institutions/choma-text-logo-200w.avif",
+      "logos/institutions/choma-text-logo-200w.png",
+      "logos/institutions/choma-text-logo-200w.webp",
+      "logos/institutions/choma-text-logo-300w.avif",
+      "logos/institutions/choma-text-logo-300w.png",
+      "logos/institutions/choma-text-logo-300w.webp",
+      "logos/institutions/choma-text-logo-400w.avif",
+      "logos/institutions/choma-text-logo-400w.png",
+      "logos/institutions/choma-text-logo-400w.webp",
+      "logos/institutions/choma-text-logo-600w.avif",
+      "logos/institutions/choma-text-logo-600w.png",
+      "logos/institutions/choma-text-logo-600w.webp",
+      "logos/institutions/choma-text-logo-800w.avif",
+      "logos/institutions/choma-text-logo-800w.png",
+      "logos/institutions/choma-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/choma-text-logo.jpg": {
+    "original": "logos/institutions/choma-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/choma-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/confluent-text-logo.png": {
+    "original": "logos/institutions/confluent-text-logo.png",
+    "variants": [
+      "logos/institutions/confluent-text-logo-100w.avif",
+      "logos/institutions/confluent-text-logo-100w.png",
+      "logos/institutions/confluent-text-logo-100w.webp",
+      "logos/institutions/confluent-text-logo-200w.avif",
+      "logos/institutions/confluent-text-logo-200w.png",
+      "logos/institutions/confluent-text-logo-200w.webp",
+      "logos/institutions/confluent-text-logo-300w.avif",
+      "logos/institutions/confluent-text-logo-300w.png",
+      "logos/institutions/confluent-text-logo-300w.webp",
+      "logos/institutions/confluent-text-logo-400w.avif",
+      "logos/institutions/confluent-text-logo-400w.png",
+      "logos/institutions/confluent-text-logo-400w.webp",
+      "logos/institutions/confluent-text-logo-600w.avif",
+      "logos/institutions/confluent-text-logo-600w.png",
+      "logos/institutions/confluent-text-logo-600w.webp",
+      "logos/institutions/confluent-text-logo-800w.avif",
+      "logos/institutions/confluent-text-logo-800w.png",
+      "logos/institutions/confluent-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/confluent-text-logo.jpg": {
+    "original": "logos/institutions/confluent-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/confluent-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/dg-logo.png": {
+    "original": "logos/institutions/dg-logo.png",
+    "variants": [
+      "logos/institutions/dg-logo-100w.avif",
+      "logos/institutions/dg-logo-100w.png",
+      "logos/institutions/dg-logo-100w.webp",
+      "logos/institutions/dg-logo-200w.avif",
+      "logos/institutions/dg-logo-200w.png",
+      "logos/institutions/dg-logo-200w.webp",
+      "logos/institutions/dg-logo-300w.avif",
+      "logos/institutions/dg-logo-300w.png",
+      "logos/institutions/dg-logo-300w.webp",
+      "logos/institutions/dg-logo-400w.avif",
+      "logos/institutions/dg-logo-400w.png",
+      "logos/institutions/dg-logo-400w.webp",
+      "logos/institutions/dg-logo-600w.avif",
+      "logos/institutions/dg-logo-600w.png",
+      "logos/institutions/dg-logo-600w.webp",
+      "logos/institutions/dg-logo-800w.avif",
+      "logos/institutions/dg-logo-800w.png",
+      "logos/institutions/dg-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/dg-logo.jpg": {
+    "original": "logos/institutions/dg-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/dg-logo-placeholder.jpg"
+  },
+  "logos/institutions/dyne-text-logo.png": {
+    "original": "logos/institutions/dyne-text-logo.png",
+    "variants": [
+      "logos/institutions/dyne-text-logo-100w.avif",
+      "logos/institutions/dyne-text-logo-100w.png",
+      "logos/institutions/dyne-text-logo-100w.webp",
+      "logos/institutions/dyne-text-logo-200w.avif",
+      "logos/institutions/dyne-text-logo-200w.png",
+      "logos/institutions/dyne-text-logo-200w.webp",
+      "logos/institutions/dyne-text-logo-300w.avif",
+      "logos/institutions/dyne-text-logo-300w.png",
+      "logos/institutions/dyne-text-logo-300w.webp",
+      "logos/institutions/dyne-text-logo-400w.avif",
+      "logos/institutions/dyne-text-logo-400w.png",
+      "logos/institutions/dyne-text-logo-400w.webp",
+      "logos/institutions/dyne-text-logo-600w.avif",
+      "logos/institutions/dyne-text-logo-600w.png",
+      "logos/institutions/dyne-text-logo-600w.webp",
+      "logos/institutions/dyne-text-logo-800w.avif",
+      "logos/institutions/dyne-text-logo-800w.png",
+      "logos/institutions/dyne-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/dyne-text-logo.jpg": {
+    "original": "logos/institutions/dyne-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/dyne-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/google-text-logo.png": {
+    "original": "logos/institutions/google-text-logo.png",
+    "variants": [
+      "logos/institutions/google-text-logo-100w.avif",
+      "logos/institutions/google-text-logo-100w.png",
+      "logos/institutions/google-text-logo-100w.webp",
+      "logos/institutions/google-text-logo-200w.avif",
+      "logos/institutions/google-text-logo-200w.png",
+      "logos/institutions/google-text-logo-200w.webp",
+      "logos/institutions/google-text-logo-300w.avif",
+      "logos/institutions/google-text-logo-300w.png",
+      "logos/institutions/google-text-logo-300w.webp",
+      "logos/institutions/google-text-logo-400w.avif",
+      "logos/institutions/google-text-logo-400w.png",
+      "logos/institutions/google-text-logo-400w.webp",
+      "logos/institutions/google-text-logo-600w.avif",
+      "logos/institutions/google-text-logo-600w.png",
+      "logos/institutions/google-text-logo-600w.webp",
+      "logos/institutions/google-text-logo-800w.avif",
+      "logos/institutions/google-text-logo-800w.png",
+      "logos/institutions/google-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/google-text-logo.jpg": {
+    "original": "logos/institutions/google-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/google-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/hhmi-text-logo.png": {
+    "original": "logos/institutions/hhmi-text-logo.png",
+    "variants": [
+      "logos/institutions/hhmi-text-logo-100w.avif",
+      "logos/institutions/hhmi-text-logo-100w.png",
+      "logos/institutions/hhmi-text-logo-100w.webp",
+      "logos/institutions/hhmi-text-logo-200w.avif",
+      "logos/institutions/hhmi-text-logo-200w.png",
+      "logos/institutions/hhmi-text-logo-200w.webp",
+      "logos/institutions/hhmi-text-logo-300w.avif",
+      "logos/institutions/hhmi-text-logo-300w.png",
+      "logos/institutions/hhmi-text-logo-300w.webp",
+      "logos/institutions/hhmi-text-logo-400w.avif",
+      "logos/institutions/hhmi-text-logo-400w.png",
+      "logos/institutions/hhmi-text-logo-400w.webp",
+      "logos/institutions/hhmi-text-logo-600w.avif",
+      "logos/institutions/hhmi-text-logo-600w.png",
+      "logos/institutions/hhmi-text-logo-600w.webp",
+      "logos/institutions/hhmi-text-logo-800w.avif",
+      "logos/institutions/hhmi-text-logo-800w.png",
+      "logos/institutions/hhmi-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/hhmi-text-logo.jpg": {
+    "original": "logos/institutions/hhmi-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/hhmi-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/jpm-logo.png": {
+    "original": "logos/institutions/jpm-logo.png",
+    "variants": [
+      "logos/institutions/jpm-logo-100w.avif",
+      "logos/institutions/jpm-logo-100w.png",
+      "logos/institutions/jpm-logo-100w.webp",
+      "logos/institutions/jpm-logo-200w.avif",
+      "logos/institutions/jpm-logo-200w.png",
+      "logos/institutions/jpm-logo-200w.webp",
+      "logos/institutions/jpm-logo-300w.avif",
+      "logos/institutions/jpm-logo-300w.png",
+      "logos/institutions/jpm-logo-300w.webp",
+      "logos/institutions/jpm-logo-400w.avif",
+      "logos/institutions/jpm-logo-400w.png",
+      "logos/institutions/jpm-logo-400w.webp",
+      "logos/institutions/jpm-logo-600w.avif",
+      "logos/institutions/jpm-logo-600w.png",
+      "logos/institutions/jpm-logo-600w.webp",
+      "logos/institutions/jpm-logo-800w.avif",
+      "logos/institutions/jpm-logo-800w.png",
+      "logos/institutions/jpm-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/jpm-logo.jpg": {
+    "original": "logos/institutions/jpm-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/jpm-logo-placeholder.jpg"
+  },
+  "logos/institutions/longitude-text-logo.png": {
+    "original": "logos/institutions/longitude-text-logo.png",
+    "variants": [
+      "logos/institutions/longitude-text-logo-100w.avif",
+      "logos/institutions/longitude-text-logo-100w.png",
+      "logos/institutions/longitude-text-logo-100w.webp",
+      "logos/institutions/longitude-text-logo-200w.avif",
+      "logos/institutions/longitude-text-logo-200w.png",
+      "logos/institutions/longitude-text-logo-200w.webp",
+      "logos/institutions/longitude-text-logo-300w.avif",
+      "logos/institutions/longitude-text-logo-300w.png",
+      "logos/institutions/longitude-text-logo-300w.webp",
+      "logos/institutions/longitude-text-logo-400w.avif",
+      "logos/institutions/longitude-text-logo-400w.png",
+      "logos/institutions/longitude-text-logo-400w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/longitude-text-logo.jpg": {
+    "original": "logos/institutions/longitude-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/longitude-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/mgen-logo.png": {
+    "original": "logos/institutions/mgen-logo.png",
+    "variants": [
+      "logos/institutions/mgen-logo-100w.avif",
+      "logos/institutions/mgen-logo-100w.png",
+      "logos/institutions/mgen-logo-100w.webp",
+      "logos/institutions/mgen-logo-200w.avif",
+      "logos/institutions/mgen-logo-200w.png",
+      "logos/institutions/mgen-logo-200w.webp",
+      "logos/institutions/mgen-logo-300w.avif",
+      "logos/institutions/mgen-logo-300w.png",
+      "logos/institutions/mgen-logo-300w.webp",
+      "logos/institutions/mgen-logo-400w.avif",
+      "logos/institutions/mgen-logo-400w.png",
+      "logos/institutions/mgen-logo-400w.webp",
+      "logos/institutions/mgen-logo-600w.avif",
+      "logos/institutions/mgen-logo-600w.png",
+      "logos/institutions/mgen-logo-600w.webp",
+      "logos/institutions/mgen-logo-800w.avif",
+      "logos/institutions/mgen-logo-800w.png",
+      "logos/institutions/mgen-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/mgen-logo.jpg": {
+    "original": "logos/institutions/mgen-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/mgen-logo-placeholder.jpg"
+  },
+  "logos/institutions/moderna-text-logo.png": {
+    "original": "logos/institutions/moderna-text-logo.png",
+    "variants": [
+      "logos/institutions/moderna-text-logo-100w.avif",
+      "logos/institutions/moderna-text-logo-100w.png",
+      "logos/institutions/moderna-text-logo-100w.webp",
+      "logos/institutions/moderna-text-logo-200w.avif",
+      "logos/institutions/moderna-text-logo-200w.png",
+      "logos/institutions/moderna-text-logo-200w.webp",
+      "logos/institutions/moderna-text-logo-300w.avif",
+      "logos/institutions/moderna-text-logo-300w.png",
+      "logos/institutions/moderna-text-logo-300w.webp",
+      "logos/institutions/moderna-text-logo-400w.avif",
+      "logos/institutions/moderna-text-logo-400w.png",
+      "logos/institutions/moderna-text-logo-400w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/moderna-text-logo.jpg": {
+    "original": "logos/institutions/moderna-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/moderna-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/nas-text-logo.png": {
+    "original": "logos/institutions/nas-text-logo.png",
+    "variants": [
+      "logos/institutions/nas-text-logo-100w.avif",
+      "logos/institutions/nas-text-logo-100w.png",
+      "logos/institutions/nas-text-logo-100w.webp",
+      "logos/institutions/nas-text-logo-200w.avif",
+      "logos/institutions/nas-text-logo-200w.png",
+      "logos/institutions/nas-text-logo-200w.webp",
+      "logos/institutions/nas-text-logo-300w.avif",
+      "logos/institutions/nas-text-logo-300w.png",
+      "logos/institutions/nas-text-logo-300w.webp",
+      "logos/institutions/nas-text-logo-400w.avif",
+      "logos/institutions/nas-text-logo-400w.png",
+      "logos/institutions/nas-text-logo-400w.webp",
+      "logos/institutions/nas-text-logo-600w.avif",
+      "logos/institutions/nas-text-logo-600w.png",
+      "logos/institutions/nas-text-logo-600w.webp",
+      "logos/institutions/nas-text-logo-800w.avif",
+      "logos/institutions/nas-text-logo-800w.png",
+      "logos/institutions/nas-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/nas-text-logo.jpg": {
+    "original": "logos/institutions/nas-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/nas-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/naturebiotech-text-logo.png": {
+    "original": "logos/institutions/naturebiotech-text-logo.png",
+    "variants": [
+      "logos/institutions/naturebiotech-text-logo-100w.avif",
+      "logos/institutions/naturebiotech-text-logo-100w.png",
+      "logos/institutions/naturebiotech-text-logo-100w.webp",
+      "logos/institutions/naturebiotech-text-logo-200w.avif",
+      "logos/institutions/naturebiotech-text-logo-200w.png",
+      "logos/institutions/naturebiotech-text-logo-200w.webp",
+      "logos/institutions/naturebiotech-text-logo-300w.avif",
+      "logos/institutions/naturebiotech-text-logo-300w.png",
+      "logos/institutions/naturebiotech-text-logo-300w.webp",
+      "logos/institutions/naturebiotech-text-logo-400w.avif",
+      "logos/institutions/naturebiotech-text-logo-400w.png",
+      "logos/institutions/naturebiotech-text-logo-400w.webp",
+      "logos/institutions/naturebiotech-text-logo-600w.avif",
+      "logos/institutions/naturebiotech-text-logo-600w.png",
+      "logos/institutions/naturebiotech-text-logo-600w.webp",
+      "logos/institutions/naturebiotech-text-logo-800w.avif",
+      "logos/institutions/naturebiotech-text-logo-800w.png",
+      "logos/institutions/naturebiotech-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/naturebiotech-text-logo.jpg": {
+    "original": "logos/institutions/naturebiotech-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/naturebiotech-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/naturerdd-text-logo.png": {
+    "original": "logos/institutions/naturerdd-text-logo.png",
+    "variants": [
+      "logos/institutions/naturerdd-text-logo-100w.avif",
+      "logos/institutions/naturerdd-text-logo-100w.png",
+      "logos/institutions/naturerdd-text-logo-100w.webp",
+      "logos/institutions/naturerdd-text-logo-200w.avif",
+      "logos/institutions/naturerdd-text-logo-200w.png",
+      "logos/institutions/naturerdd-text-logo-200w.webp",
+      "logos/institutions/naturerdd-text-logo-300w.avif",
+      "logos/institutions/naturerdd-text-logo-300w.png",
+      "logos/institutions/naturerdd-text-logo-300w.webp",
+      "logos/institutions/naturerdd-text-logo-400w.avif",
+      "logos/institutions/naturerdd-text-logo-400w.png",
+      "logos/institutions/naturerdd-text-logo-400w.webp",
+      "logos/institutions/naturerdd-text-logo-600w.avif",
+      "logos/institutions/naturerdd-text-logo-600w.png",
+      "logos/institutions/naturerdd-text-logo-600w.webp",
+      "logos/institutions/naturerdd-text-logo-800w.avif",
+      "logos/institutions/naturerdd-text-logo-800w.png",
+      "logos/institutions/naturerdd-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/naturerdd-text-logo.jpg": {
+    "original": "logos/institutions/naturerdd-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/naturerdd-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/nchroma-text-logo.png": {
+    "original": "logos/institutions/nchroma-text-logo.png",
+    "variants": [
+      "logos/institutions/nchroma-text-logo-100w.avif",
+      "logos/institutions/nchroma-text-logo-100w.png",
+      "logos/institutions/nchroma-text-logo-100w.webp",
+      "logos/institutions/nchroma-text-logo-200w.avif",
+      "logos/institutions/nchroma-text-logo-200w.png",
+      "logos/institutions/nchroma-text-logo-200w.webp",
+      "logos/institutions/nchroma-text-logo-300w.avif",
+      "logos/institutions/nchroma-text-logo-300w.png",
+      "logos/institutions/nchroma-text-logo-300w.webp",
+      "logos/institutions/nchroma-text-logo-400w.avif",
+      "logos/institutions/nchroma-text-logo-400w.png",
+      "logos/institutions/nchroma-text-logo-400w.webp",
+      "logos/institutions/nchroma-text-logo-600w.avif",
+      "logos/institutions/nchroma-text-logo-600w.png",
+      "logos/institutions/nchroma-text-logo-600w.webp",
+      "logos/institutions/nchroma-text-logo-800w.avif",
+      "logos/institutions/nchroma-text-logo-800w.png",
+      "logos/institutions/nchroma-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/nchroma-text-logo.jpg": {
+    "original": "logos/institutions/nchroma-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/nchroma-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/newlimit-text-logo.png": {
+    "original": "logos/institutions/newlimit-text-logo.png",
+    "variants": [
+      "logos/institutions/newlimit-text-logo-100w.avif",
+      "logos/institutions/newlimit-text-logo-100w.png",
+      "logos/institutions/newlimit-text-logo-100w.webp",
+      "logos/institutions/newlimit-text-logo-200w.avif",
+      "logos/institutions/newlimit-text-logo-200w.png",
+      "logos/institutions/newlimit-text-logo-200w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/newlimit-text-logo.jpg": {
+    "original": "logos/institutions/newlimit-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/newlimit-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/odi-text-logo.png": {
+    "original": "logos/institutions/odi-text-logo.png",
+    "variants": [
+      "logos/institutions/odi-text-logo-100w.avif",
+      "logos/institutions/odi-text-logo-100w.png",
+      "logos/institutions/odi-text-logo-100w.webp",
+      "logos/institutions/odi-text-logo-200w.avif",
+      "logos/institutions/odi-text-logo-200w.png",
+      "logos/institutions/odi-text-logo-200w.webp",
+      "logos/institutions/odi-text-logo-300w.avif",
+      "logos/institutions/odi-text-logo-300w.png",
+      "logos/institutions/odi-text-logo-300w.webp",
+      "logos/institutions/odi-text-logo-400w.avif",
+      "logos/institutions/odi-text-logo-400w.png",
+      "logos/institutions/odi-text-logo-400w.webp",
+      "logos/institutions/odi-text-logo-600w.avif",
+      "logos/institutions/odi-text-logo-600w.png",
+      "logos/institutions/odi-text-logo-600w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/odi-text-logo.jpg": {
+    "original": "logos/institutions/odi-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/odi-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/osu-text-logo.png": {
+    "original": "logos/institutions/osu-text-logo.png",
+    "variants": [
+      "logos/institutions/osu-text-logo-100w.avif",
+      "logos/institutions/osu-text-logo-100w.png",
+      "logos/institutions/osu-text-logo-100w.webp",
+      "logos/institutions/osu-text-logo-200w.avif",
+      "logos/institutions/osu-text-logo-200w.png",
+      "logos/institutions/osu-text-logo-200w.webp",
+      "logos/institutions/osu-text-logo-300w.avif",
+      "logos/institutions/osu-text-logo-300w.png",
+      "logos/institutions/osu-text-logo-300w.webp",
+      "logos/institutions/osu-text-logo-400w.avif",
+      "logos/institutions/osu-text-logo-400w.png",
+      "logos/institutions/osu-text-logo-400w.webp",
+      "logos/institutions/osu-text-logo-600w.avif",
+      "logos/institutions/osu-text-logo-600w.png",
+      "logos/institutions/osu-text-logo-600w.webp",
+      "logos/institutions/osu-text-logo-800w.avif",
+      "logos/institutions/osu-text-logo-800w.png",
+      "logos/institutions/osu-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/osu-text-logo.jpg": {
+    "original": "logos/institutions/osu-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/osu-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/princeton-text-logo.png": {
+    "original": "logos/institutions/princeton-text-logo.png",
+    "variants": [
+      "logos/institutions/princeton-text-logo-100w.avif",
+      "logos/institutions/princeton-text-logo-100w.png",
+      "logos/institutions/princeton-text-logo-100w.webp",
+      "logos/institutions/princeton-text-logo-200w.avif",
+      "logos/institutions/princeton-text-logo-200w.png",
+      "logos/institutions/princeton-text-logo-200w.webp",
+      "logos/institutions/princeton-text-logo-300w.avif",
+      "logos/institutions/princeton-text-logo-300w.png",
+      "logos/institutions/princeton-text-logo-300w.webp",
+      "logos/institutions/princeton-text-logo-400w.avif",
+      "logos/institutions/princeton-text-logo-400w.png",
+      "logos/institutions/princeton-text-logo-400w.webp",
+      "logos/institutions/princeton-text-logo-600w.avif",
+      "logos/institutions/princeton-text-logo-600w.png",
+      "logos/institutions/princeton-text-logo-600w.webp",
+      "logos/institutions/princeton-text-logo-800w.avif",
+      "logos/institutions/princeton-text-logo-800w.png",
+      "logos/institutions/princeton-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/princeton-text-logo.jpg": {
+    "original": "logos/institutions/princeton-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/princeton-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/regeneron-text-logo.png": {
+    "original": "logos/institutions/regeneron-text-logo.png",
+    "variants": [
+      "logos/institutions/regeneron-text-logo-100w.avif",
+      "logos/institutions/regeneron-text-logo-100w.png",
+      "logos/institutions/regeneron-text-logo-100w.webp",
+      "logos/institutions/regeneron-text-logo-200w.avif",
+      "logos/institutions/regeneron-text-logo-200w.png",
+      "logos/institutions/regeneron-text-logo-200w.webp",
+      "logos/institutions/regeneron-text-logo-300w.avif",
+      "logos/institutions/regeneron-text-logo-300w.png",
+      "logos/institutions/regeneron-text-logo-300w.webp",
+      "logos/institutions/regeneron-text-logo-400w.avif",
+      "logos/institutions/regeneron-text-logo-400w.png",
+      "logos/institutions/regeneron-text-logo-400w.webp",
+      "logos/institutions/regeneron-text-logo-600w.avif",
+      "logos/institutions/regeneron-text-logo-600w.png",
+      "logos/institutions/regeneron-text-logo-600w.webp",
+      "logos/institutions/regeneron-text-logo-800w.avif",
+      "logos/institutions/regeneron-text-logo-800w.png",
+      "logos/institutions/regeneron-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/regeneron-text-logo.jpg": {
+    "original": "logos/institutions/regeneron-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/regeneron-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/rnati-logo.png": {
+    "original": "logos/institutions/rnati-logo.png",
+    "variants": [
+      "logos/institutions/rnati-logo-100w.avif",
+      "logos/institutions/rnati-logo-100w.png",
+      "logos/institutions/rnati-logo-100w.webp",
+      "logos/institutions/rnati-logo-200w.avif",
+      "logos/institutions/rnati-logo-200w.png",
+      "logos/institutions/rnati-logo-200w.webp",
+      "logos/institutions/rnati-logo-300w.avif",
+      "logos/institutions/rnati-logo-300w.png",
+      "logos/institutions/rnati-logo-300w.webp",
+      "logos/institutions/rnati-logo-400w.avif",
+      "logos/institutions/rnati-logo-400w.png",
+      "logos/institutions/rnati-logo-400w.webp",
+      "logos/institutions/rnati-logo-600w.avif",
+      "logos/institutions/rnati-logo-600w.png",
+      "logos/institutions/rnati-logo-600w.webp",
+      "logos/institutions/rnati-logo-800w.avif",
+      "logos/institutions/rnati-logo-800w.png",
+      "logos/institutions/rnati-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/rnati-logo.jpg": {
+    "original": "logos/institutions/rnati-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/rnati-logo-placeholder.jpg"
+  },
+  "logos/institutions/sarepta-text-logo.png": {
+    "original": "logos/institutions/sarepta-text-logo.png",
+    "variants": [
+      "logos/institutions/sarepta-text-logo-100w.avif",
+      "logos/institutions/sarepta-text-logo-100w.png",
+      "logos/institutions/sarepta-text-logo-100w.webp",
+      "logos/institutions/sarepta-text-logo-200w.avif",
+      "logos/institutions/sarepta-text-logo-200w.png",
+      "logos/institutions/sarepta-text-logo-200w.webp",
+      "logos/institutions/sarepta-text-logo-300w.avif",
+      "logos/institutions/sarepta-text-logo-300w.png",
+      "logos/institutions/sarepta-text-logo-300w.webp",
+      "logos/institutions/sarepta-text-logo-400w.avif",
+      "logos/institutions/sarepta-text-logo-400w.png",
+      "logos/institutions/sarepta-text-logo-400w.webp",
+      "logos/institutions/sarepta-text-logo-600w.avif",
+      "logos/institutions/sarepta-text-logo-600w.png",
+      "logos/institutions/sarepta-text-logo-600w.webp",
+      "logos/institutions/sarepta-text-logo-800w.avif",
+      "logos/institutions/sarepta-text-logo-800w.png",
+      "logos/institutions/sarepta-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/sarepta-text-logo.jpg": {
+    "original": "logos/institutions/sarepta-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/sarepta-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/stanford-text-logo.png": {
+    "original": "logos/institutions/stanford-text-logo.png",
+    "variants": [
+      "logos/institutions/stanford-text-logo-100w.avif",
+      "logos/institutions/stanford-text-logo-100w.png",
+      "logos/institutions/stanford-text-logo-100w.webp",
+      "logos/institutions/stanford-text-logo-200w.avif",
+      "logos/institutions/stanford-text-logo-200w.png",
+      "logos/institutions/stanford-text-logo-200w.webp",
+      "logos/institutions/stanford-text-logo-300w.avif",
+      "logos/institutions/stanford-text-logo-300w.png",
+      "logos/institutions/stanford-text-logo-300w.webp",
+      "logos/institutions/stanford-text-logo-400w.avif",
+      "logos/institutions/stanford-text-logo-400w.png",
+      "logos/institutions/stanford-text-logo-400w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/stanford-text-logo.jpg": {
+    "original": "logos/institutions/stanford-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/stanford-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/tessera-text-logo.png": {
+    "original": "logos/institutions/tessera-text-logo.png",
+    "variants": [
+      "logos/institutions/tessera-text-logo-100w.avif",
+      "logos/institutions/tessera-text-logo-100w.png",
+      "logos/institutions/tessera-text-logo-100w.webp",
+      "logos/institutions/tessera-text-logo-200w.avif",
+      "logos/institutions/tessera-text-logo-200w.png",
+      "logos/institutions/tessera-text-logo-200w.webp",
+      "logos/institutions/tessera-text-logo-300w.avif",
+      "logos/institutions/tessera-text-logo-300w.png",
+      "logos/institutions/tessera-text-logo-300w.webp",
+      "logos/institutions/tessera-text-logo-400w.avif",
+      "logos/institutions/tessera-text-logo-400w.png",
+      "logos/institutions/tessera-text-logo-400w.webp",
+      "logos/institutions/tessera-text-logo-600w.avif",
+      "logos/institutions/tessera-text-logo-600w.png",
+      "logos/institutions/tessera-text-logo-600w.webp",
+      "logos/institutions/tessera-text-logo-800w.avif",
+      "logos/institutions/tessera-text-logo-800w.png",
+      "logos/institutions/tessera-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/tessera-text-logo.jpg": {
+    "original": "logos/institutions/tessera-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/tessera-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/ucb-text-logo.png": {
+    "original": "logos/institutions/ucb-text-logo.png",
+    "variants": [
+      "logos/institutions/ucb-text-logo-100w.avif",
+      "logos/institutions/ucb-text-logo-100w.png",
+      "logos/institutions/ucb-text-logo-100w.webp",
+      "logos/institutions/ucb-text-logo-200w.avif",
+      "logos/institutions/ucb-text-logo-200w.png",
+      "logos/institutions/ucb-text-logo-200w.webp",
+      "logos/institutions/ucb-text-logo-300w.avif",
+      "logos/institutions/ucb-text-logo-300w.png",
+      "logos/institutions/ucb-text-logo-300w.webp",
+      "logos/institutions/ucb-text-logo-400w.avif",
+      "logos/institutions/ucb-text-logo-400w.png",
+      "logos/institutions/ucb-text-logo-400w.webp",
+      "logos/institutions/ucb-text-logo-600w.avif",
+      "logos/institutions/ucb-text-logo-600w.png",
+      "logos/institutions/ucb-text-logo-600w.webp",
+      "logos/institutions/ucb-text-logo-800w.avif",
+      "logos/institutions/ucb-text-logo-800w.png",
+      "logos/institutions/ucb-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/ucb-text-logo.jpg": {
+    "original": "logos/institutions/ucb-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/ucb-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/ucla-text-logo.png": {
+    "original": "logos/institutions/ucla-text-logo.png",
+    "variants": [
+      "logos/institutions/ucla-text-logo-100w.avif",
+      "logos/institutions/ucla-text-logo-100w.png",
+      "logos/institutions/ucla-text-logo-100w.webp",
+      "logos/institutions/ucla-text-logo-200w.avif",
+      "logos/institutions/ucla-text-logo-200w.png",
+      "logos/institutions/ucla-text-logo-200w.webp",
+      "logos/institutions/ucla-text-logo-300w.avif",
+      "logos/institutions/ucla-text-logo-300w.png",
+      "logos/institutions/ucla-text-logo-300w.webp",
+      "logos/institutions/ucla-text-logo-400w.avif",
+      "logos/institutions/ucla-text-logo-400w.png",
+      "logos/institutions/ucla-text-logo-400w.webp",
+      "logos/institutions/ucla-text-logo-600w.avif",
+      "logos/institutions/ucla-text-logo-600w.png",
+      "logos/institutions/ucla-text-logo-600w.webp",
+      "logos/institutions/ucla-text-logo-800w.avif",
+      "logos/institutions/ucla-text-logo-800w.png",
+      "logos/institutions/ucla-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/ucla-text-logo.jpg": {
+    "original": "logos/institutions/ucla-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/ucla-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/ucsf-text-logo.png": {
+    "original": "logos/institutions/ucsf-text-logo.png",
+    "variants": [
+      "logos/institutions/ucsf-text-logo-100w.avif",
+      "logos/institutions/ucsf-text-logo-100w.png",
+      "logos/institutions/ucsf-text-logo-100w.webp",
+      "logos/institutions/ucsf-text-logo-200w.avif",
+      "logos/institutions/ucsf-text-logo-200w.png",
+      "logos/institutions/ucsf-text-logo-200w.webp",
+      "logos/institutions/ucsf-text-logo-300w.avif",
+      "logos/institutions/ucsf-text-logo-300w.png",
+      "logos/institutions/ucsf-text-logo-300w.webp",
+      "logos/institutions/ucsf-text-logo-400w.avif",
+      "logos/institutions/ucsf-text-logo-400w.png",
+      "logos/institutions/ucsf-text-logo-400w.webp",
+      "logos/institutions/ucsf-text-logo-600w.avif",
+      "logos/institutions/ucsf-text-logo-600w.png",
+      "logos/institutions/ucsf-text-logo-600w.webp",
+      "logos/institutions/ucsf-text-logo-800w.avif",
+      "logos/institutions/ucsf-text-logo-800w.png",
+      "logos/institutions/ucsf-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/ucsf-text-logo.jpg": {
+    "original": "logos/institutions/ucsf-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/ucsf-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/umc-text-logo.png": {
+    "original": "logos/institutions/umc-text-logo.png",
+    "variants": [
+      "logos/institutions/umc-text-logo-100w.avif",
+      "logos/institutions/umc-text-logo-100w.png",
+      "logos/institutions/umc-text-logo-100w.webp",
+      "logos/institutions/umc-text-logo-200w.avif",
+      "logos/institutions/umc-text-logo-200w.png",
+      "logos/institutions/umc-text-logo-200w.webp",
+      "logos/institutions/umc-text-logo-300w.avif",
+      "logos/institutions/umc-text-logo-300w.png",
+      "logos/institutions/umc-text-logo-300w.webp",
+      "logos/institutions/umc-text-logo-400w.avif",
+      "logos/institutions/umc-text-logo-400w.png",
+      "logos/institutions/umc-text-logo-400w.webp",
+      "logos/institutions/umc-text-logo-600w.avif",
+      "logos/institutions/umc-text-logo-600w.png",
+      "logos/institutions/umc-text-logo-600w.webp",
+      "logos/institutions/umc-text-logo-800w.avif",
+      "logos/institutions/umc-text-logo-800w.png",
+      "logos/institutions/umc-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/umc-text-logo.jpg": {
+    "original": "logos/institutions/umc-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/umc-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/uoft-text-logo.png": {
+    "original": "logos/institutions/uoft-text-logo.png",
+    "variants": [
+      "logos/institutions/uoft-text-logo-100w.avif",
+      "logos/institutions/uoft-text-logo-100w.png",
+      "logos/institutions/uoft-text-logo-100w.webp",
+      "logos/institutions/uoft-text-logo-200w.avif",
+      "logos/institutions/uoft-text-logo-200w.png",
+      "logos/institutions/uoft-text-logo-200w.webp",
+      "logos/institutions/uoft-text-logo-300w.avif",
+      "logos/institutions/uoft-text-logo-300w.png",
+      "logos/institutions/uoft-text-logo-300w.webp",
+      "logos/institutions/uoft-text-logo-400w.avif",
+      "logos/institutions/uoft-text-logo-400w.png",
+      "logos/institutions/uoft-text-logo-400w.webp",
+      "logos/institutions/uoft-text-logo-600w.avif",
+      "logos/institutions/uoft-text-logo-600w.png",
+      "logos/institutions/uoft-text-logo-600w.webp",
+      "logos/institutions/uoft-text-logo-800w.avif",
+      "logos/institutions/uoft-text-logo-800w.png",
+      "logos/institutions/uoft-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/uoft-text-logo.jpg": {
+    "original": "logos/institutions/uoft-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/uoft-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/upenn-text-logo.png": {
+    "original": "logos/institutions/upenn-text-logo.png",
+    "variants": [
+      "logos/institutions/upenn-text-logo-100w.avif",
+      "logos/institutions/upenn-text-logo-100w.png",
+      "logos/institutions/upenn-text-logo-100w.webp",
+      "logos/institutions/upenn-text-logo-200w.avif",
+      "logos/institutions/upenn-text-logo-200w.png",
+      "logos/institutions/upenn-text-logo-200w.webp",
+      "logos/institutions/upenn-text-logo-300w.avif",
+      "logos/institutions/upenn-text-logo-300w.png",
+      "logos/institutions/upenn-text-logo-300w.webp",
+      "logos/institutions/upenn-text-logo-400w.avif",
+      "logos/institutions/upenn-text-logo-400w.png",
+      "logos/institutions/upenn-text-logo-400w.webp",
+      "logos/institutions/upenn-text-logo-600w.avif",
+      "logos/institutions/upenn-text-logo-600w.png",
+      "logos/institutions/upenn-text-logo-600w.webp",
+      "logos/institutions/upenn-text-logo-800w.avif",
+      "logos/institutions/upenn-text-logo-800w.png",
+      "logos/institutions/upenn-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/upenn-text-logo.jpg": {
+    "original": "logos/institutions/upenn-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/upenn-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/usc-text-logo.png": {
+    "original": "logos/institutions/usc-text-logo.png",
+    "variants": [
+      "logos/institutions/usc-text-logo-100w.avif",
+      "logos/institutions/usc-text-logo-100w.png",
+      "logos/institutions/usc-text-logo-100w.webp",
+      "logos/institutions/usc-text-logo-200w.avif",
+      "logos/institutions/usc-text-logo-200w.png",
+      "logos/institutions/usc-text-logo-200w.webp",
+      "logos/institutions/usc-text-logo-300w.avif",
+      "logos/institutions/usc-text-logo-300w.png",
+      "logos/institutions/usc-text-logo-300w.webp",
+      "logos/institutions/usc-text-logo-400w.avif",
+      "logos/institutions/usc-text-logo-400w.png",
+      "logos/institutions/usc-text-logo-400w.webp",
+      "logos/institutions/usc-text-logo-600w.avif",
+      "logos/institutions/usc-text-logo-600w.png",
+      "logos/institutions/usc-text-logo-600w.webp",
+      "logos/institutions/usc-text-logo-800w.avif",
+      "logos/institutions/usc-text-logo-800w.png",
+      "logos/institutions/usc-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/usc-text-logo.jpg": {
+    "original": "logos/institutions/usc-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/usc-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/wharton-text-logo.png": {
+    "original": "logos/institutions/wharton-text-logo.png",
+    "variants": [
+      "logos/institutions/wharton-text-logo-100w.avif",
+      "logos/institutions/wharton-text-logo-100w.png",
+      "logos/institutions/wharton-text-logo-100w.webp",
+      "logos/institutions/wharton-text-logo-200w.avif",
+      "logos/institutions/wharton-text-logo-200w.png",
+      "logos/institutions/wharton-text-logo-200w.webp",
+      "logos/institutions/wharton-text-logo-300w.avif",
+      "logos/institutions/wharton-text-logo-300w.png",
+      "logos/institutions/wharton-text-logo-300w.webp",
+      "logos/institutions/wharton-text-logo-400w.avif",
+      "logos/institutions/wharton-text-logo-400w.png",
+      "logos/institutions/wharton-text-logo-400w.webp",
+      "logos/institutions/wharton-text-logo-600w.avif",
+      "logos/institutions/wharton-text-logo-600w.png",
+      "logos/institutions/wharton-text-logo-600w.webp",
+      "logos/institutions/wharton-text-logo-800w.avif",
+      "logos/institutions/wharton-text-logo-800w.png",
+      "logos/institutions/wharton-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/wharton-text-logo.jpg": {
+    "original": "logos/institutions/wharton-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/wharton-text-logo-placeholder.jpg"
+  },
+  "logos/media/asbmb-text-logo.png": {
+    "original": "logos/media/asbmb-text-logo.png",
+    "variants": [
+      "logos/media/asbmb-text-logo-200w.avif",
+      "logos/media/asbmb-text-logo-200w.png",
+      "logos/media/asbmb-text-logo-200w.webp",
+      "logos/media/asbmb-text-logo-400w.avif",
+      "logos/media/asbmb-text-logo-400w.png",
+      "logos/media/asbmb-text-logo-400w.webp",
+      "logos/media/asbmb-text-logo-600w.avif",
+      "logos/media/asbmb-text-logo-600w.png",
+      "logos/media/asbmb-text-logo-600w.webp",
+      "logos/media/asbmb-text-logo-800w.avif",
+      "logos/media/asbmb-text-logo-800w.png",
+      "logos/media/asbmb-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/media/asbmb-text-logo.jpg": {
+    "original": "logos/media/asbmb-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/asbmb-text-logo-placeholder.jpg"
+  },
+  "logos/media/cell-logo.png": {
+    "original": "logos/media/cell-logo.png",
+    "variants": [
+      "logos/media/cell-logo-200w.avif",
+      "logos/media/cell-logo-200w.png",
+      "logos/media/cell-logo-200w.webp",
+      "logos/media/cell-logo-400w.avif",
+      "logos/media/cell-logo-400w.png",
+      "logos/media/cell-logo-400w.webp",
+      "logos/media/cell-logo-600w.avif",
+      "logos/media/cell-logo-600w.png",
+      "logos/media/cell-logo-600w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/media/cell-logo.jpg": {
+    "original": "logos/media/cell-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/cell-logo-placeholder.jpg"
+  },
+  "logos/media/csh-text-logo.png": {
+    "original": "logos/media/csh-text-logo.png",
+    "variants": [
+      "logos/media/csh-text-logo-1200w.avif",
+      "logos/media/csh-text-logo-1200w.png",
+      "logos/media/csh-text-logo-1200w.webp",
+      "logos/media/csh-text-logo-200w.avif",
+      "logos/media/csh-text-logo-200w.png",
+      "logos/media/csh-text-logo-200w.webp",
+      "logos/media/csh-text-logo-400w.avif",
+      "logos/media/csh-text-logo-400w.png",
+      "logos/media/csh-text-logo-400w.webp",
+      "logos/media/csh-text-logo-600w.avif",
+      "logos/media/csh-text-logo-600w.png",
+      "logos/media/csh-text-logo-600w.webp",
+      "logos/media/csh-text-logo-800w.avif",
+      "logos/media/csh-text-logo-800w.png",
+      "logos/media/csh-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/media/csh-text-logo.jpg": {
+    "original": "logos/media/csh-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/csh-text-logo-placeholder.jpg"
+  },
+  "logos/media/endpoint-text-logo.png": {
+    "original": "logos/media/endpoint-text-logo.png",
+    "variants": [
+      "logos/media/endpoint-text-logo-200w.avif",
+      "logos/media/endpoint-text-logo-200w.png",
+      "logos/media/endpoint-text-logo-200w.webp",
+      "logos/media/endpoint-text-logo-400w.avif",
+      "logos/media/endpoint-text-logo-400w.png",
+      "logos/media/endpoint-text-logo-400w.webp",
+      "logos/media/endpoint-text-logo-600w.avif",
+      "logos/media/endpoint-text-logo-600w.png",
+      "logos/media/endpoint-text-logo-600w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/media/endpoint-text-logo.jpg": {
+    "original": "logos/media/endpoint-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/endpoint-text-logo-placeholder.jpg"
+  },
+  "logos/media/nature-text-logo.png": {
+    "original": "logos/media/nature-text-logo.png",
+    "variants": [
+      "logos/media/nature-text-logo-1200w.avif",
+      "logos/media/nature-text-logo-1200w.png",
+      "logos/media/nature-text-logo-1200w.webp",
+      "logos/media/nature-text-logo-200w.avif",
+      "logos/media/nature-text-logo-200w.png",
+      "logos/media/nature-text-logo-200w.webp",
+      "logos/media/nature-text-logo-400w.avif",
+      "logos/media/nature-text-logo-400w.png",
+      "logos/media/nature-text-logo-400w.webp",
+      "logos/media/nature-text-logo-600w.avif",
+      "logos/media/nature-text-logo-600w.png",
+      "logos/media/nature-text-logo-600w.webp",
+      "logos/media/nature-text-logo-800w.avif",
+      "logos/media/nature-text-logo-800w.png",
+      "logos/media/nature-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/media/nature-text-logo.jpg": {
+    "original": "logos/media/nature-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/nature-text-logo-placeholder.jpg"
+  },
+  "logos/media/pnas-logo.png": {
+    "original": "logos/media/pnas-logo.png",
+    "variants": [
+      "logos/media/pnas-logo-200w.avif",
+      "logos/media/pnas-logo-200w.png",
+      "logos/media/pnas-logo-200w.webp",
+      "logos/media/pnas-logo-400w.avif",
+      "logos/media/pnas-logo-400w.png",
+      "logos/media/pnas-logo-400w.webp",
+      "logos/media/pnas-logo-600w.avif",
+      "logos/media/pnas-logo-600w.png",
+      "logos/media/pnas-logo-600w.webp",
+      "logos/media/pnas-logo-800w.avif",
+      "logos/media/pnas-logo-800w.png",
+      "logos/media/pnas-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/media/pnas-logo.jpg": {
+    "original": "logos/media/pnas-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/pnas-logo-placeholder.jpg"
+  },
+  "logos/media/science-logo.png": {
+    "original": "logos/media/science-logo.png",
+    "variants": [
+      "logos/media/science-logo-1200w.avif",
+      "logos/media/science-logo-1200w.png",
+      "logos/media/science-logo-1200w.webp",
+      "logos/media/science-logo-200w.avif",
+      "logos/media/science-logo-200w.png",
+      "logos/media/science-logo-200w.webp",
+      "logos/media/science-logo-400w.avif",
+      "logos/media/science-logo-400w.png",
+      "logos/media/science-logo-400w.webp",
+      "logos/media/science-logo-600w.avif",
+      "logos/media/science-logo-600w.png",
+      "logos/media/science-logo-600w.webp",
+      "logos/media/science-logo-800w.avif",
+      "logos/media/science-logo-800w.png",
+      "logos/media/science-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/media/science-logo.jpg": {
+    "original": "logos/media/science-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/science-logo-placeholder.jpg"
+  },
+  "logos/partners/gradient-logo.png": {
+    "original": "logos/partners/gradient-logo.png",
+    "variants": [
+      "logos/partners/gradient-logo-100w.avif",
+      "logos/partners/gradient-logo-100w.png",
+      "logos/partners/gradient-logo-100w.webp",
+      "logos/partners/gradient-logo-200w.avif",
+      "logos/partners/gradient-logo-200w.png",
+      "logos/partners/gradient-logo-200w.webp",
+      "logos/partners/gradient-logo-300w.avif",
+      "logos/partners/gradient-logo-300w.png",
+      "logos/partners/gradient-logo-300w.webp",
+      "logos/partners/gradient-logo-400w.avif",
+      "logos/partners/gradient-logo-400w.png",
+      "logos/partners/gradient-logo-400w.webp",
+      "logos/partners/gradient-logo-600w.avif",
+      "logos/partners/gradient-logo-600w.png",
+      "logos/partners/gradient-logo-600w.webp",
+      "logos/partners/gradient-logo-800w.avif",
+      "logos/partners/gradient-logo-800w.png",
+      "logos/partners/gradient-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/partners/gradient-logo.jpg": {
+    "original": "logos/partners/gradient-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/partners/gradient-logo-placeholder.jpg"
+  },
+  "logos/partners/humba-logo.png": {
+    "original": "logos/partners/humba-logo.png",
+    "variants": [
+      "logos/partners/humba-logo-100w.avif",
+      "logos/partners/humba-logo-100w.png",
+      "logos/partners/humba-logo-100w.webp",
+      "logos/partners/humba-logo-200w.avif",
+      "logos/partners/humba-logo-200w.png",
+      "logos/partners/humba-logo-200w.webp",
+      "logos/partners/humba-logo-300w.avif",
+      "logos/partners/humba-logo-300w.png",
+      "logos/partners/humba-logo-300w.webp",
+      "logos/partners/humba-logo-400w.avif",
+      "logos/partners/humba-logo-400w.png",
+      "logos/partners/humba-logo-400w.webp",
+      "logos/partners/humba-logo-600w.avif",
+      "logos/partners/humba-logo-600w.png",
+      "logos/partners/humba-logo-600w.webp",
+      "logos/partners/humba-logo-800w.avif",
+      "logos/partners/humba-logo-800w.png",
+      "logos/partners/humba-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/partners/humba-logo.jpg": {
+    "original": "logos/partners/humba-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/partners/humba-logo-placeholder.jpg"
+  },
+  "logos/partners/pioneer-logo.png": {
+    "original": "logos/partners/pioneer-logo.png",
+    "variants": [
+      "logos/partners/pioneer-logo-100w.avif",
+      "logos/partners/pioneer-logo-100w.png",
+      "logos/partners/pioneer-logo-100w.webp",
+      "logos/partners/pioneer-logo-200w.avif",
+      "logos/partners/pioneer-logo-200w.png",
+      "logos/partners/pioneer-logo-200w.webp",
+      "logos/partners/pioneer-logo-300w.avif",
+      "logos/partners/pioneer-logo-300w.png",
+      "logos/partners/pioneer-logo-300w.webp",
+      "logos/partners/pioneer-logo-400w.avif",
+      "logos/partners/pioneer-logo-400w.png",
+      "logos/partners/pioneer-logo-400w.webp",
+      "logos/partners/pioneer-logo-600w.avif",
+      "logos/partners/pioneer-logo-600w.png",
+      "logos/partners/pioneer-logo-600w.webp",
+      "logos/partners/pioneer-logo-800w.avif",
+      "logos/partners/pioneer-logo-800w.png",
+      "logos/partners/pioneer-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/partners/pioneer-logo.jpg": {
+    "original": "logos/partners/pioneer-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/partners/pioneer-logo-placeholder.jpg"
+  },
+  "logos/partners/tau-logo.png": {
+    "original": "logos/partners/tau-logo.png",
+    "variants": [
+      "logos/partners/tau-logo-100w.avif",
+      "logos/partners/tau-logo-100w.png",
+      "logos/partners/tau-logo-100w.webp",
+      "logos/partners/tau-logo-200w.avif",
+      "logos/partners/tau-logo-200w.png",
+      "logos/partners/tau-logo-200w.webp",
+      "logos/partners/tau-logo-300w.avif",
+      "logos/partners/tau-logo-300w.png",
+      "logos/partners/tau-logo-300w.webp",
+      "logos/partners/tau-logo-400w.avif",
+      "logos/partners/tau-logo-400w.png",
+      "logos/partners/tau-logo-400w.webp",
+      "logos/partners/tau-logo-600w.avif",
+      "logos/partners/tau-logo-600w.png",
+      "logos/partners/tau-logo-600w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/partners/tau-logo.jpg": {
+    "original": "logos/partners/tau-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/partners/tau-logo-placeholder.jpg"
+  },
+  "team/members/Amit Deshwar.jpg": {
+    "original": "team/members/Amit Deshwar.jpg",
+    "variants": [
+      "team/members/Amit Deshwar-1200w.avif",
+      "team/members/Amit Deshwar-1200w.jpg",
+      "team/members/Amit Deshwar-1200w.webp",
+      "team/members/Amit Deshwar-1600w.avif",
+      "team/members/Amit Deshwar-1600w.jpg",
+      "team/members/Amit Deshwar-1600w.webp",
+      "team/members/Amit Deshwar-400w.avif",
+      "team/members/Amit Deshwar-400w.jpg",
+      "team/members/Amit Deshwar-400w.webp",
+      "team/members/Amit Deshwar-800w.avif",
+      "team/members/Amit Deshwar-800w.jpg",
+      "team/members/Amit Deshwar-800w.webp"
+    ],
+    "placeholder": "team/members/Amit Deshwar-placeholder.jpg"
+  },
+  "team/members/Aryan Misra.jpg": {
+    "original": "team/members/Aryan Misra.jpg",
+    "variants": [
+      "team/members/Aryan Misra-400w.avif",
+      "team/members/Aryan Misra-400w.jpg",
+      "team/members/Aryan Misra-400w.webp",
+      "team/members/Aryan Misra-800w.avif",
+      "team/members/Aryan Misra-800w.jpg",
+      "team/members/Aryan Misra-800w.webp"
+    ],
+    "placeholder": "team/members/Aryan Misra-placeholder.jpg"
+  },
+  "team/members/Catherine Stehman-Breen.jpg": {
+    "original": "team/members/Catherine Stehman-Breen.jpg",
+    "variants": [
+      "team/members/Catherine Stehman-Breen-400w.avif",
+      "team/members/Catherine Stehman-Breen-400w.jpg",
+      "team/members/Catherine Stehman-Breen-400w.webp",
+      "team/members/Catherine Stehman-Breen-800w.avif",
+      "team/members/Catherine Stehman-Breen-800w.jpg",
+      "team/members/Catherine Stehman-Breen-800w.webp"
+    ],
+    "placeholder": "team/members/Catherine Stehman-Breen-placeholder.jpg"
+  },
+  "team/members/Jacob Kimmel.jpg": {
+    "original": "team/members/Jacob Kimmel.jpg",
+    "variants": [
+      "team/members/Jacob Kimmel-400w.avif",
+      "team/members/Jacob Kimmel-400w.jpg",
+      "team/members/Jacob Kimmel-400w.webp",
+      "team/members/Jacob Kimmel-800w.avif",
+      "team/members/Jacob Kimmel-800w.jpg",
+      "team/members/Jacob Kimmel-800w.webp"
+    ],
+    "placeholder": "team/members/Jacob Kimmel-placeholder.jpg"
+  },
+  "team/members/Julia Peng.jpg": {
+    "original": "team/members/Julia Peng.jpg",
+    "variants": [
+      "team/members/Julia Peng-1200w.avif",
+      "team/members/Julia Peng-1200w.jpg",
+      "team/members/Julia Peng-1200w.webp",
+      "team/members/Julia Peng-400w.avif",
+      "team/members/Julia Peng-400w.jpg",
+      "team/members/Julia Peng-400w.webp",
+      "team/members/Julia Peng-800w.avif",
+      "team/members/Julia Peng-800w.jpg",
+      "team/members/Julia Peng-800w.webp"
+    ],
+    "placeholder": "team/members/Julia Peng-placeholder.jpg"
+  },
+  "team/members/Melissa Moore.jpg": {
+    "original": "team/members/Melissa Moore.jpg",
+    "variants": [],
+    "placeholder": "team/members/Melissa Moore-placeholder.jpg"
+  },
+  "team/members/Michael Czech.jpg": {
+    "original": "team/members/Michael Czech.jpg",
+    "variants": [
+      "team/members/Michael Czech-400w.avif",
+      "team/members/Michael Czech-400w.jpg",
+      "team/members/Michael Czech-400w.webp"
+    ],
+    "placeholder": "team/members/Michael Czech-placeholder.jpg"
+  },
+  "team/members/Michael Swift.jpg": {
+    "original": "team/members/Michael Swift.jpg",
+    "variants": [
+      "team/members/Michael Swift-1200w.avif",
+      "team/members/Michael Swift-1200w.jpg",
+      "team/members/Michael Swift-1200w.webp",
+      "team/members/Michael Swift-1600w.avif",
+      "team/members/Michael Swift-1600w.jpg",
+      "team/members/Michael Swift-1600w.webp",
+      "team/members/Michael Swift-2400w.avif",
+      "team/members/Michael Swift-2400w.jpg",
+      "team/members/Michael Swift-2400w.webp",
+      "team/members/Michael Swift-3200w.avif",
+      "team/members/Michael Swift-3200w.jpg",
+      "team/members/Michael Swift-3200w.webp",
+      "team/members/Michael Swift-400w.avif",
+      "team/members/Michael Swift-400w.jpg",
+      "team/members/Michael Swift-400w.webp",
+      "team/members/Michael Swift-800w.avif",
+      "team/members/Michael Swift-800w.jpg",
+      "team/members/Michael Swift-800w.webp"
+    ],
+    "placeholder": "team/members/Michael Swift-placeholder.jpg"
+  },
+  "team/members/Oliver Chang.jpg": {
+    "original": "team/members/Oliver Chang.jpg",
+    "variants": [
+      "team/members/Oliver Chang-1200w.avif",
+      "team/members/Oliver Chang-1200w.jpg",
+      "team/members/Oliver Chang-1200w.webp",
+      "team/members/Oliver Chang-1600w.avif",
+      "team/members/Oliver Chang-1600w.jpg",
+      "team/members/Oliver Chang-1600w.webp",
+      "team/members/Oliver Chang-2400w.avif",
+      "team/members/Oliver Chang-2400w.jpg",
+      "team/members/Oliver Chang-2400w.webp",
+      "team/members/Oliver Chang-400w.avif",
+      "team/members/Oliver Chang-400w.jpg",
+      "team/members/Oliver Chang-400w.webp",
+      "team/members/Oliver Chang-800w.avif",
+      "team/members/Oliver Chang-800w.jpg",
+      "team/members/Oliver Chang-800w.webp"
+    ],
+    "placeholder": "team/members/Oliver Chang-placeholder.jpg"
+  },
+  "team/members/Parsa Idehpour.jpeg": {
+    "original": "team/members/Parsa Idehpour.jpeg",
+    "variants": [
+      "team/members/Parsa Idehpour-400w.avif",
+      "team/members/Parsa Idehpour-400w.jpeg",
+      "team/members/Parsa Idehpour-400w.webp"
+    ],
+    "placeholder": null
+  },
+  "team/members/Parsa Idehpour.jpg": {
+    "original": "team/members/Parsa Idehpour.jpg",
+    "variants": [],
+    "placeholder": "team/members/Parsa Idehpour-placeholder.jpg"
+  },
+  "team/members/Silvia Corvera.jpg": {
+    "original": "team/members/Silvia Corvera.jpg",
+    "variants": [
+      "team/members/Silvia Corvera-400w.avif",
+      "team/members/Silvia Corvera-400w.jpg",
+      "team/members/Silvia Corvera-400w.webp"
+    ],
+    "placeholder": "team/members/Silvia Corvera-placeholder.jpg"
+  },
+  "team/members/TeamPhoto.jpg": {
+    "original": "team/members/TeamPhoto.jpg",
+    "variants": [
+      "team/members/TeamPhoto-1200w.avif",
+      "team/members/TeamPhoto-1200w.jpg",
+      "team/members/TeamPhoto-1200w.webp",
+      "team/members/TeamPhoto-1600w.avif",
+      "team/members/TeamPhoto-1600w.jpg",
+      "team/members/TeamPhoto-1600w.webp",
+      "team/members/TeamPhoto-2400w.avif",
+      "team/members/TeamPhoto-2400w.jpg",
+      "team/members/TeamPhoto-2400w.webp",
+      "team/members/TeamPhoto-3200w.avif",
+      "team/members/TeamPhoto-3200w.jpg",
+      "team/members/TeamPhoto-3200w.webp",
+      "team/members/TeamPhoto-400w.avif",
+      "team/members/TeamPhoto-400w.jpg",
+      "team/members/TeamPhoto-400w.webp",
+      "team/members/TeamPhoto-800w.avif",
+      "team/members/TeamPhoto-800w.jpg",
+      "team/members/TeamPhoto-800w.webp"
+    ],
+    "placeholder": "team/members/TeamPhoto-placeholder.jpg"
+  },
+  "team/members/Vinit Mahajan.jpg": {
+    "original": "team/members/Vinit Mahajan.jpg",
+    "variants": [],
+    "placeholder": "team/members/Vinit Mahajan-placeholder.jpg"
+  }
+}

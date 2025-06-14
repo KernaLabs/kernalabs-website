@@ -14,28 +14,51 @@ const DNACursorAnimation = lazy(() => import('./DNACursorAnimation'));
 
 // Constants for repeated classes
 const CLASSES = {
+  // Layout
   container: 'container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8',
+  section: 'py-20 sm:py-28 lg:py-36',
+  sectionHero: 'min-h-screen w-full flex items-center relative py-24 sm:py-32 lg:py-40',
+  
+  // Typography
   sectionHeading: 'text-fluid-2xl sm:text-fluid-3xl lg:text-fluid-4xl font-display font-semibold tracking-display-normal text-kerna-beige mb-4',
   sectionDescription: 'text-fluid-lg font-body text-kerna-beige/60 max-w-2xl',
+  sectionSubheading: 'text-fluid-base sm:text-fluid-lg lg:text-fluid-xl font-display font-medium text-kerna-beige/70 tracking-wide uppercase',
+  
+  // Components
   card: 'relative h-full bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 backdrop-blur-md border border-kerna-beige/10 hover:border-kerna-beige/20 hover:from-kerna-beige/10 hover:to-kerna-beige/15 transition-all duration-300 group shadow-lg hover:shadow-xl',
   logoImage: 'h-6 sm:h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity',
-  carouselArrow: 'pointer-events-auto w-12 h-12 flex items-center justify-center bg-black/50 backdrop-blur-sm border border-white/20 rounded-full transition-all'
+  
+  // Interactive elements
+  carouselArrow: 'pointer-events-auto w-12 h-12 flex items-center justify-center bg-black/50 backdrop-blur-sm border border-white/20 rounded-full transition-all',
+  carouselContainer: 'overflow-x-auto overflow-y-hidden hide-scrollbar no-select cursor-grab active:cursor-grabbing pl-carousel pr-4',
+  
+  // Decorative elements
+  decorativeLine: 'hidden sm:block h-px bg-kerna-beige/20',
+  decorativeLineVertical: 'w-1 h-16 bg-kerna-darkred',
+  
+  // Banners
+  bannerContainer: 'bg-kerna-beige',
+  bannerContent: 'flex items-center py-8 sm:py-10 lg:py-12',
+  bannerText: 'text-fluid-sm sm:text-fluid-base md:text-fluid-lg lg:text-fluid-xl text-kerna-darkblue font-display font-medium leading-snug',
+  
+  // Footer
+  socialLink: 'w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300'
 };
 
 // Therapeutic cards data
 const therapeuticCards = [
   {
-    icon: '/icons/line-graph.svg',
+    icon: '/images/icons/ui/line-graph.svg',
     title: 'Expression Curve Tuning',
     description: 'Customizable expression profiles for diverse therapeutic applications.'
   },
   {
-    icon: '/icons/aim.svg',
+    icon: '/images/icons/ui/aim.svg',
     title: 'Cell-Type Specific Expression',
     description: 'Precision-targeted delivery for cell-specific therapeutic effects.'
   },
   {
-    icon: '/icons/clock.svg',
+    icon: '/images/icons/ui/clock.svg',
     title: 'Enhanced Half-life',
     description: 'Prolonged efficacy window through optimized mRNA stability.'
   }
@@ -43,28 +66,28 @@ const therapeuticCards = [
 
 // Journal logos data
 const journalLogos = [
-  { src: '/logos/cell-logo.png', alt: 'Cell' },
-  { src: '/logos/nature-text-logo.png', alt: 'Nature' },
-  { src: '/logos/science-logo.png', alt: 'Science' },
-  { src: '/logos/pnas-logo.png', alt: 'PNAS' },
-  { src: '/logos/csh-text-logo.png', alt: 'CSH' },
+  { src: '/images/logos/media/cell-logo.png', alt: 'Cell' },
+  { src: '/images/logos/media/nature-text-logo.png', alt: 'Nature' },
+  { src: '/images/logos/media/science-logo.png', alt: 'Science' },
+  { src: '/images/logos/media/pnas-logo.png', alt: 'PNAS' },
+  { src: '/images/logos/media/csh-text-logo.png', alt: 'CSH' },
   // { src: '/logos/naturedd-text-logo.png', alt: 'Nature DD' },
   // { src: '/logos/naturebiotech-text-logo.png', alt: 'Nature Biotech' },
 ];
 
 // Partner logos data
 const partnerLogos = [
-  { src: '/logos/gradient-logo.png', alt: 'Gradient Ventures' },
-  { src: '/logos/humba-logo.png', alt: 'Humba Ventures' },
-  { src: '/logos/tau-logo.png', alt: 'Tau Ventures' },
-  { src: '/logos/pioneer-logo.png', alt: 'Pioneer Fund' }
+  { src: '/images/logos/partners/gradient-logo.png', alt: 'Gradient Ventures' },
+  { src: '/images/logos/partners/humba-logo.png', alt: 'Humba Ventures' },
+  { src: '/images/logos/partners/tau-logo.png', alt: 'Tau Ventures' },
+  { src: '/images/logos/partners/pioneer-logo.png', alt: 'Pioneer Fund' }
 ];
 
 // Media articles data
 const mediaArticles = [
   {
     href: 'https://www.asbmb.org/asbmb-today/careers/040225/melissa-moore-to-speak-at-asbmb-2025',
-    logo: '/logos/asbmb-text-logo.png',
+    logo: '/images/logos/media/asbmb-text-logo.png',
     date: 'April 2, 2025',
     title: 'Melissa Moore to speak at ASBMB 2025',
     description: 'Renowned RNA biochemist Melissa Moore will take center stage at ASBMB\'s 2025 Annual Meeting.',
@@ -72,7 +95,7 @@ const mediaArticles = [
   },
   {
     href: 'https://endpoints.news/modernas-former-top-scientist-moore-has-a-new-mrna-startup/',
-    logo: '/logos/endpoint-text-logo.png',
+    logo: '/images/logos/media/endpoint-text-logo.png',
     date: 'January 10, 2025',
     title: 'Exclusive: Moderna\'s former top scientist has a new startup using AI to improve mRNA therapies',
     description: 'Kerna Labs was founded in 2024 by industry veterans Amit Deshwar, Melissa J. Moore, and Julia Peng.',
@@ -114,24 +137,21 @@ const LandingPage = ({ contentReady = true }) => {
   return (
     <div
       id="landing-page-container"
-      className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden bg-black"
-      style={{ 
+      className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden bg-black bg-cover bg-center bg-fixed"
+      style={{
         backgroundImage: `linear-gradient(to bottom, 
           rgba(0, 0, 0, 0.85) 0%, 
           rgba(14, 23, 43, 0.3) 25%,
           rgba(14, 23, 43, 0.3) 75%,
           rgba(0, 0, 0, 0.85) 100%
-        ), url('/BackgroundSwirls.png')`, 
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center bottom', 
-        backgroundAttachment: 'fixed' 
+        ), url('/images/backgrounds/BackgroundSwirls.png')`
       }}
     >
       {/* Sentinel element for navbar scroll detection */}
-      <div id="navbar-scroll-sentinel" className="w-full h-1" style={{ position: 'absolute', top: 0, left: 0 }} />
+      <div id="navbar-scroll-sentinel" className="w-full h-1 absolute top-0 left-0" />
       
       {/* Section 1: Better Genetic Medicines */}
-      <section id="main" className="min-h-screen w-full flex items-center relative py-24 sm:py-32 lg:py-40">
+      <section id="main" className={CLASSES.sectionHero}>
         {/* DNA Cursor Animation - absolute positioned to cover the section */}
         <div className="absolute inset-0 overflow-hidden">
           <Suspense fallback={<div className="w-full h-full" />}>
@@ -192,7 +212,7 @@ const LandingPage = ({ contentReady = true }) => {
           className="select-none absolute right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto mask-fade-vertical"
         >
           {/* <img 
-            src="/hazy_droplet.svg" 
+            src="/images/icons/ui/hazy_droplet.svg" 
             alt="Hazy Droplet" 
             className="w-full h-full object-contain select-none"
           /> */}
@@ -204,7 +224,7 @@ const LandingPage = ({ contentReady = true }) => {
           className="absolute right-0 top-1/2 md:top-2/3 w-[150%] sm:w-4/5 md:w-5/6 h-auto transform -translate-y-1/3 md:-translate-y-1/2 mask-fade-bottom"
         >
           <img 
-            src="/trail.svg" 
+            src="/images/icons/ui/trail.svg" 
             alt="Particle Trail" 
             className="w-full h-full object-scale-down scale-200 sm:scale-150 md:scale-125 select-none -rotate-2 translate-x-[30%] -translate-y-[10%] origin-center"
           />
@@ -246,7 +266,7 @@ const LandingPage = ({ contentReady = true }) => {
       {/* Section 4: MRNA Therapeutics + Banner */}
       <div>
         {/* MRNA Therapeutics */}
-        <section id="therapeutics" className="py-20 sm:py-28 lg:py-36">
+        <section id="therapeutics" className={CLASSES.section}>
           <div className={CLASSES.container}>
             <AnimatedSection animation="fadeInUp" className="mb-12">
               <h2 className={CLASSES.sectionHeading}>
@@ -275,12 +295,12 @@ const LandingPage = ({ contentReady = true }) => {
         
         {/* Therapeutics Banner */}
         <AnimatedSection animation="fadeIn" threshold={0.1}>
-          <div className="bg-kerna-beige">
+          <div className={CLASSES.bannerContainer}>
             <div className={CLASSES.container}>
-              <div className="flex items-center py-8 sm:py-10 lg:py-12">
-                <AnimatedSection animation="slideInLeft" className="w-1 h-16 bg-kerna-darkred mr-6 flex-shrink-0"></AnimatedSection>
+              <div className={CLASSES.bannerContent}>
+                <AnimatedSection animation="slideInLeft" className={`${CLASSES.decorativeLineVertical} mr-6 flex-shrink-0`}></AnimatedSection>
                 <AnimatedSection animation="fadeInUp" delay={100}>
-                  <p className="text-fluid-sm sm:text-fluid-base md:text-fluid-lg lg:text-fluid-xl text-kerna-darkblue font-display font-medium leading-snug">
+                  <p className={CLASSES.bannerText}>
                     Our platform designs mRNA sequences that drive magnitude higher protein output with unprecedented cell-type precision.
                   </p>
                 </AnimatedSection>
@@ -297,11 +317,11 @@ const LandingPage = ({ contentReady = true }) => {
           <div className={CLASSES.container}>
             <AnimatedSection animation="fadeInUp" className="mb-12">
               <div className="flex items-center gap-4">
-                <div className="hidden sm:block h-px bg-kerna-beige/20 w-16 lg:w-24"></div>
-                <p className="text-fluid-base sm:text-fluid-lg lg:text-fluid-xl font-display font-medium text-kerna-beige/70 tracking-wide uppercase">
+                <div className={`${CLASSES.decorativeLine} w-16 lg:w-24`}></div>
+                <p className={CLASSES.sectionSubheading}>
                   Built by the leading minds in machine learning and RNA
                 </p>
-                <div className="hidden sm:block h-px bg-kerna-beige/20 flex-1"></div>
+                <div className={`${CLASSES.decorativeLine} flex-1`}></div>
               </div>
             </AnimatedSection>
           </div>
@@ -309,7 +329,7 @@ const LandingPage = ({ contentReady = true }) => {
           <div className="relative">
             <div 
               ref={teamCarousel.carouselRef}
-              className="overflow-x-auto overflow-y-hidden hide-scrollbar no-select cursor-grab active:cursor-grabbing pl-carousel pr-4"
+              className={CLASSES.carouselContainer}
               onMouseDown={teamCarousel.handleMouseDown}
               onMouseLeave={teamCarousel.handleMouseLeave}
               onMouseUp={teamCarousel.handleMouseUp}
@@ -364,11 +384,11 @@ const LandingPage = ({ contentReady = true }) => {
           <div className={CLASSES.container}>
             <AnimatedSection animation="fadeInUp" className="mb-12">
               <div className="flex items-center gap-4">
-                <div className="hidden sm:block h-px bg-kerna-beige/20 w-16 lg:w-24"></div>
-                <p className="text-fluid-base sm:text-fluid-lg lg:text-fluid-xl font-display font-medium text-kerna-beige/70 tracking-wide uppercase">
+                <div className={`${CLASSES.decorativeLine} w-16 lg:w-24`}></div>
+                <p className={CLASSES.sectionSubheading}>
                   Advised by the top scientific minds in genetic medicine
                 </p>
-                <div className="hidden sm:block h-px bg-kerna-beige/20 flex-1"></div>
+                <div className={`${CLASSES.decorativeLine} flex-1`}></div>
               </div>
             </AnimatedSection>
           </div>
@@ -376,7 +396,7 @@ const LandingPage = ({ contentReady = true }) => {
           <div className="relative">
             <div 
               ref={advisorsCarousel.carouselRef}
-              className="overflow-x-auto overflow-y-hidden hide-scrollbar no-select cursor-grab active:cursor-grabbing pl-carousel pr-4"
+              className={CLASSES.carouselContainer}
               onMouseDown={advisorsCarousel.handleMouseDown}
               onMouseLeave={advisorsCarousel.handleMouseLeave}
               onMouseUp={advisorsCarousel.handleMouseUp}
@@ -428,7 +448,7 @@ const LandingPage = ({ contentReady = true }) => {
         
         {/* Team Banner */}
         <AnimatedSection animation="fadeIn" threshold={0.1}>
-          <div className="bg-kerna-beige">
+          <div className={CLASSES.bannerContainer}>
             <div className={`${CLASSES.container} py-8 sm:py-10 lg:py-12`}>
             <div className="text-center">
               <AnimatedSection animation="fadeInUp" delay={0}>
@@ -479,7 +499,7 @@ const LandingPage = ({ contentReady = true }) => {
                 {/* <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px] lg:h-[500px] overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 md:hidden"></div>
                   <img 
-                    src="/team/TeamPhoto.jpg" 
+                    src="/images/team/members/TeamPhoto.jpg" 
                     alt="Team" 
                     className="w-full h-full object-cover"
                   />
@@ -508,7 +528,7 @@ const LandingPage = ({ contentReady = true }) => {
       </section> */}
 
       {/* Section 6: Media & Publications */}
-      <section id="media" className="py-20 sm:py-28 lg:py-36">
+      <section id="media" className={CLASSES.section}>
         <div className={CLASSES.container}>
           {/* Heading and Intro */}
           <AnimatedSection animation="fadeInUp" className="mb-12">
@@ -587,32 +607,25 @@ const LandingPage = ({ contentReady = true }) => {
       {/* Footer */}
       <AnimatedSection animation="fadeIn" threshold={0.1}>
         <footer 
-          className="min-h-[30vh] relative flex flex-col py-12 sm:py-16 lg:py-20"
-          style={{ 
-            background: `linear-gradient(to bottom, 
-              rgba(0, 0, 0, 0.9) 0%, 
-              rgba(0, 0, 0, 0.4) 50%,
-              rgba(0, 0, 0, 0.9) 100%
-            )`
-          }}
+          className="min-h-[30vh] relative flex flex-col py-12 sm:py-16 lg:py-20 bg-footer-gradient"
         >
           <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between container mx-auto px-4 gap-8 lg:gap-12">
             {/* Left side - Leaf logo and social links */}
             <AnimatedSection animation="fadeInUp" delay={50} className="flex flex-col items-center">
-              <img src="/icons/KernaLeaf.svg" alt="Kerna Leaf" className="w-20 sm:w-24 h-auto mb-4 sm:mb-6 select-none" />
+              <img src="/images/icons/brand/KernaLeaf.svg" alt="Kerna Leaf" className="w-20 sm:w-24 h-auto mb-4 sm:mb-6 select-none" />
               <div className="flex justify-center gap-4 sm:gap-6">
-                <a href="https://twitter.com/KernaLabs" target="_blank" rel="noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300">
-                  <img src="/icons/XIcon.svg" alt="Twitter/X" className="w-5 h-5 sm:w-6 sm:h-6" />
+                <a href="https://twitter.com/KernaLabs" target="_blank" rel="noreferrer" className={CLASSES.socialLink}>
+                  <img src="/images/icons/brand/XIcon.svg" alt="Twitter/X" className="w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
-                <a href="https://linkedin.com/company/kernalabs" target="_blank" rel="noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300">
-                  <img src="/icons/LinkedInIcon.svg" alt="LinkedIn" className="w-5 h-5 sm:w-6 sm:h-6" />
+                <a href="https://linkedin.com/company/kernalabs" target="_blank" rel="noreferrer" className={CLASSES.socialLink}>
+                  <img src="/images/icons/brand/LinkedInIcon.svg" alt="LinkedIn" className="w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
               </div>
             </AnimatedSection>
 
             {/* Right side - Text logo and copyright */}
             <AnimatedSection animation="fadeIn" delay={150} className="text-center lg:text-right lg:w-[70%]">
-              <img src="/icons/TextOnlyLogo.svg" alt="Kerna Labs" className="mx-auto lg:ml-auto lg:mr-0 mb-2 sm:mb-4 w-full max-w-[280px] sm:max-w-md lg:max-w-none h-auto opacity-10 select-none" />
+              <img src="/images/icons/brand/TextOnlyLogo.svg" alt="Kerna Labs" className="mx-auto lg:ml-auto lg:mr-0 mb-2 sm:mb-4 w-full max-w-[280px] sm:max-w-md lg:max-w-none h-auto opacity-10 select-none" />
               <p className="text-kerna-beige text-fluid-sm font-body">
                 © 2025 Kerna Labs
               </p>

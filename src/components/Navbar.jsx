@@ -134,7 +134,7 @@ const Navbar = () => {
         <div className={`flex items-center p-2 pr-4 sm:pr-6 md:pr-8 h-full border-r border-gray-700 transition-all duration-700 ${
           isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
         }`}>
-          <img src="/TextLogoWhite.png" alt="Kerna Labs Logo" className="h-8 sm:h-10 md:h-12" />
+          <img src="/images/app/TextLogoWhite.png" alt="Kerna Labs Logo" className="h-8 sm:h-10 md:h-12" />
         </div>
 
         {/* Desktop Menu with staggered animations */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { logoConfig, defaultLogoConfig } from '../config/logoConfig';
+import Image from './Image';
 
 const InstitutionLogo = ({ logo, name, size = 'default' }) => {
   // Extract filename from path
@@ -14,39 +15,40 @@ const InstitutionLogo = ({ logo, name, size = 'default' }) => {
   // Check if logo should be inverted
   const shouldInvert = config.invert || false;
   
-  // Size presets for different contexts
-  const sizePresets = {
-    default: {
-      height: `${config.height * scale}px`,
-      maxWidth: `${config.maxWidth * scale}px`
-    },
-    media: {
-      height: '40px',
-      maxWidth: '200px'
-    },
-    team: {
-      height: 'auto',
-      maxHeight: `${config.height * scale * 0.925}px`,
-      width: 'auto',
-      maxWidth: `${Math.min(config.maxWidth * scale * 0.925, 78)}px`,
-      objectFit: 'contain'
-    }
-  };
+  // Build className with Tailwind classes
+  const baseClasses = 'w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-200 select-none pointer-events-none';
   
-  // Get the appropriate style based on size prop
-  const logoStyle = sizePresets[size] || sizePresets.default;
+  // For media preset, use responsive Tailwind classes
+  let className = baseClasses;
+  let style = {};
   
-  // Build className with conditional invert
-  const className = `w-auto object-contain ${shouldInvert ? 'invert' : ''} opacity-90 hover:opacity-100 transition-opacity duration-200 select-none pointer-events-none`;
+  if (size === 'media') {
+    // Use Tailwind responsive classes for media logos
+    className += ' h-5 sm:h-7 md:h-9';
+    // Only apply maxWidth from config to prevent very wide logos
+    style.maxWidth = `${config.maxWidth * scale}px`;
+  } else {
+    // For team and default, we need to use the config values
+    style = {
+      height: size === 'team' ? 'auto' : `${config.height * scale}px`,
+      maxHeight: size === 'team' ? `${config.height * scale * 0.925}px` : undefined,
+      maxWidth: size === 'team' 
+        ? `${Math.min(config.maxWidth * scale * 0.925, 78)}px`
+        : `${config.maxWidth * scale}px`
+    };
+  }
+  
+  // Add invert class if needed
+  className += shouldInvert ? ' invert' : '';
   
   return (
-    <img
+    <Image
       src={logo}
       alt={name}
+      type="logo"
       className={className}
-      style={logoStyle}
-      loading="lazy"
-      draggable={false}
+      style={style}
+      sizes="(max-width: 640px) 100px, 200px"
     />
   );
 };

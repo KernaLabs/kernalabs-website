@@ -1,6 +1,7 @@
 import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import InstitutionLogo from './InstitutionLogo';
+import Image from './Image';
 
 const TeamCard = ({ member, delay = 0 }) => {
   const cardClass = 'h-full bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 backdrop-blur-md border border-kerna-beige/10 hover:border-kerna-beige/20 transition-[border-color,box-shadow] duration-300 group shadow-lg hover:shadow-xl';
@@ -15,12 +16,14 @@ const TeamCard = ({ member, delay = 0 }) => {
         >
           {/* Profile image */}
           <div className="flex items-center justify-center mb-2">
-            <img 
+            <Image 
               src={member.image} 
               alt={`${member.name} profile`} 
+              type="team"
+              width={80}
+              height={80}
               className="w-20 h-20 rounded-full object-cover select-none pointer-events-none transition-all duration-300 group-hover:brightness-110"
-              draggable={false}
-              loading="lazy"
+              sizes="80px"
             />
           </div>
           

@@ -25,7 +25,7 @@ const LoadingScreen = ({ isLoading }) => {
         {/* Animated Kerna Leaf Logo */}
         <div className="relative">
           <img 
-            src="/icons/KernaLeaf.svg" 
+            src="/images/icons/brand/KernaLeaf.svg" 
             alt="Kerna Labs" 
             className="w-24 h-24 animate-pulse"
           />

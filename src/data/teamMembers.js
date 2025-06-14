@@ -2,7 +2,7 @@ export const coreTeam = [
   {
     name: 'Amit Deshwar, PhD',
     position: 'Co-founder & CTO',
-    image: '/team/Amit Deshwar.jpg',
+    image: '/images/team/members/Amit Deshwar.jpg',
     description: [
       'Former Founding Scientist & Head of Platform @ Deep Genomics',
       '10+ years of experience in ML for RNA biology',
@@ -10,15 +10,15 @@ export const coreTeam = [
       'PhD Machine Learning @ University of Toronto',
     ],
     institutions: [
-      { name: 'Deep Genomics', logo: '/logos/dg-logo.png'},
-      { name: 'Google', logo: '/logos/google-text-logo.png'},
-      { name: 'University of Toronto', logo: '/logos/uoft-text-logo.png'},
+      { name: 'Deep Genomics', logo: '/images/logos/institutions/dg-logo.png'},
+      { name: 'Google', logo: '/images/logos/institutions/google-text-logo.png'},
+      { name: 'University of Toronto', logo: '/images/logos/institutions/uoft-text-logo.png'},
     ]
   },
   {
     name: 'Melissa J. Moore, PhD',
     position: 'Co-founder',
-    image: '/team/Melissa Moore.jpg',
+    image: '/images/team/members/Melissa Moore.jpg',
     description: [
       'CSO Emerita @ Moderna',
       'Led development of platform behind Covid-19 vaccine',
@@ -29,18 +29,18 @@ export const coreTeam = [
       'PhD Biological Chemistry @ MIT',
     ],
     institutions: [
-      { name: 'RNA Therapeutics Institute', logo: '/logos/rnati-logo.png'},
-      { name: 'UMass Medical', logo: '/logos/umc-text-logo.png'},
-      { name: 'Moderna', logo: '/logos/moderna-text-logo.png'},
-      { name: 'National Academy of Sciences', logo: '/logos/nas-text-logo.png'},
-      { name: 'Tessera', logo: '/logos/tessera-text-logo.png'},
-      { name: 'nChroma', logo: '/logos/nchroma-text-logo.png'},
+      { name: 'RNA Therapeutics Institute', logo: '/images/logos/institutions/rnati-logo.png'},
+      { name: 'UMass Medical', logo: '/images/logos/institutions/umc-text-logo.png'},
+      { name: 'Moderna', logo: '/images/logos/institutions/moderna-text-logo.png'},
+      { name: 'National Academy of Sciences', logo: '/images/logos/institutions/nas-text-logo.png'},
+      { name: 'Tessera', logo: '/images/logos/institutions/tessera-text-logo.png'},
+      { name: 'nChroma', logo: '/images/logos/institutions/nchroma-text-logo.png'},
     ]
   },
   {
     name: 'Julia Peng',
     position: 'Co-founder & CEO',
-    image: '/team/Julia Peng.jpg',
+    image: '/images/team/members/Julia Peng.jpg',
     description: [
       'Prev Go-to-Market @ Confluent',
       '8+ years in deeptech partnerships, GTM, B2B sales',
@@ -48,15 +48,15 @@ export const coreTeam = [
       'BSc Economics @ The Wharton School',
     ],
     institutions: [
-      { name: 'Wharton', logo: '/logos/wharton-text-logo.png'},
-      { name: 'Confluent', logo: '/logos/confluent-text-logo.png'},
-      { name: 'JP Morgan', logo: '/logos/jpm-logo.png'}
+      { name: 'Wharton', logo: '/images/logos/institutions/wharton-text-logo.png'},
+      { name: 'Confluent', logo: '/images/logos/institutions/confluent-text-logo.png'},
+      { name: 'JP Morgan', logo: '/images/logos/institutions/jpm-logo.png'}
     ]
   },
   {
     name: 'Michael Swift, PhD',
     position: 'Founding Scientist',
-    image: '/team/Michael Swift.jpg',
+    image: '/images/team/members/Michael Swift.jpg',
     description: [
       'High-throughput biology, single-cell and multi-omics expertise',
       '10+ years in RNA biology',
@@ -65,15 +65,15 @@ export const coreTeam = [
       'PhD Systems Biology @ Stanford University',
     ],
     institutions: [
-      { name: 'Stanford', logo: '/logos/stanford-text-logo.png'},
-      { name: 'Longitude Capital', logo: '/logos/longitude-text-logo.png'},
-      { name: 'miRagen', logo: '/logos/mgen-logo.png' }
+      { name: 'Stanford', logo: '/images/logos/institutions/stanford-text-logo.png'},
+      { name: 'Longitude Capital', logo: '/images/logos/institutions/longitude-text-logo.png'},
+      { name: 'miRagen', logo: '/images/logos/institutions/mgen-logo.png' }
     ]
   },
   {
     name: 'Oliver Chang, PhD',
     position: 'Platform Scientist',
-    image: '/team/Oliver Chang.jpg',
+    image: '/images/team/members/Oliver Chang.jpg',
     description: [
       '7+ years of R&D experience in mammalian cell engineering and synthetic biology',
       'Expert in CRISPR, optogenetics, and biomolecular condensates',
@@ -83,14 +83,14 @@ export const coreTeam = [
       'Spearheaded a genome organization platform integrating CRISPR, optogenetics, and genomic imaging',
     ],
     institutions: [
-      { name: 'Princeton', logo: '/logos/princeton-text-logo.png'},
-      { name: 'ODBI', logo: '/logos/odi-text-logo.png'}
+      { name: 'Princeton', logo: '/images/logos/institutions/princeton-text-logo.png'},
+      { name: 'ODBI', logo: '/images/logos/institutions/odi-text-logo.png'}
     ]
   },
   {
     name: 'Aryan Misra',
     position: 'Machine Learning',
-    image: '/team/Aryan Misra.jpg',
+    image: '/images/team/members/Aryan Misra.jpg',
     description: [
       'Generative AI, deep probabilistic modelling, Bayesian active learning, systems design',
       '12+ years in engineering and machine learning',
@@ -98,18 +98,18 @@ export const coreTeam = [
       'BSc Mathematics, BSc Statistics @ University of Toronto',
     ],
     institutions: [
-      { name: 'University of Toronto', logo: '/logos/uoft-text-logo.png' },
+      { name: 'University of Toronto', logo: '/images/logos/institutions/uoft-text-logo.png' },
     ]
   },
   {
     name: 'Parsa Idehpour, MSE',
     position: 'Machine Learning',
-    image: '/team/Parsa Idehpour.jpeg',
+    image: '/images/team/members/Parsa Idehpour.jpeg',
     description: [
       'MSE Robotics and AI @ University of Pennsylvania',
     ],
     institutions: [
-      { name: 'University of Pennsylvania', logo: '/logos/upenn-text-logo.png' },
+      { name: 'University of Pennsylvania', logo: '/images/logos/institutions/upenn-text-logo.png' },
     ]
   },
 ];
@@ -118,7 +118,7 @@ export const advisors = [
   {
     name: 'Catherine Stehman-Breen, MD',
     position: 'Advisor',
-    image: '/team/Catherine Stehman-Breen.jpg',
+    image: '/images/team/members/Catherine Stehman-Breen.jpg',
     description: [
       'Chief Executive Officer @ Chroma Medicine (2020-2024) until merger with Nvelop',
       'Chief Medical Officer @ Sarepta Therapeutics (2017) & @ Dyne/Disarm Therapeutics (2018-2019)',
@@ -128,17 +128,17 @@ export const advisors = [
       'MD University of Chicago; MS Epidemiology & Nephrology fellowship @ University of Washington',
     ],
     institutions: [
-      { name: 'nChroma', logo: '/logos/nchroma-text-logo.png'},
-      { name: 'Dyne Therapeutics', logo: '/logos/dyne-text-logo.png'},
-      { name: 'Amgen', logo: '/logos/amgen-text-logo.png'},
-      { name: 'Regeneron', logo: '/logos/regeneron-text-logo.png'},
-      { name: 'Sarepta Therapeutics', logo: '/logos/sarepta-text-logo.png'},
+      { name: 'nChroma', logo: '/images/logos/institutions/nchroma-text-logo.png'},
+      { name: 'Dyne Therapeutics', logo: '/images/logos/institutions/dyne-text-logo.png'},
+      { name: 'Amgen', logo: '/images/logos/institutions/amgen-text-logo.png'},
+      { name: 'Regeneron', logo: '/images/logos/institutions/regeneron-text-logo.png'},
+      { name: 'Sarepta Therapeutics', logo: '/images/logos/institutions/sarepta-text-logo.png'},
     ]
   },
   {
     name: 'Jacob Kimmel, PhD',
     position: 'Advisor',
-    image: '/team/Jacob Kimmel.jpg',
+    image: '/images/team/members/Jacob Kimmel.jpg',
     description: [
       'Co-founder & President @ NewLimit, creating epigenetic reprogramming therapeutics',
       'Principal Investigator & Computational Fellow @ Calico Life Sciences, leading cell-rejuvenation research',
@@ -146,15 +146,15 @@ export const advisors = [
       'PhD Stem-Cell Biology @ UCSF (NSF Center for Cellular Construction)',
     ],
     institutions: [
-      { name: 'NewLimit', logo: '/logos/newlimit-text-logo.png'},
-      { name: 'Calico Life Sciences', logo: '/logos/calico-text-logo.png'},
-      { name: 'UCSF', logo: '/logos/ucsf-text-logo.png'},
+      { name: 'NewLimit', logo: '/images/logos/institutions/newlimit-text-logo.png'},
+      { name: 'Calico Life Sciences', logo: '/images/logos/institutions/calico-text-logo.png'},
+      { name: 'UCSF', logo: '/images/logos/institutions/ucsf-text-logo.png'},
     ]
   },
   {
     name: 'Michael Czech, PhD',
     position: 'Advisor',
-    image: '/team/Michael Czech.jpg',
+    image: '/images/team/members/Michael Czech.jpg',
     description: [
       'Isadore & Fannie Foxman Chair of Medical Research @ UMass Chan Medical School',
       'Founding Chair, Program in Molecular Medicine (1989-2018); grew program to 36 labs',
@@ -163,14 +163,14 @@ export const advisors = [
       'PhD Biochemistry @ Brown University; Post-doc @ Duke University Medical Center',
     ],
     institutions: [
-      { name: 'HHMI', logo: '/logos/hhmi-text-logo.png'},
-      { name: 'UMass Medical', logo: '/logos/umc-text-logo.png'},
+      { name: 'HHMI', logo: '/images/logos/institutions/hhmi-text-logo.png'},
+      { name: 'UMass Medical', logo: '/images/logos/institutions/umc-text-logo.png'},
     ]
   },
   {
     name: 'Silvia Corvera, MD',
     position: 'Advisor',
-    image: '/team/Silvia Corvera.jpg',
+    image: '/images/team/members/Silvia Corvera.jpg',
     description: [
       'Professor & Endowed Chair in Diabetes Research @ UMass Chan Medical School',
       'Leads lab on human adipose-tissue development, thermogenic fat & metabolic disease',
@@ -178,14 +178,14 @@ export const advisors = [
       'MD & MSc Molecular Biology @ Universidad Nacional Autónoma de México; former faculty @ UPenn',
     ],
     institutions: [
-      { name: 'University of Pennsylvania', logo: '/logos/upenn-text-logo.png'},
-      { name: 'UMass Medical', logo: '/logos/umc-text-logo.png' },
+      { name: 'University of Pennsylvania', logo: '/images/logos/institutions/upenn-text-logo.png'},
+      { name: 'UMass Medical', logo: '/images/logos/institutions/umc-text-logo.png' },
     ]
   },
   {
     name: 'Vinit Mahajan, MD, PhD',
     position: 'Advisor',
-    image: '/team/Vinit Mahajan.jpg',
+    image: '/images/team/members/Vinit Mahajan.jpg',
     description: [
       'Professor of Ophthalmology & Vice-Chair for Research @ Stanford University',
       'NIH-funded Molecular Surgery & Omics Lab developing gene-therapy & proteomics for retinal disease',
@@ -193,8 +193,8 @@ export const advisors = [
       'Vitreoretinal surgeon with >300 peer-reviewed publications; trained 20+ surgical fellows worldwide',
     ],
     institutions: [
-      { name: 'Stanford', logo: '/logos/stanford-text-logo.png' },
-      { name: 'UCLA', logo: '/logos/ucla-text-logo.png'},
+      { name: 'Stanford', logo: '/images/logos/institutions/stanford-text-logo.png' },
+      { name: 'UCLA', logo: '/images/logos/institutions/ucla-text-logo.png'},
     ]
   },
 ];

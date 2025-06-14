@@ -1,0 +1,164 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { IMAGE_SIZES, getImageType, shouldPrioritize } from '../config/imageConfig';
+
+const Image = ({ 
+  src, 
+  alt, 
+  type,
+  priority,
+  className = '',
+  onLoad,
+  width,
+  height,
+  sizes,
+  loading,
+  style,
+  ...props 
+}) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const imgRef = useRef(null);
+  
+  // Determine image type if not provided
+  const imageType = type || getImageType(src);
+  const config = IMAGE_SIZES[imageType] || IMAGE_SIZES.default;
+  
+  // Determine if image should be prioritized
+  const isPriority = priority !== undefined ? priority : shouldPrioritize(src, imageType);
+  
+  // Use provided sizes or default from config
+  const imageSizes = sizes || config.sizes;
+  
+  // Extract base path and extension
+  const lastDot = src.lastIndexOf('.');
+  const basePath = src.substring(0, lastDot);
+  const originalExt = src.substring(lastDot + 1);
+  
+  // Set up intersection observer for lazy loading
+  useEffect(() => {
+    if (isPriority || loading === 'eager') {
+      setIsInView(true);
+      return;
+    }
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: '50px',
+        threshold: 0.01
+      }
+    );
+    
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+    
+    return () => observer.disconnect();
+  }, [isPriority, loading]);
+  
+  const handleLoad = (e) => {
+    setIsLoaded(true);
+    setHasError(false);
+    onLoad?.(e);
+  };
+  
+  const handleError = (e) => {
+    // If an optimized version fails, we'll fall back to the original
+    if (e.target.src !== src) {
+      e.target.src = src;
+    } else {
+      setHasError(true);
+    }
+  };
+  
+  // Generate srcset for responsive images
+  const generateResponsiveSrcSet = (format) => {
+    const ext = format || originalExt;
+    
+    // For logos, check if it's a small logo that might not have all sizes
+    // NewLimit logo is 288x81, so it only has 100w and 200w variants
+    const isSmallLogo = imageType === 'logo' && src.includes('newlimit');
+    const availableWidths = isSmallLogo 
+      ? config.widths.filter(w => w <= 200)
+      : config.widths;
+    
+    return availableWidths
+      .map(width => {
+        if (format) {
+          // For next-gen formats: name-400w.webp
+          return `${basePath}-${width}w.${format} ${width}w`;
+        } else {
+          // For original format: name-400w.jpg
+          return `${basePath}-${width}w.${ext} ${width}w`;
+        }
+      })
+      .join(', ');
+  };
+  
+  // Merge provided styles with defaults
+  const imgStyle = {
+    // Preserve aspect ratio
+    objectFit: style?.objectFit || 'contain',
+    // Prevent layout shift
+    aspectRatio: width && height ? `${width}/${height}` : undefined,
+    // Apply any additional styles
+    ...style
+  };
+  
+  return (
+    <picture ref={imgRef}>
+      {/* Only load sources when in view */}
+      {isInView && !hasError && (
+        <>
+          {/* Try AVIF first (best compression) */}
+          <source 
+            type="image/avif" 
+            srcSet={generateResponsiveSrcSet('avif')}
+            sizes={imageSizes}
+            onError={(e) => e.target.remove()} // Remove if not available
+          />
+          
+          {/* Try WebP next */}
+          <source 
+            type="image/webp" 
+            srcSet={generateResponsiveSrcSet('webp')}
+            sizes={imageSizes}
+            onError={(e) => e.target.remove()} // Remove if not available
+          />
+          
+          {/* Try optimized original format */}
+          <source
+            type={`image/${originalExt === 'jpg' ? 'jpeg' : originalExt}`}
+            srcSet={generateResponsiveSrcSet()}
+            sizes={imageSizes}
+            onError={(e) => e.target.remove()} // Remove if not available
+          />
+        </>
+      )}
+      
+      {/* Fallback to original image */}
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={isPriority ? 'eager' : 'lazy'}
+        fetchpriority={isPriority ? 'high' : 'auto'}
+        decoding="async"
+        onLoad={handleLoad}
+        onError={handleError}
+        style={imgStyle}
+        className={`${className} ${!isLoaded && !hasError ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        {...props}
+      />
+    </picture>
+  );
+};
+
+export default Image;

@@ -8,9 +8,9 @@ export const logoConfig = {
   // WIDE LOGOS (aspect ratio > 4.0) - need smaller heights to fit width
   'osu-text-logo.png': { height: 14, maxWidth: 93 },        // 2560x384 (6.67:1)
   'gradient-logo.png': { height: 14, maxWidth: 89 },        // 5000x785 (6.37:1)
-  'pioneer-logo.png': { height: 18, maxWidth: 77, invert: true },         // 5700x1337 (4.26:1)
+  'pioneer-logo.png': { height: 18, maxWidth: 77 },         // 5700x1337 (4.26:1)
   'confluent-text-logo.png': { height: 20, maxWidth: 123, scale: 1.15 },  // 1206x196 (6.15:1)
-  'endpoint-text-logo.png': { height: 18, maxWidth: 86, invert: true },    // 760x160 (4.75:1)
+  'endpoint-text-logo.png': { height: 16, maxWidth: 140, invert: true },    // 759x87 (8.72:1)
   'regeneron-text-logo.png': { height: 18, maxWidth: 90 },   // 860x171 (5.03:1)
   'tau-logo.png': { height: 20, maxWidth: 80, scale: 1.15 },             // 400x100 (4.00:1) - scaled up
   
@@ -31,9 +31,9 @@ export const logoConfig = {
   'asbmb-text-logo.png': { height: 20, maxWidth: 68 },      // 876x256 (3.42:1)
   'nature-text-logo.png': { height: 18, maxWidth: 73 },     // 1200x294 (4.08:1)
   'hhmi-text-logo.png': { height: 24, maxWidth: 80, scale: 0.85 },       // 1998x600 (3.33:1)
-  'science-logo.png': { height: 20, maxWidth: 73, invert: true },         // 1200x330 (3.64:1)
+  'science-logo.png': { height: 20, maxWidth: 73, invert: true },         // 1200x330 (3.63:1)
   'usc-text-logo.png': { height: 20, maxWidth: 65, invert: true },        // 1000x309 (3.24:1)
-  'humba-logo.png': { height: 20, maxWidth: 62, scale: 1.2, invert: true },           // 1920x618 (3.11:1) - scaled up
+  'humba-logo.png': { height: 20, maxWidth: 62, scale: 1.2 },           // 1920x618 (3.11:1) - scaled up
   'tessera-text-logo.png': { height: 24, maxWidth: 77 },    // 1201x376 (3.19:1)
   'ucb-text-logo.png': { height: 20, maxWidth: 62, invert: true },        // 2346x755 (3.11:1)
   'dyne-text-logo.png': { height: 20, maxWidth: 61 },       // 1065x349 (3.05:1)
@@ -53,7 +53,7 @@ export const logoConfig = {
   // COMPACT ASPECT (< 2.5) but actually wide
   'jpm-logo.png': { height: 18, maxWidth: 88, invert: true },             // 2400x493 (4.87:1)
   'cell-logo.png': { height: 14, maxWidth: 76 },           // 735x136 (5.40:1)
-  'csh-text-logo.png': { height: 14, maxWidth: 80 },       // 1386x242 (5.73:1)
+  'csh-text-logo.png': { height: 14, maxWidth: 80 },       // 1386x242 (5.72:1)
   'caltech-text-logo.png': { height: 20, maxWidth: 82 },    // 1524x373 (4.09:1)
   
   // COMPACT ASPECT

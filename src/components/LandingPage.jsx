@@ -277,10 +277,10 @@ const LandingPage = ({ contentReady = true }) => {
         <AnimatedSection animation="fadeIn" threshold={0.1}>
           <div className="bg-kerna-beige">
             <div className={CLASSES.container}>
-              <div className="flex items-center py-12 md:py-16 lg:py-20">
+              <div className="flex items-center py-8 sm:py-10 lg:py-12">
                 <AnimatedSection animation="slideInLeft" className="w-1 h-16 bg-kerna-darkred mr-6 flex-shrink-0"></AnimatedSection>
                 <AnimatedSection animation="fadeInUp" delay={100}>
-                  <p className="text-fluid-base sm:text-fluid-lg md:text-fluid-xl lg:text-fluid-2xl text-kerna-darkblue font-display font-medium leading-snug">
+                  <p className="text-fluid-sm sm:text-fluid-base md:text-fluid-lg lg:text-fluid-xl text-kerna-darkblue font-display font-medium leading-snug">
                     Our platform designs mRNA sequences that drive magnitude higher protein output with unprecedented cell-type precision.
                   </p>
                 </AnimatedSection>
@@ -428,21 +428,21 @@ const LandingPage = ({ contentReady = true }) => {
         {/* Team Banner */}
         <AnimatedSection animation="fadeIn" threshold={0.1}>
           <div className="bg-kerna-beige">
-            <div className={`${CLASSES.container} py-12 sm:py-16 lg:py-20`}>
+            <div className={`${CLASSES.container} py-8 sm:py-10 lg:py-12`}>
             <div className="text-center">
               <AnimatedSection animation="fadeInUp" delay={0}>
-                <h3 className="text-fluid-lg sm:text-fluid-xl md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
+                <h3 className="text-fluid-sm sm:text-fluid-lg md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
                   Built by a world-class team
                 </h3>
               </AnimatedSection>
               
               {/* Journal Logos */}
               <AnimatedSection animation="fadeIn" delay={100}>
-                <LogoGrid logos={journalLogos} className="mb-8 sm:mb-12" />
+                <LogoGrid logos={journalLogos} className="mb-10 sm:mb-16" />
               </AnimatedSection>
               
               <AnimatedSection animation="fadeInUp" delay={200}>
-                <h3 className="text-fluid-lg sm:text-fluid-xl md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
+                <h3 className="text-fluid-sm sm:text-fluid-lg md:text-fluid-2xl text-kerna-darkblue font-display font-semibold tracking-tight mb-6 sm:mb-8">
                   Backed by visionary partners
                 </h3>
               </AnimatedSection>

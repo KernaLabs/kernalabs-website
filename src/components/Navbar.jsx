@@ -13,12 +13,12 @@ const Navbar = () => {
     const timer = setTimeout(() => {
       console.log('[Navbar] Setting isLoaded to true');
       setIsLoaded(true);
-    }, 100);
+    }, 500);
 
     let observer = null;
     let retryInterval = null;
     let retryCount = 0;
-    const maxRetries = 50; // 5 seconds max (50 * 100ms)
+    const maxRetries = 500; // 5 seconds max (50 * 100ms)
     
     // Set up scroll detection for the custom scrolling container
     const setupScrollDetection = () => {

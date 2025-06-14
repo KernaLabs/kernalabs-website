@@ -23,10 +23,12 @@ const InstitutionLogo = ({ logo, name, size = 'default' }) => {
   let style = {};
   
   if (size === 'media') {
-    // Use Tailwind responsive classes for media logos
-    className += ' h-5 sm:h-7 md:h-9';
-    // Only apply maxWidth from config to prevent very wide logos
-    style.maxWidth = `${config.maxWidth * scale}px`;
+    // For media logos, use config values but scale them up for better visibility
+    const mediaScale = 1.5; // Scale factor to make media logos more visible
+    style = {
+      height: `${config.height * scale * mediaScale}px`,
+      maxWidth: `${config.maxWidth * scale * mediaScale}px`
+    };
   } else {
     // For team and default, we need to use the config values
     style = {

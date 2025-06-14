@@ -87,6 +87,12 @@ async function processImage(inputPath) {
       const outputName = `${baseName}-${width}w${ext}`;
       const outputPath = path.join(dirName, outputName);
       
+      // Skip if file already exists
+      if (fs.existsSync(outputPath)) {
+        console.log(`  → Skipping ${outputName} (already exists)`);
+        continue;
+      }
+      
       // Configure sharp based on format
       let sharpInstance = image
         .resize(width, null, {
@@ -114,6 +120,12 @@ async function processImage(inputPath) {
       for (const format of config.formats) {
         const formatOutputName = `${baseName}-${width}w.${format}`;
         const formatOutputPath = path.join(dirName, formatOutputName);
+        
+        // Skip if file already exists
+        if (fs.existsSync(formatOutputPath)) {
+          console.log(`  → Skipping ${formatOutputName} (already exists)`);
+          continue;
+        }
         
         let formatInstance = image
           .resize(width, null, {

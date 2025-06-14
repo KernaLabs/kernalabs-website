@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { IMAGE_SIZES, getImageType, shouldPrioritize } from '../config/imageConfig';
+import { IMAGE_SIZES, getImageType } from '../config/imageConfig';
 
 const Image = ({ 
   src, 
@@ -25,7 +25,7 @@ const Image = ({
   const config = IMAGE_SIZES[imageType] || IMAGE_SIZES.default;
   
   // Determine if image should be prioritized
-  const isPriority = priority !== undefined ? priority : shouldPrioritize(src, imageType);
+  const isPriority = priority !== undefined ? priority : false;
   
   // Use provided sizes or default from config
   const imageSizes = sizes || config.sizes;
@@ -34,6 +34,12 @@ const Image = ({
   const lastDot = src.lastIndexOf('.');
   const basePath = src.substring(0, lastDot);
   const originalExt = src.substring(lastDot + 1);
+  
+  // Calculate available widths
+  const isSmallLogo = imageType === 'logo' && src.includes('newlimit');
+  const availableWidths = isSmallLogo 
+    ? config.widths.filter(w => w <= 200)
+    : config.widths;
   
   // Set up intersection observer for lazy loading
   useEffect(() => {
@@ -80,13 +86,6 @@ const Image = ({
   // Generate srcset for responsive images
   const generateResponsiveSrcSet = (format) => {
     const ext = format || originalExt;
-    
-    // For logos, check if it's a small logo that might not have all sizes
-    // NewLimit logo is 288x81, so it only has 100w and 200w variants
-    const isSmallLogo = imageType === 'logo' && src.includes('newlimit');
-    const availableWidths = isSmallLogo 
-      ? config.widths.filter(w => w <= 200)
-      : config.widths;
     
     return availableWidths
       .map(width => {
@@ -144,7 +143,7 @@ const Image = ({
       
       {/* Fallback to original image */}
       <img
-        src={src}
+        src={availableWidths.length > 0 && !hasError ? `${basePath}-${availableWidths[0]}w.${originalExt}` : src}
         alt={alt}
         width={width}
         height={height}
@@ -154,6 +153,8 @@ const Image = ({
         onLoad={handleLoad}
         onError={handleError}
         style={imgStyle}
+        srcSet={isInView && !hasError ? generateResponsiveSrcSet() : undefined}
+        sizes={isInView && !hasError ? imageSizes : undefined}
         className={`${className} ${!isLoaded && !hasError ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         {...props}
       />

@@ -43,6 +43,12 @@ const InstitutionLogo = ({ logo, name, size = 'default' }) => {
   // Add invert class if needed
   className += shouldInvert ? ' invert' : '';
   
+  // Calculate reasonable width/height for browser hints
+  // Use a standard height of 100px and calculate width from maxWidth ratio
+  const standardHeight = 100;
+  const aspectRatio = config.maxWidth / config.height;
+  const calculatedWidth = Math.round(standardHeight * aspectRatio);
+  
   return (
     <Image
       src={logo}
@@ -51,6 +57,8 @@ const InstitutionLogo = ({ logo, name, size = 'default' }) => {
       className={className}
       style={style}
       sizes="(max-width: 640px) 100px, 200px"
+      width={calculatedWidth}
+      height={standardHeight}
     />
   );
 };

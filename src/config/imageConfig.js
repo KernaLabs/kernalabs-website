@@ -31,16 +31,6 @@ export const IMAGE_SIZES = {
   }
 };
 
-// Quality settings
-export const IMAGE_QUALITY = {
-  jpeg: 100,
-  webp: 100,
-  avif: 100,
-  png: 100
-};
-
-// Supported formats in order of preference
-export const IMAGE_FORMATS = ['avif', 'webp'];
 
 // Get image type from path
 export const getImageType = (src) => {
@@ -51,36 +41,3 @@ export const getImageType = (src) => {
   return 'default';
 };
 
-// Generate srcset string
-export const generateSrcSet = (basePath, widths, format) => {
-  const ext = format || basePath.split('.').pop();
-  const pathWithoutExt = basePath.substring(0, basePath.lastIndexOf('.'));
-  
-  return widths
-    .map(width => {
-      if (format) {
-        // For next-gen formats: name-400w.webp
-        return `${pathWithoutExt}-${width}w.${format} ${width}w`;
-      } else {
-        // For original format: name-400w.jpg
-        return `${pathWithoutExt}-${width}w.${ext} ${width}w`;
-      }
-    })
-    .join(', ');
-};
-
-// Check if image should be prioritized
-export const shouldPrioritize = (src, type) => {
-  // Hero images and backgrounds always priority
-  if (type === 'hero' || src.includes('BackgroundSwirls')) {
-    return true;
-  }
-  
-  // First few team members might be priority
-  const priorityTeamMembers = ['Amit Deshwar', 'Melissa Moore', 'Julia Peng'];
-  if (type === 'team' && priorityTeamMembers.some(name => src.includes(name))) {
-    return true;
-  }
-  
-  return false;
-};

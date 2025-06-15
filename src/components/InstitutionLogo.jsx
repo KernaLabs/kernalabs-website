@@ -59,6 +59,8 @@ const InstitutionLogo = ({ logo, name, size = 'default' }) => {
       sizes="(max-width: 640px) 100px, 200px"
       width={calculatedWidth}
       height={standardHeight}
+      loading="lazy"
+      fetchpriority="low"
     />
   );
 };

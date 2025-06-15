@@ -20,9 +20,9 @@ function App() {
     // Preload critical assets
     const preloadAssets = async () => {
       const criticalAssets = [
-        '/icons/KernaLeaf.svg',
-        '/BackgroundSwirls.png',
-        '/TextLogoWhite.png'
+        '/images/icons/KernaLeaf.svg',
+        '/images/backgrounds/BackgroundSwirls.png',
+        '/images/app/TextLogoWhite.png'
       ];
 
       try {

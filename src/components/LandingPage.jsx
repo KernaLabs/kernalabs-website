@@ -343,7 +343,7 @@ const LandingPage = ({ contentReady = true }) => {
                     delay={idx * 30}
                   />
                 ))}
-                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert />
+                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert="true" />
               </div>
             </div>
 
@@ -410,7 +410,7 @@ const LandingPage = ({ contentReady = true }) => {
                     delay={idx * 30}
                   />
                 ))}
-                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert />
+                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert="true" />
               </div>
             </div>
 

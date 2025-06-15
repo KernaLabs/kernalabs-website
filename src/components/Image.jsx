@@ -13,6 +13,7 @@ const Image = ({
   sizes,
   loading,
   style,
+  disableResponsive = false,
   ...props 
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -29,6 +30,9 @@ const Image = ({
   
   // Use provided sizes or default from config
   const imageSizes = sizes || config.sizes;
+  
+  // For logos, use simpler loading strategy to avoid mobile issues
+  const shouldUseSimpleLoading = disableResponsive || (imageType === 'logo' || imageType === 'media');
   
   // Extract base path and extension
   const lastDot = src.lastIndexOf('.');
@@ -75,10 +79,14 @@ const Image = ({
   };
   
   const handleError = (e) => {
-    // If an optimized version fails, we'll fall back to the original
+    // Always fall back to the original image on any error
     if (e.target.src !== src) {
+      console.warn(`Image failed to load: ${e.target.src}, falling back to: ${src}`);
       e.target.src = src;
+      // Don't set hasError to allow srcset to still work
     } else {
+      // Only set error if the original image also fails
+      console.error(`Image failed to load completely: ${src}`);
       setHasError(true);
     }
   };
@@ -110,6 +118,27 @@ const Image = ({
     ...style
   };
   
+  // For logos, use simple img tag without picture element to avoid mobile issues
+  if (shouldUseSimpleLoading) {
+    return (
+      <img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={isPriority ? 'eager' : 'lazy'}
+        fetchpriority={isPriority ? 'high' : 'auto'}
+        decoding="async"
+        onLoad={handleLoad}
+        onError={handleError}
+        style={imgStyle}
+        className={`${className} ${!isLoaded && !hasError ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        {...props}
+      />
+    );
+  }
+
   return (
     <picture ref={imgRef}>
       {/* Only load sources when in view */}
@@ -143,7 +172,7 @@ const Image = ({
       
       {/* Fallback to original image */}
       <img
-        src={availableWidths.length > 0 && !hasError ? `${basePath}-${availableWidths[0]}w.${originalExt}` : src}
+        src={src}
         alt={alt}
         width={width}
         height={height}

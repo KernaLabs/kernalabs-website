@@ -8,7 +8,7 @@ const TherapeuticCard = ({ icon, title, description, delay = 0 }) => {
     <div className={cardClass}>
       <AnimatedSection animation="fadeInUp" delay={delay} className="p-8 flex flex-col h-full">
         <div className="mb-6 w-10 h-10">
-          <img src={icon} alt={title} className="w-full h-full" />
+          <img src={icon} alt={title} className="w-full h-full object-contain" />
         </div>
         <h3 className="text-kerna-beige text-fluid-lg font-display font-medium mb-3">{title}</h3>
         <p className="text-kerna-beige/70 text-fluid-base font-body leading-relaxed">{description}</p>

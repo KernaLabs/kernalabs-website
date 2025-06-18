@@ -28,7 +28,7 @@ const ImageTest = () => {
               src="/images/logos/media/endpoint-text-logo.png"
               alt="Endpoint logo"
               type="logo"
-              style={{ maxHeight: '40px', width: 'auto' }}
+              className="max-h-[40px] w-auto"
             />
           </div>
         </div>

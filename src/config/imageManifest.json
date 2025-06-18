@@ -95,6 +95,32 @@
     "variants": [],
     "placeholder": "logos/institutions/amgen-text-logo-placeholder.jpg"
   },
+  "logos/institutions/bullseye-text-logo.png": {
+    "original": "logos/institutions/bullseye-text-logo.png",
+    "variants": [
+      "logos/institutions/bullseye-text-logo-100w.avif",
+      "logos/institutions/bullseye-text-logo-100w.png",
+      "logos/institutions/bullseye-text-logo-100w.webp",
+      "logos/institutions/bullseye-text-logo-200w.avif",
+      "logos/institutions/bullseye-text-logo-200w.png",
+      "logos/institutions/bullseye-text-logo-200w.webp",
+      "logos/institutions/bullseye-text-logo-300w.avif",
+      "logos/institutions/bullseye-text-logo-300w.png",
+      "logos/institutions/bullseye-text-logo-300w.webp",
+      "logos/institutions/bullseye-text-logo-400w.avif",
+      "logos/institutions/bullseye-text-logo-400w.png",
+      "logos/institutions/bullseye-text-logo-400w.webp",
+      "logos/institutions/bullseye-text-logo-600w.avif",
+      "logos/institutions/bullseye-text-logo-600w.png",
+      "logos/institutions/bullseye-text-logo-600w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/bullseye-text-logo.jpg": {
+    "original": "logos/institutions/bullseye-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/bullseye-text-logo-placeholder.jpg"
+  },
   "logos/institutions/calico-text-logo.png": {
     "original": "logos/institutions/calico-text-logo.png",
     "variants": [
@@ -612,6 +638,35 @@
     "original": "logos/institutions/osu-text-logo.jpg",
     "variants": [],
     "placeholder": "logos/institutions/osu-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/ponoma-text-logo.png": {
+    "original": "logos/institutions/ponoma-text-logo.png",
+    "variants": [
+      "logos/institutions/ponoma-text-logo-100w.avif",
+      "logos/institutions/ponoma-text-logo-100w.png",
+      "logos/institutions/ponoma-text-logo-100w.webp",
+      "logos/institutions/ponoma-text-logo-200w.avif",
+      "logos/institutions/ponoma-text-logo-200w.png",
+      "logos/institutions/ponoma-text-logo-200w.webp",
+      "logos/institutions/ponoma-text-logo-300w.avif",
+      "logos/institutions/ponoma-text-logo-300w.png",
+      "logos/institutions/ponoma-text-logo-300w.webp",
+      "logos/institutions/ponoma-text-logo-400w.avif",
+      "logos/institutions/ponoma-text-logo-400w.png",
+      "logos/institutions/ponoma-text-logo-400w.webp",
+      "logos/institutions/ponoma-text-logo-600w.avif",
+      "logos/institutions/ponoma-text-logo-600w.png",
+      "logos/institutions/ponoma-text-logo-600w.webp",
+      "logos/institutions/ponoma-text-logo-800w.avif",
+      "logos/institutions/ponoma-text-logo-800w.png",
+      "logos/institutions/ponoma-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/ponoma-text-logo.jpg": {
+    "original": "logos/institutions/ponoma-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/ponoma-text-logo-placeholder.jpg"
   },
   "logos/institutions/princeton-text-logo.png": {
     "original": "logos/institutions/princeton-text-logo.png",
@@ -1331,6 +1386,24 @@
       "team/members/Catherine Stehman-Breen-800w.webp"
     ],
     "placeholder": "team/members/Catherine Stehman-Breen-placeholder.jpg"
+  },
+  "team/members/Declan Coleman.jpg": {
+    "original": "team/members/Declan Coleman.jpg",
+    "variants": [
+      "team/members/Declan Coleman-1200w.avif",
+      "team/members/Declan Coleman-1200w.jpg",
+      "team/members/Declan Coleman-1200w.webp",
+      "team/members/Declan Coleman-1600w.avif",
+      "team/members/Declan Coleman-1600w.jpg",
+      "team/members/Declan Coleman-1600w.webp",
+      "team/members/Declan Coleman-400w.avif",
+      "team/members/Declan Coleman-400w.jpg",
+      "team/members/Declan Coleman-400w.webp",
+      "team/members/Declan Coleman-800w.avif",
+      "team/members/Declan Coleman-800w.jpg",
+      "team/members/Declan Coleman-800w.webp"
+    ],
+    "placeholder": "team/members/Declan Coleman-placeholder.jpg"
   },
   "team/members/Jacob Kimmel.jpg": {
     "original": "team/members/Jacob Kimmel.jpg",

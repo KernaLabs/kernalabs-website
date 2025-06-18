@@ -112,6 +112,18 @@ export const coreTeam = [
       { name: 'University of Pennsylvania', logo: '/images/logos/institutions/upenn-text-logo.png' },
     ]
   },
+  {
+    name: 'Declan Coleman',
+    position: 'Research Associate',
+    image: '/images/team/members/Declan Coleman.jpg',
+    description: [
+      'Molecular Biology @ Ponoma College',
+    ],
+    institutions: [
+      { name: 'Ponoma College', logo: '/images/logos/institutions/ponoma-text-logo.png' },
+      { name: 'Bullseye Bio', logo: '/images/logos/institutions/bullseye-text-logo.png' },
+    ]
+  },
 ];
 
 export const advisors = [

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { IMAGE_SIZES, getImageType } from '../config/imageConfig';
+import imageManifest from '../config/imageManifest.json';
 
 const Image = ({ 
   src, 
@@ -35,11 +36,22 @@ const Image = ({
   const basePath = src.substring(0, lastDot);
   const originalExt = src.substring(lastDot + 1);
   
-  // Calculate available widths
-  const isSmallLogo = imageType === 'logo' && src.includes('newlimit');
-  const availableWidths = isSmallLogo 
-    ? config.widths.filter(w => w <= 200)
-    : config.widths;
+  // Get manifest entry for this image
+  const manifestKey = src.startsWith('/') ? src.substring(1) : src;
+  const manifestEntry = imageManifest[manifestKey.replace(/^images\//, '')];
+  
+  // Extract available widths from manifest variants
+  const availableWidths = [];
+  if (manifestEntry && manifestEntry.variants) {
+    const widthSet = new Set();
+    manifestEntry.variants.forEach(variant => {
+      const match = variant.match(/-(\d+)w\./);
+      if (match) {
+        widthSet.add(parseInt(match[1]));
+      }
+    });
+    availableWidths.push(...Array.from(widthSet).sort((a, b) => a - b));
+  }
   
   // Set up intersection observer for lazy loading
   useEffect(() => {

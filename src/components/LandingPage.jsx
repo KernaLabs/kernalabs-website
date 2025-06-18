@@ -8,6 +8,7 @@ import TeamCard from './TeamCard';
 import LogoGrid from './LogoGrid';
 import useCarousel from '../hooks/useCarousel';
 import { coreTeam, advisors } from '../data/teamMembers';
+import { getBackgroundStyle } from '../utils/imageUtils';
 
 // Lazy load the DNA animation
 const DNACursorAnimation = lazy(() => import('./DNACursorAnimation'));
@@ -138,14 +139,15 @@ const LandingPage = ({ contentReady = true }) => {
     <div
       id="landing-page-container"
       className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden bg-black bg-cover bg-center bg-fixed"
-      style={{
-        backgroundImage: `linear-gradient(to bottom, 
+      style={getBackgroundStyle(
+        '/images/backgrounds/BackgroundSwirls.png',
+        `linear-gradient(to bottom, 
           rgba(0, 0, 0, 0.85) 0%, 
           rgba(14, 23, 43, 0.3) 25%,
           rgba(14, 23, 43, 0.3) 75%,
           rgba(0, 0, 0, 0.85) 100%
-        ), url('/images/backgrounds/BackgroundSwirls.png')`
-      }}
+        )`
+      )}
     >
       {/* Sentinel element for navbar scroll detection */}
       <div id="navbar-scroll-sentinel" className="w-full h-1 absolute top-0 left-0" />

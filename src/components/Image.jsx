@@ -114,11 +114,9 @@ const Image = ({
   
   // Merge provided styles with defaults
   const imgStyle = {
-    // Preserve aspect ratio
-    objectFit: style?.objectFit || 'contain',
     // Prevent layout shift
     aspectRatio: width && height ? `${width}/${height}` : undefined,
-    // Apply any additional styles
+    // Apply any additional styles (objectFit can be overridden via style prop if needed)
     ...style
   };
   
@@ -167,7 +165,7 @@ const Image = ({
         style={imgStyle}
         srcSet={isInView && !hasError ? generateResponsiveSrcSet() : undefined}
         sizes={isInView && !hasError ? imageSizes : undefined}
-        className={`${className} ${!isLoaded && !hasError ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        className={`object-contain ${className} ${!isLoaded && !hasError ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         {...props}
       />
     </picture>

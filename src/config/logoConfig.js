@@ -9,6 +9,7 @@ export const logoConfig = {
   'osu-text-logo.png': { height: 14, maxWidth: 93 },        // 2560x384 (6.67:1)
   'gradient-logo.png': { height: 20, maxWidth: 127 },        // 5000x785 (6.37:1) - increased size
   'pioneer-logo.png': { height: 22, maxWidth: 94 },         // 5700x1337 (4.26:1) - increased size
+  'xeiavp-logo.png': { height: 20, maxWidth: 55 },         
   'confluent-text-logo.png': { height: 20, maxWidth: 123, scale: 1.15 },  // 1206x196 (6.15:1)
   'endpoint-text-logo.png': { height: 16, maxWidth: 140, invert: true },    // 759x87 (8.72:1)
   'regeneron-text-logo.png': { height: 18, maxWidth: 90 },   // 860x171 (5.03:1)

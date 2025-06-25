@@ -81,7 +81,8 @@ const partnerLogos = [
   { src: '/images/logos/partners/gradient-logo.png', alt: 'Gradient Ventures' },
   { src: '/images/logos/partners/humba-logo.png', alt: 'Humba Ventures' },
   { src: '/images/logos/partners/tau-logo.png', alt: 'Tau Ventures' },
-  { src: '/images/logos/partners/pioneer-logo.png', alt: 'Pioneer Fund' }
+  { src: '/images/logos/partners/pioneer-logo.png', alt: 'Pioneer Fund' },
+  { src: '/images/logos/partners/xeiavp-logo.png', alt: 'Xeia Venture Partners' }
 ];
 
 // Media articles data

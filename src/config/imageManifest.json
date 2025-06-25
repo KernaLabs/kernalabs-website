@@ -1345,6 +1345,35 @@
     "variants": [],
     "placeholder": "logos/partners/tau-logo-placeholder.jpg"
   },
+  "logos/partners/xeiavp-logo.png": {
+    "original": "logos/partners/xeiavp-logo.png",
+    "variants": [
+      "logos/partners/xeiavp-logo-100w.avif",
+      "logos/partners/xeiavp-logo-100w.png",
+      "logos/partners/xeiavp-logo-100w.webp",
+      "logos/partners/xeiavp-logo-200w.avif",
+      "logos/partners/xeiavp-logo-200w.png",
+      "logos/partners/xeiavp-logo-200w.webp",
+      "logos/partners/xeiavp-logo-300w.avif",
+      "logos/partners/xeiavp-logo-300w.png",
+      "logos/partners/xeiavp-logo-300w.webp",
+      "logos/partners/xeiavp-logo-400w.avif",
+      "logos/partners/xeiavp-logo-400w.png",
+      "logos/partners/xeiavp-logo-400w.webp",
+      "logos/partners/xeiavp-logo-600w.avif",
+      "logos/partners/xeiavp-logo-600w.png",
+      "logos/partners/xeiavp-logo-600w.webp",
+      "logos/partners/xeiavp-logo-800w.avif",
+      "logos/partners/xeiavp-logo-800w.png",
+      "logos/partners/xeiavp-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/partners/xeiavp-logo.jpg": {
+    "original": "logos/partners/xeiavp-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/partners/xeiavp-logo-placeholder.jpg"
+  },
   "team/members/Amit Deshwar.jpg": {
     "original": "team/members/Amit Deshwar.jpg",
     "variants": [

@@ -102,7 +102,7 @@ export const coreTeam = [
     ]
   },
   {
-    name: 'Parsa Idehpour, MSE',
+    name: 'Parsa Idehpour',
     position: 'Machine Learning',
     image: '/images/team/members/Parsa Idehpour.jpeg',
     description: [
@@ -193,22 +193,7 @@ export const advisors = [
       { name: 'University of Pennsylvania', logo: '/images/logos/institutions/upenn-text-logo.png'},
       { name: 'UMass Medical', logo: '/images/logos/institutions/umc-text-logo.png' },
     ]
-  },
-  {
-    name: 'Vinit Mahajan, MD, PhD',
-    position: 'Advisor',
-    image: '/images/team/members/Vinit Mahajan.jpg',
-    description: [
-      'Professor of Ophthalmology & Vice-Chair for Research @ Stanford University',
-      'NIH-funded Molecular Surgery & Omics Lab developing gene-therapy & proteomics for retinal disease',
-      'Performed first CRISPR-based eye-disease gene-editing in human stem cells; leads two retinal gene-therapy trials',
-      'Vitreoretinal surgeon with >300 peer-reviewed publications; trained 20+ surgical fellows worldwide',
-    ],
-    institutions: [
-      { name: 'Stanford', logo: '/images/logos/institutions/stanford-text-logo.png' },
-      { name: 'UCLA', logo: '/images/logos/institutions/ucla-text-logo.png'},
-    ]
-  },
+  }
 ];
 
 // For backward compatibility

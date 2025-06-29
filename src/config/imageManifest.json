@@ -1566,10 +1566,5 @@
       "team/members/TeamPhoto-800w.webp"
     ],
     "placeholder": "team/members/TeamPhoto-placeholder.jpg"
-  },
-  "team/members/Vinit Mahajan.jpg": {
-    "original": "team/members/Vinit Mahajan.jpg",
-    "variants": [],
-    "placeholder": "team/members/Vinit Mahajan-placeholder.jpg"
   }
 }

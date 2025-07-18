@@ -143,8 +143,7 @@ export const advisors = [
       { name: 'nChroma', logo: '/images/logos/institutions/nchroma-text-logo.png'},
       { name: 'Dyne Therapeutics', logo: '/images/logos/institutions/dyne-text-logo.png'},
       { name: 'Amgen', logo: '/images/logos/institutions/amgen-text-logo.png'},
-      { name: 'Regeneron', logo: '/images/logos/institutions/regeneron-text-logo.png'},
-      { name: 'Sarepta Therapeutics', logo: '/images/logos/institutions/sarepta-text-logo.png'},
+      { name: 'Regeneron', logo: '/images/logos/institutions/regeneron-text-logo.png'}
     ]
   },
   {

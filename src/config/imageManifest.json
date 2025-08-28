@@ -1206,6 +1206,16 @@
     "variants": [],
     "placeholder": "logos/media/pnas-logo-placeholder.jpg"
   },
+  "logos/media/prnewswire-text-logo.jpg": {
+    "original": "logos/media/prnewswire-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/prnewswire-text-logo-placeholder.jpg"
+  },
+  "logos/media/prnewswire-text-logo.png": {
+    "original": "logos/media/prnewswire-text-logo.png",
+    "variants": [],
+    "placeholder": null
+  },
   "logos/media/science-logo.png": {
     "original": "logos/media/science-logo.png",
     "variants": [
@@ -1231,6 +1241,32 @@
     "original": "logos/media/science-logo.jpg",
     "variants": [],
     "placeholder": "logos/media/science-logo-placeholder.jpg"
+  },
+  "logos/media/xeia-text-logo.png": {
+    "original": "logos/media/xeia-text-logo.png",
+    "variants": [
+      "logos/media/xeia-text-logo-1200w.avif",
+      "logos/media/xeia-text-logo-1200w.png",
+      "logos/media/xeia-text-logo-1200w.webp",
+      "logos/media/xeia-text-logo-200w.avif",
+      "logos/media/xeia-text-logo-200w.png",
+      "logos/media/xeia-text-logo-200w.webp",
+      "logos/media/xeia-text-logo-400w.avif",
+      "logos/media/xeia-text-logo-400w.png",
+      "logos/media/xeia-text-logo-400w.webp",
+      "logos/media/xeia-text-logo-600w.avif",
+      "logos/media/xeia-text-logo-600w.png",
+      "logos/media/xeia-text-logo-600w.webp",
+      "logos/media/xeia-text-logo-800w.avif",
+      "logos/media/xeia-text-logo-800w.png",
+      "logos/media/xeia-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/media/xeia-text-logo.jpg": {
+    "original": "logos/media/xeia-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/xeia-text-logo-placeholder.jpg"
   },
   "logos/partners/gradient-logo.png": {
     "original": "logos/partners/gradient-logo.png",

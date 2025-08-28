@@ -20,7 +20,7 @@ const MediaCard = ({ href, logo, date, title, description, isPublication, delay 
       <AnimatedSection animation="fadeInUp" delay={delay} className="p-10 lg:p-12">
         <div className="flex flex-col lg:flex-row lg:items-start gap-8">
           <div className="flex-shrink-0 lg:w-64">
-            <div className="h-10 mb-3 flex items-center">
+            <div className="h-10 mb-3 flex items-center justify-start">
               <InstitutionLogo 
                 logo={logo} 
                 name=""

@@ -96,6 +96,22 @@ const mediaArticles = [
     isPublication: false
   },
   {
+    href: 'https://www.xeiavp.com/posts/ai-designed-mrna-therapies-a-universal-toolkit-for-genetic-medicine',
+    logo: '/images/logos/media/xeia-text-logo.png',
+    date: 'January 15, 2025',
+    title: 'AI-designed mRNA therapies: A universal toolkit for genetic medicine',
+    description: 'Exploring how AI is revolutionizing mRNA therapeutic design to create a universal platform for genetic medicine.',
+    isPublication: false
+  },
+  {
+    href: 'https://www.prnewswire.com/news-releases/ex-deep-genomics-moderna-execs-get-backing-leap-ahead-to-develop-next-generation-mrna-therapeutics-with-ai-302348897.html',
+    logo: '/images/logos/media/prnewswire-text-logo.png',
+    date: 'January 13, 2025',
+    title: 'Ex-Deep Genomics, Moderna execs get backing, leap ahead to develop next-generation mRNA therapeutics with AI',
+    description: 'Kerna Labs announces funding to advance AI-driven mRNA therapeutic platform with founding team from Deep Genomics and Moderna.',
+    isPublication: false
+  },
+  {
     href: 'https://endpoints.news/modernas-former-top-scientist-moore-has-a-new-mrna-startup/',
     logo: '/images/logos/media/endpoint-text-logo.png',
     date: 'January 10, 2025',
@@ -545,11 +561,6 @@ const LandingPage = ({ contentReady = true }) => {
             <AnimatedSection animation="fadeIn" delay={150}>
               <p className={CLASSES.sectionDescription}>
                 Pioneering the next era of genetic medicine.
-              </p>
-            </AnimatedSection>
-            <AnimatedSection animation="fadeIn" delay={250}>
-              <p className="text-fluid-lg font-body text-kerna-beige/60 max-w-3xl mt-2">
-                We are building large-scale machine learning models to design mRNA with unmatched potency, targeting, and safety.
               </p>
             </AnimatedSection>
           </AnimatedSection>

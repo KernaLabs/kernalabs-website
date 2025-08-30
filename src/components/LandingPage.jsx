@@ -92,7 +92,7 @@ const mediaArticles = [
     logo: '/images/logos/media/asbmb-text-logo.png',
     date: 'April 2, 2025',
     title: 'Melissa Moore to speak at ASBMB 2025',
-    description: 'Renowned RNA biochemist Melissa Moore will take center stage at ASBMB\'s 2025 Annual Meeting.',
+    // description: 'Renowned RNA biochemist Melissa Moore will take center stage at ASBMB\'s 2025 Annual Meeting.',
     isPublication: false
   },
   {
@@ -100,7 +100,7 @@ const mediaArticles = [
     logo: '/images/logos/media/xeia-text-logo.png',
     date: 'January 15, 2025',
     title: 'AI-designed mRNA therapies: A universal toolkit for genetic medicine',
-    description: 'Exploring how AI is revolutionizing mRNA therapeutic design to create a universal platform for genetic medicine.',
+    // description: 'Exploring how AI is revolutionizing mRNA therapeutic design to create a universal platform for genetic medicine.',
     isPublication: false
   },
   {
@@ -108,7 +108,7 @@ const mediaArticles = [
     logo: '/images/logos/media/prnewswire-text-logo.png',
     date: 'January 13, 2025',
     title: 'Ex-Deep Genomics, Moderna execs get backing, led by Gradient to develop next-generation mRNA therapeutics with AI',
-    description: 'Kerna Labs announces funding to advance AI-driven mRNA therapeutic platform with founding team from Deep Genomics and Moderna.',
+    // description: 'Kerna Labs announces funding to advance AI-driven mRNA therapeutic platform with founding team from Deep Genomics and Moderna.',
     isPublication: false
   },
   {
@@ -116,7 +116,7 @@ const mediaArticles = [
     logo: '/images/logos/media/endpoint-text-logo.png',
     date: 'January 10, 2025',
     title: 'Exclusive: Moderna\'s former top scientist has a new startup using AI to improve mRNA therapies',
-    description: 'Kerna Labs was founded in 2024 by industry veterans Amit Deshwar, Melissa J. Moore, and Julia Peng.',
+    // description: 'Kerna Labs was founded in 2024 by industry veterans Amit Deshwar, Melissa J. Moore, and Julia Peng.',
     isPublication: false
   },
   // {

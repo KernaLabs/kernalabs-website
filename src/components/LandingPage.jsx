@@ -104,10 +104,10 @@ const mediaArticles = [
     isPublication: false
   },
   {
-    href: 'https://www.prnewswire.com/news-releases/ex-deep-genomics-moderna-execs-get-backing-leap-ahead-to-develop-next-generation-mrna-therapeutics-with-ai-302348897.html',
+    href: 'https://www.prnewswire.com/news-releases/ex-deep-genomics-moderna-execs-get-backing-led-by-gradient-to-develop-next-generation-mrna-therapeutics-with-ai-302348897.html',
     logo: '/images/logos/media/prnewswire-text-logo.png',
     date: 'January 13, 2025',
-    title: 'Ex-Deep Genomics, Moderna execs get backing, leap ahead to develop next-generation mRNA therapeutics with AI',
+    title: 'Ex-Deep Genomics, Moderna execs get backing, led by Gradient to develop next-generation mRNA therapeutics with AI',
     description: 'Kerna Labs announces funding to advance AI-driven mRNA therapeutic platform with founding team from Deep Genomics and Moderna.',
     isPublication: false
   },

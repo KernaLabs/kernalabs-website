@@ -37,12 +37,12 @@ const MediaCard = ({ href, logo, date, title, description, isPublication, delay 
           </div>
           <div className="flex-grow">
             <p className="text-kerna-beige/60 text-fluid-sm font-body mb-3">{date}</p>
-            <h3 className="text-kerna-beige text-fluid-xl lg:text-fluid-2xl font-display font-medium mb-4 leading-tight">
+            <h3 className="text-kerna-beige text-fluid-xl lg:text-fluid-2xl font-display font-medium mb-1 leading-tight">
               {title}
             </h3>
-            <p className="text-kerna-beige/70 text-fluid-base font-body leading-relaxed">
+            {/* <p className="text-kerna-beige/70 text-fluid-base font-body leading-relaxed">
               {description}
-            </p>
+            </p> */}
           </div>
         </div>
       </AnimatedSection>

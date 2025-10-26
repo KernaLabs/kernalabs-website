@@ -88,6 +88,17 @@ export const coreTeam = [
     ]
   },
   {
+    name: 'Nitin Raj, PhD',
+    position: 'Scientist',
+    image: '/images/team/members/Nitin Raj.jpg',
+    description: [
+    ],
+    institutions: [
+      { name: 'Inceptive', logo: '/images/logos/institutions/inceptive-text-logo.png'},
+      { name: 'Stanford Medicine', logo: '/images/logos/institutions/stanford-medicine-text-logo.png'}
+    ]
+  },
+  {
     name: 'Aryan Misra',
     position: 'Machine Learning',
     image: '/images/team/members/Aryan Misra.jpg',
@@ -195,20 +206,19 @@ export const advisors = [
     ]
   },
   {
-    name: 'Vinit Mahajan, MD, PhD',
+    name: 'Kerry Benenato, PhD',
     position: 'Advisor',
-    image: '/images/team/members/Vinit Mahajan.jpg',
+    image: '/images/team/members/Kerry Benenato.jpg',
     description: [
-      'Professor of Ophthalmology & Vice-Chair for Research @ Stanford University',
-      'NIH-funded Molecular Surgery & Omics Lab developing gene-therapy & proteomics for retinal disease',
-      'Performed first CRISPR-based eye-disease gene-editing in human stem cells; leads two retinal gene-therapy trials',
-      'Vitreoretinal surgeon with >300 peer-reviewed publications; trained 20+ surgical fellows worldwide',
+      
     ],
     institutions: [
-      { name: 'Stanford', logo: '/images/logos/institutions/stanford-text-logo.png' },
-      { name: 'UCLA', logo: '/images/logos/institutions/ucla-text-logo.png'},
+      { name: 'AstraZeneca', logo: '/images/logos/institutions/astrazeneca-text-logo.png' },
+      { name: 'Moderna', logo: '/images/logos/institutions/moderna-text-logo.png'},
+      { name: '76Bio', logo: '/images/logos/institutions/76bio-text-logo.png'},
+      { name: 'Sail Biomedicines', logo: '/images/logos/institutions/sail-text-logo.png'},
     ]
-  },
+  }
 ];
 
 // For backward compatibility

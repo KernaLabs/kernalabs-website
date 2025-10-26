@@ -18,6 +18,7 @@ export const logoConfig = {
   'nchroma-text-logo.png': { height: 24, maxWidth: 109 },     // 3334x736 (4.53:1)
   'wharton-text-logo.png': { height: 24, maxWidth: 95, invert: true },     // 864x218 (3.96:1)
   'moderna-text-logo.png': { height: 24, maxWidth: 94 },     // 486x124 (3.92:1)
+  'inceptive-text-logo.png': { height: 28, maxWidth: 108, scale: 1.15, teamMaxWidth: 90, invert: true },   // 1500x384 (3.91:1) - boosted sizing
   'amgen-text-logo.png': { height: 18, maxWidth: 70 },       // 2560x655 (3.91:1)
   'mgen-logo.png': { height: 20, maxWidth: 79 },            // 1478x375 (3.94:1)
   'longitude-text-logo.png': { height: 26, maxWidth: 96 },   // 435x118 (3.69:1)
@@ -37,11 +38,14 @@ export const logoConfig = {
   'tessera-text-logo.png': { height: 24, maxWidth: 77 },    // 1201x376 (3.19:1)
   'ucb-text-logo.png': { height: 20, maxWidth: 62, invert: true },        // 2346x755 (3.11:1)
   'dyne-text-logo.png': { height: 20, maxWidth: 61 },       // 1065x349 (3.05:1)
+  'astrazeneca-text-logo.png': { height: 30, maxWidth: 104, scale: 1.1, teamMaxWidth: 96, teamMaxHeight: 32, invert: true }, // 900x260 (3.46:1) - boosted size
+  'stanford-medicine-text-logo.png': { height: 24, maxWidth: 85, invert: true }, // 618x180 (3.43:1)
   'choma-text-logo.png': { height: 20, maxWidth: 76 },      // 1127x295 (3.82:1)
   'naturerdd-text-logo.png': { height: 20, maxWidth: 60 },  // 1143x379 (3.02:1)
   'naturebiotech-text-logo.png': { height: 20, maxWidth: 60 }, // 2000x669 (2.99:1)
   
   // MEDIUM ASPECT (2.5-3.0)
+  'sail-text-logo.png': { height: 34, maxWidth: 92, invert: true },     // 600x221 (2.71:1)
   'google-text-logo.png': { height: 24, maxWidth: 71 },     // 1200x406 (2.96:1)
   'upenn-text-logo.png': { height: 32, maxWidth: 92, scale: 0.9, invert: true },      // 1450x507 (2.86:1)
   'uoft-text-logo.png': { height: 32, maxWidth: 90, invert: true },       // 2309x821 (2.81:1)
@@ -59,6 +63,7 @@ export const logoConfig = {
   // COMPACT ASPECT
   'ucsf-text-logo.png': { height: 24, maxWidth: 49, scale: 0.85 },       // 2560x1249 (2.05:1)
   'dg-logo.png': { height: 44, maxWidth: 88, scale: 1.2 },              // 1024x512 (2.00:1)
+  '76bio-text-logo.png': { height: 38, maxWidth: 72, scale: 1.4, teamMaxWidth: 100, invert: true }, // 1654x871 (1.90:1) - enlarged
   'mcmaster-text-logo.png': { height: 20, maxWidth: 36 },   // 1200x665 (1.80:1)
   
   // SQUARE-ISH

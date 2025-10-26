@@ -66,6 +66,35 @@
     "variants": [],
     "placeholder": "backgrounds/BackgroundSwirls-placeholder.jpg"
   },
+  "logos/institutions/76bio-text-logo.png": {
+    "original": "logos/institutions/76bio-text-logo.png",
+    "variants": [
+      "logos/institutions/76bio-text-logo-100w.avif",
+      "logos/institutions/76bio-text-logo-100w.png",
+      "logos/institutions/76bio-text-logo-100w.webp",
+      "logos/institutions/76bio-text-logo-200w.avif",
+      "logos/institutions/76bio-text-logo-200w.png",
+      "logos/institutions/76bio-text-logo-200w.webp",
+      "logos/institutions/76bio-text-logo-300w.avif",
+      "logos/institutions/76bio-text-logo-300w.png",
+      "logos/institutions/76bio-text-logo-300w.webp",
+      "logos/institutions/76bio-text-logo-400w.avif",
+      "logos/institutions/76bio-text-logo-400w.png",
+      "logos/institutions/76bio-text-logo-400w.webp",
+      "logos/institutions/76bio-text-logo-600w.avif",
+      "logos/institutions/76bio-text-logo-600w.png",
+      "logos/institutions/76bio-text-logo-600w.webp",
+      "logos/institutions/76bio-text-logo-800w.avif",
+      "logos/institutions/76bio-text-logo-800w.png",
+      "logos/institutions/76bio-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/76bio-text-logo.jpg": {
+    "original": "logos/institutions/76bio-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/76bio-text-logo-placeholder.jpg"
+  },
   "logos/institutions/amgen-text-logo.png": {
     "original": "logos/institutions/amgen-text-logo.png",
     "variants": [
@@ -94,6 +123,35 @@
     "original": "logos/institutions/amgen-text-logo.jpg",
     "variants": [],
     "placeholder": "logos/institutions/amgen-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/astrazeneca-text-logo.png": {
+    "original": "logos/institutions/astrazeneca-text-logo.png",
+    "variants": [
+      "logos/institutions/astrazeneca-text-logo-100w.avif",
+      "logos/institutions/astrazeneca-text-logo-100w.png",
+      "logos/institutions/astrazeneca-text-logo-100w.webp",
+      "logos/institutions/astrazeneca-text-logo-200w.avif",
+      "logos/institutions/astrazeneca-text-logo-200w.png",
+      "logos/institutions/astrazeneca-text-logo-200w.webp",
+      "logos/institutions/astrazeneca-text-logo-300w.avif",
+      "logos/institutions/astrazeneca-text-logo-300w.png",
+      "logos/institutions/astrazeneca-text-logo-300w.webp",
+      "logos/institutions/astrazeneca-text-logo-400w.avif",
+      "logos/institutions/astrazeneca-text-logo-400w.png",
+      "logos/institutions/astrazeneca-text-logo-400w.webp",
+      "logos/institutions/astrazeneca-text-logo-600w.avif",
+      "logos/institutions/astrazeneca-text-logo-600w.png",
+      "logos/institutions/astrazeneca-text-logo-600w.webp",
+      "logos/institutions/astrazeneca-text-logo-800w.avif",
+      "logos/institutions/astrazeneca-text-logo-800w.png",
+      "logos/institutions/astrazeneca-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/astrazeneca-text-logo.jpg": {
+    "original": "logos/institutions/astrazeneca-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/astrazeneca-text-logo-placeholder.jpg"
   },
   "logos/institutions/bullseye-text-logo.png": {
     "original": "logos/institutions/bullseye-text-logo.png",
@@ -346,6 +404,35 @@
     "original": "logos/institutions/hhmi-text-logo.jpg",
     "variants": [],
     "placeholder": "logos/institutions/hhmi-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/inceptive-text-logo.png": {
+    "original": "logos/institutions/inceptive-text-logo.png",
+    "variants": [
+      "logos/institutions/inceptive-text-logo-100w.avif",
+      "logos/institutions/inceptive-text-logo-100w.png",
+      "logos/institutions/inceptive-text-logo-100w.webp",
+      "logos/institutions/inceptive-text-logo-200w.avif",
+      "logos/institutions/inceptive-text-logo-200w.png",
+      "logos/institutions/inceptive-text-logo-200w.webp",
+      "logos/institutions/inceptive-text-logo-300w.avif",
+      "logos/institutions/inceptive-text-logo-300w.png",
+      "logos/institutions/inceptive-text-logo-300w.webp",
+      "logos/institutions/inceptive-text-logo-400w.avif",
+      "logos/institutions/inceptive-text-logo-400w.png",
+      "logos/institutions/inceptive-text-logo-400w.webp",
+      "logos/institutions/inceptive-text-logo-600w.avif",
+      "logos/institutions/inceptive-text-logo-600w.png",
+      "logos/institutions/inceptive-text-logo-600w.webp",
+      "logos/institutions/inceptive-text-logo-800w.avif",
+      "logos/institutions/inceptive-text-logo-800w.png",
+      "logos/institutions/inceptive-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/inceptive-text-logo.jpg": {
+    "original": "logos/institutions/inceptive-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/inceptive-text-logo-placeholder.jpg"
   },
   "logos/institutions/jpm-logo.png": {
     "original": "logos/institutions/jpm-logo.png",
@@ -755,6 +842,32 @@
     "variants": [],
     "placeholder": "logos/institutions/rnati-logo-placeholder.jpg"
   },
+  "logos/institutions/sail-text-logo.png": {
+    "original": "logos/institutions/sail-text-logo.png",
+    "variants": [
+      "logos/institutions/sail-text-logo-100w.avif",
+      "logos/institutions/sail-text-logo-100w.png",
+      "logos/institutions/sail-text-logo-100w.webp",
+      "logos/institutions/sail-text-logo-200w.avif",
+      "logos/institutions/sail-text-logo-200w.png",
+      "logos/institutions/sail-text-logo-200w.webp",
+      "logos/institutions/sail-text-logo-300w.avif",
+      "logos/institutions/sail-text-logo-300w.png",
+      "logos/institutions/sail-text-logo-300w.webp",
+      "logos/institutions/sail-text-logo-400w.avif",
+      "logos/institutions/sail-text-logo-400w.png",
+      "logos/institutions/sail-text-logo-400w.webp",
+      "logos/institutions/sail-text-logo-600w.avif",
+      "logos/institutions/sail-text-logo-600w.png",
+      "logos/institutions/sail-text-logo-600w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/sail-text-logo.jpg": {
+    "original": "logos/institutions/sail-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/sail-text-logo-placeholder.jpg"
+  },
   "logos/institutions/sarepta-text-logo.png": {
     "original": "logos/institutions/sarepta-text-logo.png",
     "variants": [
@@ -783,6 +896,32 @@
     "original": "logos/institutions/sarepta-text-logo.jpg",
     "variants": [],
     "placeholder": "logos/institutions/sarepta-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/stanford-medicine-text-logo.png": {
+    "original": "logos/institutions/stanford-medicine-text-logo.png",
+    "variants": [
+      "logos/institutions/stanford-medicine-text-logo-100w.avif",
+      "logos/institutions/stanford-medicine-text-logo-100w.png",
+      "logos/institutions/stanford-medicine-text-logo-100w.webp",
+      "logos/institutions/stanford-medicine-text-logo-200w.avif",
+      "logos/institutions/stanford-medicine-text-logo-200w.png",
+      "logos/institutions/stanford-medicine-text-logo-200w.webp",
+      "logos/institutions/stanford-medicine-text-logo-300w.avif",
+      "logos/institutions/stanford-medicine-text-logo-300w.png",
+      "logos/institutions/stanford-medicine-text-logo-300w.webp",
+      "logos/institutions/stanford-medicine-text-logo-400w.avif",
+      "logos/institutions/stanford-medicine-text-logo-400w.png",
+      "logos/institutions/stanford-medicine-text-logo-400w.webp",
+      "logos/institutions/stanford-medicine-text-logo-600w.avif",
+      "logos/institutions/stanford-medicine-text-logo-600w.png",
+      "logos/institutions/stanford-medicine-text-logo-600w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/stanford-medicine-text-logo.jpg": {
+    "original": "logos/institutions/stanford-medicine-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/stanford-medicine-text-logo-placeholder.jpg"
   },
   "logos/institutions/stanford-text-logo.png": {
     "original": "logos/institutions/stanford-text-logo.png",
@@ -1432,6 +1571,15 @@
     ],
     "placeholder": "team/members/Julia Peng-placeholder.jpg"
   },
+  "team/members/Kerry Benenato.jpg": {
+    "original": "team/members/Kerry Benenato.jpg",
+    "variants": [
+      "team/members/Kerry Benenato-400w.avif",
+      "team/members/Kerry Benenato-400w.jpg",
+      "team/members/Kerry Benenato-400w.webp"
+    ],
+    "placeholder": "team/members/Kerry Benenato-placeholder.jpg"
+  },
   "team/members/Melissa Moore.jpg": {
     "original": "team/members/Melissa Moore.jpg",
     "variants": [],
@@ -1469,6 +1617,18 @@
       "team/members/Michael Swift-800w.webp"
     ],
     "placeholder": "team/members/Michael Swift-placeholder.jpg"
+  },
+  "team/members/Nitin Raj.jpg": {
+    "original": "team/members/Nitin Raj.jpg",
+    "variants": [
+      "team/members/Nitin Raj-400w.avif",
+      "team/members/Nitin Raj-400w.jpg",
+      "team/members/Nitin Raj-400w.webp",
+      "team/members/Nitin Raj-800w.avif",
+      "team/members/Nitin Raj-800w.jpg",
+      "team/members/Nitin Raj-800w.webp"
+    ],
+    "placeholder": "team/members/Nitin Raj-placeholder.jpg"
   },
   "team/members/Oliver Chang.jpg": {
     "original": "team/members/Oliver Chang.jpg",

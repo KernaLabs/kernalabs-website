@@ -31,13 +31,20 @@ const InstitutionLogo = ({ logo, name, size = 'default' }) => {
     };
   } else {
     // For team and default, we need to use the config values
-    style = {
-      height: size === 'team' ? 'auto' : `${config.height * scale}px`,
-      maxHeight: size === 'team' ? `${config.height * scale * 0.925}px` : undefined,
-      maxWidth: size === 'team' 
-        ? `${Math.min(config.maxWidth * scale * 0.925, 78)}px`
-        : `${config.maxWidth * scale}px`
-    };
+    if (size === 'team') {
+      const teamWidthCap = config.teamMaxWidth || 78;
+      const teamHeightCap = config.teamMaxHeight || (config.height * scale * 0.925);
+      style = {
+        height: 'auto',
+        maxHeight: `${teamHeightCap}px`,
+        maxWidth: `${Math.min(config.maxWidth * scale * 0.925, teamWidthCap)}px`
+      };
+    } else {
+      style = {
+        height: `${config.height * scale}px`,
+        maxWidth: `${config.maxWidth * scale}px`
+      };
+    }
   }
   
   // Add invert class if needed

@@ -92,6 +92,11 @@ export const coreTeam = [
     position: 'Scientist',
     image: '/images/team/members/Nitin Raj.jpg',
     description: [
+      'Senior Scientist @ Inceptive advancing AI‑driven RNA design',
+      'Former Postdoctoral Fellow @ Stanford Medicine (Attardi Lab)',
+      '10+ years in cancer biology & gene regulation',
+      'Publications in Nature & Molecular Cell on p53 tumor suppression and RNA‑regulated stress responses',
+      'PhD Genetics @ Michigan State University',
     ],
     institutions: [
       { name: 'Inceptive', logo: '/images/logos/institutions/inceptive-text-logo.png'},
@@ -210,7 +215,12 @@ export const advisors = [
     position: 'Advisor',
     image: '/images/team/members/Kerry Benenato.jpg',
     description: [
-      
+      'Chief Platform Officer @ Sail Biomedicines, building an integrated RNA‑medicines platform & portfolio',
+      'Former Chief Scientific Officer @ 76Bio, advancing an mRNA/LNP‑enabled targeted protein‑degradation modality',
+      '8-year leadership tenure @ Moderna leading platform chemistry & formulation discovery; co‑inventor on LNP innovations enabling mRNA vaccines; ACS “Heroes of Chemistry” honoree',
+      'Early research career @ AstraZeneca; NIH Postdoctoral Fellow @ Harvard University',
+      'Recognized leader in RNA delivery & platform strategy; named a 2025 Rising Leader by In Vivo',
+      'PhD Organic Chemistry @ Boston College; BS Chemistry @ Providence College',
     ],
     institutions: [
       { name: 'AstraZeneca', logo: '/images/logos/institutions/astrazeneca-text-logo.png' },

@@ -429,6 +429,47 @@
     ],
     "placeholder": null
   },
+  "logos/institutions/inceptive-text-logo-dark.avif": {
+    "original": "logos/institutions/inceptive-text-logo-dark.avif",
+    "variants": [
+      "logos/institutions/inceptive-text-logo-dark-100w.avif",
+      "logos/institutions/inceptive-text-logo-dark-200w.avif",
+      "logos/institutions/inceptive-text-logo-dark-300w.avif",
+      "logos/institutions/inceptive-text-logo-dark-400w.avif",
+      "logos/institutions/inceptive-text-logo-dark-600w.avif",
+      "logos/institutions/inceptive-text-logo-dark-800w.avif"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/inceptive-text-logo-dark.png": {
+    "original": "logos/institutions/inceptive-text-logo-dark.png",
+    "variants": [
+      "logos/institutions/inceptive-text-logo-dark-100w.png",
+      "logos/institutions/inceptive-text-logo-dark-200w.png",
+      "logos/institutions/inceptive-text-logo-dark-300w.png",
+      "logos/institutions/inceptive-text-logo-dark-400w.png",
+      "logos/institutions/inceptive-text-logo-dark-600w.png",
+      "logos/institutions/inceptive-text-logo-dark-800w.png"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/inceptive-text-logo-dark.webp": {
+    "original": "logos/institutions/inceptive-text-logo-dark.webp",
+    "variants": [
+      "logos/institutions/inceptive-text-logo-dark-100w.webp",
+      "logos/institutions/inceptive-text-logo-dark-200w.webp",
+      "logos/institutions/inceptive-text-logo-dark-300w.webp",
+      "logos/institutions/inceptive-text-logo-dark-400w.webp",
+      "logos/institutions/inceptive-text-logo-dark-600w.webp",
+      "logos/institutions/inceptive-text-logo-dark-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/inceptive-text-logo-dark.jpg": {
+    "original": "logos/institutions/inceptive-text-logo-dark.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/inceptive-text-logo-dark-placeholder.jpg"
+  },
   "logos/institutions/inceptive-text-logo.jpg": {
     "original": "logos/institutions/inceptive-text-logo.jpg",
     "variants": [],
@@ -1345,6 +1386,16 @@
     "variants": [],
     "placeholder": "logos/media/pnas-logo-placeholder.jpg"
   },
+  "logos/media/prnewswire-text-logo.jpg": {
+    "original": "logos/media/prnewswire-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/prnewswire-text-logo-placeholder.jpg"
+  },
+  "logos/media/prnewswire-text-logo.png": {
+    "original": "logos/media/prnewswire-text-logo.png",
+    "variants": [],
+    "placeholder": null
+  },
   "logos/media/science-logo.png": {
     "original": "logos/media/science-logo.png",
     "variants": [
@@ -1370,6 +1421,32 @@
     "original": "logos/media/science-logo.jpg",
     "variants": [],
     "placeholder": "logos/media/science-logo-placeholder.jpg"
+  },
+  "logos/media/xeia-text-logo.png": {
+    "original": "logos/media/xeia-text-logo.png",
+    "variants": [
+      "logos/media/xeia-text-logo-1200w.avif",
+      "logos/media/xeia-text-logo-1200w.png",
+      "logos/media/xeia-text-logo-1200w.webp",
+      "logos/media/xeia-text-logo-200w.avif",
+      "logos/media/xeia-text-logo-200w.png",
+      "logos/media/xeia-text-logo-200w.webp",
+      "logos/media/xeia-text-logo-400w.avif",
+      "logos/media/xeia-text-logo-400w.png",
+      "logos/media/xeia-text-logo-400w.webp",
+      "logos/media/xeia-text-logo-600w.avif",
+      "logos/media/xeia-text-logo-600w.png",
+      "logos/media/xeia-text-logo-600w.webp",
+      "logos/media/xeia-text-logo-800w.avif",
+      "logos/media/xeia-text-logo-800w.png",
+      "logos/media/xeia-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/media/xeia-text-logo.jpg": {
+    "original": "logos/media/xeia-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/media/xeia-text-logo-placeholder.jpg"
   },
   "logos/partners/gradient-logo.png": {
     "original": "logos/partners/gradient-logo.png",
@@ -1483,6 +1560,35 @@
     "original": "logos/partners/tau-logo.jpg",
     "variants": [],
     "placeholder": "logos/partners/tau-logo-placeholder.jpg"
+  },
+  "logos/partners/xeiavp-logo.png": {
+    "original": "logos/partners/xeiavp-logo.png",
+    "variants": [
+      "logos/partners/xeiavp-logo-100w.avif",
+      "logos/partners/xeiavp-logo-100w.png",
+      "logos/partners/xeiavp-logo-100w.webp",
+      "logos/partners/xeiavp-logo-200w.avif",
+      "logos/partners/xeiavp-logo-200w.png",
+      "logos/partners/xeiavp-logo-200w.webp",
+      "logos/partners/xeiavp-logo-300w.avif",
+      "logos/partners/xeiavp-logo-300w.png",
+      "logos/partners/xeiavp-logo-300w.webp",
+      "logos/partners/xeiavp-logo-400w.avif",
+      "logos/partners/xeiavp-logo-400w.png",
+      "logos/partners/xeiavp-logo-400w.webp",
+      "logos/partners/xeiavp-logo-600w.avif",
+      "logos/partners/xeiavp-logo-600w.png",
+      "logos/partners/xeiavp-logo-600w.webp",
+      "logos/partners/xeiavp-logo-800w.avif",
+      "logos/partners/xeiavp-logo-800w.png",
+      "logos/partners/xeiavp-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/partners/xeiavp-logo.jpg": {
+    "original": "logos/partners/xeiavp-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/partners/xeiavp-logo-placeholder.jpg"
   },
   "team/members/Amit Deshwar.jpg": {
     "original": "team/members/Amit Deshwar.jpg",

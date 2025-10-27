@@ -9,16 +9,18 @@ export const logoConfig = {
   'osu-text-logo.png': { height: 14, maxWidth: 93 },        // 2560x384 (6.67:1)
   'gradient-logo.png': { height: 20, maxWidth: 127 },        // 5000x785 (6.37:1) - increased size
   'pioneer-logo.png': { height: 22, maxWidth: 94 },         // 5700x1337 (4.26:1) - increased size
+  'xeiavp-logo.png': { height: 20, maxWidth: 55 },         
+  'xeia-text-logo.png': { height: 20, maxWidth: 60, invert: true },      // Media logo for XeiaVP article - inverted to white
   'confluent-text-logo.png': { height: 20, maxWidth: 123, scale: 1.15 },  // 1206x196 (6.15:1)
   'endpoint-text-logo.png': { height: 16, maxWidth: 140, invert: true },    // 759x87 (8.72:1)
   'regeneron-text-logo.png': { height: 18, maxWidth: 90 },   // 860x171 (5.03:1)
   'tau-logo.png': { height: 20, maxWidth: 80, scale: 1.15 },             // 400x100 (4.00:1) - scaled up
   
   // EXTRA WIDE (aspect ratio > 3.5)
-  'nchroma-text-logo.png': { height: 24, maxWidth: 109 },     // 3334x736 (4.53:1)
+  'nchroma-text-logo.png': { height: 26, maxWidth: 118 },     // 3334x736 (4.53:1) - slightly larger
   'wharton-text-logo.png': { height: 24, maxWidth: 95, invert: true },     // 864x218 (3.96:1)
   'moderna-text-logo.png': { height: 24, maxWidth: 94 },     // 486x124 (3.92:1)
-  'inceptive-text-logo.png': { height: 28, maxWidth: 108, scale: 1.15, teamMaxWidth: 90, invert: true },   // 1500x384 (3.91:1) - boosted sizing
+  'inceptive-text-logo.png': { height: 30, maxWidth: 118, scale: 1.25, teamMaxWidth: 118, teamMaxHeight: 34, invert: true },   // 1500x384 (3.91:1) - boosted sizing
   'amgen-text-logo.png': { height: 18, maxWidth: 70 },       // 2560x655 (3.91:1)
   'mgen-logo.png': { height: 20, maxWidth: 79 },            // 1478x375 (3.94:1)
   'longitude-text-logo.png': { height: 26, maxWidth: 96 },   // 435x118 (3.69:1)
@@ -38,14 +40,15 @@ export const logoConfig = {
   'tessera-text-logo.png': { height: 24, maxWidth: 77 },    // 1201x376 (3.19:1)
   'ucb-text-logo.png': { height: 20, maxWidth: 62, invert: true },        // 2346x755 (3.11:1)
   'dyne-text-logo.png': { height: 20, maxWidth: 61 },       // 1065x349 (3.05:1)
-  'astrazeneca-text-logo.png': { height: 30, maxWidth: 104, scale: 1.1, teamMaxWidth: 96, teamMaxHeight: 32, invert: true }, // 900x260 (3.46:1) - boosted size
+  'prnewswire-text-logo.png': { height: 20, maxWidth: 120 }, // PR Newswire media logo
+  'astrazeneca-text-logo.png': { height: 32, maxWidth: 112, scale: 1.2, teamMaxWidth: 102, teamMaxHeight: 34, invert: true }, // 900x260 (3.46:1) - boosted size
   'stanford-medicine-text-logo.png': { height: 24, maxWidth: 85, invert: true }, // 618x180 (3.43:1)
   'choma-text-logo.png': { height: 20, maxWidth: 76 },      // 1127x295 (3.82:1)
   'naturerdd-text-logo.png': { height: 20, maxWidth: 60 },  // 1143x379 (3.02:1)
   'naturebiotech-text-logo.png': { height: 20, maxWidth: 60 }, // 2000x669 (2.99:1)
   
   // MEDIUM ASPECT (2.5-3.0)
-  'sail-text-logo.png': { height: 34, maxWidth: 92, invert: true },     // 600x221 (2.71:1)
+  'sail-text-logo.png': { height: 32, maxWidth: 88, invert: true },     // 600x221 (2.71:1) - slightly smaller
   'google-text-logo.png': { height: 24, maxWidth: 71 },     // 1200x406 (2.96:1)
   'upenn-text-logo.png': { height: 32, maxWidth: 92, scale: 0.9, invert: true },      // 1450x507 (2.86:1)
   'uoft-text-logo.png': { height: 32, maxWidth: 90, invert: true },       // 2309x821 (2.81:1)
@@ -63,7 +66,7 @@ export const logoConfig = {
   // COMPACT ASPECT
   'ucsf-text-logo.png': { height: 24, maxWidth: 49, scale: 0.85 },       // 2560x1249 (2.05:1)
   'dg-logo.png': { height: 44, maxWidth: 88, scale: 1.2 },              // 1024x512 (2.00:1)
-  '76bio-text-logo.png': { height: 38, maxWidth: 72, scale: 1.4, teamMaxWidth: 100, invert: true }, // 1654x871 (1.90:1) - enlarged
+  '76bio-text-logo.png': { height: 34, maxWidth: 66, scale: 1.3, teamMaxWidth: 92, invert: true }, // 1654x871 (1.90:1) - adjusted sizing
   'mcmaster-text-logo.png': { height: 20, maxWidth: 36 },   // 1200x665 (1.80:1)
   
   // SQUARE-ISH

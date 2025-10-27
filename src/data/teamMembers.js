@@ -89,7 +89,7 @@ export const coreTeam = [
   },
   {
     name: 'Nitin Raj, PhD',
-    position: 'Scientist',
+    position: 'Principal Scientist',
     image: '/images/team/members/Nitin Raj.jpg',
     description: [
       'Senior Scientist @ Inceptive advancing AI‑driven RNA design',
@@ -115,17 +115,6 @@ export const coreTeam = [
     ],
     institutions: [
       { name: 'University of Toronto', logo: '/images/logos/institutions/uoft-text-logo.png' },
-    ]
-  },
-  {
-    name: 'Parsa Idehpour, MSE',
-    position: 'Machine Learning',
-    image: '/images/team/members/Parsa Idehpour.jpeg',
-    description: [
-      'MSE Robotics and AI @ University of Pennsylvania',
-    ],
-    institutions: [
-      { name: 'University of Pennsylvania', logo: '/images/logos/institutions/upenn-text-logo.png' },
     ]
   },
   {
@@ -180,6 +169,25 @@ export const advisors = [
     ]
   },
   {
+    name: 'Kerry Benenato, PhD',
+    position: 'Advisor',
+    image: '/images/team/members/Kerry Benenato.jpg',
+    description: [
+      'Chief Platform Officer @ Sail Biomedicines, building an integrated RNA‑medicines platform & portfolio',
+      'Former Chief Scientific Officer @ 76Bio, advancing an mRNA/LNP‑enabled targeted protein‑degradation modality',
+      '8-year leadership tenure @ Moderna leading platform chemistry & formulation discovery; co‑inventor on LNP innovations enabling mRNA vaccines; ACS “Heroes of Chemistry” honoree',
+      'Early research career @ AstraZeneca; NIH Postdoctoral Fellow @ Harvard University',
+      'Recognized leader in RNA delivery & platform strategy; named a 2025 Rising Leader by In Vivo',
+      'PhD Organic Chemistry @ Boston College; BS Chemistry @ Providence College',
+    ],
+    institutions: [
+      { name: 'AstraZeneca', logo: '/images/logos/institutions/astrazeneca-text-logo.png' },
+      { name: 'Moderna', logo: '/images/logos/institutions/moderna-text-logo.png'},
+      { name: '76Bio', logo: '/images/logos/institutions/76bio-text-logo.png'},
+      { name: 'Sail Biomedicines', logo: '/images/logos/institutions/sail-text-logo.png'},
+    ]
+  },
+  {
     name: 'Michael Czech, PhD',
     position: 'Advisor',
     image: '/images/team/members/Michael Czech.jpg',
@@ -208,25 +216,6 @@ export const advisors = [
     institutions: [
       { name: 'University of Pennsylvania', logo: '/images/logos/institutions/upenn-text-logo.png'},
       { name: 'UMass Medical', logo: '/images/logos/institutions/umc-text-logo.png' },
-    ]
-  },
-  {
-    name: 'Kerry Benenato, PhD',
-    position: 'Advisor',
-    image: '/images/team/members/Kerry Benenato.jpg',
-    description: [
-      'Chief Platform Officer @ Sail Biomedicines, building an integrated RNA‑medicines platform & portfolio',
-      'Former Chief Scientific Officer @ 76Bio, advancing an mRNA/LNP‑enabled targeted protein‑degradation modality',
-      '8-year leadership tenure @ Moderna leading platform chemistry & formulation discovery; co‑inventor on LNP innovations enabling mRNA vaccines; ACS “Heroes of Chemistry” honoree',
-      'Early research career @ AstraZeneca; NIH Postdoctoral Fellow @ Harvard University',
-      'Recognized leader in RNA delivery & platform strategy; named a 2025 Rising Leader by In Vivo',
-      'PhD Organic Chemistry @ Boston College; BS Chemistry @ Providence College',
-    ],
-    institutions: [
-      { name: 'AstraZeneca', logo: '/images/logos/institutions/astrazeneca-text-logo.png' },
-      { name: 'Moderna', logo: '/images/logos/institutions/moderna-text-logo.png'},
-      { name: '76Bio', logo: '/images/logos/institutions/76bio-text-logo.png'},
-      { name: 'Sail Biomedicines', logo: '/images/logos/institutions/sail-text-logo.png'},
     ]
   }
 ];

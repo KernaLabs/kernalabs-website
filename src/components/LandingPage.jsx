@@ -27,8 +27,6 @@ const CLASSES = {
   
   // Components
   card: 'relative h-full bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 backdrop-blur-md border border-kerna-beige/10 hover:border-kerna-beige/20 hover:from-kerna-beige/10 hover:to-kerna-beige/15 transition-all duration-300 group shadow-lg hover:shadow-xl',
-  logoImage: 'h-6 sm:h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity',
-  
   // Interactive elements
   carouselArrow: 'pointer-events-auto w-12 h-12 flex items-center justify-center bg-black/50 backdrop-blur-sm border border-white/20 rounded-full transition-all',
   carouselContainer: 'overflow-x-auto overflow-y-hidden hide-scrollbar no-select cursor-grab active:cursor-grabbing pl-carousel pr-4',
@@ -71,9 +69,7 @@ const journalLogos = [
   { src: '/images/logos/media/nature-text-logo.png', alt: 'Nature' },
   { src: '/images/logos/media/science-logo.png', alt: 'Science' },
   { src: '/images/logos/media/pnas-logo.png', alt: 'PNAS' },
-  { src: '/images/logos/media/csh-text-logo.png', alt: 'CSH' },
-  // { src: '/logos/naturedd-text-logo.png', alt: 'Nature DD' },
-  // { src: '/logos/naturebiotech-text-logo.png', alt: 'Nature Biotech' },
+  { src: '/images/logos/media/csh-text-logo.png', alt: 'CSH' }
 ];
 
 // Partner logos data
@@ -92,7 +88,6 @@ const mediaArticles = [
     logo: '/images/logos/media/asbmb-text-logo.png',
     date: 'April 2, 2025',
     title: 'Melissa Moore to speak at ASBMB 2025',
-    // description: 'Renowned RNA biochemist Melissa Moore will take center stage at ASBMB\'s 2025 Annual Meeting.',
     isPublication: false
   },
   {
@@ -100,7 +95,6 @@ const mediaArticles = [
     logo: '/images/logos/media/xeia-text-logo.png',
     date: 'January 15, 2025',
     title: 'AI-designed mRNA therapies: A universal toolkit for genetic medicine',
-    // description: 'Exploring how AI is revolutionizing mRNA therapeutic design to create a universal platform for genetic medicine.',
     isPublication: false
   },
   {
@@ -108,7 +102,6 @@ const mediaArticles = [
     logo: '/images/logos/media/prnewswire-text-logo.png',
     date: 'January 13, 2025',
     title: 'Ex-Deep Genomics, Moderna execs get backing, led by Gradient to develop next-generation mRNA therapeutics with AI',
-    // description: 'Kerna Labs announces funding to advance AI-driven mRNA therapeutic platform with founding team from Deep Genomics and Moderna.',
     isPublication: false
   },
   {
@@ -116,33 +109,8 @@ const mediaArticles = [
     logo: '/images/logos/media/endpoint-text-logo.png',
     date: 'January 10, 2025',
     title: 'Exclusive: Moderna\'s former top scientist has a new startup using AI to improve mRNA therapies',
-    // description: 'Kerna Labs was founded in 2024 by industry veterans Amit Deshwar, Melissa J. Moore, and Julia Peng.',
     isPublication: false
-  },
-  // {
-  //   href: 'https://genome.cshlp.org/content/34/3/394.short',
-  //   logo: '/logos/csh-text-logo.png',
-  //   date: 'March 20, 2024',
-  //   title: 'Translation dependent and independent mRNA decay occur through mutually exclusive pathways defined by ribosome density during T cell activation',
-  //   description: 'A breakthrough in RNA language modeling, enabling unprecedented understanding and design of RNA sequences.',
-  //   isPublication: true
-  // },
-  // {
-  //   href: 'https://www.nature.com/articles/s41573-023-00827-x',
-  //   logo: '/logos/naturerdd-text-logo.png',
-  //   date: 'November 29, 2023',
-  //   title: 'Tailor made: the art of therapeutic mRNA design',
-  //   description: 'Comprehensive analysis of regulatory elements and their role in muscle development and function.',
-  //   isPublication: true
-  // },
-  // {
-  //   href: 'https://www.nature.com/articles/s41587-022-01525-6',
-  //   logo: '/logos/naturebiotech-text-logo.png',
-  //   date: 'November 10, 2022',
-  //   title: 'An engineered T7 RNA polymerase that produces mRNA free of immunostimulatory byproducts',
-  //   description: 'A breakthrough in mRNA production, enabling safer and more effective therapies.',
-  //   isPublication: true
-  // }
+  }
 ];
 
 const LandingPage = ({ contentReady = true }) => {
@@ -190,7 +158,6 @@ const LandingPage = ({ contentReady = true }) => {
         <div className="container mx-auto max-w-7xl relative z-20 pointer-events-none px-4 sm:px-6 lg:px-8">
           <div className="w-full sm:max-w-lg md:max-w-2xl lg:max-w-3xl">
             <h1 className="font-display font-bold tracking-display-tight leading-tight text-kerna-beige">
-              {/* First line - responsive sizing */}
               <span className="block text-fluid-3xl sm:text-fluid-4xl md:text-fluid-5xl lg:text-fluid-6xl">
                 <StaggeredText 
                   text="Better genetic medicines," 
@@ -200,7 +167,6 @@ const LandingPage = ({ contentReady = true }) => {
                 />
               </span>
               
-              {/* Second line - same size as first line */}
               <div className="block text-fluid-3xl sm:text-fluid-4xl md:text-fluid-5xl lg:text-fluid-6xl mt-1 sm:mt-2">
                 <RotatingText 
                   words={['built', 'designed', 'engineered']} 
@@ -230,61 +196,10 @@ const LandingPage = ({ contentReady = true }) => {
         <div 
           className="select-none absolute right-0 top-1/2 transform -translate-y-1/2 w-[120%] sm:w-[70%] md:w-[60%] lg:w-[45%] h-auto mask-fade-vertical"
         >
-          {/* <img 
-            src="/images/icons/ui/hazy_droplet.svg" 
-            alt="Hazy Droplet" 
-            className="w-full h-full object-contain select-none"
-          /> */}
         </div>
       </section>
-
-      {/* <section id="platform" className="snap-start h-screen w-full flex items-center relative overflow-hidden">
-        <div 
-          className="absolute right-0 top-1/2 md:top-2/3 w-[150%] sm:w-4/5 md:w-5/6 h-auto transform -translate-y-1/3 md:-translate-y-1/2 mask-fade-bottom"
-        >
-          <img 
-            src="/images/icons/ui/trail.svg" 
-            alt="Particle Trail" 
-            className="w-full h-full object-scale-down scale-200 sm:scale-150 md:scale-125 select-none -rotate-2 translate-x-[30%] -translate-y-[10%] origin-center"
-          />
-        </div>
-
-        <div className="{CLASSES.container} relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-            <div className="relative">
-              <div className="absolute -left-4 -top-4 w-20 h-20 bg-kerna-darkred/10 rounded-full blur-2xl" />
-              <div className="bg-black/30 backdrop-blur-sm backdrop-brightness-90 border border-white/10 rounded-none p-8 relative">
-                <div className="absolute -left-2 -top-2 w-16 h-1 bg-kerna-darkred" />
-                <div className="absolute -left-2 -top-2 w-1 h-16 bg-kerna-darkred" />
-                <h2 className="text-xl md:text-2xl font-medium leading-tight text-kerna-beige mb-6">
-                  Despite its potential, mRNA is held back by key bottlenecks in payload design and delivery.
-                </h2>
-                <p className="text-base text-kerna-red drop-shadow-md">
-                  Kerna Labs solves these key limitations with cutting-edge payload design.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative mt-12 md:mt-32">
-              <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-kerna-darkred/10 rounded-full blur-2xl" />
-              <div className="bg-black/30 backdrop-blur-sm backdrop-brightness-75 border border-white/10 rounded-none p-8 relative">
-                <div className="absolute -right-2 -bottom-2 w-16 h-1 bg-kerna-darkred" />
-                <div className="absolute -right-2 -bottom-2 w-1 h-16 bg-kerna-darkred" />
-                <h2 className="text-xl md:text-2xl font-medium leading-tight text-kerna-beige mb-6">
-                  Unlocking New Potential in RNA-Based Therapies
-                </h2>
-                <p className="text-base text-kerna-red drop-shadow-md">
-                  We leverage advanced computational techniques and high-throughput biology to fundamentally change the way we do drug discovery and development.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Section 4: MRNA Therapeutics + Banner */}
       <div>
-        {/* MRNA Therapeutics */}
         <section id="therapeutics" className={CLASSES.section}>
           <div className={CLASSES.container}>
             <AnimatedSection animation="fadeInUp" className="mb-12">
@@ -362,7 +277,7 @@ const LandingPage = ({ contentReady = true }) => {
                     delay={idx * 30}
                   />
                 ))}
-                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert="true" />
+                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert />
               </div>
             </div>
 
@@ -429,7 +344,7 @@ const LandingPage = ({ contentReady = true }) => {
                     delay={idx * 30}
                   />
                 ))}
-                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert="true" />
+                <div className="w-[calc((100vw-1280px)/2)] flex-none" inert />
               </div>
             </div>
 
@@ -496,56 +411,7 @@ const LandingPage = ({ contentReady = true }) => {
           </div>
         </AnimatedSection>
       </div>
-
-      {/* Section 6: Our Mission - Commented out */}
-      {/* <section id="mission" className="min-h-screen flex flex-col">
-        <div className="flex-1 flex flex-col justify-center">
-          {/* Heading - stays left-aligned */}
-          {/* <div className="{CLASSES.container} mb-8">
-            <div className="relative inline-block">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-kerna-beige">
-                Our Mission
-              </h2>
-              <div className="absolute -left-2 -bottom-2 w-12 h-0.5 bg-kerna-red"></div>
-            </div>
-          </div> */}
-          
-          {/* Content container */}
-          {/* <div className="px-4 sm:px-6 lg:px-8">
-            <div className="max-w-screen-2xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-12">
-                {/* Image Container */}
-                {/* <div className="relative aspect-[4/3] md:aspect-auto md:h-[400px] lg:h-[500px] overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 md:hidden"></div>
-                  <img 
-                    src="/images/team/members/TeamPhoto.jpg" 
-                    alt="Team" 
-                    className="w-full h-full object-cover"
-                  />
-                </div> */}
-                
-                {/* Text Container */}
-                {/* <div className="relative md:flex md:items-center">
-                  <div className="p-6 bg-black/30 backdrop-blur-sm border border-white/10 rounded-none -mt-20 py-20 md:mt-0 md:py-0 relative z-20 w-full h-full flex flex-col justify-center">
-                    <div className="absolute -left-2 -top-2 w-16 h-1 bg-kerna-red hidden md:block"></div>
-                    <div className="absolute -left-2 -top-2 w-1 h-16 bg-kerna-red hidden md:block"></div>
-                    
-                    <div>
-                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-kerna-beige mb-6 font-normal text-center">
-                        We are revolutionizing genetic medicine
-                      </p>
-                      <p className="text-sm sm:text-base md:text-lg text-kerna-beige/70 font-light leading-relaxed text-center">
-                        We are paving the way for a new generation of therapies by leveraging AI and high-throughput biology to decode RNA biology.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
+      
       {/* Section 6: Media & Publications */}
       <section id="media" className={CLASSES.section}>
         <div className={CLASSES.container}>
@@ -561,6 +427,11 @@ const LandingPage = ({ contentReady = true }) => {
             <AnimatedSection animation="fadeIn" delay={150}>
               <p className={CLASSES.sectionDescription}>
                 Pioneering the next era of genetic medicine.
+              </p>
+            </AnimatedSection>
+            <AnimatedSection animation="fadeIn" delay={250}>
+              <p className="text-fluid-lg font-body text-kerna-beige/60 max-w-3xl mt-2">
+                We are building large-scale machine learning models to design mRNA with unmatched potency, targeting, and safety.
               </p>
             </AnimatedSection>
           </AnimatedSection>

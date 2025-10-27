@@ -88,6 +88,22 @@ export const coreTeam = [
     ]
   },
   {
+    name: 'Nitin Raj, PhD',
+    position: 'Principal Scientist',
+    image: '/images/team/members/Nitin Raj.jpg',
+    description: [
+      'Senior Scientist @ Inceptive advancing AI‑driven RNA design',
+      'Former Postdoctoral Fellow @ Stanford Medicine (Attardi Lab)',
+      '10+ years in cancer biology & gene regulation',
+      'Publications in Nature & Molecular Cell on p53 tumor suppression and RNA‑regulated stress responses',
+      'PhD Genetics @ Michigan State University',
+    ],
+    institutions: [
+      { name: 'Inceptive', logo: '/images/logos/institutions/inceptive-text-logo.png'},
+      { name: 'Stanford Medicine', logo: '/images/logos/institutions/stanford-medicine-text-logo.png'}
+    ]
+  },
+  {
     name: 'Aryan Misra',
     position: 'Machine Learning',
     image: '/images/team/members/Aryan Misra.jpg',
@@ -99,17 +115,6 @@ export const coreTeam = [
     ],
     institutions: [
       { name: 'University of Toronto', logo: '/images/logos/institutions/uoft-text-logo.png' },
-    ]
-  },
-  {
-    name: 'Parsa Idehpour',
-    position: 'Machine Learning',
-    image: '/images/team/members/Parsa Idehpour.jpeg',
-    description: [
-      'MSE Robotics and AI @ University of Pennsylvania',
-    ],
-    institutions: [
-      { name: 'University of Pennsylvania', logo: '/images/logos/institutions/upenn-text-logo.png' },
     ]
   },
   {
@@ -143,7 +148,8 @@ export const advisors = [
       { name: 'nChroma', logo: '/images/logos/institutions/nchroma-text-logo.png'},
       { name: 'Dyne Therapeutics', logo: '/images/logos/institutions/dyne-text-logo.png'},
       { name: 'Amgen', logo: '/images/logos/institutions/amgen-text-logo.png'},
-      { name: 'Regeneron', logo: '/images/logos/institutions/regeneron-text-logo.png'}
+      { name: 'Regeneron', logo: '/images/logos/institutions/regeneron-text-logo.png'},
+      { name: 'Sarepta Therapeutics', logo: '/images/logos/institutions/sarepta-text-logo.png'},
     ]
   },
   {
@@ -160,6 +166,25 @@ export const advisors = [
       { name: 'NewLimit', logo: '/images/logos/institutions/newlimit-text-logo.png'},
       { name: 'Calico Life Sciences', logo: '/images/logos/institutions/calico-text-logo.png'},
       { name: 'UCSF', logo: '/images/logos/institutions/ucsf-text-logo.png'},
+    ]
+  },
+  {
+    name: 'Kerry Benenato, PhD',
+    position: 'Advisor',
+    image: '/images/team/members/Kerry Benenato.jpg',
+    description: [
+      'Chief Platform Officer @ Sail Biomedicines, building an integrated RNA‑medicines platform & portfolio',
+      'Former Chief Scientific Officer @ 76Bio, advancing an mRNA/LNP‑enabled targeted protein‑degradation modality',
+      '8-year leadership tenure @ Moderna leading platform chemistry & formulation discovery; co‑inventor on LNP innovations enabling mRNA vaccines; ACS “Heroes of Chemistry” honoree',
+      'Early research career @ AstraZeneca; NIH Postdoctoral Fellow @ Harvard University',
+      'Recognized leader in RNA delivery & platform strategy; named a 2025 Rising Leader by In Vivo',
+      'PhD Organic Chemistry @ Boston College; BS Chemistry @ Providence College',
+    ],
+    institutions: [
+      { name: 'AstraZeneca', logo: '/images/logos/institutions/astrazeneca-text-logo.png' },
+      { name: 'Moderna', logo: '/images/logos/institutions/moderna-text-logo.png'},
+      { name: '76Bio', logo: '/images/logos/institutions/76bio-text-logo.png'},
+      { name: 'Sail Biomedicines', logo: '/images/logos/institutions/sail-text-logo.png'},
     ]
   },
   {

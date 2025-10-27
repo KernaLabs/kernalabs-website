@@ -20,7 +20,7 @@ const MediaCard = ({ href, logo, date, title, description, isPublication, delay 
       <AnimatedSection animation="fadeInUp" delay={delay} className="p-10 lg:p-12">
         <div className="flex flex-col lg:flex-row lg:items-start gap-8">
           <div className="flex-shrink-0 lg:w-64">
-            <div className="h-10 mb-3 flex items-center justify-start">
+            <div className="h-10 mb-3 flex items-center">
               <InstitutionLogo 
                 logo={logo} 
                 name=""
@@ -37,12 +37,14 @@ const MediaCard = ({ href, logo, date, title, description, isPublication, delay 
           </div>
           <div className="flex-grow">
             <p className="text-kerna-beige/60 text-fluid-sm font-body mb-3">{date}</p>
-            <h3 className="text-kerna-beige text-fluid-xl lg:text-fluid-2xl font-display font-medium mb-1 leading-tight">
+            <h3 className="text-kerna-beige text-fluid-xl lg:text-fluid-2xl font-display font-medium mb-4 leading-tight">
               {title}
             </h3>
-            {/* <p className="text-kerna-beige/70 text-fluid-base font-body leading-relaxed">
-              {description}
-            </p> */}
+            {description && (
+              <p className="text-kerna-beige/70 text-fluid-base font-body leading-relaxed">
+                {description}
+              </p>
+            )}
           </div>
         </div>
       </AnimatedSection>

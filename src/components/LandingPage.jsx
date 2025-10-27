@@ -27,8 +27,6 @@ const CLASSES = {
   
   // Components
   card: 'relative h-full bg-gradient-to-br from-kerna-beige/5 to-kerna-beige/10 backdrop-blur-md border border-kerna-beige/10 hover:border-kerna-beige/20 hover:from-kerna-beige/10 hover:to-kerna-beige/15 transition-all duration-300 group shadow-lg hover:shadow-xl',
-  logoImage: 'h-6 sm:h-8 md:h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity',
-  
   // Interactive elements
   carouselArrow: 'pointer-events-auto w-12 h-12 flex items-center justify-center bg-black/50 backdrop-blur-sm border border-white/20 rounded-full transition-all',
   carouselContainer: 'overflow-x-auto overflow-y-hidden hide-scrollbar no-select cursor-grab active:cursor-grabbing pl-carousel pr-4',
@@ -71,9 +69,7 @@ const journalLogos = [
   { src: '/images/logos/media/nature-text-logo.png', alt: 'Nature' },
   { src: '/images/logos/media/science-logo.png', alt: 'Science' },
   { src: '/images/logos/media/pnas-logo.png', alt: 'PNAS' },
-  { src: '/images/logos/media/csh-text-logo.png', alt: 'CSH' },
-  // { src: '/logos/naturedd-text-logo.png', alt: 'Nature DD' },
-  // { src: '/logos/naturebiotech-text-logo.png', alt: 'Nature Biotech' },
+  { src: '/images/logos/media/csh-text-logo.png', alt: 'CSH' }
 ];
 
 // Partner logos data

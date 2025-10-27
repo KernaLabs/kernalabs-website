@@ -429,47 +429,6 @@
     ],
     "placeholder": null
   },
-  "logos/institutions/inceptive-text-logo-dark.avif": {
-    "original": "logos/institutions/inceptive-text-logo-dark.avif",
-    "variants": [
-      "logos/institutions/inceptive-text-logo-dark-100w.avif",
-      "logos/institutions/inceptive-text-logo-dark-200w.avif",
-      "logos/institutions/inceptive-text-logo-dark-300w.avif",
-      "logos/institutions/inceptive-text-logo-dark-400w.avif",
-      "logos/institutions/inceptive-text-logo-dark-600w.avif",
-      "logos/institutions/inceptive-text-logo-dark-800w.avif"
-    ],
-    "placeholder": null
-  },
-  "logos/institutions/inceptive-text-logo-dark.png": {
-    "original": "logos/institutions/inceptive-text-logo-dark.png",
-    "variants": [
-      "logos/institutions/inceptive-text-logo-dark-100w.png",
-      "logos/institutions/inceptive-text-logo-dark-200w.png",
-      "logos/institutions/inceptive-text-logo-dark-300w.png",
-      "logos/institutions/inceptive-text-logo-dark-400w.png",
-      "logos/institutions/inceptive-text-logo-dark-600w.png",
-      "logos/institutions/inceptive-text-logo-dark-800w.png"
-    ],
-    "placeholder": null
-  },
-  "logos/institutions/inceptive-text-logo-dark.webp": {
-    "original": "logos/institutions/inceptive-text-logo-dark.webp",
-    "variants": [
-      "logos/institutions/inceptive-text-logo-dark-100w.webp",
-      "logos/institutions/inceptive-text-logo-dark-200w.webp",
-      "logos/institutions/inceptive-text-logo-dark-300w.webp",
-      "logos/institutions/inceptive-text-logo-dark-400w.webp",
-      "logos/institutions/inceptive-text-logo-dark-600w.webp",
-      "logos/institutions/inceptive-text-logo-dark-800w.webp"
-    ],
-    "placeholder": null
-  },
-  "logos/institutions/inceptive-text-logo-dark.jpg": {
-    "original": "logos/institutions/inceptive-text-logo-dark.jpg",
-    "variants": [],
-    "placeholder": "logos/institutions/inceptive-text-logo-dark-placeholder.jpg"
-  },
   "logos/institutions/inceptive-text-logo.jpg": {
     "original": "logos/institutions/inceptive-text-logo.jpg",
     "variants": [],

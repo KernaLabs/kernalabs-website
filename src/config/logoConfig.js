@@ -20,7 +20,7 @@ export const logoConfig = {
   'nchroma-text-logo.png': { height: 26, maxWidth: 118 },     // 3334x736 (4.53:1) - slightly larger
   'wharton-text-logo.png': { height: 24, maxWidth: 95, invert: true },     // 864x218 (3.96:1)
   'moderna-text-logo.png': { height: 24, maxWidth: 94 },     // 486x124 (3.92:1)
-  'inceptive-text-logo.png': { height: 30, maxWidth: 118, scale: 1.25, teamMaxWidth: 118, teamMaxHeight: 34, invert: true },   // 1500x384 (3.91:1) - boosted sizing
+  'inceptive-text-logo.png': { height: 30, maxWidth: 118, scale: 1.25, teamMaxWidth: 118, teamMaxHeight: 34 },   // 1500x384 (3.91:1) - boosted sizing
   'amgen-text-logo.png': { height: 18, maxWidth: 70 },       // 2560x655 (3.91:1)
   'mgen-logo.png': { height: 20, maxWidth: 79 },            // 1478x375 (3.94:1)
   'longitude-text-logo.png': { height: 26, maxWidth: 96 },   // 435x118 (3.69:1)

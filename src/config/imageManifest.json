@@ -405,34 +405,34 @@
     "variants": [],
     "placeholder": "logos/institutions/hhmi-text-logo-placeholder.jpg"
   },
-  "logos/institutions/inceptive-text-logo.png": {
-    "original": "logos/institutions/inceptive-text-logo.png",
+  "logos/institutions/inceptive-text-logo-v2.png": {
+    "original": "logos/institutions/inceptive-text-logo-v2.png",
     "variants": [
-      "logos/institutions/inceptive-text-logo-100w.avif",
-      "logos/institutions/inceptive-text-logo-100w.png",
-      "logos/institutions/inceptive-text-logo-100w.webp",
-      "logos/institutions/inceptive-text-logo-200w.avif",
-      "logos/institutions/inceptive-text-logo-200w.png",
-      "logos/institutions/inceptive-text-logo-200w.webp",
-      "logos/institutions/inceptive-text-logo-300w.avif",
-      "logos/institutions/inceptive-text-logo-300w.png",
-      "logos/institutions/inceptive-text-logo-300w.webp",
-      "logos/institutions/inceptive-text-logo-400w.avif",
-      "logos/institutions/inceptive-text-logo-400w.png",
-      "logos/institutions/inceptive-text-logo-400w.webp",
-      "logos/institutions/inceptive-text-logo-600w.avif",
-      "logos/institutions/inceptive-text-logo-600w.png",
-      "logos/institutions/inceptive-text-logo-600w.webp",
-      "logos/institutions/inceptive-text-logo-800w.avif",
-      "logos/institutions/inceptive-text-logo-800w.png",
-      "logos/institutions/inceptive-text-logo-800w.webp"
+      "logos/institutions/inceptive-text-logo-v2-100w.avif",
+      "logos/institutions/inceptive-text-logo-v2-100w.png",
+      "logos/institutions/inceptive-text-logo-v2-100w.webp",
+      "logos/institutions/inceptive-text-logo-v2-200w.avif",
+      "logos/institutions/inceptive-text-logo-v2-200w.png",
+      "logos/institutions/inceptive-text-logo-v2-200w.webp",
+      "logos/institutions/inceptive-text-logo-v2-300w.avif",
+      "logos/institutions/inceptive-text-logo-v2-300w.png",
+      "logos/institutions/inceptive-text-logo-v2-300w.webp",
+      "logos/institutions/inceptive-text-logo-v2-400w.avif",
+      "logos/institutions/inceptive-text-logo-v2-400w.png",
+      "logos/institutions/inceptive-text-logo-v2-400w.webp",
+      "logos/institutions/inceptive-text-logo-v2-600w.avif",
+      "logos/institutions/inceptive-text-logo-v2-600w.png",
+      "logos/institutions/inceptive-text-logo-v2-600w.webp",
+      "logos/institutions/inceptive-text-logo-v2-800w.avif",
+      "logos/institutions/inceptive-text-logo-v2-800w.png",
+      "logos/institutions/inceptive-text-logo-v2-800w.webp"
     ],
     "placeholder": null
   },
-  "logos/institutions/inceptive-text-logo.jpg": {
-    "original": "logos/institutions/inceptive-text-logo.jpg",
+  "logos/institutions/inceptive-text-logo-v2.jpg": {
+    "original": "logos/institutions/inceptive-text-logo-v2.jpg",
     "variants": [],
-    "placeholder": "logos/institutions/inceptive-text-logo-placeholder.jpg"
+    "placeholder": "logos/institutions/inceptive-text-logo-v2-placeholder.jpg"
   },
   "logos/institutions/jpm-logo.png": {
     "original": "logos/institutions/jpm-logo.png",

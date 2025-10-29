@@ -99,7 +99,7 @@ export const coreTeam = [
       'PhD Genetics @ Michigan State University',
     ],
     institutions: [
-      { name: 'Inceptive', logo: '/images/logos/institutions/inceptive-text-logo.png'},
+      { name: 'Inceptive', logo: '/images/logos/institutions/inceptive-text-logo-v2.png'},
       { name: 'Stanford Medicine', logo: '/images/logos/institutions/stanford-medicine-text-logo.png'}
     ]
   },

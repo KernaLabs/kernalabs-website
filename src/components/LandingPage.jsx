@@ -235,7 +235,7 @@ const LandingPage = ({ contentReady = true }) => {
                 <AnimatedSection animation="slideInLeft" className={`${CLASSES.decorativeLineVertical} mr-6 flex-shrink-0`}></AnimatedSection>
                 <AnimatedSection animation="fadeInUp" delay={100}>
                   <p className={CLASSES.bannerText}>
-                    Our platform designs mRNA sequences that drive magnitude higher protein output with unprecedented cell-type precision.
+                    Our platform designs mRNA sequences that drive significantly higher protein output with unprecedented cell-type precision.
                   </p>
                 </AnimatedSection>
               </div>

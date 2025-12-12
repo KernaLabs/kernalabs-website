@@ -72,6 +72,8 @@ export const logoConfig = {
   // SQUARE-ISH
   'umc-text-logo.png': { height: 40, maxWidth: 53, scale: 0.9, invert: false },        // 2701x2053 (1.32:1)
   'nas-text-logo.png': { height: 40, maxWidth: 48, invert: true },        // 1200x996 (1.20:1)
+  'carnegie-mellon-2-text-logo.png': { height: 36, maxWidth: 52, scale: 1.0, invert: true },  // ~700x490 (1.43:1) - text logo
+  'aikium-text-logo.png': { height: 44, maxWidth: 44, scale: 1.0 },       // 1:1 square logo with decorative border
 };
 
 // Default configuration for any missing logos

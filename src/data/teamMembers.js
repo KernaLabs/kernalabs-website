@@ -118,15 +118,15 @@ export const coreTeam = [
     ]
   },
   {
-    name: 'Declan Coleman',
-    position: 'Research Associate',
-    image: '/images/team/members/Declan Coleman.jpg',
+    name: 'Danush Sadasivam',
+    position: 'Machine Learning',
+    image: '/images/team/members/Danush Sadasivam.jpg',
     description: [
-      'Molecular Biology @ Ponoma College',
+      '',
     ],
     institutions: [
-      { name: 'Ponoma College', logo: '/images/logos/institutions/ponoma-text-logo.png' },
-      { name: 'Bullseye Bio', logo: '/images/logos/institutions/bullseye-text-logo.png' },
+      { name: 'Carnegie Mellon University', logo: '/images/logos/institutions/carnegie-mellon-2-text-logo.png' },
+      { name: 'Aikium', logo: '/images/logos/institutions/aikium-text-logo.png' },
     ]
   },
 ];

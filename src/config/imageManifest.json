@@ -95,6 +95,35 @@
     "variants": [],
     "placeholder": "logos/institutions/76bio-text-logo-placeholder.jpg"
   },
+  "logos/institutions/aikium-text-logo.png": {
+    "original": "logos/institutions/aikium-text-logo.png",
+    "variants": [
+      "logos/institutions/aikium-text-logo-100w.avif",
+      "logos/institutions/aikium-text-logo-100w.png",
+      "logos/institutions/aikium-text-logo-100w.webp",
+      "logos/institutions/aikium-text-logo-200w.avif",
+      "logos/institutions/aikium-text-logo-200w.png",
+      "logos/institutions/aikium-text-logo-200w.webp",
+      "logos/institutions/aikium-text-logo-300w.avif",
+      "logos/institutions/aikium-text-logo-300w.png",
+      "logos/institutions/aikium-text-logo-300w.webp",
+      "logos/institutions/aikium-text-logo-400w.avif",
+      "logos/institutions/aikium-text-logo-400w.png",
+      "logos/institutions/aikium-text-logo-400w.webp",
+      "logos/institutions/aikium-text-logo-600w.avif",
+      "logos/institutions/aikium-text-logo-600w.png",
+      "logos/institutions/aikium-text-logo-600w.webp",
+      "logos/institutions/aikium-text-logo-800w.avif",
+      "logos/institutions/aikium-text-logo-800w.png",
+      "logos/institutions/aikium-text-logo-800w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/aikium-text-logo.jpg": {
+    "original": "logos/institutions/aikium-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/aikium-text-logo-placeholder.jpg"
+  },
   "logos/institutions/amgen-text-logo.png": {
     "original": "logos/institutions/amgen-text-logo.png",
     "variants": [
@@ -230,6 +259,32 @@
     "original": "logos/institutions/caltech-text-logo.jpg",
     "variants": [],
     "placeholder": "logos/institutions/caltech-text-logo-placeholder.jpg"
+  },
+  "logos/institutions/carnegie-mellon-2-text-logo.png": {
+    "original": "logos/institutions/carnegie-mellon-2-text-logo.png",
+    "variants": [
+      "logos/institutions/carnegie-mellon-2-text-logo-100w.avif",
+      "logos/institutions/carnegie-mellon-2-text-logo-100w.png",
+      "logos/institutions/carnegie-mellon-2-text-logo-100w.webp",
+      "logos/institutions/carnegie-mellon-2-text-logo-200w.avif",
+      "logos/institutions/carnegie-mellon-2-text-logo-200w.png",
+      "logos/institutions/carnegie-mellon-2-text-logo-200w.webp",
+      "logos/institutions/carnegie-mellon-2-text-logo-300w.avif",
+      "logos/institutions/carnegie-mellon-2-text-logo-300w.png",
+      "logos/institutions/carnegie-mellon-2-text-logo-300w.webp",
+      "logos/institutions/carnegie-mellon-2-text-logo-400w.avif",
+      "logos/institutions/carnegie-mellon-2-text-logo-400w.png",
+      "logos/institutions/carnegie-mellon-2-text-logo-400w.webp",
+      "logos/institutions/carnegie-mellon-2-text-logo-600w.avif",
+      "logos/institutions/carnegie-mellon-2-text-logo-600w.png",
+      "logos/institutions/carnegie-mellon-2-text-logo-600w.webp"
+    ],
+    "placeholder": null
+  },
+  "logos/institutions/carnegie-mellon-2-text-logo.jpg": {
+    "original": "logos/institutions/carnegie-mellon-2-text-logo.jpg",
+    "variants": [],
+    "placeholder": "logos/institutions/carnegie-mellon-2-text-logo-placeholder.jpg"
   },
   "logos/institutions/choma-text-logo.png": {
     "original": "logos/institutions/choma-text-logo.png",
@@ -1591,23 +1646,17 @@
     ],
     "placeholder": "team/members/Catherine Stehman-Breen-placeholder.jpg"
   },
-  "team/members/Declan Coleman.jpg": {
-    "original": "team/members/Declan Coleman.jpg",
+  "team/members/Danush Sadasivam.jpg": {
+    "original": "team/members/Danush Sadasivam.jpg",
     "variants": [
-      "team/members/Declan Coleman-1200w.avif",
-      "team/members/Declan Coleman-1200w.jpg",
-      "team/members/Declan Coleman-1200w.webp",
-      "team/members/Declan Coleman-1600w.avif",
-      "team/members/Declan Coleman-1600w.jpg",
-      "team/members/Declan Coleman-1600w.webp",
-      "team/members/Declan Coleman-400w.avif",
-      "team/members/Declan Coleman-400w.jpg",
-      "team/members/Declan Coleman-400w.webp",
-      "team/members/Declan Coleman-800w.avif",
-      "team/members/Declan Coleman-800w.jpg",
-      "team/members/Declan Coleman-800w.webp"
+      "team/members/Danush Sadasivam-400w.avif",
+      "team/members/Danush Sadasivam-400w.jpg",
+      "team/members/Danush Sadasivam-400w.webp",
+      "team/members/Danush Sadasivam-800w.avif",
+      "team/members/Danush Sadasivam-800w.jpg",
+      "team/members/Danush Sadasivam-800w.webp"
     ],
-    "placeholder": "team/members/Declan Coleman-placeholder.jpg"
+    "placeholder": "team/members/Danush Sadasivam-placeholder.jpg"
   },
   "team/members/Jacob Kimmel.jpg": {
     "original": "team/members/Jacob Kimmel.jpg",

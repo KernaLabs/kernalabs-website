@@ -160,7 +160,7 @@ const LandingPage = ({ contentReady = true }) => {
             <h1 className="font-display font-bold tracking-display-tight leading-tight text-kerna-beige">
               <span className="block text-fluid-3xl sm:text-fluid-4xl md:text-fluid-5xl lg:text-fluid-6xl">
                 <StaggeredText 
-                  text="Better genetic medicines," 
+                  text="Therapeutic abundance," 
                   delay={60}
                   startDelay={150}
                   ready={contentReady}
@@ -169,7 +169,7 @@ const LandingPage = ({ contentReady = true }) => {
               
               <div className="block text-fluid-3xl sm:text-fluid-4xl md:text-fluid-5xl lg:text-fluid-6xl mt-1 sm:mt-2">
                 <RotatingText 
-                  words={['built', 'designed', 'engineered']} 
+                  words={['unlocked', 'enabled', 'scaled']} 
                   interval={3000}
                   className="text-kerna-red inline align-baseline"
                 />

@@ -185,7 +185,7 @@ const LandingPage = ({ contentReady = true }) => {
               </div>
             </h1>
             <div className="w-full sm:max-w-md lg:max-w-lg mt-4 md:mt-6">
-              <p className={`text-fluid-base sm:text-fluid-lg md:text-fluid-xl font-body text-kerna-beige/90 transition-all duration-500 delay-700 ${
+              <p className={`text-fluid-base sm:text-fluid-lg md:text-fluid-xl font-body text-kerna-beige/90 transition-all duration-500 delay-200 ${
                 contentReady ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}>
                 Kerna Labs is unlocking the full potential of mRNA as the universal toolkit for genetic medicine.

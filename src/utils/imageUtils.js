@@ -7,8 +7,10 @@ export const getOptimizedBackgroundImage = (imagePath, gradient = null) => {
   const lastDot = imagePath.lastIndexOf('.');
   const basePath = imagePath.substring(0, lastDot);
   
-  // For backgrounds, use 1920w as default size (good for most screens)
-  const defaultWidth = '1920w';
+  // The background swirl sits behind a heavy dark gradient overlay, so a 1280w
+  // variant is visually indistinguishable from larger sizes while being far
+  // lighter on the wire (the dominant blocking asset on mobile).
+  const defaultWidth = '1280w';
   
   // Build the optimized paths
   const avifPath = `${basePath}-${defaultWidth}.avif`;

@@ -1,32 +1,33 @@
 // Image optimization configuration
 export const IMAGE_SIZES = {
-  // Team photos - from mobile to 4K displays
+  // Team photos - rendered as ~80px avatars. `widths` mirrors the ladder in
+  // scripts/optimize-images.js; the actual candidates come from the manifest.
   team: {
-    widths: [400, 800, 1200, 1600, 2400, 3200],
-    sizes: '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 400px'
+    widths: [400, 800],
+    sizes: '80px'
   },
-  
+
   // Institution/partner logos
   logo: {
-    widths: [100, 200, 300, 400, 600, 800],
+    widths: [200, 400],
     sizes: '(max-width: 640px) 100px, 200px'
   },
-  
-  // Hero/background images - up to 5K displays
+
+  // Hero/background images
   hero: {
-    widths: [1920, 2560, 3840, 5120],
+    widths: [1280, 1920],
     sizes: '100vw'
   },
-  
+
   // Media/press logos
   media: {
-    widths: [200, 400, 600, 800, 1200],
+    widths: [200, 400],
     sizes: '(max-width: 640px) 150px, (max-width: 1024px) 200px, 300px'
   },
-  
+
   // Default sizes for other images
   default: {
-    widths: [320, 640, 960, 1280, 1920, 2560, 3840],
+    widths: [320, 640, 1280],
     sizes: '100vw'
   }
 };

@@ -8,29 +8,35 @@ const config = {
   publicDir: path.join(__dirname, '../public/images'),
   outputDir: path.join(__dirname, '../public/images'),
   formats: ['webp', 'avif'], // Next-gen formats to generate
+  // Sizes are scoped to how each asset is actually displayed on the page.
+  // Team avatars render at ~80px, logos at ~100-200px, so we don't generate
+  // multi-thousand-pixel variants that would never be requested but still bloat
+  // the repo and (via the manifest) the candidate srcset.
   sizes: {
-    // Team photos - from mobile to 4K displays
-    team: [400, 800, 1200, 1600, 2400, 3200],
-    
-    // Institution/partner logos
-    logos: [100, 200, 300, 400, 600, 800],
-    
-    // Hero/background images - up to 5K displays
-    backgrounds: [1920, 2560, 3840, 5120],
-    
+    // Team photos - rendered as ~80px avatars (400/800 covers 2x-3x retina)
+    team: [400, 800],
+
+    // Institution/partner logos - rendered at ~100-200px
+    logos: [200, 400],
+
+    // Hero/background images
+    backgrounds: [1280, 1920],
+
     // Media/press logos
-    media: [200, 400, 600, 800, 1200],
-    
+    media: [200, 400],
+
     // Default sizes for other images
-    default: [320, 640, 960, 1280, 1920, 2560, 3840]
+    default: [320, 640, 1280]
   },
-  
-  // Maximum quality settings for professional appearance
+
+  // Lossy settings tuned for web delivery. At these levels the visual
+  // difference is imperceptible for photos/logos but file sizes drop ~10-20x
+  // versus the previous lossless/quality-100 settings.
   quality: {
-    jpeg: 100,  // Lossless JPEG
-    webp: 100,  // Lossless WebP
-    avif: 100,  // Lossless AVIF
-    png: 100    // No compression for PNGs
+    jpeg: 78,
+    webp: 75,
+    avif: 50,  // AVIF's quality scale runs lower than JPEG/WebP for similar fidelity
+    png: 9     // PNG compressionLevel (0-9); only used for the original-format fallback variant
   }
 };
 
@@ -102,14 +108,14 @@ async function processImage(inputPath) {
       
       // Apply format-specific settings
       if (ext === '.jpg' || ext === '.jpeg') {
-        sharpInstance = sharpInstance.jpeg({ 
+        sharpInstance = sharpInstance.jpeg({
           quality: config.quality.jpeg,
           mozjpeg: true // Use mozjpeg encoder for better quality
         });
       } else if (ext === '.png') {
-        sharpInstance = sharpInstance.png({ 
-          quality: config.quality.png,
-          compressionLevel: 0 // No compression
+        sharpInstance = sharpInstance.png({
+          compressionLevel: config.quality.png,
+          palette: true // Quantize to a palette where possible for smaller files
         });
       }
       
@@ -134,17 +140,14 @@ async function processImage(inputPath) {
           });
         
         if (format === 'webp') {
-          formatInstance = formatInstance.webp({ 
+          formatInstance = formatInstance.webp({
             quality: config.quality.webp,
-            lossless: true, // Lossless WebP
-            effort: 6 // Maximum effort for best compression
+            effort: 5 // Good compression without the runtime cost of effort 6
           });
         } else if (format === 'avif') {
-          formatInstance = formatInstance.avif({ 
+          formatInstance = formatInstance.avif({
             quality: config.quality.avif,
-            lossless: true, // Lossless AVIF
-            effort: 9, // Maximum effort
-            chromaSubsampling: '4:4:4' // No chroma subsampling
+            effort: 4 // effort 9 was ~5x slower for negligible additional savings
           });
         }
         

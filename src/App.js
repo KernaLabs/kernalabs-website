@@ -12,49 +12,23 @@ function App() {
   // console.log('[App] Component rendered');
 
   useEffect(() => {
-    // console.log('[App] useEffect running');
-    // Simulate minimum loading time for better UX
-    const minimumLoadTime = 1500;
-    const startTime = Date.now();
+    // Reveal content as soon as React has mounted. We intentionally do NOT block
+    // on downloading the background/hero images — gating the first paint on a
+    // multi-hundred-KB background is what tanked LCP/Speed Index. The brand
+    // loading screen still shows briefly for polish, but it never waits on the
+    // network, so the hero (the LCP element) can paint almost immediately.
+    const minimumLoadTime = 400;
 
-    // Preload critical assets
-    const preloadAssets = async () => {
-      const criticalAssets = [
-        '/icons/KernaLeaf.svg',
-        '/images/backgrounds/BackgroundSwirls-1920w.webp',
-        '/images/app/TextLogoWhite-640w.webp'
-      ];
+    // Play the hero entrance animations on the next frame.
+    const raf = requestAnimationFrame(() => setContentReady(true));
 
-      try {
-        await Promise.all(
-          criticalAssets.map(src => {
-            return new Promise((resolve, reject) => {
-              const img = new Image();
-              img.onload = resolve;
-              img.onerror = reject;
-              img.src = src;
-            });
-          })
-        );
-      } catch (error) {
-        console.error('Error preloading assets:', error);
-      }
+    // Fade the loading screen out after a short, fixed delay.
+    const timer = setTimeout(() => setIsLoading(false), minimumLoadTime);
 
-      // Ensure minimum load time
-      const elapsedTime = Date.now() - startTime;
-      const remainingTime = Math.max(0, minimumLoadTime - elapsedTime);
-      
-      setTimeout(() => {
-        // console.log('[App] Setting contentReady to true');
-        setContentReady(true);
-        setTimeout(() => {
-          // console.log('[App] Setting isLoading to false');
-          setIsLoading(false);
-        }, 100);
-      }, remainingTime);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(timer);
     };
-
-    preloadAssets();
   }, []);
 
   return (

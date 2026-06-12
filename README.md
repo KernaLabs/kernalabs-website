@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Kerna Labs — Marketing Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The marketing site for [Kerna Labs](https://kernalabs.ai), a company building
+frontier AI models for mRNA therapeutics. It's a single-page React application
+with a performance-optimized image pipeline, responsive layouts, and lightweight
+interactive animations.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- **React 18** (Create React App / `react-scripts`)
+- **Tailwind CSS** for styling
+- **sharp** for build-time responsive image generation (WebP/AVIF variants)
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install      # install dependencies
+npm start        # run the dev server at http://localhost:3000
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Scripts
 
-### `npm test`
+| Command | Description |
+| --- | --- |
+| `npm start` | Start the development server with hot reload |
+| `npm test` | Run the test suite in watch mode |
+| `npm run build` | Build the production bundle into `build/` |
+| `npm run optimize-images` | Generate responsive image variants and refresh `src/config/imageManifest.json` |
+| `npm run build:with-images` | Optimize images, then build for production |
+| `npm run deploy` | Publish `build/` to GitHub Pages |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When you add or change imagery, run `npm run optimize-images` and commit both the
+source images and the generated variants. See `scripts/optimize-images.js` for the
+size ladders and encoding settings.
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+public/             Static assets and images (source + generated variants)
+src/
+  components/       UI components (landing page, navbar, cards, animations)
+  hooks/            Reusable hooks (carousel, intersection animations)
+  config/           Image size config + generated image manifest
+  data/             Team and content data
+  utils/            Helpers (image styles, throttling)
+scripts/            Build tooling (image optimizer)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Production and staging are deployed automatically by **Netlify**:
 
-### `npm run eject`
+- `master` → production ([kernalabs.ai](https://kernalabs.ai))
+- `staging` → staging preview
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A `gh-pages` deploy path also exists via `npm run deploy`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Cache headers and security headers are configured in `public/_headers`.

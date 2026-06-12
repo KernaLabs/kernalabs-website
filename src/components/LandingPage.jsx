@@ -121,7 +121,7 @@ const LandingPage = ({ contentReady = true }) => {
   // console.log('[LandingPage] Component rendered');
   
   return (
-    <div
+    <main
       id="landing-page-container"
       className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden bg-black bg-cover bg-center bg-fixed"
       style={getBackgroundStyle(
@@ -139,15 +139,16 @@ const LandingPage = ({ contentReady = true }) => {
       
       {/* Section 1: Better Genetic Medicines */}
       <section id="main" className={CLASSES.sectionHero}>
-        {/* DNA Cursor Animation - absolute positioned to cover the section */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* DNA Cursor Animation - absolute positioned to cover the section.
+            Decorative only, so hide it from assistive tech. */}
+        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
           <Suspense fallback={<div className="w-full h-full" />}>
-            <DNACursorAnimation 
+            <DNACursorAnimation
               baseSize={12}
               growSize={20}
               growDistance={180}
-              gapX={40}
-              gapY={40}
+              gapX={52}
+              gapY={52}
               colorPalette={['#666666', '#777777', '#888888', '#999999']}
               animationDuration={0.2}
               containerClassName="w-full h-full"
@@ -285,7 +286,9 @@ const LandingPage = ({ contentReady = true }) => {
             <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none">
               <div className={CLASSES.container}>
                 <div className="flex justify-between">
-                  <button 
+                  <button
+                    type="button"
+                    aria-label="Scroll to previous team members"
                     onClick={teamCarousel.scrollLeftFunc}
                     disabled={!teamCarousel.canScrollLeft}
                     className={`${CLASSES.carouselArrow} ${
@@ -296,7 +299,9 @@ const LandingPage = ({ contentReady = true }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
-                  <button 
+                  <button
+                    type="button"
+                    aria-label="Scroll to next team members"
                     onClick={teamCarousel.scrollRightFunc}
                     disabled={!teamCarousel.canScrollRight}
                     className={`${CLASSES.carouselArrow} ${
@@ -352,7 +357,9 @@ const LandingPage = ({ contentReady = true }) => {
             <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none">
               <div className={CLASSES.container}>
                 <div className="flex justify-between">
-                  <button 
+                  <button
+                    type="button"
+                    aria-label="Scroll to previous advisors"
                     onClick={advisorsCarousel.scrollLeftFunc}
                     disabled={!advisorsCarousel.canScrollLeft}
                     className={`${CLASSES.carouselArrow} ${
@@ -363,7 +370,9 @@ const LandingPage = ({ contentReady = true }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
-                  <button 
+                  <button
+                    type="button"
+                    aria-label="Scroll to next advisors"
                     onClick={advisorsCarousel.scrollRightFunc}
                     disabled={!advisorsCarousel.canScrollRight}
                     className={`${CLASSES.carouselArrow} ${
@@ -518,7 +527,7 @@ const LandingPage = ({ contentReady = true }) => {
           </div>
         </footer>
       </AnimatedSection>
-    </div>
+    </main>
   );
 };
 

@@ -178,6 +178,10 @@ const Navbar = () => {
 
         {/* Mobile Menu Button with animation */}
         <button
+          type="button"
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
           className={`md:hidden p-2 text-white hover:text-kerna-red transition-all duration-500 ${
             isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}
@@ -210,6 +214,7 @@ const Navbar = () => {
 
       {/* Mobile Menu with staggered animations */}
       <div
+        id="mobile-menu"
         className={`md:hidden absolute w-full bg-black/90 backdrop-blur-sm border-b border-gray-700 transition-all duration-300 ease-in-out ${
           isMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
         }`}

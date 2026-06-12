@@ -49,7 +49,7 @@ Key components follow a modular pattern:
 ### Image Optimization Strategy
 - **scripts/optimize-images.js**: Sharp-based image processor that generates:
   - Multiple sizes for different device categories (team, logos, backgrounds, media)
-  - Next-gen formats (WebP, AVIF) with lossless compression
+  - Next-gen formats (WebP, AVIF) with lossy compression tuned for web delivery
   - Placeholder images for lazy loading
   - Automatic manifest generation for srcSet management
 
@@ -61,7 +61,9 @@ Key components follow a modular pattern:
 - Throttled scroll and resize event handlers
 
 ### Deployment Configuration
-- Hosted on GitHub Pages at https://kernalabs.ai
+- Deployed via Netlify at https://kernalabs.ai
+- `master` auto-deploys to production; `staging` auto-deploys to a staging preview
 - CNAME file in public/ directory for custom domain
-- Build output is deployed to the gh-pages branch
+- A `gh-pages` deploy path also exists via `npm run deploy`
+- Cache and security headers are configured in `public/_headers`
 - Homepage configured in package.json for proper routing

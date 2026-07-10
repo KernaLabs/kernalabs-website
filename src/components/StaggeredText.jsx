@@ -73,10 +73,7 @@ const StaggeredText = ({
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-2'
           }`}
-          style={{ 
-            transitionDelay: `${index * 20}ms`,
-            willChange: 'transform, opacity'
-          }}
+          style={{ transitionDelay: `${index * 20}ms` }}
         >
           {word}
           {index < words.length - 1 && '\u00A0'}

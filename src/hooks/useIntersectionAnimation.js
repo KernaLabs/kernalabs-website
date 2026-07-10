@@ -1,67 +1,45 @@
-import { useEffect, useRef, useState, useMemo } from 'react';
-import { throttle } from '../utils/throttle';
+import { useEffect, useRef, useState } from 'react';
 
+// Reveal-once visibility hook: flips to visible the first time the element
+// enters the viewport, then stops observing. Content is never re-hidden on
+// exit — re-hiding depended on a reliable re-entry callback, which Safari does
+// not deliver after trackpad pinch-zoom (it intersects against the layout
+// viewport, not the visual one), leaving already-seen sections blank. One-shot
+// reveals also avoid observer/state churn on every scroll frame.
 const useIntersectionAnimation = (options = {}) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState('down');
-  const lastScrollY = useRef(0);
-
-  // Throttled scroll handler for better performance
-  const handleScroll = useMemo(() => 
-    throttle(() => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY.current) {
-        setScrollDirection('down');
-      } else if (currentScrollY < lastScrollY.current) {
-        setScrollDirection('up');
-      }
-      lastScrollY.current = currentScrollY;
-    }, 50), 
-  []);
-
-  // Track scroll direction
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
 
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
 
-    const observerOptions = {
-      threshold: options.threshold || 0.1,
-      rootMargin: options.rootMargin || '-50px',
-    };
+    if (typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
+      return;
+    }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          // Only mark as animated when scrolling down
-          if (scrollDirection === 'down' && !hasAnimated) {
-            setHasAnimated(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
           }
-        } else {
-          setIsVisible(false);
-          // Reset animation state when element is out of view and scrolling down
-          if (scrollDirection === 'down') {
-            setHasAnimated(false);
-          }
-        }
-      });
-    }, observerOptions);
+        });
+      },
+      {
+        threshold: options.threshold || 0.1,
+        rootMargin: options.rootMargin || '-50px',
+      }
+    );
 
     observer.observe(element);
 
-    return () => {
-      observer.disconnect();
-    };
-  }, [scrollDirection, hasAnimated, options.threshold, options.rootMargin]);
+    return () => observer.disconnect();
+  }, [options.threshold, options.rootMargin]);
 
-  return { ref, isVisible, hasAnimated, scrollDirection };
+  return { ref, isVisible };
 };
 
 export default useIntersectionAnimation;

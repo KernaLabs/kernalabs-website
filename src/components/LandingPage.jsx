@@ -123,7 +123,7 @@ const LandingPage = ({ contentReady = true }) => {
   return (
     <main
       id="landing-page-container"
-      className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden bg-black bg-cover bg-center bg-fixed"
+      className="fixed inset-0 w-screen overflow-y-scroll overflow-x-hidden bg-black bg-cover bg-center"
       style={getBackgroundStyle(
         '/images/backgrounds/BackgroundSwirls.png',
         `linear-gradient(to bottom, 

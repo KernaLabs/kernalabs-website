@@ -1,22 +1,20 @@
 import React from 'react';
 import useIntersectionAnimation from '../hooks/useIntersectionAnimation';
 
-const AnimatedSection = ({ 
-  children, 
+const AnimatedSection = ({
+  children,
   animation = 'fadeInUp',
   delay = 0,
   threshold = 0.1,
   className = '',
-  once = false,
+  // Reveals are always one-shot; prop kept so existing call sites don't leak
+  // an unknown attribute onto the DOM node.
+  once = true,
   rootMargin = '50px',
   duration = 500,
-  ...props 
+  ...props
 }) => {
-  const { ref, isVisible, scrollDirection, hasAnimated } = useIntersectionAnimation({ 
-    threshold, 
-    once,
-    rootMargin 
-  });
+  const { ref, isVisible } = useIntersectionAnimation({ threshold, rootMargin });
 
   // Map duration to valid Tailwind classes
   const getDurationClass = (ms) => {
@@ -57,18 +55,15 @@ const AnimatedSection = ({
   };
 
   const baseClasses = animationClasses[animation] || animationClasses.fadeInUp;
-  
-  // Show animation state when visible AND (scrolling down OR already animated)
-  const shouldShowAnimated = isVisible && (hasAnimated || scrollDirection === 'down');
-  
-  const stateClasses = shouldShowAnimated
+
+  const stateClasses = isVisible
     ? visibleClasses[animation] || visibleClasses.fadeInUp
     : hiddenClasses[animation] || hiddenClasses.fadeInUp;
 
   return (
     <div
       ref={ref}
-      className={`${baseClasses} ${stateClasses} ${className} will-change-transform`}
+      className={`${baseClasses} ${stateClasses} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
       {...props}
     >

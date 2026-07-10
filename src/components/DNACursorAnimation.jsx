@@ -127,9 +127,10 @@ const DNACursorAnimation = ({
   const containerRef = useRef(null);
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [isVisible, setIsVisible] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
   const [time, setTime] = useState(0);
   const animationFrameRef = useRef();
+  const isOnScreenRef = useRef(false);
 
   // Update container dimensions and check visibility
   useEffect(() => {
@@ -152,13 +153,15 @@ const DNACursorAnimation = ({
       }, 100);
     };
 
-    // Use IntersectionObserver for lazy loading
+    // Track on-screen state: letters are created lazily on first reveal and
+    // stay mounted after that, but the ambient time loop only runs while the
+    // hero is actually on screen (it re-renders every letter on each tick).
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
+          isOnScreenRef.current = entry.isIntersecting;
           if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect();
+            setHasBeenVisible(true);
           }
         });
       },
@@ -172,10 +175,10 @@ const DNACursorAnimation = ({
     updateDimensions();
     window.addEventListener('resize', handleResize);
     
-    // Subtle ambient animation
+    // Subtle ambient animation — skipped entirely while off-screen
     let lastTime = 0;
     const animate = (timestamp) => {
-      if (timestamp - lastTime >= 200) { // Update every 200ms for subtle effect
+      if (isOnScreenRef.current && timestamp - lastTime >= 200) { // Update every 200ms for subtle effect
         setTime(timestamp);
         lastTime = timestamp;
       }
@@ -301,7 +304,7 @@ const DNACursorAnimation = ({
       onTouchMove={handleTouchMove}
       onTouchEnd={handleMouseLeave}
     >
-      {dimensions.width > 0 && dimensions.height > 0 && isVisible && letters}
+      {dimensions.width > 0 && dimensions.height > 0 && hasBeenVisible && letters}
     </div>
   );
 };

@@ -12,7 +12,7 @@ const MediaCard = ({ href, logo, date, title, description, isPublication, delay 
     >
       <div className="absolute top-8 right-8 w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
         <img 
-          src="/images/icons/ui/Arrow.svg" 
+          src="/images/icons/ui/Arrow.svg?v=2"
           alt=""
           className="w-full h-full"
         />

@@ -1,20 +1,11 @@
-# Cache control for images
+# Images are not content-hashed (only width-suffixed), so they must stay
+# revalidatable — an immutable year pins stale files on returning visitors.
 /images/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Access-Control-Allow-Origin: *
 
-# Cache control for optimized images (WebP, AVIF)
-/images/*.webp
-  Cache-Control: public, max-age=31536000, immutable
-  
-/images/*.avif
-  Cache-Control: public, max-age=31536000, immutable
-
-# Cache control for static assets
+# Hashed build assets are safe to cache forever
 /static/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# Cache control for app icons
-/images/app/*
   Cache-Control: public, max-age=31536000, immutable
 
 # Security headers
@@ -26,8 +17,4 @@
 
 # Enable CORS for fonts
 /fonts/*
-  Access-Control-Allow-Origin: *
-
-# Enable CORS for images (for canvas usage)
-/images/*
   Access-Control-Allow-Origin: *

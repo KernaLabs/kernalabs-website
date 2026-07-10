@@ -47,17 +47,17 @@ const CLASSES = {
 // Therapeutic cards data
 const therapeuticCards = [
   {
-    icon: '/images/icons/ui/line-graph.svg',
+    icon: '/images/icons/ui/line-graph.svg?v=2',
     title: 'Expression Curve Tuning',
     description: 'Customizable expression profiles for diverse therapeutic applications.'
   },
   {
-    icon: '/images/icons/ui/aim.svg',
+    icon: '/images/icons/ui/aim.svg?v=2',
     title: 'Cell-Type Specific Expression',
     description: 'Precision-targeted delivery for cell-specific therapeutic effects.'
   },
   {
-    icon: '/images/icons/ui/clock.svg',
+    icon: '/images/icons/ui/clock.svg?v=2',
     title: 'Enhanced Half-life',
     description: 'Prolonged efficacy window through optimized mRNA stability.'
   }
@@ -506,20 +506,20 @@ const LandingPage = ({ contentReady = true }) => {
           <div className="flex-1 flex flex-col lg:flex-row items-center justify-center lg:justify-between container mx-auto px-4 gap-8 lg:gap-12">
             {/* Left side - Leaf logo and social links */}
             <AnimatedSection animation="fadeInUp" delay={50} className="flex flex-col items-center">
-              <img src="/images/icons/brand/KernaLeaf.svg" alt="Kerna Leaf" className="w-20 sm:w-24 h-auto mb-4 sm:mb-6 select-none" />
+              <img src="/images/icons/brand/KernaLeaf.svg?v=2" alt="Kerna Leaf" className="w-20 sm:w-24 h-auto mb-4 sm:mb-6 select-none" />
               <div className="flex justify-center gap-4 sm:gap-6">
                 <a href="https://twitter.com/KernaLabs" target="_blank" rel="noreferrer" className={CLASSES.socialLink}>
-                  <img src="/images/icons/brand/XIcon.svg" alt="Twitter/X" className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <img src="/images/icons/brand/XIcon.svg?v=2" alt="Twitter/X" className="w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
                 <a href="https://linkedin.com/company/kernalabs" target="_blank" rel="noreferrer" className={CLASSES.socialLink}>
-                  <img src="/images/icons/brand/LinkedInIcon.svg" alt="LinkedIn" className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <img src="/images/icons/brand/LinkedInIcon.svg?v=2" alt="LinkedIn" className="w-5 h-5 sm:w-6 sm:h-6" />
                 </a>
               </div>
             </AnimatedSection>
 
             {/* Right side - Text logo and copyright */}
             <AnimatedSection animation="fadeIn" delay={150} className="text-center lg:text-right lg:w-[70%]">
-              <img src="/images/icons/brand/TextOnlyLogo.svg" alt="Kerna Labs" className="mx-auto lg:ml-auto lg:mr-0 mb-2 sm:mb-4 w-full max-w-[280px] sm:max-w-md lg:max-w-none h-auto opacity-10 select-none" />
+              <img src="/images/icons/brand/TextOnlyLogo.svg?v=2" alt="Kerna Labs" className="mx-auto lg:ml-auto lg:mr-0 mb-2 sm:mb-4 w-full max-w-[280px] sm:max-w-md lg:max-w-none h-auto opacity-10 select-none" />
               <p className="text-kerna-beige text-fluid-sm font-body">
                 © 2025 Kerna Labs
               </p>

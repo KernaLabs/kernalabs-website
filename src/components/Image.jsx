@@ -47,15 +47,19 @@ const Image = ({
   }
   const hasVariants = availableWidths.length > 0;
 
+  // Paths must be URI-encoded: unescaped spaces (e.g. team photo filenames)
+  // are srcset syntax errors and make browsers drop the candidate entirely.
   const srcSetFor = (format) =>
     availableWidths
-      .map((w) => `${basePath}-${w}w.${format || originalExt} ${w}w`)
+      .map((w) => `${encodeURI(`${basePath}-${w}w.${format || originalExt}`)} ${w}w`)
       .join(', ');
 
   // Never use the full-size original as the loaded source: fall back to the
   // smallest generated variant in the original format. The browser only fetches
   // this when no <source> matches (very old browsers), so it stays cheap.
-  const fallbackSrc = hasVariants ? `${basePath}-${availableWidths[0]}w.${originalExt}` : src;
+  const fallbackSrc = hasVariants
+    ? encodeURI(`${basePath}-${availableWidths[0]}w.${originalExt}`)
+    : src;
 
   const imgStyle = {
     // Reserve space to avoid layout shift when width/height are known

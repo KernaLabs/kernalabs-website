@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { IMAGE_SIZES, getImageType } from '../config/imageConfig';
 import imageManifest from '../config/imageManifest.json';
 
@@ -20,6 +20,7 @@ const Image = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const triedOriginal = useRef(false);
 
   // Determine image type / responsive size hints
   const imageType = type || getImageType(src);
@@ -74,8 +75,11 @@ const Image = ({
   };
 
   const handleError = (e) => {
-    // Last resort: fall back to the original asset, then flag a hard error
-    if (e.target.src !== src) {
+    // Retry with the original asset at most once; if that also fails (or there
+    // was no smaller variant to begin with), surface the error state rather
+    // than refetching a missing file forever.
+    if (!triedOriginal.current && fallbackSrc !== src) {
+      triedOriginal.current = true;
       e.target.src = src;
     } else {
       setHasError(true);

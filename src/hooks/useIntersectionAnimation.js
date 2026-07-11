@@ -30,7 +30,7 @@ const useIntersectionAnimation = (options = {}) => {
       },
       {
         threshold: options.threshold || 0.1,
-        rootMargin: options.rootMargin || '-50px',
+        rootMargin: options.rootMargin || '0px',
       }
     );
 

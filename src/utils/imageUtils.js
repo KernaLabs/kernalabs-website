@@ -52,18 +52,13 @@ export const getOptimizedBackgroundImage = (imagePath, gradient = null) => {
  * Returns an object that can be spread into a style prop
  */
 export const getBackgroundStyle = (imagePath, gradient = null) => {
-  const { webp, fallback } = getOptimizedBackgroundImage(imagePath, gradient);
-  
-  // For maximum compatibility, we'll use WebP as the primary format
-  // since it has broader support than AVIF
+  const { webp } = getOptimizedBackgroundImage(imagePath, gradient);
+
+  // WebP as the single background format: every browser this bundle targets
+  // supports it, and React drops non-standard style keys, so a separate
+  // "fallback" property never reached the DOM anyway.
   let backgroundImage = gradient ? `${gradient}, ` : '';
   backgroundImage += `url('${webp}')`;
-  
-  // Return style object
-  return {
-    backgroundImage,
-    // Fallback for browsers that don't support WebP
-    // This will be overridden by the WebP version if supported
-    fallbackBackgroundImage: `${gradient ? `${gradient}, ` : ''}url('${fallback}')`
-  };
+
+  return { backgroundImage };
 };

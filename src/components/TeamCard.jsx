@@ -12,7 +12,7 @@ const TeamCard = ({ member, delay = 0 }) => {
         <AnimatedSection
           animation="fadeInUp"
           delay={delay}
-          className="px-4 py-10 flex flex-col h-[360px]"
+          className="px-4 py-10 flex flex-col h-[320px]"
         >
           {/* Profile image */}
           <div className="flex items-center justify-center mb-2">
@@ -27,14 +27,11 @@ const TeamCard = ({ member, delay = 0 }) => {
             />
           </div>
           
-          {/* Name and position */}
+          {/* Name */}
           <div className="text-center mb-4">
-            <h3 className="text-kerna-beige font-display text-fluid-lg font-medium leading-tight mb-1">
+            <h3 className="text-kerna-beige font-display text-fluid-lg font-medium leading-tight">
               {member.name}
             </h3>
-            <p className="text-kerna-beige/60 uppercase tracking-wider text-fluid-sm font-body">
-              {member.position}
-            </p>
           </div>
           
           {/* Institution logos section */}

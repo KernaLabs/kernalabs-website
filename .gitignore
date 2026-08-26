@@ -14,6 +14,10 @@
 # misc
 .DS_Store
 
+# Archived team/advisor bios — kept out of src/ so they never reach the deployed
+# bundle, and out of git so they are not published to the public repo.
+/data/team-bios.local.json
+
 # Lighthouse / PageSpeed reports (internal only — never commit)
 *lighthouse*.html
 *--kernalabs.netlify.app_*.html

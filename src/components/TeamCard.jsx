@@ -22,7 +22,7 @@ const TeamCard = ({ member, delay = 0 }) => {
               type="team"
               width={80}
               height={80}
-              className="w-20 h-20 rounded-full object-cover select-none pointer-events-none transition-all duration-300 group-hover:brightness-110"
+              className="w-20 h-20 rounded-full object-cover grayscale select-none pointer-events-none transition-all duration-300 group-hover:brightness-110"
               sizes="80px"
             />
           </div>

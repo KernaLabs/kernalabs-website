@@ -5,6 +5,9 @@
 // invert can be set to true for dark logos that need to be inverted to white
 
 export const logoConfig = {
+  'lilly-logo.svg': { height: 35, maxWidth: 65 },
+  'alltrna-logo.svg': { height: 24, maxWidth: 95 },
+  'TextOnlyLogo.svg': { height: 20, maxWidth: 115 },
   // WIDE LOGOS (aspect ratio > 4.0) - need smaller heights to fit width
   'osu-text-logo.png': { height: 14, maxWidth: 93 },        // 2560x384 (6.67:1)
   'gradient-logo.png': { height: 20, maxWidth: 127 },        // 5000x785 (6.37:1) - increased size

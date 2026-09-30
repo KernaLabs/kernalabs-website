@@ -84,6 +84,15 @@ const partnerLogos = [
 // Media articles data
 const mediaArticles = [
   {
+    href: 'https://kernalabs.substack.com/p/mrna-medicines-in-a-post-agi-world',
+    logo: '/images/icons/brand/TextOnlyLogo.svg',
+    date: 'September 29, 2026',
+    title: 'mRNA Medicines in a Post-AGI World',
+    description: 'Realizing the full potential of mRNA as a programmable medicine.',
+    category: 'Essays',
+    isPublication: false
+  },
+  {
     href: 'https://www.asbmb.org/asbmb-today/careers/040225/melissa-moore-to-speak-at-asbmb-2025',
     logo: '/images/logos/media/asbmb-text-logo.png',
     date: 'April 2, 2025',
@@ -455,6 +464,7 @@ const LandingPage = ({ contentReady = true }) => {
                 date={article.date}
                 title={article.title}
                 description={article.description}
+                category={article.category}
                 isPublication={article.isPublication}
                 delay={50 + idx * 50}
               />

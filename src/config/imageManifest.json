@@ -1016,6 +1016,18 @@
     "variants": [],
     "placeholder": "logos/partners/xeiavp-logo-placeholder.jpg"
   },
+  "team/members/Alex Zinoviev.jpg": {
+    "original": "team/members/Alex Zinoviev.jpg",
+    "variants": [
+      "team/members/Alex Zinoviev-400w.avif",
+      "team/members/Alex Zinoviev-400w.jpg",
+      "team/members/Alex Zinoviev-400w.webp",
+      "team/members/Alex Zinoviev-800w.avif",
+      "team/members/Alex Zinoviev-800w.jpg",
+      "team/members/Alex Zinoviev-800w.webp"
+    ],
+    "placeholder": "team/members/Alex Zinoviev-placeholder.jpg"
+  },
   "team/members/Amit Deshwar.jpg": {
     "original": "team/members/Amit Deshwar.jpg",
     "variants": [
@@ -1110,18 +1122,6 @@
       "team/members/Michael Czech-400w.webp"
     ],
     "placeholder": "team/members/Michael Czech-placeholder.jpg"
-  },
-  "team/members/Michael Swift.jpg": {
-    "original": "team/members/Michael Swift.jpg",
-    "variants": [
-      "team/members/Michael Swift-400w.avif",
-      "team/members/Michael Swift-400w.jpg",
-      "team/members/Michael Swift-400w.webp",
-      "team/members/Michael Swift-800w.avif",
-      "team/members/Michael Swift-800w.jpg",
-      "team/members/Michael Swift-800w.webp"
-    ],
-    "placeholder": "team/members/Michael Swift-placeholder.jpg"
   },
   "team/members/Nitin Raj.jpg": {
     "original": "team/members/Nitin Raj.jpg",

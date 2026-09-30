@@ -30,15 +30,6 @@ export const coreTeam = [
     ]
   },
   {
-    name: 'Michael Swift, PhD',
-    image: '/images/team/members/Michael Swift.jpg',
-    institutions: [
-      { name: 'Stanford', logo: '/images/logos/institutions/stanford-text-logo.png'},
-      { name: 'Longitude Capital', logo: '/images/logos/institutions/longitude-text-logo.png'},
-      { name: 'miRagen', logo: '/images/logos/institutions/mgen-logo.png' }
-    ]
-  },
-  {
     name: 'Oliver Chang, PhD',
     image: '/images/team/members/Oliver Chang.jpg',
     institutions: [
@@ -100,6 +91,14 @@ export const advisors = [
       { name: 'Moderna', logo: '/images/logos/institutions/moderna-text-logo.png'},
       { name: '76Bio', logo: '/images/logos/institutions/76bio-text-logo.png'},
       { name: 'Sail Biomedicines', logo: '/images/logos/institutions/sail-text-logo.png'},
+    ]
+  },
+  {
+    name: 'Alex Zinoviev, PhD',
+    image: '/images/team/members/Alex Zinoviev.jpg',
+    institutions: [
+      { name: 'Lilly', logo: '/images/logos/institutions/lilly-logo.svg' },
+      { name: 'Alltrna', logo: '/images/logos/institutions/alltrna-logo.svg' },
     ]
   },
   {

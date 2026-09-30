@@ -2,7 +2,7 @@ import React from 'react';
 import AnimatedSection from './AnimatedSection';
 import InstitutionLogo from './InstitutionLogo';
 
-const MediaCard = ({ href, logo, date, title, description, isPublication, delay = 0 }) => {
+const MediaCard = ({ href, logo, date, title, description, category, isPublication, delay = 0 }) => {
   return (
     <a 
       href={href}
@@ -32,7 +32,7 @@ const MediaCard = ({ href, logo, date, title, description, isPublication, delay 
                 ? 'bg-white/10 text-white/80' 
                 : 'bg-kerna-red/20 text-kerna-red'
             }`}>
-              {isPublication ? 'Publication' : 'News'}
+              {category || (isPublication ? 'Publication' : 'News')}
             </span>
           </div>
           <div className="flex-grow">

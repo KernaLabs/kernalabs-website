@@ -41,7 +41,7 @@ const CLASSES = {
   bannerText: 'text-fluid-sm sm:text-fluid-base md:text-fluid-lg lg:text-fluid-xl text-kerna-darkblue font-display font-medium leading-snug',
   
   // Footer
-  socialLink: 'w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center bg-kerna-beige/90 hover:bg-kerna-beige/100 rounded-full transition-all hover:scale-110 duration-300'
+  socialLink: 'w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center bg-kerna-beige/80 hover:bg-kerna-beige/90 rounded-full transition-all hover:scale-110 duration-300'
 };
 
 // Therapeutic cards data
@@ -526,13 +526,13 @@ const LandingPage = ({ contentReady = true }) => {
               <img src="/images/icons/brand/KernaLeaf.svg?v=2" alt="Kerna Leaf" className="w-20 sm:w-24 h-auto mb-4 sm:mb-6 select-none" />
               <div className="flex justify-center gap-3 sm:gap-4">
                 <a href="https://twitter.com/KernaLabs" target="_blank" rel="noreferrer" className={CLASSES.socialLink}>
-                  <img src="/images/icons/brand/XIcon.svg?v=2" alt="Twitter/X" className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <img src="/images/icons/brand/XIcon.svg?v=2" alt="Twitter/X" className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px]" />
                 </a>
                 <a href="https://linkedin.com/company/kernalabs" target="_blank" rel="noreferrer" className={CLASSES.socialLink}>
-                  <img src="/images/icons/brand/LinkedInIcon.svg?v=2" alt="LinkedIn" className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <img src="/images/icons/brand/LinkedInIcon.svg?v=2" alt="LinkedIn" className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px]" />
                 </a>
                 <a href="https://kernalabs.substack.com" target="_blank" rel="noreferrer" className={CLASSES.socialLink}>
-                  <img src="/images/icons/brand/SubstackIcon.svg" alt="Substack" className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <img src="/images/icons/brand/SubstackIcon.svg" alt="Substack" className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px]" />
                 </a>
               </div>
             </AnimatedSection>

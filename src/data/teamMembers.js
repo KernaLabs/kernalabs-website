@@ -97,7 +97,7 @@ export const advisors = [
     name: 'Alex Zinoviev, PhD',
     image: '/images/team/members/Alex Zinoviev.jpg',
     institutions: [
-      { name: 'Lilly', logo: '/images/logos/institutions/lilly-logo.svg' },
+      { name: 'Lilly', logo: '/images/logos/institutions/lilly-logo-white.svg' },
       { name: 'Alltrna', logo: '/images/logos/institutions/alltrna-logo.svg' },
     ]
   },

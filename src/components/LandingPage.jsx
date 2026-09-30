@@ -84,6 +84,13 @@ const partnerLogos = [
 // Media articles data
 const mediaArticles = [
   {
+    href: 'https://events.endpoints.news/aiday2026/12695151',
+    logo: '/images/logos/media/endpoint-text-logo.png',
+    date: 'October 14, 2026',
+    title: 'Melissa J. Moore to speak at Endpoints AI Day on Oct 14',
+    isPublication: false
+  },
+  {
     href: 'https://kernalabs.substack.com/p/mrna-medicines-in-a-post-agi-world',
     logo: '/images/icons/brand/TextOnlyLogo.svg',
     date: 'September 29, 2026',
